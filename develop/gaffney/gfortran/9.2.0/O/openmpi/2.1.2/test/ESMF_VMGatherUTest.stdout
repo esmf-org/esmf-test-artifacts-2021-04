@@ -1,4 +1,4 @@
-build time -- 2021-04-21 20:58:09
+build time -- 2021-04-22 22:41:40
 --------------------------------------------------------------------------
 WARNING: Open MPI will create a shared memory backing file in a
 directory that appears to be mounted on a network filesystem.
@@ -15,25 +15,35 @@ Note, too, that system administrators can set a list of filesystems
 where Open MPI is disallowed from creating temporary files by setting
 the MCA parameter "orte_no_session_dir".
 
-  Local host: r3i3n9
-  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r3i3n9_0/17551/1/shared_mem_pool.r3i3n9
+  Local host: r2i5n13
+  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i5n13_0/566/1/shared_mem_pool.r2i5n13
 
 You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
 disable this message.
 --------------------------------------------------------------------------
   Beginning Test, file ESMF_VMGatherUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_VMGatherUTest.F90, line 67
   Beginning Test, file ESMF_VMGatherUTest.F90, line 67
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMGatherUTest.F90, line 67
   NUMBER_OF_PROCESSORS           4
-  Beginning Test, file ESMF_VMGatherUTest.F90, line 67
   NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
+  PASS  Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 109
   PASS  Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 109
   PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 126
+ Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
   PASS  Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 109
   PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 126
-  PASS  Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 109
+           2  array1:            0
+  PASS  Verifying array2 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 143
   PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 126
  Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
            1  array1:            0
@@ -44,38 +54,21 @@ disable this message.
            1  array1:            0
            1  array1:            0
            1  array1:            0
- Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
-           2  array1:            0
-           2  array1:            0
-           2  array1:            0
-           2  array1:            0
-           2  array1:            0
-           2  array1:            0
- Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
-           0  array1:            0
-           2  array1:            0
-           2  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-  PASS  Verifying array2 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 143
-  PASS  Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 154
-  PASS  Verifying array2 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 143
-  PASS  Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 154
-  PASS  Verifying array2 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 143
   PASS  Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 154
   PASS  Verifying farray1 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 171
  contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-  PASS  Verifying farray1 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 171
- contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
+ Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+  PASS  Verifying array2 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 143
+  PASS  Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 154
+  PASS  Verifying array2 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 143
            2  farray1:    0.0000000000000000     
            2  farray1:    0.0000000000000000     
            2  farray1:    0.0000000000000000     
@@ -85,7 +78,22 @@ disable this message.
            2  farray1:    0.0000000000000000     
            2  farray1:    0.0000000000000000     
  contents after gather (should be localPet*2+1, localPet*2+2):
+           2  farray2:    5.0000000000000000     
   PASS  Verifying farray1 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 171
+ contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
+           0  farray1:    0.0000000000000000     
+  PASS  Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 154
+  PASS  Verifying farray1 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 171
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           2  farray2:    6.0000000000000000     
+  PASS  Verifying farray2 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 193
+  PASS  Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 204
  contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
            1  farray1:    0.0000000000000000     
            1  farray1:    0.0000000000000000     
@@ -94,37 +102,18 @@ disable this message.
            1  farray1:    0.0000000000000000     
            1  farray1:    0.0000000000000000     
            1  farray1:    0.0000000000000000     
-           1  farray1:    0.0000000000000000     
- contents after gather (should be localPet*2+1, localPet*2+2):
-           1  farray2:    3.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
  contents after gather (should be localPet*2+1, localPet*2+2):
            0  farray2:    1.0000000000000000     
            0  farray2:    2.0000000000000000     
   PASS  Verifying farray2 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 193
   PASS  Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 204
-           1  farray2:    4.0000000000000000     
-  PASS  Verifying farray2 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 193
-  PASS  Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 204
-  PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 221
-           2  farray2:    5.0000000000000000     
-           2  farray2:    6.0000000000000000     
-  PASS  Verifying farray2 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 193
-  PASS  Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 204
-  PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 221
- contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
   PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 221
  contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
            0  f4array1:    0.00000000    
            0  f4array1:    0.00000000    
            0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
+  PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 221
+ contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
            2  f4array1:    0.00000000    
            2  f4array1:    0.00000000    
            2  f4array1:    0.00000000    
@@ -137,85 +126,59 @@ disable this message.
            2  f4array2:    5.00000000    
            2  f4array2:    6.00000000    
   PASS  Verifying f4array2 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 243
- contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+           1  farray1:    0.0000000000000000     
  contents after gather (should be localPet*2+1, localPet*2+2):
-           1  f4array2:    3.00000000    
-           1  f4array2:    4.00000000    
-  PASS  Verifying f4array2 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 243
+           1  farray2:    3.0000000000000000     
+  PASS  GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 285
+  PASS  Verifying array1 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 302
+ Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
+           2  array1:            0
            0  f4array1:    0.00000000    
  contents after gather (should be localPet*2+1, localPet*2+2):
            0  f4array2:    1.00000000    
            0  f4array2:    2.00000000    
   PASS  Verifying f4array2 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 243
   PASS  GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 285
-  PASS  GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 285
-  PASS  GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 285
+           1  farray2:    4.0000000000000000     
+  PASS  Verifying farray2 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 193
+  PASS  Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 204
   PASS  Verifying array1 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 302
- Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
            2  array1:            0
            2  array1:            0
-           2  array1:            0
-           2  array1:            0
-           2  array1:            0
-           2  array1:            0
-           2  array1:            0
-           2  array1:            0
-  PASS  Verifying array1 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 302
- Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
-           1  array1:            0
-           1  array1:            0
-           1  array1:            0
-           1  array1:            0
-           1  array1:            0
-           1  array1:            0
-           1  array1:            0
-           1  array1:            0
   PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 319
-  PASS  Verifying array1 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 302
- Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-           0  array1:            0
-  PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 319
-  PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 319
-  PASS  GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 330
-  PASS  Verifying farray1 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 347
-  PASS  GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 330
-  PASS  Verifying farray1 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 347
+  PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 221
  contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+ Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+           0  array1:            0
+  PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 319
+  PASS  GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 330
   PASS  GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 330
   PASS  Verifying farray1 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 347
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
-           0  farray1:    0.0000000000000000     
- contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
-           1  farray1:    0.0000000000000000     
-           1  farray1:    0.0000000000000000     
-           1  farray1:    0.0000000000000000     
-           1  farray1:    0.0000000000000000     
-           1  farray1:    0.0000000000000000     
-           1  farray1:    0.0000000000000000     
-           1  farray1:    0.0000000000000000     
-           1  farray1:    0.0000000000000000     
  contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
            2  farray1:    0.0000000000000000     
            2  farray1:    0.0000000000000000     
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
            2  farray1:    0.0000000000000000     
            2  farray1:    0.0000000000000000     
            2  farray1:    0.0000000000000000     
@@ -226,66 +189,87 @@ disable this message.
            2  farray2:    5.0000000000000000     
            2  farray2:    6.0000000000000000     
   PASS  Verifying farray2 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 369
-  PASS  GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 380
+  PASS  Verifying farray1 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 347
+ contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           0  farray1:    0.0000000000000000     
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
  contents after gather (should be localPet*2+1, localPet*2+2):
-           1  farray2:    3.0000000000000000     
-           1  farray2:    4.0000000000000000     
-  PASS  Verifying farray2 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 369
+           1  f4array2:    3.00000000    
+           1  f4array2:    4.00000000    
+  PASS  Verifying f4array2 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 243
   PASS  GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 380
+  PASS  Verifying f4array1 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 397
+ contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
            0  farray1:    0.0000000000000000     
            0  farray1:    0.0000000000000000     
  contents after gather (should be localPet*2+1, localPet*2+2):
            0  farray2:    1.0000000000000000     
            0  farray2:    2.0000000000000000     
   PASS  Verifying farray2 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 369
+  PASS  GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 285
+           2  f4array1:    0.00000000    
+           2  f4array1:    0.00000000    
+           2  f4array1:    0.00000000    
   PASS  GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 380
   PASS  Verifying f4array1 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 397
-  PASS  Verifying f4array1 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 397
- contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
-           2  f4array1:    0.00000000    
-           2  f4array1:    0.00000000    
-           2  f4array1:    0.00000000    
-           2  f4array1:    0.00000000    
-           2  f4array1:    0.00000000    
-           2  f4array1:    0.00000000    
-           2  f4array1:    0.00000000    
-  PASS  Verifying f4array1 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 397
- contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
-           1  f4array1:    0.00000000    
  contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
            0  f4array1:    0.00000000    
            0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
-           0  f4array1:    0.00000000    
- contents after gather (should be localPet*2+1, localPet*2+2):
- contents after gather (should be localPet*2+1, localPet*2+2):
-           1  f4array2:    3.00000000    
-           1  f4array2:    4.00000000    
+  PASS  Verifying array1 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 302
+ Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
+           1  array1:            0
+           2  f4array1:    0.00000000    
+           2  f4array1:    0.00000000    
+           2  f4array1:    0.00000000    
+           2  f4array1:    0.00000000    
            2  f4array1:    0.00000000    
  contents after gather (should be localPet*2+1, localPet*2+2):
            2  f4array2:    5.00000000    
            2  f4array2:    6.00000000    
   PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 419
+           1  array1:            0
+           1  array1:            0
+           0  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+           0  f4array1:    0.00000000    
+  Ending Test, file ESMF_VMGatherUTest.F90, line 432
+ contents after gather (should be localPet*2+1, localPet*2+2):
            0  f4array2:    1.00000000    
            0  f4array2:    2.00000000    
   PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 419
   Ending Test, file ESMF_VMGatherUTest.F90, line 432
-  Ending Test, file ESMF_VMGatherUTest.F90, line 432
-  PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 419
-  Ending Test, file ESMF_VMGatherUTest.F90, line 432
+           1  array1:            0
+           1  array1:            0
+           1  array1:            0
+           1  array1:            0
+           1  array1:            0
+  PASS  Verifying array2 data after GatherV() Test for Integer, ESMF_VMGatherUTest.F90, line 319
+  PASS  GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 330
+  PASS  Verifying farray1 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 347
+ contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
+           1  farray1:    0.0000000000000000     
+           1  farray1:    0.0000000000000000     
+           1  farray1:    0.0000000000000000     
+           1  farray1:    0.0000000000000000     
   PASS  Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 109
+           1  farray1:    0.0000000000000000     
+           1  farray1:    0.0000000000000000     
+           1  farray1:    0.0000000000000000     
+           1  farray1:    0.0000000000000000     
+ contents after gather (should be localPet*2+1, localPet*2+2):
+           1  farray2:    3.0000000000000000     
   PASS  Verifying array1 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 126
+           1  farray2:    4.0000000000000000     
+  PASS  Verifying farray2 data after GatherV() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 369
  Contents after gather (should be 1,2,... at localPet=petCount-1 , 0 elsewhere), :
            3  array1:            1
            3  array1:            2
@@ -296,9 +280,21 @@ disable this message.
            3  array1:            7
            3  array1:            8
   PASS  Verifying array2 data after Gather() Test for Integer, ESMF_VMGatherUTest.F90, line 143
+  PASS  GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 380
   PASS  Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 154
+  PASS  Verifying f4array1 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 397
   PASS  Verifying farray1 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 171
  contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+ contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+           1  f4array1:    0.00000000    
+ contents after gather (should be localPet*2+1, localPet*2+2):
            3  farray1:    1.0000000000000000     
            3  farray1:    2.0000000000000000     
            3  farray1:    3.0000000000000000     
@@ -310,8 +306,12 @@ disable this message.
  contents after gather (should be localPet*2+1, localPet*2+2):
            3  farray2:    7.0000000000000000     
            3  farray2:    8.0000000000000000     
+           1  f4array2:    3.00000000    
+           1  f4array2:    4.00000000    
+  PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 419
   PASS  Verifying farray2 data after Gather() Test for ESMF_KIND_R8, ESMF_VMGatherUTest.F90, line 193
   PASS  Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 204
+  Ending Test, file ESMF_VMGatherUTest.F90, line 432
   PASS  Verifying f4array1 data after Gather() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 221
  contents after gather (should be 1.,2.,... at localPet=petCount-1 , 0. elsewhere), :
            3  f4array1:    1.00000000    
@@ -369,9 +369,9 @@ disable this message.
            3  f4array2:    8.00000000    
   PASS  Verifying f4array2 data after GatherV() Test for ESMF_KIND_R4, ESMF_VMGatherUTest.F90, line 419
   Ending Test, file ESMF_VMGatherUTest.F90, line 432
-  PET           2  Test Elapsed Time    4.8470000000000040       msec.
-  PET           1  Test Elapsed Time    5.3760000000000057       msec.
-  PET           0  Test Elapsed Time    4.5199999999999960       msec.
-  PET           3  Test Elapsed Time    7.4579999999999922       msec.
-[r3i3n9:246018] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
-[r3i3n9:246018] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+  PET           3  Test Elapsed Time    5.5439999999999934       msec.
+  PET           2  Test Elapsed Time    4.6789999999999887       msec.
+  PET           0  Test Elapsed Time    4.1899999999999995       msec.
+  PET           1  Test Elapsed Time    5.4209999999999816       msec.
+[r2i5n13:235822] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[r2i5n13:235822] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
