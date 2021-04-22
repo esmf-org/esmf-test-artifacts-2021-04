@@ -9,6 +9,8 @@ JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 cd /p/work1/mpotts/gfortran_10.1.0_mpt_O_develop
 
 module unload compiler/intel mpt
+
+module load costinit
 module load gcc/10.1.0 mpt/2.20 
 
 module list >& module-test.log
@@ -25,4 +27,5 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh koehr05 /p/work1/mpotts/gfortran_10.1.0_mpt_O_develop/getres-test.sh
+ssh koehr06 /p/work1/mpotts/gfortran_10.1.0_mpt_O_develop/getres-test.sh
+ssh koehr06 /p/work1/mpotts/gfortran_10.1.0_mpt_O_develop/getres-test.sh
