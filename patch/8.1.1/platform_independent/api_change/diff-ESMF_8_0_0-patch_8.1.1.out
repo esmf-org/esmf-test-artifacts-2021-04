@@ -1,0 +1,2503 @@
+37a38,43
+> <SPAN <PRE>       subroutine ESMF_InitializePreMPI(rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE> -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        integer,                 intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+734c740,741
+< <SPAN      maxPeCountPerPet, prefIntraProcess, prefIntraSsi, prefInterSsi, rc)
+---
+> <SPAN      maxPeCountPerPet, prefIntraProcess, prefIntraSsi, prefInterSsi, &amp;
+> <SPAN      minStackSize, openMpHandling, openMpNumThreads, rc)
+741a749,751
+> <SPAN      integer,             intent(in),  optional :: minStackSize
+> <SPAN      character(*),        intent(in),  optional :: openMpHandling
+> <SPAN      integer,             intent(in),  optional :: openMpNumThreads
+746c756,757
+< <SPAN      maxPetCountPerVas, prefIntraProcess, prefIntraSsi, prefInterSsi, rc)
+---
+> <SPAN      maxPetCountPerVas, prefIntraProcess, prefIntraSsi, prefInterSsi, &amp;
+> <SPAN      minStackSize, rc)
+753a765
+> <SPAN      integer,             intent(in),  optional :: minStackSize
+758c770,771
+< <SPAN      maxPeCountPerPet, prefIntraProcess, prefIntraSsi, prefInterSsi, rc)
+---
+> <SPAN      maxPeCountPerPet, prefIntraProcess, prefIntraSsi, prefInterSsi, &amp;
+> <SPAN      minStackSize, rc)
+765a779
+> <SPAN      integer,             intent(in),  optional :: minStackSize
+1441c1455,1456
+< <SPAN      maxPeCountPerPet, prefIntraProcess, prefIntraSsi, prefInterSsi, rc)
+---
+> <SPAN      maxPeCountPerPet, prefIntraProcess, prefIntraSsi, prefInterSsi, &amp;
+> <SPAN      minStackSize, rc)
+1448a1464
+> <SPAN      integer,             intent(in),  optional :: minStackSize
+1453c1469,1470
+< <SPAN      maxPetCountPerVas, prefIntraProcess, prefIntraSsi, prefInterSsi, rc)
+---
+> <SPAN      maxPetCountPerVas, prefIntraProcess, prefIntraSsi, prefInterSsi, &amp;
+> <SPAN      minStackSize, rc)
+1460a1478
+> <SPAN      integer,             intent(in),  optional :: minStackSize
+1465c1483,1484
+< <SPAN      maxPeCountPerPet, prefIntraProcess, prefIntraSsi, prefInterSsi, rc)
+---
+> <SPAN      maxPeCountPerPet, prefIntraProcess, prefIntraSsi, prefInterSsi, &amp;
+> <SPAN      minStackSize, rc)
+1472a1492
+> <SPAN      integer,             intent(in),  optional :: minStackSize
+1742c1762
+< <SPAN                     routehandleList, name, rc)
+---
+> <SPAN                     routehandleList, name, vm, rc)
+1754a1775
+> <SPAN        type(ESMF_VM), intent(in), optional :: vm
+1760a1782,1789
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>vm</TT> to support object creation on a
+> <SPAN    different VM than that of the current context.
+1761a1791,1792
+> <SPAN </DD>
+> <SPAN </DL>
+1767c1798
+< <SPAN <PRE>       recursive subroutine ESMF_StateDestroy(state, rc)
+---
+> <SPAN <PRE>       recursive subroutine ESMF_StateDestroy(state, noGarbage, rc)
+1770a1802
+> <SPAN        logical, intent(in), optional :: noGarbage
+1776a1809,1817
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>noGarbage</TT>.
+> <SPAN    The argument provides a mechanism to override the default garbage collection
+> <SPAN    mechanism when destroying an ESMF object.
+1777a1819,1820
+> <SPAN </DD>
+> <SPAN </DL>
+1882c1925
+< <SPAN <PRE>   subroutine ESMF_StateReconcile (state, vm, attreconflag, rc)
+---
+> <SPAN <PRE>   subroutine ESMF_StateReconcile(state, vm, rc)
+1886d1928
+< <SPAN      type(ESMF_AttReconcileFlag), intent(in),  optional :: attreconflag
+1950a1993,2000
+> <SPAN <PRE>   subroutine ESMF_StateSet(state, stateIntent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_State),            intent(inout)         :: state
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN      type(ESMF_StateIntent_Flag), intent(in),  optional :: stateIntent
+> <SPAN      integer,                     intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+1975a2026,2083
+> <SPAN    subroutine ESMF_MethodCplCompAdd(cplcomp, label, index, userRoutine, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      interface
+> <SPAN        subroutine userRoutine(cplcomp, rc)
+> <SPAN          use ESMF_CompMod
+> <SPAN          implicit none
+> <SPAN          type(ESMF_CplComp)          :: cplcomp      ! must not be optional
+> <SPAN          integer, intent(out)        :: rc           ! must not be optional
+> <SPAN        end subroutine
+> <SPAN      end interface
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAdd()
+> <SPAN    subroutine ESMF_MethodCplCompAddShObj(cplcomp, label, index, userRoutine, &amp;
+> <SPAN      sharedObj, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      character(len=*), intent(in)            :: userRoutine
+> <SPAN      character(len=*), intent(in),  optional :: sharedObj
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAdd()
+> <SPAN    subroutine ESMF_MethodGridCompAdd(gcomp, label, index, userRoutine, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_GridComp)                     :: gcomp
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      interface
+> <SPAN        subroutine userRoutine(gcomp, rc)
+> <SPAN          use ESMF_CompMod
+> <SPAN          implicit none
+> <SPAN          type(ESMF_GridComp)         :: gcomp        ! must not be optional
+> <SPAN          integer, intent(out)        :: rc           ! must not be optional
+> <SPAN        end subroutine
+> <SPAN      end interface
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAdd()
+> <SPAN    subroutine ESMF_MethodGridCompAddShObj(gcomp, label, index, userRoutine, &amp;
+> <SPAN      sharedObj, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_GridComp)                     :: gcomp
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      character(len=*), intent(in)            :: userRoutine
+> <SPAN      character(len=*), intent(in),  optional :: sharedObj
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAdd()
+2004,2006c2112,2113
+< <SPAN <PRE>   ! Private name; call using ESMF_MethodExecute()
+< <SPAN    subroutine ESMF_MethodStateExecute(state, label, index, existflag, &amp;
+< <SPAN      userRc, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAddReplace()
+> <SPAN    subroutine ESMF_MethodCplCompAddRep(cplcomp, label, index, userRoutine, rc)
+2008c2115
+< <SPAN <PRE>     type(ESMF_State)                        :: state
+---
+> <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+2011,2012c2118,2125
+< <SPAN      logical,          intent(out), optional :: existflag
+< <SPAN      integer,          intent(out), optional :: userRc
+---
+> <SPAN      interface
+> <SPAN        subroutine userRoutine(cplcomp, rc)
+> <SPAN          use ESMF_CompMod
+> <SPAN          implicit none
+> <SPAN          type(ESMF_CplComp)          :: cplcomp      ! must not be optional
+> <SPAN          integer, intent(out)        :: rc           ! must not be optional
+> <SPAN        end subroutine
+> <SPAN      end interface
+2016,2017c2129,2131
+< <SPAN <PRE>   ! Private name; call using ESMF_MethodRemove()
+< <SPAN    subroutine ESMF_MethodStateRemove(state, label, index, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAddReplace()
+> <SPAN    subroutine ESMF_MethodCplCompAddRepShObj(cplcomp, label, index, userRoutine, &amp;
+> <SPAN      sharedObj, rc)
+2019c2133
+< <SPAN <PRE>     type(ESMF_State)                        :: state
+---
+> <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+2021a2136,2137
+> <SPAN      character(len=*), intent(in)            :: userRoutine
+> <SPAN      character(len=*), intent(in),  optional :: sharedObj
+2025,2026c2141,2142
+< <SPAN <PRE>   ! Private name; call using ESMF_MethodAdd()
+< <SPAN    subroutine ESMF_MethodGridCompAdd(gcomp, label, index, userRoutine, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAddReplace()
+> <SPAN    subroutine ESMF_MethodGridCompAddRep(gcomp, label, index, userRoutine, rc)
+2042,2043c2158,2159
+< <SPAN <PRE>   ! Private name; call using ESMF_MethodAdd()
+< <SPAN    subroutine ESMF_MethodGridCompAddShObj(gcomp, label, index, userRoutine, &amp;
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAddReplace()
+> <SPAN    subroutine ESMF_MethodGridCompAddRepShObj(gcomp, label, index, userRoutine, &amp;
+2054,2055c2170,2171
+< <SPAN <PRE>   ! Private name; call using ESMF_MethodAdd()
+< <SPAN    subroutine ESMF_MethodCplCompAdd(cplcomp, label, index, userRoutine, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAddReplace()
+> <SPAN    subroutine ESMF_MethodStateAddRep(state, label, index, userRoutine, rc)
+2057c2173
+< <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+---
+> <SPAN <PRE>     type(ESMF_State)                        :: state
+2061,2062c2177,2178
+< <SPAN        subroutine userRoutine(cplcomp, rc)
+< <SPAN          use ESMF_CompMod
+---
+> <SPAN        subroutine userRoutine(state, rc)
+> <SPAN          use ESMF_StateMod
+2064c2180
+< <SPAN          type(ESMF_CplComp)          :: cplcomp      ! must not be optional
+---
+> <SPAN          type(ESMF_State)            :: state        ! must not be optional
+2071,2072c2187,2188
+< <SPAN <PRE>   ! Private name; call using ESMF_MethodAdd()
+< <SPAN    subroutine ESMF_MethodCplCompAddShObj(cplcomp, label, index, userRoutine, &amp;
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodAddReplace()
+> <SPAN    subroutine ESMF_MethodStateAddRepShObj(state, label, index, userRoutine, &amp;
+2075c2191
+< <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+---
+> <SPAN <PRE>     type(ESMF_State)                        :: state
+2084c2200,2212
+< <SPAN    subroutine ESMF_MethodGridCompExecute(gcomp, label, index, existflag, &amp;
+---
+> <SPAN    recursive subroutine ESMF_MethodCplCompExecute(cplcomp, label, index, existflag, &amp;
+> <SPAN      userRc, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      logical,          intent(out), optional :: existflag
+> <SPAN      integer,          intent(out), optional :: userRc
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodExecute()
+> <SPAN    recursive subroutine ESMF_MethodGridCompExecute(gcomp, label, index, existflag, &amp;
+2096c2224
+< <SPAN    subroutine ESMF_MethodCplCompExecute(cplcomp, label, index, existflag, &amp;
+---
+> <SPAN    recursive subroutine ESMF_MethodStateExecute(state, label, index, existflag, &amp;
+2099c2227
+< <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+---
+> <SPAN <PRE>     type(ESMF_State)                        :: state
+2106a2235,2273
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodGet()
+> <SPAN    subroutine ESMF_MethodCplCompGet(cplcomp, label, index, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      logical,          intent(out), optional :: isPresent
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodGet()
+> <SPAN    subroutine ESMF_MethodGridCompGet(gcomp, label, index, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_GridComp)                     :: gcomp
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      logical,          intent(out), optional :: isPresent
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodGet()
+> <SPAN    subroutine ESMF_MethodStateGet(state, label, index, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_State)                        :: state
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      logical,          intent(out), optional :: isPresent
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   ! Private name; call using ESMF_MethodRemove()
+> <SPAN    subroutine ESMF_MethodCplCompRemove(cplcomp, label, index, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+> <SPAN      character(len=*), intent(in)            :: label
+> <SPAN      integer,          intent(in),  optional :: index
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+2117c2284
+< <SPAN    subroutine ESMF_MethodCplCompRemove(cplcomp, label, index, rc)
+---
+> <SPAN    subroutine ESMF_MethodStateRemove(state, label, index, rc)
+2119c2286
+< <SPAN <PRE>     type(ESMF_CplComp)                      :: cplcomp
+---
+> <SPAN <PRE>     type(ESMF_State)                        :: state
+2144,2145c2311,2312
+< <SPAN    subroutine ESMF_RegridWeightGenFile(srcFile, dstFile, weightFile, &amp;
+< <SPAN      regridmethod, polemethod, regridPoleNPnts, lineType, normType, &amp;
+---
+> <SPAN    subroutine ESMF_RegridWeightGenFile(srcFile, dstFile, &amp;
+> <SPAN      weightFile, rhFile, regridmethod, polemethod, regridPoleNPnts, lineType, normType, &amp;
+2162d2328
+< <SPAN    character(len=*),             intent(in)            :: weightFile
+2163a2330,2331
+> <SPAN    character(len=*),             intent(in),  optional :: weightFile
+> <SPAN    character(len=*),             intent(in),  optional :: rhFile
+2485a2654,2658
+> <SPAN <DT><STRONG>8.0.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>isPacked</TT>.
+> <SPAN    The new argument allows the user to query if this is a packed FieldBundle.
+> <SPAN    
+> <SPAN </DD>
+2715c2888
+< <SPAN    srcToDstTransposeMap, rc)
+---
+> <SPAN    ignoreUnmatchedIndicesFlag, srcToDstTransposeMap, rc)
+2721a2895
+> <SPAN    logical, intent(in), optional :: ignoreUnmatchedIndicesFlag(:)
+2728a2903,2910
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ignoreUnmatchedIndicesFlag</TT> to support cases
+> <SPAN    where source and destination side do not cover the exact same index space.
+2729a2912,2913
+> <SPAN </DD>
+> <SPAN </DL>
+2737c2921,2922
+< <SPAN    routehandle, factor, srcToDstTransposeMap, rc)
+---
+> <SPAN      routehandle, ignoreUnmatchedIndicesFlag, &amp;
+> <SPAN      srcToDstTransposeMap, rc)
+2739,2741c2924,2926
+< <SPAN <PRE>   type(ESMF_FieldBundle), intent(in) :: srcFieldBundle
+< <SPAN    type(ESMF_FieldBundle), intent(inout) :: dstFieldBundle
+< <SPAN    type(ESMF_RouteHandle), intent(inout) :: routehandle
+---
+> <SPAN <PRE>     type(ESMF_FieldBundle), intent(in) :: srcFieldBundle
+> <SPAN      type(ESMF_FieldBundle), intent(inout) :: dstFieldBundle
+> <SPAN      type(ESMF_RouteHandle), intent(inout) :: routehandle
+2743,2744c2928,2930
+< <SPAN    integer, intent(in), optional :: srcToDstTransposeMap(:)
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN      logical, intent(in), optional :: ignoreUnmatchedIndicesFlag(:)
+> <SPAN      integer, intent(in), optional :: srcToDstTransposeMap(:)
+> <SPAN      integer, intent(out), optional :: rc
+2749a2936,2943
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ignoreUnmatchedIndicesFlag</TT> to support cases
+> <SPAN    where source and destination side do not cover the exact same index space.
+2750a2945,2946
+> <SPAN </DD>
+> <SPAN </DL>
+2974c3170,3172
+< <SPAN          routehandle, zeroregion, termorderflag, checkflag, rc)
+---
+> <SPAN      routehandle, &amp;
+> <SPAN      zeroregion, &amp; ! DEPRECATED ARGUMENT
+> <SPAN      zeroregionflag, termorderflag, checkflag, rc)
+2976,2978c3174,3176
+< <SPAN <PRE>         type(ESMF_FieldBundle), intent(in), optional :: srcFieldBundle
+< <SPAN          type(ESMF_FieldBundle), intent(inout), optional :: dstFieldBundle
+< <SPAN          type(ESMF_RouteHandle), intent(inout) :: routehandle
+---
+> <SPAN <PRE>     type(ESMF_FieldBundle), intent(in), optional :: srcFieldBundle
+> <SPAN      type(ESMF_FieldBundle), intent(inout), optional :: dstFieldBundle
+> <SPAN      type(ESMF_RouteHandle), intent(inout) :: routehandle
+2980,2983c3178,3182
+< <SPAN          type(ESMF_Region_Flag), intent(in), optional :: zeroregion
+< <SPAN          type(ESMF_TermOrder_Flag), intent(in), optional :: termorderflag(:)
+< <SPAN          logical, intent(in), optional :: checkflag
+< <SPAN          integer, intent(out), optional :: rc
+---
+> <SPAN      type(ESMF_Region_Flag), intent(in), optional :: zeroregion ! DEPRECATED ARGUMENT
+> <SPAN      type(ESMF_Region_Flag), intent(in), target, optional :: zeroregionflag(:)
+> <SPAN      type(ESMF_TermOrder_Flag), intent(in), optional :: termorderflag(:)
+> <SPAN      logical, intent(in), optional :: checkflag
+> <SPAN      integer, intent(out), optional :: rc
+2999a3199,3204
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>zeroregionflag</TT>, and deprecated
+> <SPAN    <TT>zeroregion</TT>. The new argument allows greater flexibility
+> <SPAN    in setting the zero region for individual FieldBundle members.
+> <SPAN    
+> <SPAN </DD>
+3038c3243
+< <SPAN    srcTermProcessing, rc)
+---
+> <SPAN    ignoreUnmatchedIndicesFlag, srcTermProcessing, rc)
+3045a3251
+> <SPAN    logical, intent(in), optional :: ignoreUnmatchedIndicesFlag(:)
+3064a3271,3276
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ignoreUnmatchedIndicesFlag</TT> to support cases
+> <SPAN    where the sparse matrix includes terms with source or destination sequence
+> <SPAN    indices not present in the source or destination field.
+> <SPAN    
+> <SPAN </DD>
+3073c3285,3286
+< <SPAN          routehandle, srcTermProcessing, rc)
+---
+> <SPAN          routehandle, ignoreUnmatchedIndicesFlag, &amp;
+> <SPAN          srcTermProcessing, rc)
+3078a3292
+> <SPAN          logical, intent(in), optional :: ignoreUnmatchedIndicesFlag(:)
+3097a3312,3317
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ignoreUnmatchedIndicesFlag</TT> to support cases
+> <SPAN    where the sparse matrix includes terms with source or destination sequence
+> <SPAN    indices not present in the source or destination field.
+> <SPAN    
+> <SPAN </DD>
+3106c3326,3327
+< <SPAN        filename, routehandle, srcTermProcessing, rc)
+---
+> <SPAN        filename, routehandle, ignoreUnmatchedIndicesFlag, &amp;
+> <SPAN        srcTermProcessing, rc)
+3112a3334
+> <SPAN        logical, intent(in), optional :: ignoreUnmatchedIndicesFlag(:)
+3206c3428
+< <SPAN      totalLWidth, totalUWidth, name, rc)
+---
+> <SPAN      totalLWidth, totalUWidth, pinflag, name, rc)
+3219a3442
+> <SPAN      type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3226a3450,3457
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>pinflag</TT> to provide access to DE sharing
+> <SPAN    between PETs.
+3227a3459,3460
+> <SPAN </DD>
+> <SPAN </DL>
+3236c3469
+< <SPAN      ungriddedUBound, totalLWidth, totalUWidth, name, rc)
+---
+> <SPAN      ungriddedUBound, totalLWidth, totalUWidth, pinflag, name, rc)
+3249a3483
+> <SPAN      type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3256a3491,3498
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>pinflag</TT> to provide access to DE sharing
+> <SPAN    between PETs.
+3257a3500,3501
+> <SPAN </DD>
+> <SPAN </DL>
+3366,3367c3610
+< <SPAN      gridToFieldMap, ungriddedLBound, ungriddedUBound, &amp;
+< <SPAN      name, rc)
+---
+> <SPAN      gridToFieldMap, ungriddedLBound, ungriddedUBound, pinflag, name, rc)
+3376a3620
+> <SPAN      type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3383,3384c3627
+< <SPAN      gridToFieldMap, ungriddedLBound, ungriddedUBound, &amp;
+< <SPAN      name, rc)
+---
+> <SPAN      gridToFieldMap, ungriddedLBound, ungriddedUBound, pinflag, name, rc)
+3393a3637
+> <SPAN      type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3452c3696
+< <SPAN    function ESMF_FieldCreateMeshTKR(mesh, typekind, &amp;
+---
+> <SPAN    function ESMF_FieldCreateMeshTKR(mesh, typekind, indexflag, &amp;
+3454c3698
+< <SPAN      name, rc)
+---
+> <SPAN      pinflag, name, rc)
+3460a3705
+> <SPAN      type(ESMF_Index_Flag), intent(in), optional :: indexflag
+3464a3710
+> <SPAN      type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3471,3472c3717,3718
+< <SPAN      meshloc, gridToFieldMap, ungriddedLBound, ungriddedUBound, &amp;
+< <SPAN      name, rc)
+---
+> <SPAN      indexflag, meshloc, gridToFieldMap, ungriddedLBound, ungriddedUBound, &amp;
+> <SPAN      pinflag, name, rc)
+3478a3725
+> <SPAN      type(ESMF_Index_Flag),intent(in), optional :: indexflag
+3482a3730
+> <SPAN      type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3546,3549c3794,3796
+< <SPAN    function ESMF_FieldCreateXGTKR(xgrid, typekind, &amp;
+< <SPAN      xgridside, gridindex, &amp;
+< <SPAN      gridToFieldMap, ungriddedLBound, ungriddedUBound, &amp;
+< <SPAN      name, rc)
+---
+> <SPAN    function ESMF_FieldCreateXGTKR(xgrid, typekind, xgridside, &amp;
+> <SPAN      gridindex, gridToFieldMap, ungriddedLBound, ungriddedUBound, &amp;
+> <SPAN      pinflag, name, rc)
+3560a3808
+> <SPAN      type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3567,3569c3815,3816
+< <SPAN      xgridside, gridindex, &amp;
+< <SPAN      gridToFieldMap, ungriddedLBound, ungriddedUBound, &amp;
+< <SPAN      name, rc)
+---
+> <SPAN      xgridside, gridindex, gridToFieldMap, ungriddedLBound, ungriddedUBound, &amp;
+> <SPAN      pinflag, name, rc)
+3580a3828
+> <SPAN      type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3675,3677c3923,3925
+< <SPAN  subroutine ESMF_FieldEmptyCompAS(field, arrayspec, &amp;
+< <SPAN   indexflag, gridToFieldMap, &amp;
+< <SPAN   ungriddedLBound, ungriddedUBound, totalLWidth, totalUWidth, rc)
+---
+> <SPAN  subroutine ESMF_FieldEmptyCompAS(field, arrayspec, indexflag, &amp;
+> <SPAN   gridToFieldMap, ungriddedLBound, ungriddedUBound, totalLWidth, totalUWidth, &amp;
+> <SPAN   pinflag, rc)
+3687a3936
+> <SPAN   type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3693a3943,3950
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>pinflag</TT> to provide access to DE sharing
+> <SPAN    between PETs.
+3694a3952,3953
+> <SPAN </DD>
+> <SPAN </DL>
+3701,3703c3960,3962
+< <SPAN  subroutine ESMF_FieldEmptyCompTK(field, typekind, &amp;
+< <SPAN   indexflag, gridToFieldMap, &amp;
+< <SPAN   ungriddedLBound, ungriddedUBound, totalLWidth, totalUWidth, rc)
+---
+> <SPAN  subroutine ESMF_FieldEmptyCompTK(field, typekind, indexflag, &amp;
+> <SPAN   gridToFieldMap, ungriddedLBound, ungriddedUBound, totalLWidth, totalUWidth, &amp;
+> <SPAN   pinflag, rc)
+3713a3973
+> <SPAN   type(ESMF_Pin_Flag), intent(in), optional :: pinflag
+3719a3980,3987
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>pinflag</TT> to provide access to DE sharing
+> <SPAN    between PETs.
+3720a3989,3990
+> <SPAN </DD>
+> <SPAN </DL>
+3991c4261
+< <SPAN    subroutine ESMF_FieldEmptySetMesh(field, mesh, meshloc, rc)
+---
+> <SPAN    subroutine ESMF_FieldEmptySetMesh(field, mesh, indexflag, meshloc, rc)
+3995a4266
+> <SPAN    type(ESMF_Index_Flag),intent(in), optional :: indexflag
+4070c4341
+< <SPAN      status, geomtype, grid, mesh, locstream, xgrid, array, &amp;
+---
+> <SPAN      status, geomtype, grid, mesh, locstream, xgrid, array, localarrayList, &amp;
+4073c4344,4346
+< <SPAN      totalLWidth, totalUWidth, localDeCount, name, vm, rc)
+---
+> <SPAN      totalLWidth, totalUWidth, localDeCount, ssiLocalDeCount, &amp;
+> <SPAN      localDeToDeMap, minIndex, maxIndex, elementCount, &amp;
+> <SPAN      localMinIndex, localMaxIndex, localElementCount, name, vm, rc)
+4084a4358
+> <SPAN      type(ESMF_LocalArray), target, intent(out), optional :: localarrayList(:)
+4097a4372,4379
+> <SPAN      integer, intent(out), optional :: ssiLocalDeCount
+> <SPAN      integer, intent(out), optional :: localDeToDeMap(:)
+> <SPAN      integer, intent(out), optional :: minIndex(:)
+> <SPAN      integer, intent(out), optional :: maxIndex(:)
+> <SPAN      integer, intent(out), optional :: elementCount(:)
+> <SPAN      integer, intent(out), optional :: localMinIndex(:)
+> <SPAN      integer, intent(out), optional :: localMaxIndex(:)
+> <SPAN      integer, intent(out), optional :: localElementCount(:)
+4115a4398,4426
+> <SPAN <DT><STRONG>8.0.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>minIndex</TT>.
+> <SPAN    The new argument allows the user to query the global lower bounds of the field data across all PETs.
+> <SPAN <BR>
+> <SPAN Added argument <TT>maxIndex</TT>.
+> <SPAN    The new argument allows the user to query the global upper bounds of the field data across all PETs.
+> <SPAN <BR>
+> <SPAN Added argument <TT>elementCount</TT>.
+> <SPAN    The new argument allows the user to query the global number of items of the field data across all PETs.
+> <SPAN <BR>
+> <SPAN Added argument <TT>localMinIndex</TT>.
+> <SPAN    The new argument allows the user to query the PET local lower bounds globally indexed of the field data.
+> <SPAN <BR>
+> <SPAN Added argument <TT>localMaxIndex</TT>.
+> <SPAN    The new argument allows the user to query the PET local upper bounds globally indexed of the field data.
+> <SPAN <BR>
+> <SPAN Added argument <TT>localElementCount</TT>.
+> <SPAN    The new argument allows the user to query the PET local number of items of the field data.
+> <SPAN    
+> <SPAN </DD>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ssiLocalDeCount</TT> and <TT>localarrayList</TT> to
+> <SPAN    support DE sharing between PETs on the same single system
+> <SPAN    image (SSI).
+> <SPAN <BR>
+> <SPAN Added argument <TT>localDeToDeMap</TT> to support DE handling from
+> <SPAN    the Field level rather than require user to go to Array level.
+> <SPAN    
+> <SPAN </DD>
+4483a4795
+> <SPAN                      checkFlag, &amp;
+4490c4802
+< <SPAN        integer(ESMF_KIND_I4),         intent(in),    optional :: dstMaskValues(:)
+---
+> <SPAN        integer(ESMF_KIND_I4),          intent(in),    optional :: dstMaskValues(:)
+4512a4825
+> <SPAN        logical,                        intent(in),    optional :: checkFlag
+4577a4891,4896
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>checkFlag</TT> to enable the user to turn on more
+> <SPAN                 expensive error checking during regrid weight calculation. 
+> <SPAN 
+> <SPAN <P>
+> <SPAN </DD>
+4656,4657c4975
+< <SPAN <PRE>   ! Private name; call using ESMF_FieldSet()
+< <SPAN    subroutine ESMF_FieldSet(field, name, rc)
+---
+> <SPAN <PRE>   subroutine ESMF_FieldSet(field, name, rc)
+4664a4983,4989
+> <SPAN <PRE>   subroutine ESMF_FieldSync(field, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_Field), intent(in)            :: field
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN      integer,          intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+5401c5726,5727
+< <SPAN      dstArrayBundle, routehandle, factor, srcToDstTransposeMap, rc)
+---
+> <SPAN      dstArrayBundle, routehandle, factor, ignoreUnmatchedIndicesFlag, &amp;
+> <SPAN      srcToDstTransposeMap, rc)
+5403,5406c5729,5732
+< <SPAN <PRE>     type(ESMF_ArrayBundle),   intent(in)            :: srcArrayBundle
+< <SPAN      type(ESMF_ArrayBundle),   intent(inout)         :: dstArrayBundle
+< <SPAN      type(ESMF_RouteHandle),   intent(inout)         :: routehandle
+< <SPAN      &lt;type&gt;(ESMF_KIND_&lt;kind&gt;), intent(in)            :: factor
+---
+> <SPAN <PRE>     type(ESMF_ArrayBundle),  intent(in)            :: srcArrayBundle
+> <SPAN      type(ESMF_ArrayBundle),  intent(inout)         :: dstArrayBundle
+> <SPAN      type(ESMF_RouteHandle),  intent(inout)         :: routehandle
+> <SPAN      &lt;type&gt;(ESMF_KIND_&lt;kind&gt;),intent(in)            :: factor
+5408,5409c5734,5736
+< <SPAN      integer,                  intent(in),  optional :: srcToDstTransposeMap(:)
+< <SPAN      integer,                  intent(out), optional :: rc
+---
+> <SPAN      logical,                 intent(in),  optional :: ignoreUnmatchedIndicesFlag(:)
+> <SPAN      integer,                 intent(in),  optional :: srcToDstTransposeMap(:)
+> <SPAN      integer,                 intent(out), optional :: rc
+5414a5742,5749
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ignoreUnmatchedIndicesFlag</TT> to support cases
+> <SPAN       where source and destination side do not cover the exact same index space.
+5415a5751,5752
+> <SPAN </DD>
+> <SPAN </DL>
+5423c5760,5761
+< <SPAN      routehandle, srcToDstTransposeMap, rc)
+---
+> <SPAN      routehandle, ignoreUnmatchedIndicesFlag, &amp;
+> <SPAN      srcToDstTransposeMap, rc)
+5428a5767
+> <SPAN      logical,                intent(in),  optional :: ignoreUnmatchedIndicesFlag(:)
+5435a5775,5782
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ignoreUnmatchedIndicesFlag</TT> to support cases
+> <SPAN       where source and destination side do not cover the exact same index space.
+5436a5784,5785
+> <SPAN </DD>
+> <SPAN </DL>
+5483,5492c5832,5844
+< <SPAN      routehandle, zeroregion, termorderflag, checkflag, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>     type(ESMF_ArrayBundle),    intent(in),    optional :: srcArrayBundle
+< <SPAN      type(ESMF_ArrayBundle),    intent(inout), optional :: dstArrayBundle
+< <SPAN      type(ESMF_RouteHandle),    intent(inout)           :: routehandle
+< <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+< <SPAN      type(ESMF_Region_Flag),    intent(in),    optional :: zeroregion
+< <SPAN      type(ESMF_TermOrder_Flag), intent(in),    optional :: termorderflag(:)
+< <SPAN      logical,                   intent(in),    optional :: checkflag
+< <SPAN      integer,                   intent(out),   optional :: rc
+---
+> <SPAN      routehandle, &amp;
+> <SPAN      zeroregion, &amp; ! DEPRECATED ARGUMENT
+> <SPAN      zeroregionflag, termorderflag, checkflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_ArrayBundle),    intent(in),         optional :: srcArrayBundle
+> <SPAN      type(ESMF_ArrayBundle),    intent(inout),      optional :: dstArrayBundle
+> <SPAN      type(ESMF_RouteHandle),    intent(inout)                :: routehandle
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN      type(ESMF_Region_Flag),    intent(in), optional :: zeroregion ! DEPRECATED ARGUMENT
+> <SPAN      type(ESMF_Region_Flag),    intent(in), target, optional :: zeroregionflag(:)
+> <SPAN      type(ESMF_TermOrder_Flag), intent(in), target, optional :: termorderflag(:)
+> <SPAN      logical,                   intent(in),         optional :: checkflag
+> <SPAN      integer,                   intent(out),        optional :: rc
+5508a5861,5866
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>zeroregionflag</TT>, and deprecated
+> <SPAN                 <TT>zeroregion</TT>. The new argument allows greater flexibility
+> <SPAN                 in setting the zero region for individual ArrayBundle members.
+> <SPAN    
+> <SPAN </DD>
+5547c5905
+< <SPAN      srcTermProcessing, rc)
+---
+> <SPAN      ignoreUnmatchedIndicesFlag, srcTermProcessing, rc)
+5554a5913
+> <SPAN      logical,                intent(in),    optional :: ignoreUnmatchedIndicesFlag(:)
+5573a5933,5938
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ignoreUnmatchedIndicesFlag</TT> to support cases
+> <SPAN       where the sparse matrix includes terms with source or destination sequence
+> <SPAN       indices not present in the source or destination array.
+> <SPAN    
+> <SPAN </DD>
+5582c5947
+< <SPAN      routehandle, srcTermProcessing, rc)
+---
+> <SPAN      routehandle, ignoreUnmatchedIndicesFlag, srcTermProcessing, rc)
+5587a5953
+> <SPAN      logical,                 intent(in),    optional :: ignoreUnmatchedIndicesFlag(:)
+5606a5973,5978
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>ignoreUnmatchedIndicesFlag</TT> to support cases
+> <SPAN       where the sparse matrix includes terms with source or destination sequence
+> <SPAN       indices not present in the source or destination array.
+> <SPAN    
+> <SPAN </DD>
+6088c6460
+< <SPAN    function ESMF_ArrayCreateCopy(array, rc)
+---
+> <SPAN    function ESMF_ArrayCreateCopy(array, datacopyflag, delayout, rc)
+6093a6466,6467
+> <SPAN         type(ESMF_DataCopy_Flag), intent(in), optional :: datacopyflag
+> <SPAN         type(ESMF_DELayout), intent(in), optional :: delayout
+6099a6474,6484
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>datacopyflag</TT> to select between different
+> <SPAN    copy options.
+> <SPAN <BR>
+> <SPAN Added argument <TT>delayout</TT> to create Array with different localDe -&gt; DE
+> <SPAN    mapping. This is identical to a change in DE -&gt; PET mapping.
+6100a6486,6487
+> <SPAN </DD>
+> <SPAN </DL>
+9112c9499
+< <SPAN <PRE>       subroutine ESMF_LocStreamDestroy(locstream, rc)
+---
+> <SPAN <PRE>       subroutine ESMF_LocStreamDestroy(locstream, noGarbage, rc)
+9115a9503
+> <SPAN        logical,              intent(in),   optional :: noGarbage
+9121a9510,9518
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>noGarbage</TT>.
+> <SPAN      The argument provides a mechanism to override the default garbage collection
+> <SPAN      mechanism when destroying an ESMF object.
+9122a9520,9521
+> <SPAN </DD>
+> <SPAN </DL>
+9319,9320c9718
+< <SPAN      function ESMF_MeshCreate3Part(parametricDim, spatialDim, &amp;
+< <SPAN                                    coordSys, rc)
+---
+> <SPAN      function ESMF_MeshCreate3Part(parametricDim, spatialDim, coordSys, name, rc)
+9322c9720
+< <SPAN <PRE>     type(ESMF_Mesh)         :: ESMF_MeshCreate3Part
+---
+> <SPAN <PRE>     type(ESMF_Mesh)                                 :: ESMF_MeshCreate3Part
+9326a9725
+> <SPAN      character(len=*),         intent(in),  optional :: name
+9335c9734
+< <SPAN                     elementDistgrid, coordSys, rc)
+---
+> <SPAN                     elementDistgrid, coordSys, name, rc)
+9337c9736
+< <SPAN <PRE>     type(ESMF_Mesh)                           :: ESMF_MeshCreate1Part
+---
+> <SPAN <PRE>     type(ESMF_Mesh)                                 :: ESMF_MeshCreate1Part
+9339,9352c9738,9751
+< <SPAN <PRE>     integer,            intent(in)            :: parametricDim
+< <SPAN      integer,            intent(in)            :: spatialDim
+< <SPAN      integer,            intent(in)            :: nodeIds(:)
+< <SPAN      real(ESMF_KIND_R8), intent(in)            :: nodeCoords(:)
+< <SPAN      integer,            intent(in)            :: nodeOwners(:)
+< <SPAN      integer,            intent(in),  optional :: nodeMask(:)
+< <SPAN      type(ESMF_DistGrid), intent(in), optional :: nodalDistgrid
+< <SPAN      integer,            intent(in)            :: elementIds(:)
+< <SPAN      integer,            intent(in)            :: elementTypes(:)
+< <SPAN      integer,            intent(in)            :: elementConn(:)
+< <SPAN      integer,            intent(in),  optional :: elementMask(:)
+< <SPAN      real(ESMF_KIND_R8), intent(in),  optional :: elementArea(:)
+< <SPAN      real(ESMF_KIND_R8), intent(in),  optional :: elementCoords(:)
+< <SPAN      type(ESMF_DistGrid), intent(in),  optional :: elementDistgrid
+---
+> <SPAN <PRE>     integer,                  intent(in)            :: parametricDim
+> <SPAN      integer,                  intent(in)            :: spatialDim
+> <SPAN      integer,                  intent(in)            :: nodeIds(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in)            :: nodeCoords(:)
+> <SPAN      integer,                  intent(in)            :: nodeOwners(:)
+> <SPAN      integer,                  intent(in),  optional :: nodeMask(:)
+> <SPAN      type(ESMF_DistGrid),      intent(in),  optional :: nodalDistgrid
+> <SPAN      integer,                  intent(in)            :: elementIds(:)
+> <SPAN      integer,                  intent(in)            :: elementTypes(:)
+> <SPAN      integer,                  intent(in)            :: elementConn(:)
+> <SPAN      integer,                  intent(in),  optional :: elementMask(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in),  optional :: elementArea(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in),  optional :: elementCoords(:)
+> <SPAN      type(ESMF_DistGrid),      intent(in),  optional :: elementDistgrid
+9354c9753,9754
+< <SPAN      integer,            intent(out), optional :: rc
+---
+> <SPAN      character(len=*),         intent(in),  optional :: name
+> <SPAN      integer,                  intent(out), optional :: rc
+9358c9758
+< <SPAN      function ESMF_MeshCreateFromGrid(grid, rc)
+---
+> <SPAN      function ESMF_MeshCreateFromGrid(grid, name, rc)
+9362a9763
+> <SPAN      character(len=*),       intent(in),  optional :: name
+9369c9770
+< <SPAN                   nodalDistgrid, elementDistgrid, rc)
+---
+> <SPAN                   nodalDistgrid, elementDistgrid, name, rc)
+9381a9783
+> <SPAN      character(len=*),           intent(in),  optional :: name
+9387c9789
+< <SPAN        elementDistgrid, vm, rc)
+---
+> <SPAN        elementDistgrid, vm, name, rc)
+9391c9793
+< <SPAN <PRE>     type(ESMF_Mesh),     intent(in)            :: mesh
+---
+> <SPAN <PRE>     type(ESMF_Mesh),          intent(in)            :: mesh
+9393,9396c9795,9799
+< <SPAN      type(ESMF_DistGrid), intent(in),  optional :: nodalDistgrid
+< <SPAN      type(ESMF_DistGrid), intent(in),  optional :: elementDistgrid
+< <SPAN      type(ESMF_VM),       intent(in),  optional :: vm
+< <SPAN      integer,             intent(out), optional :: rc
+---
+> <SPAN      type(ESMF_DistGrid),      intent(in),  optional :: nodalDistgrid
+> <SPAN      type(ESMF_DistGrid),      intent(in),  optional :: elementDistgrid
+> <SPAN      type(ESMF_VM),            intent(in),  optional :: vm
+> <SPAN      character(len=*),         intent(in),  optional :: name
+> <SPAN      integer,                  intent(out), optional :: rc
+9405c9808
+< <SPAN <PRE>     type(ESMF_Mesh)                           :: ESMF_MeshCreateEasyElems1Type
+---
+> <SPAN <PRE>     type(ESMF_Mesh) :: ESMF_MeshCreateEasyElems1Type
+9407c9810
+< <SPAN <PRE>     integer,            intent(in)            :: parametricDim
+---
+> <SPAN <PRE>     integer,                  intent(in)            :: parametricDim
+9409,9416c9812,9819
+< <SPAN      integer,            intent(in), optional  :: elementIds(:)
+< <SPAN      integer,            intent(in)            :: elementType
+< <SPAN      real(ESMF_KIND_R8), intent(in)            :: elementCornerCoords(:,:,:)
+< <SPAN      integer,            intent(in),  optional :: elementMask(:)
+< <SPAN      real(ESMF_KIND_R8), intent(in),  optional :: elementArea(:)
+< <SPAN      real(ESMF_KIND_R8), intent(in),  optional :: elementCoords(:,:)
+< <SPAN      type(ESMF_DistGrid), intent(in),  optional :: elementDistgrid
+< <SPAN      integer,            intent(out), optional :: rc
+---
+> <SPAN      integer,                  intent(in),  optional :: elementIds(:)
+> <SPAN      integer,                  intent(in)            :: elementType
+> <SPAN      real(ESMF_KIND_R8),       intent(in)            :: elementCornerCoords(:,:,:)
+> <SPAN      integer,                  intent(in),  optional :: elementMask(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in),  optional :: elementArea(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in),  optional :: elementCoords(:,:)
+> <SPAN      type(ESMF_DistGrid),      intent(in),  optional :: elementDistgrid
+> <SPAN      integer,                  intent(out), optional :: rc
+9425c9828
+< <SPAN <PRE>     type(ESMF_Mesh)                           :: ESMF_MeshCreateEasyElemsGen
+---
+> <SPAN <PRE>     type(ESMF_Mesh) :: ESMF_MeshCreateEasyElemsGen
+9427c9830
+< <SPAN <PRE>     integer,            intent(in)            :: parametricDim
+---
+> <SPAN <PRE>     integer,                  intent(in)            :: parametricDim
+9429,9436c9832,9839
+< <SPAN      integer,            intent(in), optional  :: elementIds(:)
+< <SPAN      integer,            intent(in)            :: elementTypes(:)
+< <SPAN      real(ESMF_KIND_R8), intent(in)            :: elementCornerCoords(:,:)
+< <SPAN      integer,            intent(in),  optional :: elementMask(:)
+< <SPAN      real(ESMF_KIND_R8), intent(in),  optional :: elementArea(:)
+< <SPAN      real(ESMF_KIND_R8), intent(in),  optional :: elementCoords(:,:)
+< <SPAN      type(ESMF_DistGrid), intent(in),  optional :: elementDistgrid
+< <SPAN      integer,            intent(out), optional :: rc
+---
+> <SPAN      integer,                  intent(in),  optional :: elementIds(:)
+> <SPAN      integer,                  intent(in)            :: elementTypes(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in)            :: elementCornerCoords(:,:)
+> <SPAN      integer,                  intent(in),  optional :: elementMask(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in),  optional :: elementArea(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in),  optional :: elementCoords(:,:)
+> <SPAN      type(ESMF_DistGrid),      intent(in),  optional :: elementDistgrid
+> <SPAN      integer,                  intent(out), optional :: rc
+9439c9842
+< <SPAN <PRE> function ESMF_MeshCreateCubedSphere(tileSize, nx, ny, rc)
+---
+> <SPAN <PRE> function ESMF_MeshCreateCubedSphere(tileSize, nx, ny, name, rc)
+9446c9849,9850
+< <SPAN      integer,                  intent(out),optional  :: rc
+---
+> <SPAN      character(len=*),         intent(in),  optional :: name
+> <SPAN      integer,                  intent(out), optional :: rc
+9449c9853
+< <SPAN <PRE>       subroutine ESMF_MeshDestroy(mesh, rc)
+---
+> <SPAN <PRE>       subroutine ESMF_MeshDestroy(mesh, noGarbage, rc)
+9454a9859
+> <SPAN      logical,         intent(in),   optional :: noGarbage
+9460a9866,9874
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>noGarbage</TT>.
+> <SPAN      The argument provides a mechanism to override the default garbage collection
+> <SPAN      mechanism when destroying an ESMF object.
+9461a9876,9877
+> <SPAN </DD>
+> <SPAN </DL>
+9467c9883
+< <SPAN <PRE>     function ESMF_MeshEmptyCreate(nodalDistgrid, elementDistgrid, rc)
+---
+> <SPAN <PRE>     function ESMF_MeshEmptyCreate(nodalDistgrid, elementDistgrid, name, rc)
+9471,9473c9887,9890
+< <SPAN <PRE>     type(ESMF_DistGrid),        intent(in), optional  :: elementdistgrid
+< <SPAN      type(ESMF_DistGrid),        intent(in), optional  :: nodalDistgrid
+< <SPAN      integer,                    intent(out), optional :: rc
+---
+> <SPAN <PRE>     type(ESMF_DistGrid),      intent(in),  optional :: elementdistgrid
+> <SPAN      type(ESMF_DistGrid),      intent(in),  optional :: nodalDistgrid
+> <SPAN      character(len=*),         intent(in),  optional :: name
+> <SPAN      integer,                  intent(out), optional :: rc
+9484a9902,9908
+> <SPAN                     nodeCount, nodeIds, nodeCoords, nodeOwners, &amp;
+> <SPAN                     nodeMaskIsPresent, nodeMask,&amp;
+> <SPAN                     elementCount, elementIds, elementTypes, &amp;
+> <SPAN                     elementConnCount, elementConn, &amp;
+> <SPAN                     elementMaskIsPresent,elementMask, &amp;
+> <SPAN                     elementAreaIsPresent, elementArea, &amp;
+> <SPAN                     elementCoordsIsPresent, elementCoords, &amp;
+9490c9914
+< <SPAN                     isMemFreed, coordSys, status, rc)
+---
+> <SPAN                     isMemFreed, coordSys, status, name, rc)
+9496a9921,9937
+> <SPAN      integer,                  intent(out), optional :: nodeCount
+> <SPAN      integer,                  intent(out), optional :: nodeIds(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(out), optional :: nodeCoords(:)
+> <SPAN      integer,                  intent(out), optional :: nodeOwners(:)
+> <SPAN      logical,                  intent(out), optional :: nodeMaskIsPresent
+> <SPAN      integer,                  intent(out), optional :: nodeMask(:)
+> <SPAN      integer,                  intent(out), optional :: elementCount
+> <SPAN      integer,                  intent(out), optional :: elementIds(:)
+> <SPAN      integer,                  intent(out), optional :: elementTypes(:)
+> <SPAN      integer,                  intent(out), optional :: elementConnCount
+> <SPAN      integer,                  intent(out), optional :: elementConn(:)
+> <SPAN      logical,                  intent(out), optional :: elementMaskIsPresent
+> <SPAN      integer,                  intent(out), optional :: elementMask(:)
+> <SPAN      logical,                  intent(out), optional :: elementAreaIsPresent
+> <SPAN      real(ESMF_KIND_R8),       intent(out), optional :: elementArea(:)
+> <SPAN      logical,                  intent(out), optional :: elementCoordsIsPresent
+> <SPAN      real(ESMF_KIND_R8),       intent(out), optional :: elementCoords(:)
+9509a9951
+> <SPAN      character(len=*),         intent(out), optional :: name
+9521a9964,9974
+> <SPAN <PRE>       subroutine ESMF_MeshSet(mesh, &amp;
+> <SPAN             elementMask, elementArea, rc)
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_Mesh),          intent(in)            :: mesh
+> <SPAN      integer,                  intent(in), optional :: elementMask(:)
+> <SPAN      real(ESMF_KIND_R8),       intent(in), optional :: elementArea(:)
+> <SPAN      integer,                  intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+9527a9981,9986
+> <SPAN <PRE>    subroutine ESMF_MeshGetMOAB(moabOn, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     logical, intent(out)                      :: moabOn
+> <SPAN      integer, intent(out), optional            :: rc
+> <SPAN </PRE>
+> 
+9627c10086
+< <SPAN    subroutine ESMF_XGridDestroy(xgrid, rc)
+---
+> <SPAN    subroutine ESMF_XGridDestroy(xgrid, noGarbage, rc)
+9630a10090
+> <SPAN      logical,          intent(in),   optional :: noGarbage
+9636a10097,10105
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>noGarbage</TT>.
+> <SPAN      The argument provides a mechanism to override the default garbage collection
+> <SPAN      mechanism when destroying an ESMF object.
+9637a10107,10108
+> <SPAN </DD>
+> <SPAN </DL>
+9829c10300
+< <SPAN      indexflag, connectionList, delayout, vm, rc)
+---
+> <SPAN      indexflag, connectionList, delayout, vm, indexTK, rc)
+9844a10316
+> <SPAN      type(ESMF_TypeKind_Flag),       intent(in),  optional :: indexTK
+9850a10323,10330
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>indexTK</TT> to support explicit selection
+> <SPAN                 between 32-bit and 64-bit sequence indices.
+9851a10332,10333
+> <SPAN </DD>
+> <SPAN </DL>
+9861c10343
+< <SPAN      delayout, vm, rc)
+---
+> <SPAN      delayout, vm, indexTK, rc)
+9876a10359
+> <SPAN      type(ESMF_TypeKind_Flag),       intent(in),  optional :: indexTK
+9882a10366,10373
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>indexTK</TT> to support explicit selection
+> <SPAN                 between 32-bit and 64-bit sequence indices.
+9883a10375,10376
+> <SPAN </DD>
+> <SPAN </DL>
+10042,10043c10535,10537
+< <SPAN      elementCountPTile, minIndexPDe, maxIndexPDe, elementCountPDe, &amp;
+< <SPAN      localDeToDeMap, deToTileMap, indexCountPDe, collocation, regDecompFlag, &amp;
+---
+> <SPAN      elementCountPTile, elementCountPTileI8, minIndexPDe, maxIndexPDe, &amp;
+> <SPAN      elementCountPDe, elementCountPDeI8, localDeToDeMap, deToTileMap, &amp;
+> <SPAN      indexCountPDe, collocation, regDecompFlag, indexTK, indexflag, &amp;
+10046c10540
+< <SPAN <PRE>     type(ESMF_DistGrid),    intent(in)            :: distgrid
+---
+> <SPAN <PRE>     type(ESMF_DistGrid),      intent(in)            :: distgrid
+10048,10064c10542,10562
+< <SPAN      type(ESMF_DELayout),    intent(out), optional :: delayout
+< <SPAN      integer,                intent(out), optional :: dimCount
+< <SPAN      integer,                intent(out), optional :: tileCount
+< <SPAN      integer,                intent(out), optional :: deCount
+< <SPAN      integer,                intent(out), optional :: localDeCount
+< <SPAN      integer,        target, intent(out), optional :: minIndexPTile(:,:)
+< <SPAN      integer,        target, intent(out), optional :: maxIndexPTile(:,:)
+< <SPAN      integer,        target, intent(out), optional :: elementCountPTile(:)
+< <SPAN      integer,        target, intent(out), optional :: minIndexPDe(:,:)
+< <SPAN      integer,        target, intent(out), optional :: maxIndexPDe(:,:)
+< <SPAN      integer,        target, intent(out), optional :: elementCountPDe(:)
+< <SPAN      integer,        target, intent(out), optional :: localDeToDeMap(:)
+< <SPAN      integer,        target, intent(out), optional :: deToTileMap(:)
+< <SPAN      integer,        target, intent(out), optional :: indexCountPDe(:,:)
+< <SPAN      integer,        target, intent(out), optional :: collocation(:)
+< <SPAN      logical,                intent(out), optional :: regDecompFlag
+< <SPAN      integer,                intent(out), optional :: connectionCount
+---
+> <SPAN      type(ESMF_DELayout),      intent(out), optional :: delayout
+> <SPAN      integer,                  intent(out), optional :: dimCount
+> <SPAN      integer,                  intent(out), optional :: tileCount
+> <SPAN      integer,                  intent(out), optional :: deCount
+> <SPAN      integer,                  intent(out), optional :: localDeCount
+> <SPAN      integer,          target, intent(out), optional :: minIndexPTile(:,:)
+> <SPAN      integer,          target, intent(out), optional :: maxIndexPTile(:,:)
+> <SPAN      integer,          target, intent(out), optional :: elementCountPTile(:)
+> <SPAN  integer(ESMF_KIND_I8),target, intent(out), optional :: elementCountPTileI8(:)
+> <SPAN      integer,          target, intent(out), optional :: minIndexPDe(:,:)
+> <SPAN      integer,          target, intent(out), optional :: maxIndexPDe(:,:)
+> <SPAN      integer,          target, intent(out), optional :: elementCountPDe(:)
+> <SPAN  integer(ESMF_KIND_I8),target, intent(out), optional :: elementCountPDeI8(:)
+> <SPAN      integer,          target, intent(out), optional :: localDeToDeMap(:)
+> <SPAN      integer,          target, intent(out), optional :: deToTileMap(:)
+> <SPAN      integer,          target, intent(out), optional :: indexCountPDe(:,:)
+> <SPAN      integer,          target, intent(out), optional :: collocation(:)
+> <SPAN      logical,                  intent(out), optional :: regDecompFlag
+> <SPAN      type(ESMF_TypeKind_Flag), intent(out), optional :: indexTK
+> <SPAN      type(ESMF_Index_Flag),    intent(out), optional :: indexflag
+> <SPAN      integer,                  intent(out), optional :: connectionCount
+10066,10067c10564,10565
+< <SPAN                      target, intent(out), optional :: connectionList(:)
+< <SPAN      integer,                intent(out), optional :: rc
+---
+> <SPAN                        target, intent(out), optional :: connectionList(:)
+> <SPAN      integer,                  intent(out), optional :: rc
+10079,10084c10577,10581
+< <SPAN <DD>Added argument <TT>deCount</TT> to simplify access to this variable.
+< <SPAN    
+< <SPAN </DD>
+< <SPAN <DT><STRONG>7.0.0</STRONG></DT>
+< <SPAN <DD>Added arguments <TT>connectionCount</TT> and <TT>connectionList</TT>
+< <SPAN       to provide user access to the explicitly defined connections in a DistGrid.
+---
+> <SPAN <DD>Added argument <TT>deCount</TT> to simplify access to this 
+> <SPAN                 variable. <BR>
+> <SPAN Added arguments <TT>connectionCount</TT> and <TT>connectionList</TT>
+> <SPAN                 to provide user access to the explicitly defined connections in
+> <SPAN                 a DistGrid.
+10089c10586,10597
+< <SPAN       to simplify access to these variables.
+---
+> <SPAN                 to simplify access to these variables.
+> <SPAN    
+> <SPAN </DD>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>indexTK</TT> to allow query of the sequence index
+> <SPAN                 typekind.
+> <SPAN <BR>
+> <SPAN Added arguments <TT>elementCountPTileI8</TT> and
+> <SPAN                 <TT>elementCountPDeI8</TT> to provide 64-bit access.
+> <SPAN <BR>
+> <SPAN Added argument <TT>indexflag</TT> to allow user to query this
+> <SPAN                 setting.
+10100c10608,10609
+< <SPAN      de, tile, collocation, arbSeqIndexFlag, seqIndexList, elementCount, rc)
+---
+> <SPAN      de, tile, collocation, arbSeqIndexFlag, seqIndexList, seqIndexListI8, &amp;
+> <SPAN      elementCount, elementCountI8, rc)
+10102,10103c10611,10612
+< <SPAN <PRE>     type(ESMF_DistGrid),    intent(in)            :: distgrid
+< <SPAN      integer,                intent(in)            :: localDe
+---
+> <SPAN <PRE>     type(ESMF_DistGrid),      intent(in)            :: distgrid
+> <SPAN      integer,                  intent(in)            :: localDe
+10105,10111c10614,10622
+< <SPAN      integer,                intent(out), optional :: de
+< <SPAN      integer,                intent(out), optional :: tile
+< <SPAN      integer,                intent(in),  optional :: collocation
+< <SPAN      logical,                intent(out), optional :: arbSeqIndexFlag
+< <SPAN      integer,        target, intent(out), optional :: seqIndexList(:)
+< <SPAN      integer,                intent(out), optional :: elementCount
+< <SPAN      integer,                intent(out), optional :: rc
+---
+> <SPAN      integer,                  intent(out), optional :: de
+> <SPAN      integer,                  intent(out), optional :: tile
+> <SPAN      integer,                  intent(in),  optional :: collocation
+> <SPAN      logical,                  intent(out), optional :: arbSeqIndexFlag
+> <SPAN      integer,          target, intent(out), optional :: seqIndexList(:)
+> <SPAN  integer(ESMF_KIND_I8),target, intent(out), optional :: seqIndexListI8(:)
+> <SPAN      integer,                  intent(out), optional :: elementCount
+> <SPAN      integer,                  intent(out), optional :: elementCountI8
+> <SPAN      integer,                  intent(out), optional :: rc
+10125a10637,10641
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added arguments <TT>seqIndexListI8</TT> and <TT>elementCountI8</TT>
+> <SPAN                 to provide 64-bit access.
+> <SPAN    
+> <SPAN </DD>
+10187a10704,10716
+> <SPAN <PRE>   ! Private name; call using ESMF_DistGridSet()
+> <SPAN    subroutine ESMF_DistGridSetPLocalDe(distgrid, localDe, collocation, &amp;
+> <SPAN      seqIndexList, seqIndexListI8, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_DistGrid),      intent(inout)         :: distgrid
+> <SPAN      integer,                  intent(in)            :: localDe
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN      integer,                  intent(in),  optional :: collocation
+> <SPAN      integer,          target, intent(in),  optional :: seqIndexList(:)
+> <SPAN  integer(ESMF_KIND_I8),target, intent(in),  optional :: seqIndexListI8(:)
+> <SPAN      integer,                  intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+10272c10801
+< <SPAN <PRE>     type(ESMF_RouteHandle), intent(inout)          :: routehandle   
+---
+> <SPAN <PRE>     type(ESMF_RouteHandle), intent(inout)          :: routehandle
+10298c10827
+< <SPAN <PRE>     type(ESMF_RouteHandle), intent(in)            :: routehandle      
+---
+> <SPAN <PRE>     type(ESMF_RouteHandle), intent(in)            :: routehandle
+10308c10837
+< <SPAN      character(len = *),     intent(in),  optional :: name    
+---
+> <SPAN      character(len = *),     intent(in),  optional :: name
+10314c10843
+< <SPAN <PRE>     type(ESMF_RouteHandle), intent(inout)         :: routehandle   
+---
+> <SPAN <PRE>     type(ESMF_RouteHandle), intent(inout)         :: routehandle
+10320,10321c10849,10850
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeAdd()
+< <SPAN    subroutine ESMF_AttAddPackStd(&lt;object&gt;, convention, purpose, attpack, rc)
+---
+> <SPAN <PRE>     interface assignment(=)
+> <SPAN      info1 = info2
+10323,10327c10852,10853
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: convention
+< <SPAN    character (len = *), intent(in) :: purpose
+< <SPAN    type(ESMF_AttPack), intent(inout), optional :: attpack
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>     type(ESMF_Info) :: info1
+> <SPAN      type(ESMF_Info) :: info2
+10328a10855,10863
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN    
+> <SPAN <UL>
+> <SPAN <LI>This interface is backward compatible with ESMF versions starting at 5.2.0r. If code using this interface compiles with any version of ESMF starting with 5.2.0r, then it will compile with the current version.
+> <SPAN    
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+10330,10334c10865,10867
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeAdd()
+< <SPAN    subroutine ESMF_AttAddPackStdN(&lt;object&gt;, convention, purpose, &amp;
+< <SPAN    nestConvention, nestPurpose, nestAttPackInstanceCountList, &amp;
+< <SPAN    nestAttPackInstanceNameList, nestCount, &amp;
+< <SPAN    nestAttPackInstanceNameCount, attpack, rc)
+---
+> <SPAN <PRE> interface operator(==)
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>     logical :: result
+10336,10346c10869,10870
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: convention
+< <SPAN    character (len = *), intent(in) :: purpose
+< <SPAN    character (len = *), intent(in) :: nestConvention(:)
+< <SPAN    character (len = *), intent(in) :: nestPurpose(:)
+< <SPAN    integer, intent(in) :: nestAttPackInstanceCountList(:)
+< <SPAN    character (len = *), intent(out) :: nestAttPackInstanceNameList(:)
+< <SPAN    integer, intent(in), optional :: nestCount
+< <SPAN    integer, intent(out), optional :: nestAttPackInstanceNameCount
+< <SPAN    type(ESMF_AttPack), intent(inout), optional :: attpack
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>      type(ESMF_Info), intent(in) :: info1
+> <SPAN       type(ESMF_Info), intent(in) :: info2
+10349,10351c10873,10875
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeAdd()
+< <SPAN    subroutine ESMF_AttAddPackCst(&lt;object&gt;, convention, purpose, &amp;
+< <SPAN    attrList, count, redundant, attpack, rc)
+---
+> <SPAN <PRE> interface operator(/=)
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>     logical :: result
+10353,10360c10877,10878
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: convention
+< <SPAN    character (len = *), intent(in) :: purpose
+< <SPAN    character (len = *), intent(in) :: attrList(:)
+< <SPAN    integer, intent(in), optional :: count
+< <SPAN    logical, intent(in), optional :: redundant
+< <SPAN    type(ESMF_AttPack), intent(inout), optional :: attpack
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>      type(ESMF_Info), intent(in) :: info1
+> <SPAN       type(ESMF_Info), intent(in) :: info2
+10363,10365c10881
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeAdd()
+< <SPAN    subroutine ESMF_AttAddPackCstN(&lt;object&gt;, convention, purpose, &amp;
+< <SPAN    attrList, count, nestConvention, nestPurpose, nestCount, attpack, rc)
+---
+> <SPAN <PRE> subroutine ESMF_InfoBroadcast(info, rootPet, rc)
+10367,10375c10883,10885
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: convention
+< <SPAN    character (len = *), intent(in) :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attrList(:)
+< <SPAN    integer, intent(in), optional :: count
+< <SPAN    character (len = *), intent(in) :: nestConvention(:)
+< <SPAN    character (len = *), intent(in) :: nestPurpose(:)
+< <SPAN    integer, intent(in), optional :: nestCount
+< <SPAN    type(ESMF_AttPack), intent(inout), optional :: attpack
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(inout) :: info
+> <SPAN    integer, intent(in) :: rootPet
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+10379,10381c10889,10890
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeAdd()
+< <SPAN    subroutine ESMF_AttAddPackCstN1(&lt;object&gt;, convention, purpose, &amp;
+< <SPAN    attrList, count, nestConvention, nestPurpose, attpack, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_InfoCreate()
+> <SPAN  function ESMF_InfoCreateEmpty(rc)
+10383,10391c10892,10894
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: convention
+< <SPAN    character (len = *), intent(in) :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attrList(:)
+< <SPAN    integer, intent(in), optional :: count
+< <SPAN    character (len = *), intent(in) :: nestConvention
+< <SPAN    character (len = *), intent(in) :: nestPurpose
+< <SPAN    type(ESMF_AttPack), intent(inout), optional :: attpack
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>   integer, intent(out), optional :: rc
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>   type(ESMF_Info) :: ESMF_InfoCreateEmpty
+10394,10395c10897,10898
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeCopy()
+< <SPAN    subroutine ESMF_AttributeCopy(&lt;object1&gt;, &lt;object2&gt;, attcopy, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_InfoCreate()
+> <SPAN  function ESMF_InfoCreateByKey(info, key, rc)
+10397,10399c10900,10902
+< <SPAN <PRE>   &lt;object1&gt;, see below for supported values
+< <SPAN    &lt;object2&gt;, see below for supported values
+< <SPAN    type(ESMF_AttCopy_Flag),intent(in) optional :: attcopy
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+> <SPAN    character(len=*), intent(in) :: key
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+10400a10904,10905
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>   type(ESMF_Info) :: ESMF_InfoCreateByKey
+10403,10404c10908,10909
+< <SPAN <PRE>   subroutine ESMF_AttributeGet(&lt;object&gt;, name, attpack, &lt;value&gt; &amp;
+< <SPAN    &lt;defaultvalue&gt;, attnestflag, isPresent, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_InfoCreate()
+> <SPAN  function ESMF_InfoCreateFromInfo(info, rc)
+10406,10409c10911
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+< <SPAN    &lt;value&gt;, see below for supported values
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+10411,10413d10912
+< <SPAN    &lt;defaultvalue&gt;, see below for supported values
+< <SPAN    type(ESMF_AttNest_Flag),intent(in), optional :: attnestflag
+< <SPAN    logical, intent(out), optional :: isPresent
+10414a10914,10915
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>   type(ESMF_Info) :: ESMF_InfoCreateFromInfo
+10417,10418c10918,10919
+< <SPAN <PRE>   subroutine ESMF_AttributeGet(&lt;object&gt;, name, attpack, &lt;value&gt;, &amp;
+< <SPAN    &lt;defaultvalue&gt;, inputList, attnestflag, isPresent, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_InfoCreate()
+> <SPAN  function ESMF_InfoCreateByParse(jsonString, rc)
+10420,10423c10921
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+< <SPAN    &lt;value&gt;, see below for supported values
+---
+> <SPAN <PRE>   character(len=*), intent(in) :: jsonString
+10425,10428d10922
+< <SPAN    &lt;defaultvalue&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: inputList(:)
+< <SPAN    type(ESMF_AttNest_Flag),intent(in), optional :: attnestflag
+< <SPAN    logical, intent(out), optional :: isPresent
+10429a10924,10925
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>   type(ESMF_Info) :: ESMF_InfoCreateByParse
+10432,10434c10928
+< <SPAN <PRE>   subroutine ESMF_AttributeGet(&lt;object&gt;, name, attpack, &lt;valueList&gt;, &amp;
+< <SPAN    &lt;defaultvalueList&gt;, attnestflag, itemCount, &amp;
+< <SPAN    isPresent, rc)
+---
+> <SPAN <PRE> subroutine ESMF_InfoDestroy(info, rc)
+10436,10439c10930
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+< <SPAN    &lt;valueList&gt;, see below for supported values
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(inout) :: info
+10441,10444d10931
+< <SPAN    &lt;defaultvalueList&gt;, see below for supported values
+< <SPAN    type(ESMF_AttNest_Flag),intent(in), optional :: attnestflag
+< <SPAN    integer, intent(out), optional :: itemCount
+< <SPAN    logical, intent(out), optional :: isPresent
+10448,10450c10935
+< <SPAN <PRE>   subroutine ESMF_AttributeGet(&lt;object&gt;, name, attpack, &lt;valueList&gt;, &amp;
+< <SPAN    &lt;defaultvalueList&gt;, inputList, attnestflag, &amp;
+< <SPAN    itemCount, isPresent, rc)
+---
+> <SPAN <PRE> function ESMF_InfoDump(info, key, indent, rc) result(output)
+10452,10455c10937
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+< <SPAN    &lt;valueList&gt;, see below for supported values
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+10457,10461c10939,10940
+< <SPAN    &lt;defaultvalueList&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: inputList(:)
+< <SPAN    type(ESMF_AttNest_Flag),intent(in), optional :: attnestflag
+< <SPAN    integer, intent(out), optional :: itemCount
+< <SPAN    logical, intent(out), optional :: isPresent
+---
+> <SPAN    character(*), intent(in), optional :: key
+> <SPAN    integer, intent(in), optional :: indent
+10462a10942,10943
+> <SPAN    RESULT:
+> <SPAN    character(:), allocatable :: output
+10465,10466c10946
+< <SPAN <PRE>   subroutine ESMF_AttributeGet(&lt;object&gt;, name, &lt;value&gt;, &lt;defaultvalue&gt;, &amp;
+< <SPAN    convention, purpose, attPackInstanceName, attnestflag, isPresent, rc)
+---
+> <SPAN <PRE>  subroutine ESMF_InfoGet(info, key, value, default, idx, attnestflag, rc)
+10468,10477c10948,10955
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;value&gt;, see below for supported values
+< <SPAN    &lt;defaultvalue&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+< <SPAN    type(ESMF_AttNest_Flag),intent(in), optional :: attnestflag
+< <SPAN    logical, intent(out), optional :: isPresent
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>    type(ESMF_Info), intent(in) :: info
+> <SPAN     character(len=*), intent(in) :: key
+> <SPAN     &lt;value&gt;, see below for supported value
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN     &lt;default, optional&gt; see below for supported default value
+> <SPAN     integer, intent(in), optional :: idx
+> <SPAN     type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+> <SPAN     integer, intent(out), optional :: rc
+10480,10482c10958
+< <SPAN <PRE>   subroutine ESMF_AttributeGet(&lt;object&gt;, name, &lt;value&gt;, &lt;defaultvalue&gt;, &amp;
+< <SPAN    inputList, convention, purpose, attPackInstanceName, attnestflag, &amp;
+< <SPAN    isPresent, rc)
+---
+> <SPAN <PRE>  subroutine ESMF_InfoGetCharAlloc(info, key, value, default, idx, attnestflag, rc)
+10484,10494c10960,10967
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;value&gt;, see below for supported values
+< <SPAN    &lt;defaultvalue&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: inputList(:)
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+< <SPAN    type(ESMF_AttNest_Flag),intent(in), optional :: attnestflag
+< <SPAN    logical, intent(out), optional :: isPresent
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>    type(ESMF_Info), intent(in) :: info
+> <SPAN     character(len=*), intent(in) :: key
+> <SPAN     character(:), allocatable, intent(out) :: value
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN     character(len=*), intent(in), optional :: default
+> <SPAN     integer, intent(in), optional :: idx
+> <SPAN     type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+> <SPAN     integer, intent(out), optional :: rc
+10497,10499c10970
+< <SPAN <PRE>   subroutine ESMF_AttributeGet(&lt;object&gt;, name, &lt;valueList&gt;, &amp;
+< <SPAN    &lt;defaultvalueList&gt;, convention, purpose, attPackInstanceName, &amp;
+< <SPAN    attnestflag, itemCount, isPresent, rc)
+---
+> <SPAN <PRE>  subroutine ESMF_InfoGet(info, key, values, itemCount, attnestflag, scalarToArray, rc)
+10501,10511c10972,10979
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;valueList&gt;, see below for supported values
+< <SPAN    &lt;defaultvalueList&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+< <SPAN    type(ESMF_AttNest_Flag),intent(in), optional :: attnestflag
+< <SPAN    integer, intent(out), optional :: itemCount
+< <SPAN    logical, intent(out), optional :: isPresent
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>    type(ESMF_Info), intent(in) :: info
+> <SPAN     character(len=*), intent(in) :: key
+> <SPAN     &lt;values&gt;, see below for supported values
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN     integer, intent(out), optional :: itemCount
+> <SPAN     type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+> <SPAN     logical, intent(in), optional :: scalarToArray
+> <SPAN     integer, intent(out), optional :: rc
+10514,10516c10982
+< <SPAN <PRE>   subroutine ESMF_AttributeGet(&lt;object&gt;, name, &lt;valueList&gt;, &amp;
+< <SPAN    &lt;defaultvalueList&gt;, inputList, convention, purpose, attPackInstanceName, &amp;
+< <SPAN    attnestflag, itemCount, isPresent, rc)
+---
+> <SPAN <PRE>  subroutine ESMF_InfoGetAlloc(info, key, values, itemCount, attnestflag, scalarToArray, rc)
+10518,10529c10984,10991
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;valueList&gt;, see below for supported values
+< <SPAN    &lt;defaultvalueList&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: inputList(:)
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+< <SPAN    type(ESMF_AttNest_Flag),intent(in), optional :: attnestflag
+< <SPAN    integer, intent(out), optional :: itemCount
+< <SPAN    logical, intent(out), optional :: isPresent
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>    type(ESMF_Info), intent(in) :: info
+> <SPAN     character(len=*), intent(in) :: key
+> <SPAN     &lt;values&gt;, see below for supported values
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN     integer, intent(out), optional :: itemCount
+> <SPAN     type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+> <SPAN     logical, intent(in), optional :: scalarToArray
+> <SPAN     integer, intent(out), optional :: rc
+10532,10534c10994,10996
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGet()
+< <SPAN    subroutine ESMF_AttributeGetCount(&lt;object&gt;, attpack, count, &amp;
+< <SPAN    attcountflag, attnestflag, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_InfoGet()
+> <SPAN   subroutine ESMF_InfoInquire(info, size, key, jsonType, isArray, &amp;
+> <SPAN     isDirty, idx, typekind, ikey, isPresent, isStructured, isNull, rc)
+10536,10565c10998
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+< <SPAN    integer, intent(out) :: count
+< <SPAN    type(ESMF_AttGetCountFlag), intent(in), optional :: attcountflag
+< <SPAN    type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGet()
+< <SPAN    subroutine ESMF_AttributeGetCount(&lt;object&gt;, count, &amp;
+< <SPAN    convention, purpose, attPackInstanceName, &amp;
+< <SPAN    attcountflag, attnestflag, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    integer, intent(out) :: count
+< <SPAN    character (len=*), intent(in), optional :: convention
+< <SPAN    character (len=*), intent(in), optional :: purpose
+< <SPAN    character (len=*), intent(in), optional :: attPackInstanceName
+< <SPAN    type(ESMF_AttGetCountFlag), intent(in), optional :: attcountflag
+< <SPAN    type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGet()
+< <SPAN    subroutine ESMF_AttributeGetInfoByNamAP(&lt;object&gt;, name, attpack, &amp;
+< <SPAN    attnestflag, typekind, itemCount, isPresent, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+---
+> <SPAN <PRE>    type(ESMF_Info), intent(in) :: info
+10567,10571c11000,11011
+< <SPAN    type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+< <SPAN    type(ESMF_TypeKind_Flag), intent(out), optional :: typekind
+< <SPAN    integer, intent(out), optional :: itemCount
+< <SPAN    logical, intent(out), optional :: isPresent
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN     integer, intent(out), optional :: size
+> <SPAN     character(len=*), intent(in), optional :: key
+> <SPAN     character(len=*), intent(out), optional :: jsonType
+> <SPAN     logical, intent(out), optional :: isArray
+> <SPAN     logical, intent(out), optional :: isDirty
+> <SPAN     integer, intent(in), optional :: idx
+> <SPAN     type(ESMF_TypeKind_Flag), intent(out), optional :: typekind
+> <SPAN     character(len=*), intent(out), optional :: ikey
+> <SPAN     logical, intent(out), optional :: isPresent
+> <SPAN     logical, intent(out), optional :: isStructured
+> <SPAN     logical, intent(out), optional :: isNull
+> <SPAN     integer, intent(out), optional :: rc
+10574,10577c11014
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGet()
+< <SPAN    subroutine ESMF_AttributeGetInfoByNam(&lt;object&gt;, name, &amp;
+< <SPAN    convention, purpose, attPackInstanceName, &amp;
+< <SPAN    attnestflag, typekind, itemCount, isPresent, rc)
+---
+> <SPAN <PRE>  subroutine ESMF_InfoGetFromHost(host, info, rc)
+10579,10580c11016,11017
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+---
+> <SPAN <PRE>    type(ESMF_*), intent(inout) :: host
+> <SPAN     type(ESMF_Info), intent(out) :: info
+10582,10589c11019
+< <SPAN    character (len=*), intent(in), optional :: convention
+< <SPAN    character (len=*), intent(in), optional :: purpose
+< <SPAN    character (len=*), intent(in), optional :: attPackInstanceName
+< <SPAN    type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+< <SPAN    type(ESMF_TypeKind_Flag), intent(out), optional :: typekind
+< <SPAN    integer, intent(out), optional :: itemCount
+< <SPAN    logical, intent(out), optional :: isPresent
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN     integer, intent(out), optional :: rc
+10592,10594c11022
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGet()
+< <SPAN    subroutine ESMF_AttributeGetInfoByNum(&lt;object&gt;, attributeIndex, &amp;
+< <SPAN    name, attpack, attnestflag, typekind, itemcount, isPresent, rc)
+---
+> <SPAN <PRE> function ESMF_InfoGetTK(info, key, attnestflag, rc) result(typekind)
+10596,10617c11024,11026
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    integer, intent(in) :: attributeIndex
+< <SPAN    character (len = *), intent(out) :: name
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+< <SPAN    type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+< <SPAN    type(ESMF_TypeKind_Flag), intent(out), optional :: typekind
+< <SPAN    integer, intent(out), optional :: itemCount
+< <SPAN    logical, intent(out), optional :: isPresent
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGet()
+< <SPAN    subroutine ESMF_AttributeGetInfoByNum(&lt;object&gt;, attributeIndex, &amp;
+< <SPAN    name, convention, purpose, attPackInstanceName, attnestflag, &amp;
+< <SPAN    typekind, itemcount, isPresent, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    integer, intent(in) :: attributeIndex
+< <SPAN    character (len = *), intent(out) :: name
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+> <SPAN    character(len=*), intent(in) :: key
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+10619,10621d11027
+< <SPAN    type(ESMF_TypeKind_Flag), intent(out), optional :: typekind
+< <SPAN    integer, intent(out), optional :: itemCount
+< <SPAN    logical, intent(out), optional :: isPresent
+10622a11029,11030
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>   type(ESMF_TypeKind_Flag) :: typekind
+10625,10628c11033
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGet()
+< <SPAN    subroutine ESMF_AttributeGetAPinstNamesAP(&lt;object&gt;, attpack, &amp;
+< <SPAN    attPackInstanceNameList, attPackInstanceNameCount, &amp;
+< <SPAN    attnestflag, rc)
+---
+> <SPAN <PRE> subroutine ESMF_InfoGetArrayMeta(info, key, isArray, size, attnestflag, rc)
+10630,10633c11035,11038
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+< <SPAN    character (len = *), intent(out) :: attPackInstanceNameList(:)
+< <SPAN    integer, intent(out) :: attPackInstanceNameCount
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+> <SPAN    character(len=*), intent(in) :: key
+> <SPAN    logical, intent(out) :: isArray
+> <SPAN    integer(C_INT), intent(out) :: size
+10639,10658c11044,11047
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGet()
+< <SPAN    subroutine ESMF_AttributeGetAPinstNames(&lt;object&gt;, convention, purpose, &amp;
+< <SPAN    attPackInstanceNameList, attPackInstanceNameCount, attnestflag, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), :: convention
+< <SPAN    character (len = *), intent(in), :: purpose
+< <SPAN    character (len = *), intent(out) :: attPackInstanceNameList(:)
+< <SPAN    integer, intent(out) :: attPackInstanceNameCount
+< <SPAN    type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeGetAttPack()
+< <SPAN    subroutine ESMF_AttGetAttPack(&lt;object&gt;, convention, purpose, &amp;
+< <SPAN    attPackInstanceName, attpack, attnestflag, isPresent, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: convention
+< <SPAN    character (len = *), intent(in) :: purpose
+---
+> <SPAN <PRE> function ESMF_InfoIsPresent(info, key, attnestflag, isPointer, rc) result(is_present)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+> <SPAN    character(len=*), intent(in) :: key
+10660,10661d11048
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+< <SPAN    type(ESMF_AttPack), intent(inout), optional :: attpack
+10663,10743c11050
+< <SPAN    logical, intent(out), optional :: isPresent
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLink()
+< <SPAN    subroutine ESMF_CompAttLink(&lt;object1&gt;, &lt;object2&gt;, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   &lt;object1&gt;, see below for supported values
+< <SPAN    &lt;object2&gt;, see below for supported values
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLink()
+< <SPAN    subroutine ESMF_StateAttLink(state, &lt;object&gt;, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   type(ESMF_State), intent(inout) :: state
+< <SPAN    &lt;object&gt;, see below for supported values
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLink()
+< <SPAN    subroutine ESMF_FieldBundleAttLink(fieldbundle, field, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   type(ESMF_FieldBundle), intent(inout) :: fieldbundle
+< <SPAN    type(ESMF_Field), intent(in) :: field
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLink()
+< <SPAN    subroutine ESMF_FieldAttLink(field, grid, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   type(ESMF_Field), intent(inout) :: field
+< <SPAN    type(ESMF_Grid), intent(in) :: grid
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLink()
+< <SPAN    subroutine ESMF_ArrayBundleAttLink(arraybundle, array, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   type(ESMF_ArrayBundle), intent(inout) :: arraybundle
+< <SPAN    type(ESMF_Array), intent(in) :: array
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLinkRemove()
+< <SPAN    subroutine ESMF_CompAttLinkRemove(&lt;object1&gt;, &lt;object2&gt;, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   &lt;object1&gt;, see below for supported values
+< <SPAN    &lt;object2&gt;, see below for supported values
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLinkRemove()
+< <SPAN    subroutine ESMF_StateAttLinkRemove(state, &lt;object&gt;, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   type(ESMF_State), intent(inout) :: state
+< <SPAN    &lt;object&gt;, see below for supported values
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLinkRemove()
+< <SPAN    subroutine ESMF_FieldBundleAttLinkRemove(fieldbundle, field, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   type(ESMF_FieldBundle), intent(inout) :: fieldbundle
+< <SPAN    type(ESMF_Field), intent(in) :: field
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLinkRemove()
+< <SPAN    subroutine ESMF_FieldAttLinkRemove(field, grid, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   type(ESMF_Field), intent(inout) :: field
+< <SPAN    type(ESMF_Grid), intent(in) :: grid
+< <SPAN    integer, intent(out), optional :: rc
+< <SPAN </PRE>
+< 
+< <SPAN <PRE>   ! Private name; call using ESMF_AttributeLinkRemove()
+< <SPAN    subroutine ESMF_ArrayBundleAttLinkRemove(arraybundle, array, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>   type(ESMF_ArrayBundle), intent(inout) :: arraybundle
+< <SPAN    type(ESMF_Array), intent(in) :: array
+---
+> <SPAN    logical, intent(in), optional :: isPointer
+10744a11052,11053
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>   logical :: is_present
+10747c11056
+< <SPAN <PRE>   subroutine ESMF_AttributeRead(&lt;object&gt;, fileName, schemaFileName, rc)
+---
+> <SPAN <PRE> function ESMF_InfoIsSet(info, key, rc) result(is_set)
+10749,10751c11058,11060
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: fileName
+< <SPAN    character (len = *), intent(in), optional :: schemaFileName
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+> <SPAN    character(len=*), intent(in) :: key
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+10752a11062,11063
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>   logical :: is_set
+10755,10756c11066
+< <SPAN <PRE>   subroutine ESMF_AttributeRemove(&lt;object&gt;, name, &amp;
+< <SPAN    attpack, rc)
+---
+> <SPAN <PRE> subroutine ESMF_InfoPrint(info, indent, preString, unit, rc)
+10758c11068
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+10760,10761c11070,11072
+< <SPAN    character (len = *), intent(in), optional :: name
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+---
+> <SPAN    character(*), intent(in), optional :: preString
+> <SPAN    character(*), intent(out), optional :: unit
+> <SPAN    integer, intent(in), optional :: indent
+10765,10766c11076
+< <SPAN <PRE>   subroutine ESMF_AttributeRemove(&lt;object&gt;, name, convention, purpose, &amp;
+< <SPAN    attPackInstanceName, rc)
+---
+> <SPAN <PRE> function ESMF_InfoReadJSON(filename, rc) result(info_r)
+10768,10772c11078,11079
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: name
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+---
+> <SPAN <PRE>   character(len=*), intent(in) :: filename
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+10773a11081,11082
+> <SPAN </PRE><EM>RETURN VALUE:</EM>
+> <SPAN <PRE>   type(ESMF_Info) :: info_r
+10776,10777c11085
+< <SPAN <PRE>   subroutine ESMF_AttributeSet(&lt;object&gt;, name, &lt;value&gt;, attpack, &amp;
+< <SPAN    rc)
+---
+> <SPAN <PRE> subroutine ESMF_InfoRemove(info, keyParent, keyChild, attnestflag, rc)
+10779,10782c11087,11088
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;value&gt;, see below for supported values
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(inout) :: info
+> <SPAN    character(len=*), intent(in) :: keyParent
+10783a11090,11091
+> <SPAN    character(len=*), intent(in), optional :: keyChild
+> <SPAN    type(ESMF_AttNest_Flag), intent(in), optional :: attnestflag
+10787,10788c11095
+< <SPAN <PRE>   subroutine ESMF_AttributeSet(&lt;object&gt;, name, &lt;value&gt;, attpack, &amp;
+< <SPAN    inputList, rc)
+---
+> <SPAN <PRE>  subroutine ESMF_InfoSet(info, key, value, force, idx, pkey, rc)
+10790,10793c11097,11099
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;value&gt;, see below for supported values
+< <SPAN    type(ESMF_AttPack), intent(inout) :: attpack
+---
+> <SPAN <PRE>    type(ESMF_Info), intent(inout) :: info
+> <SPAN     character(len=*), intent(in) :: key
+> <SPAN     &lt;value&gt;, see below for supported value
+10795,10796c11101,11104
+< <SPAN    character (len = *), intent(in), optional :: inputList(:)
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN     logical, intent(in), optional :: force
+> <SPAN     integer, intent(in), optional :: idx
+> <SPAN     character(len=*), intent(in), optional :: pkey
+> <SPAN     integer, intent(out), optional :: rc
+10799,10800c11107,11108
+< <SPAN <PRE>   subroutine ESMF_AttributeSet(&lt;object&gt;, name, &lt;valueList&gt;, attpack, &amp;
+< <SPAN    itemCount, rc)
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_InfoSet
+> <SPAN  subroutine ESMF_InfoSetINFO(info, key, value, force, rc)
+10802,10805c11110,11112
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;valueList&gt;, see below for supported values
+< <SPAN    type(ESMF_AttPack), intent(in) :: attpack
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(inout) :: info
+> <SPAN    character(len=*), intent(in) :: key
+> <SPAN    type(ESMF_Info), intent(in) :: value
+10807c11114
+< <SPAN    integer, intent(in), optional :: itemCount
+---
+> <SPAN    logical, intent(in), optional :: force
+10811,10812c11118
+< <SPAN <PRE>   subroutine ESMF_AttributeSet(&lt;object&gt;, name, &lt;value&gt;, &amp;
+< <SPAN    convention, purpose, attPackInstanceName, rc)
+---
+> <SPAN <PRE>  subroutine ESMF_InfoSet(info, key, values, force, pkey, rc)
+10814,10820c11120,11126
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;value&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>    type(ESMF_Info), intent(inout) :: info
+> <SPAN     character(len=*), intent(in) :: key
+> <SPAN     &lt;values&gt;, see below for supported values
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN     logical, intent(in), optional :: force
+> <SPAN     character(len=*), intent(in), optional :: pkey
+> <SPAN     integer, intent(out), optional :: rc
+10823,10824c11129
+< <SPAN <PRE>   subroutine ESMF_AttributeSet(&lt;object&gt;, name, &lt;value&gt;, inputList,
+< <SPAN    convention, purpose, attPackInstanceName, rc)
+---
+> <SPAN <PRE> subroutine ESMF_InfoSetNULL(info, key, force, rc)
+10826,10832c11131,11134
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;value&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: inputList(:)
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(inout) :: info
+> <SPAN    character(len=*), intent(in) :: key
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN    logical, intent(in), optional :: force
+10836,10837c11138,11139
+< <SPAN <PRE>   subroutine ESMF_AttributeSet(&lt;object&gt;, name, &lt;valueList&gt;, &amp;
+< <SPAN    convention, purpose, attPackInstanceName, itemCount, rc)
+---
+> <SPAN <PRE>  subroutine ESMF_InfoSync(host, rootPet, vm, markClean, &amp;
+> <SPAN      rc)
+10839,10846c11141,11146
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in) :: name
+< <SPAN    &lt;valueList&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    character (len = *), intent(in), optional :: attPackInstanceName
+< <SPAN    integer, intent(in), optional :: itemCount
+< <SPAN    integer, intent(out), optional :: rc
+---
+> <SPAN <PRE>    type(ESMF_*), intent(inout) :: host
+> <SPAN     integer, intent(in) :: rootPet
+> <SPAN     type(ESMF_VM), intent(in) :: vm
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN     logical, intent(in), optional :: markClean
+> <SPAN     integer, intent(out), optional :: rc
+10849c11149
+< <SPAN <PRE>   subroutine ESMF_AttributeUpdate(&lt;object&gt;, vm, rootList, reconcile, rc)
+---
+> <SPAN <PRE> subroutine ESMF_InfoUpdate(lhs, rhs, recursive, overwrite, rc)
+10851,10854c11151,11155
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    type(ESMF_VM), intent(in) :: vm
+< <SPAN    integer, intent(in) :: rootList(:)
+< <SPAN    logical, intent(in), optional :: reconcile
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(inout) :: lhs
+> <SPAN    type(ESMF_Info), intent(in) :: rhs
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN    logical, intent(in), optional :: recursive
+> <SPAN    logical, intent(in), optional :: overwrite
+10858,10859c11159
+< <SPAN <PRE>   subroutine ESMF_AttributeWrite(&lt;object&gt;, convention, purpose, &amp;
+< <SPAN    attwriteflag, rc)
+---
+> <SPAN <PRE> subroutine ESMF_InfoWriteJSON(info, filename, rc)
+10861,10864c11161,11163
+< <SPAN <PRE>   &lt;object&gt;, see below for supported values
+< <SPAN    character (len = *), intent(in), optional :: convention
+< <SPAN    character (len = *), intent(in), optional :: purpose
+< <SPAN    type(ESMF_AttWriteFlag), intent(in), optional :: attwriteflag
+---
+> <SPAN <PRE>   type(ESMF_Info), intent(in) :: info
+> <SPAN    character(len=*), intent(in) :: filename
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+11419c11718,11719
+< <SPAN <PRE>       subroutine ESMF_TimeSet(time, &amp;
+---
+> <SPAN <PRE>   ! Private name; call using ESMF_TimeSet()
+> <SPAN        subroutine ESMF_TimeSetDefault(time, &amp;
+11472a11773,11780
+> <SPAN <PRE>   ! Private name; call using ESMF_TimeSet()
+> <SPAN        subroutine ESMF_TimeSetString(time, timeString, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(ESMF_Time),         intent(inout)         :: time
+> <SPAN        character(*),            intent(in)            :: timeString
+> <SPAN        integer,                 intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+14081c14389
+< <SPAN <PRE>     type(ESMF_VM),  intent(in)            :: vm
+---
+> <SPAN <PRE>     type(ESMF_VM),  intent(in),  optional :: vm
+14088a14397,14404
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Made argument <TT>vm</TT> optional to simplify usage when calling
+> <SPAN      on the current VM.
+14089a14406,14407
+> <SPAN </DD>
+> <SPAN </DL>
+14149a14468,14483
+> <SPAN <PRE>   subroutine ESMF_VMEpochEnter(vm, epoch, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE> -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN      type(ESMF_VM),            intent(in),  optional :: vm
+> <SPAN      type(ESMF_VMEpoch_Flag),  intent(in),  optional :: epoch
+> <SPAN      integer,                  intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   subroutine ESMF_VMEpochExit(vm, keepAlloc, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE> -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN      type(ESMF_VM),            intent(in),  optional :: vm
+> <SPAN      logical,                  intent(in),  optional :: keepAlloc
+> <SPAN      integer,                  intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+14198c14532
+< <SPAN      petCount, peCount, ssiCount, ssiMinPetCount, ssiMaxPetCount, &amp;
+---
+> <SPAN      currentSsiPe, petCount, peCount, ssiCount, ssiMap, ssiMinPetCount, ssiMaxPetCount, &amp;
+14202c14536
+< <SPAN <PRE>     type(ESMF_VM),      intent(in)            :: vm
+---
+> <SPAN <PRE>     type(ESMF_VM),        intent(in)            :: vm
+14204,14215c14538,14551
+< <SPAN      integer,            intent(out), optional :: localPet
+< <SPAN      integer,            intent(out), optional :: petCount
+< <SPAN      integer,            intent(out), optional :: peCount
+< <SPAN      integer,            intent(out), optional :: ssiCount
+< <SPAN      integer,            intent(out), optional :: ssiMinPetCount
+< <SPAN      integer,            intent(out), optional :: ssiMaxPetCount
+< <SPAN      integer,            intent(out), optional :: ssiLocalPetCount
+< <SPAN      integer,            intent(out), optional :: mpiCommunicator
+< <SPAN      logical,            intent(out), optional :: pthreadsEnabledFlag
+< <SPAN      logical,            intent(out), optional :: openMPEnabledFlag
+< <SPAN      logical,            intent(out), optional :: ssiSharedMemoryEnabledFlag
+< <SPAN      integer,            intent(out), optional :: rc
+---
+> <SPAN      integer,              intent(out), optional :: localPet
+> <SPAN      integer,              intent(out), optional :: currentSsiPe
+> <SPAN      integer,              intent(out), optional :: petCount
+> <SPAN      integer,              intent(out), optional :: peCount
+> <SPAN      integer,              intent(out), optional :: ssiCount
+> <SPAN      integer, allocatable, intent(out), optional :: ssiMap(:)
+> <SPAN      integer,              intent(out), optional :: ssiMinPetCount
+> <SPAN      integer,              intent(out), optional :: ssiMaxPetCount
+> <SPAN      integer,              intent(out), optional :: ssiLocalPetCount
+> <SPAN      integer,              intent(out), optional :: mpiCommunicator
+> <SPAN      logical,              intent(out), optional :: pthreadsEnabledFlag
+> <SPAN      logical,              intent(out), optional :: openMPEnabledFlag
+> <SPAN      logical,              intent(out), optional :: ssiSharedMemoryEnabledFlag
+> <SPAN      integer,              intent(out), optional :: rc
+14236a14573,14580
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Added argument <TT>currentSsiPe</TT> for easy query of the
+> <SPAN      current PE within the local SSI that is executing the request.
+> <SPAN <BR>
+> <SPAN Added argument <TT>ssiMap</TT> for a convenient way to obtain a view
+> <SPAN      of the mapping of PETs to single system images across the entire VM.
+> <SPAN    
+> <SPAN </DD>
+14244c14588
+< <SPAN    subroutine ESMF_VMGetPetLocalInfo(vm, pet, peCount, &amp;
+---
+> <SPAN    subroutine ESMF_VMGetPetSpecific(vm, pet, peCount, &amp;
+14318a14663,14677
+> <SPAN <PRE>   subroutine ESMF_VMLog(vm, prefix, logMsgFlag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     type(ESMF_VM),          intent(in)              :: vm
+> <SPAN      character(len=*),       intent(in),   optional  :: prefix
+> <SPAN      type(ESMF_LogMsg_Flag), intent(in),   optional  :: logMsgFlag
+> <SPAN      integer, intent(out),                 optional  :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>   subroutine ESMF_VMLogSystem(prefix, logMsgFlag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     character(len=*),       intent(in),   optional  :: prefix
+> <SPAN      type(ESMF_LogMsg_Flag), intent(in),   optional  :: logMsgFlag
+> <SPAN      integer, intent(out),                 optional  :: rc
+> <SPAN </PRE>
+> 
+14722a15082,15447
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeAdd()
+> <SPAN        subroutine ESMF_AttAddPackInfo(info, convention, purpose, attrList, &amp;
+> <SPAN          nestConvention, nestPurpose, attpack, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;ESMF_Info&gt;),   intent(inout)           :: info
+> <SPAN        character (len = *), intent(in)              :: convention
+> <SPAN        character (len = *), intent(in)              :: purpose
+> <SPAN        character (len = *), intent(in),    optional :: attrList(:)
+> <SPAN        character (len = *), intent(in)     optional :: nestConvention
+> <SPAN        character (len = *), intent(in)     optional :: nestPurpose
+> <SPAN        type(ESMF_AttPack),  intent(out),   optional :: attpack
+> <SPAN        integer,             intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeAdd()
+> <SPAN        subroutine ESMF_AttAddPackStd(target, convention, purpose, attrList, &amp;
+> <SPAN          nestConvention, nestPurpose, attpack, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),      intent(inout)           :: target
+> <SPAN        character (len = *), intent(in)              :: convention
+> <SPAN        character (len = *), intent(in)              :: purpose
+> <SPAN        character (len = *), intent(in),    optional :: attrList(:)
+> <SPAN        character (len = *), intent(in)     optional :: nestConvention
+> <SPAN        character (len = *), intent(in)     optional :: nestPurpose
+> <SPAN        type(ESMF_AttPack),  intent(out),   optional :: attpack
+> <SPAN        integer,             intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeCopy()
+> <SPAN        subroutine ESMF_AttributeCopy(src, dst, attcopy, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),          intent(in)            :: src
+> <SPAN        type(&lt;object&gt;),          intent(inout)         :: dst
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        type(ESMF_AttCopy_Flag), intent(in),  optional :: attcopy
+> <SPAN        integer,                 intent(out), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeGet(target, name, attpack, &lt;value&gt; &amp;
+> <SPAN          &lt;defaultvalue&gt;, attnestflag, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),         intent(in)              :: target
+> <SPAN        character (len = *),    intent(in)              :: name
+> <SPAN        type(ESMF_AttPack),     intent(inout)           :: attpack
+> <SPAN        &lt;value&gt;, see below for supported values
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        &lt;defaultvalue&gt;, see below for supported values
+> <SPAN        type(ESMF_AttNest_Flag),intent(in),  optional   :: attnestflag
+> <SPAN        logical,                intent(out), optional   :: isPresent
+> <SPAN        integer,                intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeGet(target, name, attpack, &lt;valueList&gt;, &amp;
+> <SPAN          &lt;defaultvalueList&gt;, attnestflag, itemCount, &amp;
+> <SPAN          isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),         intent(in)              :: target
+> <SPAN        character (len = *),    intent(in)              :: name
+> <SPAN        type(ESMF_AttPack),     intent(inout)           :: attpack
+> <SPAN        &lt;valueList&gt;, see below for supported values
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        &lt;defaultvalueList&gt;, see below for supported values
+> <SPAN        type(ESMF_AttNest_Flag),intent(in),  optional   :: attnestflag
+> <SPAN        integer,                intent(out), optional   :: itemCount
+> <SPAN        logical,                intent(out), optional   :: isPresent
+> <SPAN        integer,                intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeGet(target, name, &lt;value&gt;, &lt;defaultvalue&gt;, &amp;
+> <SPAN          convention, purpose, attnestflag, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),         intent(in)              :: target
+> <SPAN        character (len = *),    intent(in)              :: name
+> <SPAN        &lt;value&gt;, see below for supported values
+> <SPAN        &lt;defaultvalue&gt;, see below for supported values
+> <SPAN        character (len = *),    intent(in),    optional :: convention
+> <SPAN        character (len = *),    intent(in),    optional :: purpose
+> <SPAN        type(ESMF_AttNest_Flag),intent(in),    optional :: attnestflag
+> <SPAN        logical,                intent(out),   optional :: isPresent
+> <SPAN        integer,                intent(inout), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeGet(target, name, &lt;valueList&gt;, &lt;defaultvalueList&gt;, &amp;
+> <SPAN          convention, purpose, attnestflag, itemCount, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),         intent(in)              :: target
+> <SPAN        character (len = *),    intent(in)              :: name
+> <SPAN        &lt;valueList&gt;, see below for supported values
+> <SPAN        &lt;defaultvalueList&gt;, see below for supported values
+> <SPAN        character (len = *),    intent(in),    optional :: convention
+> <SPAN        character (len = *),    intent(in),    optional :: purpose
+> <SPAN        type(ESMF_AttNest_Flag),intent(in),    optional :: attnestflag
+> <SPAN        integer,                intent(out),   optional :: itemCount
+> <SPAN        logical,                intent(out),   optional :: isPresent
+> <SPAN        integer,                intent(inout), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeGet()
+> <SPAN        subroutine ESMF_AttributeGetCount(target, attpack, count, &amp;
+> <SPAN                                          attcountflag, attnestflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),             intent(in)              :: target
+> <SPAN        type(ESMF_AttPack),         intent(inout)           :: attpack
+> <SPAN        integer,                    intent(inout)           :: count
+> <SPAN        type(ESMF_AttGetCountFlag), intent(in),    optional :: attcountflag
+> <SPAN        type(ESMF_AttNest_Flag),    intent(in),    optional :: attnestflag
+> <SPAN        integer,                    intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeGet()
+> <SPAN        subroutine ESMF_AttributeGetCount(target, count, convention, purpose, &amp;
+> <SPAN          attcountflag, attnestflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),             intent(in)              :: target
+> <SPAN        integer,                    intent(inout)           :: count
+> <SPAN        character (len=*),          intent(in),    optional :: convention
+> <SPAN        character (len=*),          intent(in),    optional :: purpose
+> <SPAN        type(ESMF_AttGetCountFlag), intent(in),    optional :: attcountflag
+> <SPAN        type(ESMF_AttNest_Flag),    intent(in),    optional :: attnestflag
+> <SPAN        integer,                    intent(inout), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeGet()
+> <SPAN        subroutine ESMF_AttributeGetInfoByNamAP(target, name, attpack, &amp;
+> <SPAN          attnestflag, typekind, itemCount, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),           intent(in)              :: target
+> <SPAN        character (len = *),      intent(in)              :: name
+> <SPAN        type(ESMF_AttPack),       intent(inout)           :: attpack
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        type(ESMF_AttNest_Flag),  intent(in),    optional :: attnestflag
+> <SPAN        type(ESMF_TypeKind_Flag), intent(out),   optional :: typekind
+> <SPAN        integer,                  intent(out),   optional :: itemCount
+> <SPAN        logical,                  intent(out),   optional :: isPresent
+> <SPAN        integer,                  intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeGet()
+> <SPAN        subroutine ESMF_AttributeGetInfoByNam(target, name, &amp;
+> <SPAN          convention, purpose, attnestflag, typekind, itemCount, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),           intent(in)              :: target
+> <SPAN        character (len = *),      intent(in)              :: name
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        character (len=*),        intent(in),    optional :: convention
+> <SPAN        character (len=*),        intent(in),    optional :: purpose
+> <SPAN        type(ESMF_AttNest_Flag),  intent(in),    optional :: attnestflag
+> <SPAN        type(ESMF_TypeKind_Flag), intent(out),   optional :: typekind
+> <SPAN        integer,                  intent(out),   optional :: itemCount
+> <SPAN        logical,                  intent(out),   optional :: isPresent
+> <SPAN        integer,                  intent(inout), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeGet()
+> <SPAN        subroutine ESMF_AttributeGetInfoByNum(target, attributeIndex, &amp;
+> <SPAN          name, convention, purpose, attnestflag, typekind, itemcount, isPresent, &amp;
+> <SPAN          rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),           intent(in)              :: target
+> <SPAN        integer,                  intent(in)              :: attributeIndex
+> <SPAN        character (len = *),      intent(out)             :: name
+> <SPAN        character (len = *),      intent(in),    optional :: convention
+> <SPAN        character (len = *),      intent(in),    optional :: purpose
+> <SPAN        type(ESMF_AttNest_Flag),  intent(in),    optional :: attnestflag
+> <SPAN        type(ESMF_TypeKind_Flag), intent(out),   optional :: typekind
+> <SPAN        integer,                  intent(out),   optional :: itemCount
+> <SPAN        logical,                  intent(out),   optional :: isPresent
+> <SPAN        integer,                  intent(inout), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       ! Private name; call using ESMF_AttributeGetAttPack()
+> <SPAN        subroutine ESMF_AttGetAttPack(target, convention, purpose, &amp;
+> <SPAN          attpack, attnestflag, isPresent, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),          intent(in)               :: target
+> <SPAN        character (len = *),     intent(in)               :: convention
+> <SPAN        character (len = *),     intent(in)               :: purpose
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        type(ESMF_AttPack),      intent(inout),  optional :: attpack
+> <SPAN        type(ESMF_AttNest_Flag), intent(in),     optional :: attnestflag
+> <SPAN        logical,                 intent(out),    optional :: isPresent
+> <SPAN        integer,                 intent(out),    optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeRemove(target, name, &amp;
+> <SPAN          attpack, attnestflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),          intent(inout)           :: target
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        character (len = *),     intent(in),    optional :: name
+> <SPAN        type(ESMF_AttPack),      intent(inout), optional :: attpack
+> <SPAN        type(ESMF_AttNest_Flag), intent(in),    optional :: attnestflag
+> <SPAN        integer,                 intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeRemove(target, name, convention, purpose, &amp;
+> <SPAN          attnestflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),          intent(inout)           :: target
+> <SPAN        character (len = *),     intent(in),    optional :: name
+> <SPAN        character (len = *),     intent(in),    optional :: convention
+> <SPAN        character (len = *),     intent(in),    optional :: purpose
+> <SPAN        type(ESMF_AttNest_Flag), intent(in),    optional :: attnestflag
+> <SPAN        integer,                 intent(inout), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeSet(target, name, &lt;value&gt;, attpack, &amp;
+> <SPAN          itemcount, attnestflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),          intent(in)              :: target
+> <SPAN        character (len = *),     intent(in)              :: name
+> <SPAN        &lt;value&gt;, see below for supported values
+> <SPAN        type(ESMF_AttPack),      intent(inout)           :: attpack
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        integer,                 intent(in),    optional :: itemcount
+> <SPAN        type(ESMF_AttNest_Flag), intent(in),    optional :: attnestflag
+> <SPAN        integer,                 intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeSet(target, name, &lt;valueList&gt;, attpack, &amp;
+> <SPAN          itemCount,  attnestflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),          intent(in)              :: target
+> <SPAN        character (len = *),     intent(in)              :: name
+> <SPAN        &lt;valueList&gt;, see below for supported values
+> <SPAN        type(ESMF_AttPack),      intent(inout)           :: attpack
+> <SPAN  -- The following arguments require argument keyword syntax (e.g. rc=rc). --
+> <SPAN        integer,                 intent(in),    optional :: itemcount
+> <SPAN        type(ESMF_AttNest_Flag), intent(in),    optional :: attnestflag
+> <SPAN        integer,                 intent(inout), optional :: rc
+> <SPAN </PRE>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeSet(target, name, &lt;value&gt;, &amp;
+> <SPAN          convention, purpose, itemcount, attnestflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),          intent(inout)           :: target
+> <SPAN        character (len = *),     intent(in)              :: name
+> <SPAN        &lt;value&gt;, see below for supported values
+> <SPAN        character (len = *),     intent(in),    optional :: convention
+> <SPAN        character (len = *),     intent(in),    optional :: purpose
+> <SPAN        integer,                 intent(in),    optional :: itemcount
+> <SPAN        type(ESMF_AttNest_Flag), intent(in),    optional :: attnestflag
+> <SPAN        integer,                 intent(inout), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeSet(target, name, &lt;valueList&gt;, &amp;
+> <SPAN          convention, purpose, itemCount, attnestflag, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       type(&lt;object&gt;),          intent(inout)           :: target
+> <SPAN        character (len = *),     intent(in)              :: name
+> <SPAN        &lt;valueList&gt;, see below for supported values
+> <SPAN        character (len = *),     intent(in),    optional :: convention
+> <SPAN        character (len = *),     intent(in),    optional :: purpose
+> <SPAN        integer,                 intent(in),    optional :: itemcount
+> <SPAN        type(ESMF_AttNest_Flag), intent(in),    optional :: attnestflag
+> <SPAN        integer,                 intent(inout), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> attPackInstanceName </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
+> 
+> <SPAN <PRE>       subroutine ESMF_AttributeUpdate(target, vm, rootList, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>       &lt;target&gt;, see below for supported values
+> <SPAN        type(ESMF_VM), intent(in)            :: vm
+> <SPAN        integer,       intent(in)            :: rootList(:)
+> <SPAN        integer,       intent(out), optional :: rc
+> <SPAN </PRE>
+> <SPAN <I CLASS="sans">STATUS:</I>
+> <SPAN        The following parameters were removed in ESMF version 8.1.0:
+> <SPAN        
+> <SPAN <UL>
+> <SPAN <LI><TT> reconcile </TT>
+> <SPAN        
+> <SPAN </LI>
+> <SPAN </UL>
+> <SPAN 
+> <SPAN <P>
