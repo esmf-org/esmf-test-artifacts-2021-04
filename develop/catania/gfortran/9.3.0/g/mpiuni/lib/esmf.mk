@@ -1,4 +1,4 @@
-build time -- 2021-04-22 07:04:05
+build time -- 2021-04-22 09:37:00
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -32,7 +32,7 @@ ESMF_LIBSDIR=/Volumes/esmf/mpotts/gfortran_9.3.0_mpiuni_g_develop/lib/libg/Darwi
 ESMF_F90COMPILER=gfortran
 ESMF_F90LINKER=gfortran
 
-ESMF_F90COMPILEOPTS=-g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer   -m64 -mcmodel=small -ffree-line-length-none
+ESMF_F90COMPILEOPTS=-fallow-argument-mismatch -fallow-invalid-boz -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer   -m64 -mcmodel=small -ffree-line-length-none
 ESMF_F90COMPILEPATHS=-I/Volumes/esmf/mpotts/gfortran_9.3.0_mpiuni_g_develop/mod/modg/Darwin.gfortran.64.mpiuni.default -I/Volumes/esmf/mpotts/gfortran_9.3.0_mpiuni_g_develop/src/include -I/usr/local/Cellar/netcdf/4.7.4_1/include
 ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_PTHREADS -DESMF_NO_OPENMP -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Darwin=1 -DESMF_COMM=mpiuni -DESMF_DIR=/Volumes/esmf/mpotts/gfortran_9.3.0_mpiuni_g_develop -DESMF_MPIUNI
 ESMF_F90COMPILEFREECPP=
