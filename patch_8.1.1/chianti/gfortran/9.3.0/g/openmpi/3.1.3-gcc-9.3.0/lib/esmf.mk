@@ -1,4 +1,4 @@
-build time -- 2021-04-22 10:58:30.759100
+build time -- 2021-04-23 11:01:38.395534
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -13,16 +13,16 @@ build time -- 2021-04-22 10:58:30.759100
 #
 
 #----------------------------------------------
-ESMF_VERSION_STRING=8.1.1 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_1_1_beta_snapshot_03
+ESMF_VERSION_STRING=8.1.1
+ESMF_VERSION_STRING_GIT=ESMF_8_1_1
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
 ESMF_VERSION_MINOR=1
 ESMF_VERSION_REVISION=1
 ESMF_VERSION_PATCHLEVEL=1
-ESMF_VERSION_PUBLIC='F'
-ESMF_VERSION_BETASNAPSHOT='T'
+ESMF_VERSION_PUBLIC='T'
+ESMF_VERSION_BETASNAPSHOT='F'
 
 
 ESMF_APPSDIR=/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1/apps/appsg/Linux.gfortran.64.openmpi.default
@@ -34,7 +34,7 @@ ESMF_F90LINKER=mpifort
 
 ESMF_F90COMPILEOPTS=-g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp
 ESMF_F90COMPILEPATHS=-I/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1/mod/modg/Linux.gfortran.64.openmpi.default -I/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1/src/include -I/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-c-4.7.4-mh42cmw5oougqeytguqxjkkrrd2bfdsl/include -I/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-fortran-4.5.3-7cigsuiobyasv6mbext7pmabw5fhzo6y/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_1_beta_snapshot_03' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=-ffree-form
 ESMF_F90COMPILEFIXCPP=-cpp -ffixed-form
@@ -53,7 +53,7 @@ ESMF_CXXLINKER=mpicxx
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -Wall -Wextra -Wno-unused  -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp
 ESMF_CXXCOMPILEPATHS= -I/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1/src/include  -I/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-c-4.7.4-mh42cmw5oougqeytguqxjkkrrd2bfdsl/include -I/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_1_beta_snapshot_03' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1 -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_1_1' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1 -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_SIGUSR2
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp
 ESMF_CXXLINKPATHS=-L/home/mpotts/gfortran_9.3.0_openmpi_g_patch_8.1.1/lib/libg/Linux.gfortran.64.openmpi.default -L/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-c-4.7.4-mh42cmw5oougqeytguqxjkkrrd2bfdsl/lib -L/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-fortran-4.5.3-7cigsuiobyasv6mbext7pmabw5fhzo6y/lib -L/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-7.5.0/gcc-9.3.0-3ltccu6cenbq/lib64/../lib64/
