@@ -1,4 +1,4 @@
-build time -- 2021-04-22 05:43:23.335716
+build time -- 2021-04-23 06:21:16.099501
  --------------------------------------- 
  --------------------------------------- 
  Start of  System Test ESMF_ArrayRedistOpenACCSTest
@@ -18,8 +18,8 @@ build time -- 2021-04-22 05:43:23.335716
  Start of  System Test ESMF_ArrayRedistOpenACCSTest
  --------------------------------------- 
  --------------------------------------- 
- Start of  System Test ESMF_ArrayRedistOpenACCSTest
  --------------------------------------- 
+ Start of  System Test ESMF_ArrayRedistOpenACCSTest
  --------------------------------------- 
  Start of  System Test ESMF_ArrayRedistOpenACCSTest
  --------------------------------------- 
@@ -34,10 +34,13 @@ build time -- 2021-04-22 05:43:23.335716
  Created component user model 2rc =           0
  Created component user model 1rc =           0
  Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
  Created component user model 1rc =           0
  Created component user model 2rc =           0
  Created component user model 1rc =           0
  Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
  Created component user model 2rc =           0
  Created component user one-way coupler, rc =           0
  Comp Creates finished
@@ -49,9 +52,6 @@ build time -- 2021-04-22 05:43:23.335716
  Comp Creates finished
  Created component user one-way coupler, rc =           0
  Comp Creates finished
- Created component user one-way coupler, rc =           0
- Comp Creates finished
- Created component user one-way coupler, rc =           0
  Comp Creates finished
  Created component user one-way coupler, rc =           0
  Comp Creates finished
@@ -71,42 +71,41 @@ build time -- 2021-04-22 05:43:23.335716
  Comp1 SetServices finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
  Comp2 SetVM finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
- Comp2 SetServices finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
- Comp2 SetServices finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
- Comp2 SetServices finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
- Comp2 SetServices finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
  Comp2 SetVM finished, rc=            0           0
  Comp2 SetServices finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
  Comp2 SetVM finished, rc=            0           0
  Comp2 SetServices finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
  User Comp2 Register starting
  User Comp2 Register starting
  Registered Initialize, Run, and Finalize routines
  User Comp2 Register returning
- Comp2 SetServices finished, rc=            0           0
  Registered Initialize, Run, and Finalize routines
  User Comp2 Register returning
  Comp2 SetServices finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
- User Coupler Register returning
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
@@ -115,26 +114,27 @@ build time -- 2021-04-22 05:43:23.335716
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0           0
+ User Coupler Register returning
  Cpl SetServices finished, rc=            0           0
  User Coupler Register starting
- User Coupler Register starting
- Registered Initialize, Run, and Finalize routines
- User Coupler Register starting
- User Coupler Register starting
- Registered Initialize, Run, and Finalize routines
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
- Cpl SetServices finished, rc=            0           0
+ User Coupler Register starting
+ User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
- Cpl SetServices finished, rc=            0           0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0           0
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0           0
+ Cpl SetServices finished, rc=            0           0
+ Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
+ Cpl SetServices finished, rc=            0           0
  Cpl SetServices finished, rc=            0           0
  User Comp1 Init starting
 --- ESMCI::VM::print() start ---
@@ -144,10 +144,10 @@ build time -- 2021-04-22 05:43:23.335716
   localID = 1
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x33a5280
+vm located at: 0x26c7340
 npets = 1, mypet=0
-  pth_mutex =		 0x3376820
-  pth_finish_count =	 0x33a5a50
+  pth_mutex =		 0x26c2d20
+  pth_finish_count =	 0x26c7b10
 MPI_Comm_size: 1
 MPI_Comm_rank in local MPI communicator: 0
 MPI_Comm_rank in MPI_COMM_WORLD: 0
@@ -170,11 +170,9 @@ ncores = 8
  User Comp1 Init returning
  Comp 1 Initialize finished, rc =           0           0
  Comp 1 Initialize finished, rc =           0           0
- Comp 2 Initialize finished, rc =           0           0
  Comp 1 Initialize finished, rc =           0           0
  Comp 2 Initialize finished, rc =           0           0
  Comp 2 Initialize finished, rc =           0           0
- User Coupler Init starting
  Comp 1 Initialize finished, rc =           0           0
  Comp 2 Initialize finished, rc =           0           0
  User Coupler Init starting
@@ -190,6 +188,8 @@ ncores = 8
  User Coupler Init starting
  User Coupler Init starting
  Import State contains            1  items.
+ Comp 2 Initialize finished, rc =           0           0
+ User Coupler Init starting
  Import State contains            0  items.
  User Coupler Init starting
  Import State contains            0  items.
@@ -224,33 +224,31 @@ ncores = 8
  User Comp1 Run returning
  Comp 1 Run returned, rc =           0           0
  Comp 1 Run returned, rc =           0           0
- User Coupler Run starting
+ Comp 1 Run returned, rc =           0           0
  Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
  Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
  Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
- Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
- Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
- Comp 1 Run returned, rc =           0           0
- User Coupler Run starting
+ User Coupler Run returning
  User Coupler Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
  User Coupler Final starting
+ Comp 1 Run returned, rc =           0           0
+ User Coupler Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
- User Coupler Final starting
+ Comp 1 Run returned, rc =           0           0
+ User Coupler Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
- User Coupler Final starting
- User Coupler Run returning
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
  User Coupler Final starting
@@ -260,8 +258,10 @@ ncores = 8
  User Coupler Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
+ User Coupler Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
+ User Coupler Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
  User Coupler Final returning
@@ -272,9 +272,9 @@ ncores = 8
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
  User Coupler Final starting
+ User Coupler Run returning
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
- User Coupler Run returning
  Coupler Run returned, rc =           0           0
  User Comp2 Run starting
  User Coupler Run returning
@@ -298,11 +298,11 @@ ncores = 8
  Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
  Comp 1 Finalize finished, rc =           0           0
- User Comp2 Final starting
- Comp 1 Finalize finished, rc =           0           0
- User Comp2 Final starting
- Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
+ Comp 1 Finalize finished, rc =           0           0
+ User Comp2 Final starting
+ Comp 1 Finalize finished, rc =           0           0
+ User Comp2 Final starting
  Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
  Comp 1 Finalize finished, rc =           0           0
@@ -316,12 +316,12 @@ ncores = 8
   System Test ESMF_ArrayRedistOpenACCSTest                                                                                                                                                                                                                        complete.
  All Destroy routines done
   System Test ESMF_ArrayRedistOpenACCSTest                                                                                                                                                                                                                        complete.
- ------------------------------------------------------------
  All Destroy routines done
   System Test ESMF_ArrayRedistOpenACCSTest                                                                                                                                                                                                                        complete.
  ------------------------------------------------------------
  ------------------------------------------------------------
  Test finished, localPet =            2
+ ------------------------------------------------------------
  ------------------------------------------------------------
  All Destroy routines done
   System Test ESMF_ArrayRedistOpenACCSTest                                                                                                                                                                                                                        complete.
@@ -364,10 +364,10 @@ ncores = 8
  ------------------------------------------------------------
  ------------------------------------------------------------
  ------------------------------------------------------------
+ ------------------------------------------------------------
  Test finished, localPet =            1
  ------------------------------------------------------------
  ------------------------------------------------------------
- ------------------------------------------------------------
  
   System Test ESMF_ArrayRedistOpenACCSTest
   SUCCESS:  System Test ESMF_ArrayRedistOpenACCSTest finished correctly.
@@ -427,8 +427,8 @@ ncores = 8
  Start of  System Test ESMF_ArrayRedistOpenACCSTest
  --------------------------------------- 
  --------------------------------------- 
- Start of  System Test ESMF_ArrayRedistOpenACCSTest
  --------------------------------------- 
+ Start of  System Test ESMF_ArrayRedistOpenACCSTest
  --------------------------------------- 
  Start of  System Test ESMF_ArrayRedistOpenACCSTest
  --------------------------------------- 
@@ -443,10 +443,13 @@ ncores = 8
  Created component user model 2rc =           0
  Created component user model 1rc =           0
  Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
  Created component user model 1rc =           0
  Created component user model 2rc =           0
  Created component user model 1rc =           0
  Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
  Created component user model 2rc =           0
  Created component user one-way coupler, rc =           0
  Comp Creates finished
@@ -458,9 +461,6 @@ ncores = 8
  Comp Creates finished
  Created component user one-way coupler, rc =           0
  Comp Creates finished
- Created component user one-way coupler, rc =           0
- Comp Creates finished
- Created component user one-way coupler, rc =           0
  Comp Creates finished
  Created component user one-way coupler, rc =           0
  Comp Creates finished
@@ -480,42 +480,41 @@ ncores = 8
  Comp1 SetServices finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
  Comp2 SetVM finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
- Comp2 SetServices finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
- Comp2 SetServices finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
- Comp2 SetServices finished, rc=            0           0
- Comp2 SetVM finished, rc=            0           0
- Comp2 SetServices finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
  Comp2 SetVM finished, rc=            0           0
  Comp2 SetServices finished, rc=            0           0
  Comp1 SetServices finished, rc=            0           0
  Comp2 SetVM finished, rc=            0           0
  Comp2 SetServices finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
+ Comp2 SetVM finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
  User Comp2 Register starting
  User Comp2 Register starting
  Registered Initialize, Run, and Finalize routines
  User Comp2 Register returning
- Comp2 SetServices finished, rc=            0           0
  Registered Initialize, Run, and Finalize routines
  User Comp2 Register returning
  Comp2 SetServices finished, rc=            0           0
+ Comp2 SetServices finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
  Cpl SetVM finished, rc=            0           0
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
- User Coupler Register returning
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
@@ -524,26 +523,27 @@ ncores = 8
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0           0
+ User Coupler Register returning
  Cpl SetServices finished, rc=            0           0
  User Coupler Register starting
- User Coupler Register starting
- Registered Initialize, Run, and Finalize routines
- User Coupler Register starting
- User Coupler Register starting
- Registered Initialize, Run, and Finalize routines
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
- Cpl SetServices finished, rc=            0           0
+ User Coupler Register starting
+ User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
- Cpl SetServices finished, rc=            0           0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0           0
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0           0
+ Cpl SetServices finished, rc=            0           0
+ Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
+ Cpl SetServices finished, rc=            0           0
  Cpl SetServices finished, rc=            0           0
  User Comp1 Init starting
 --- ESMCI::VM::print() start ---
@@ -553,10 +553,10 @@ ncores = 8
   localID = 1
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x33a5280
+vm located at: 0x26c7340
 npets = 1, mypet=0
-  pth_mutex =		 0x3376820
-  pth_finish_count =	 0x33a5a50
+  pth_mutex =		 0x26c2d20
+  pth_finish_count =	 0x26c7b10
 MPI_Comm_size: 1
 MPI_Comm_rank in local MPI communicator: 0
 MPI_Comm_rank in MPI_COMM_WORLD: 0
@@ -579,11 +579,9 @@ ncores = 8
  User Comp1 Init returning
  Comp 1 Initialize finished, rc =           0           0
  Comp 1 Initialize finished, rc =           0           0
- Comp 2 Initialize finished, rc =           0           0
  Comp 1 Initialize finished, rc =           0           0
  Comp 2 Initialize finished, rc =           0           0
  Comp 2 Initialize finished, rc =           0           0
- User Coupler Init starting
  Comp 1 Initialize finished, rc =           0           0
  Comp 2 Initialize finished, rc =           0           0
  User Coupler Init starting
@@ -599,6 +597,8 @@ ncores = 8
  User Coupler Init starting
  User Coupler Init starting
  Import State contains            1  items.
+ Comp 2 Initialize finished, rc =           0           0
+ User Coupler Init starting
  Import State contains            0  items.
  User Coupler Init starting
  Import State contains            0  items.
@@ -633,33 +633,31 @@ ncores = 8
  User Comp1 Run returning
  Comp 1 Run returned, rc =           0           0
  Comp 1 Run returned, rc =           0           0
- User Coupler Run starting
+ Comp 1 Run returned, rc =           0           0
  Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
  Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
  Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
- Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
- Comp 1 Run returned, rc =           0           0
  User Coupler Run starting
- Comp 1 Run returned, rc =           0           0
- User Coupler Run starting
+ User Coupler Run returning
  User Coupler Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
  User Coupler Final starting
+ Comp 1 Run returned, rc =           0           0
+ User Coupler Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
- User Coupler Final starting
+ Comp 1 Run returned, rc =           0           0
+ User Coupler Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
- User Coupler Final starting
- User Coupler Run returning
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
  User Coupler Final starting
@@ -669,8 +667,10 @@ ncores = 8
  User Coupler Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
+ User Coupler Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
+ User Coupler Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
  User Coupler Final returning
@@ -681,9 +681,9 @@ ncores = 8
  Coupler Run returned, rc =           0           0
  Comp 2 Run returned, rc =           0           0
  User Coupler Final starting
+ User Coupler Run returning
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
- User Coupler Run returning
  Coupler Run returned, rc =           0           0
  User Comp2 Run starting
  User Coupler Run returning
@@ -707,11 +707,11 @@ ncores = 8
  Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
  Comp 1 Finalize finished, rc =           0           0
- User Comp2 Final starting
- Comp 1 Finalize finished, rc =           0           0
- User Comp2 Final starting
- Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
+ Comp 1 Finalize finished, rc =           0           0
+ User Comp2 Final starting
+ Comp 1 Finalize finished, rc =           0           0
+ User Comp2 Final starting
  Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
  Comp 1 Finalize finished, rc =           0           0
@@ -725,12 +725,12 @@ ncores = 8
   System Test ESMF_ArrayRedistOpenACCSTest                                                                                                                                                                                                                        complete.
  All Destroy routines done
   System Test ESMF_ArrayRedistOpenACCSTest                                                                                                                                                                                                                        complete.
- ------------------------------------------------------------
  All Destroy routines done
   System Test ESMF_ArrayRedistOpenACCSTest                                                                                                                                                                                                                        complete.
  ------------------------------------------------------------
  ------------------------------------------------------------
  Test finished, localPet =            2
+ ------------------------------------------------------------
  ------------------------------------------------------------
  All Destroy routines done
   System Test ESMF_ArrayRedistOpenACCSTest                                                                                                                                                                                                                        complete.
@@ -773,8 +773,8 @@ ncores = 8
  ------------------------------------------------------------
  ------------------------------------------------------------
  ------------------------------------------------------------
- Test finished, localPet =            1
  ------------------------------------------------------------
+ Test finished, localPet =            1
  ------------------------------------------------------------
  ------------------------------------------------------------
  
