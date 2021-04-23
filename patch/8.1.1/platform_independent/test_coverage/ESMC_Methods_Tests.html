@@ -1,0 +1,1277 @@
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'> 
+<meta name='Author' content='Himanshu Pillai'>
+<meta name='GENERATOR' content='Mozilla/4.79 [en] (X11; U; Linux 2.4.18-3smp i686) [Netscape]'><title>ESMC Methods Tests</title></head>
+<body text='#000000' bgcolor='#ffffff' link='#993300' vlink='#666600' alink='#666600'>
+<font face='arial, helvetica, sans serif'><font color='#006699'><font size='+2'><b> <br>
+Public ESMC Methods With Tests </b> </font></font></font>
+<pre style='margin-left: 40px;'><font face='arial,' helvetica='' sans='' serif='' style='font-family: sans-serif;'><font size='-1'><br></font></font><font face='arial,' helvetica='' sans='' serif='' size='-1' style='font-family: sans-serif;'>
+Thu Apr 22 14:47:36 MDT 2021
+<p>
+The following is the list of the implemented ESMF C public subroutines and functions. Below each
+is the path(s) to the test that calls the subroutine or function. Those without test
+paths have not been tested.
+
+
+ESMC_ArrayCreate
+src/Superstructure/State/tests/ESMC_StateUTest.C:  array = ESMC_ArrayCreate(arrayspec, distgrid, "array1", &rc);
+src/Infrastructure/Array/tests/ESMC_ArrayUTest.C:  array = ESMC_ArrayCreate(arrayspec, distgrid, "array1", &rc);
+
+
+ESMC_ArrayDestroy
+src/Superstructure/State/tests/ESMC_StateUTest.C:  rc = ESMC_ArrayDestroy(&array);
+src/Infrastructure/Array/tests/ESMC_ArrayUTest.C:  rc = ESMC_ArrayDestroy(&array);
+
+
+ESMC_ArrayGetName
+src/Superstructure/State/tests/ESMC_StateUTest.C:  arrayName = ESMC_ArrayGetName(array,&rc);
+
+
+ESMC_ArrayGetPtr
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  ptr = (double *)ESMC_ArrayGetPtr(retrievedArray, 0, rc);
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  ptr = (double *)ESMC_ArrayGetPtr(retrievedArray, 0, rc);
+src/Superstructure/State/tests/ESMC_StateUTest.C:  int *arrayData = (int *) ESMC_ArrayGetPtr(array, 0,&rc);
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  farray3 = (double *) ESMC_ArrayGetPtr(array, 0, &rc);
+
+
+ESMC_ArrayPrint
+src/Superstructure/State/tests/ESMC_StateUTest.C:  rc = ESMC_ArrayPrint(array);
+src/Infrastructure/Array/tests/ESMC_ArrayUTest.C:  rc = ESMC_ArrayPrint(array);
+
+
+ESMC_ArraySpecGet
+src/Infrastructure/ArraySpec/tests/ESMC_ArraySpecUTest.C:  rc = ESMC_ArraySpecGet(arrayspec, &rank_out, &typekind_out);
+
+
+ESMC_ArraySpecSet
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_ArraySpecSet(&arrayspec, 3, ESMC_TYPEKIND_I4);
+src/Superstructure/State/tests/ESMC_StateUTest.C:  rc = ESMC_ArraySpecSet(&arrayspec, 2, ESMC_TYPEKIND_I4);
+src/Infrastructure/ArraySpec/tests/ESMC_ArraySpecUTest.C:  rc = ESMC_ArraySpecSet(&arrayspec, rank, typekind);
+src/Infrastructure/Array/tests/ESMC_ArrayUTest.C:  rc = ESMC_ArraySpecSet(&arrayspec, 2, ESMC_TYPEKIND_I4);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_ArraySpecSet(&arrayspec, 1, ESMC_TYPEKIND_I4);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_ArraySpecSet(&arrayspec, 2, ESMC_TYPEKIND_R8);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_ArraySpecSet(&arrayspec2, 1, ESMC_TYPEKIND_R8);
+
+
+ESMC_CalendarCreate
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  calendar = ESMC_CalendarCreate("Gregorian", ESMC_CALKIND_GREGORIAN, &rc);
+src/Infrastructure/TimeMgr/tests/ESMC_TimeUTest.C:  calendar = ESMC_CalendarCreate("Gregorian", ESMC_CALKIND_GREGORIAN, &rc);
+src/Infrastructure/TimeMgr/tests/ESMC_CalendarUTest.C:  calendar = ESMC_CalendarCreate("Gregorian", ESMC_CALKIND_GREGORIAN, &rc);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  calendar = ESMC_CalendarCreate("Gregorian", ESMC_CALKIND_GREGORIAN, &rc);
+src/Infrastructure/TimeMgr/examples/ESMC_ClockEx.C:   gregorianCalendar = ESMC_CalendarCreate(9, "Gregorian", 
+
+
+ESMC_CalendarDestroy
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CalendarDestroy(&calendar);
+src/Infrastructure/TimeMgr/tests/ESMC_TimeUTest.C:  rc = ESMC_CalendarDestroy(&calendar);
+src/Infrastructure/TimeMgr/tests/ESMC_CalendarUTest.C:  rc = ESMC_CalendarDestroy(&calendar);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_CalendarDestroy(&calendar);
+src/Infrastructure/TimeMgr/examples/ESMC_ClockEx.C:   rc = ESMC_CalendarDestroy(&gregorianCalendar);
+
+
+ESMC_CalendarPrint
+src/Infrastructure/TimeMgr/tests/ESMC_TimeUTest.C:  rc = ESMC_CalendarPrint(calendar);
+src/Infrastructure/TimeMgr/tests/ESMC_CalendarUTest.C:  rc = ESMC_CalendarPrint(calendar);
+
+
+ESMC_ClockAdvance
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_ClockAdvance(clock);
+src/Infrastructure/TimeMgr/examples/ESMC_ClockEx.C:     rc = clock->ESMC_ClockAdvance();
+
+
+ESMC_ClockCreate
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  clock = ESMC_ClockCreate("TEST_CLOCK",timeStep,startTime, stopTime,
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  clock = ESMC_ClockCreate("TEST_CLOCK", timeStep, startTime, stopTime, &rc);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:   clock_ptr = ESMC_ClockCreate(args, &rc);
+src/Infrastructure/TimeMgr/examples/ESMC_ClockEx.C:   clock = ESMC_ClockCreate(7, "Clock 1", &timeStep, &startTime, &stopTime, 
+
+
+ESMC_ClockDestroy
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_ClockDestroy(&clock);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_ClockDestroy(&clock);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:   rc = ESMC_ClockDestroy(clock_ptr);
+src/Infrastructure/TimeMgr/examples/ESMC_ClockEx.C:   rc = ESMC_ClockDestroy(&clock);
+
+
+ESMC_ClockGet
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_ClockGet(clock, &currSimTime, &advanceCount);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_ClockGet(clock, &currSimTime, &advanceCount1);
+src/Infrastructure/TimeMgr/examples/ESMC_ClockEx.C:   rc = clock->ESMC_ClockGet(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+
+ESMC_ClockPrint
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_ClockPrint(*clock);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_ClockPrint(*clock);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_ClockPrint(*clock);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_ClockPrint(*clock);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_ClockPrint(*clock);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_ClockPrint(*clock);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_ClockPrint(*clock);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_ClockPrint(clock);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:   rc = clock_ptr->ESMC_ClockPrint(print_options);
+
+
+ESMC_ConfigCreate
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  cf = ESMC_ConfigCreate(&rc);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  cf = ESMC_ConfigCreate(&rc);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  cf1 = ESMC_ConfigCreate(&rc);
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      cf = ESMC_ConfigCreate(&rc);
+
+
+ESMC_ConfigDestroy
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigDestroy(&cf);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigDestroy(&cfs);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigDestroy(&cfs);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigDestroy(&cfs);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigDestroy(&cf);
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      rc = ESMC_ConfigDestroy(cf);
+
+
+ESMC_ConfigFindLabel
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigFindLabel(cfs, label1, &present);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigFindLabel(cf, label, &present);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigFindLabel(cf, labelx, &presentx);
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      rc = ESMC_ConfigFindLabel(cf, "constants:");
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      rc = ESMC_ConfigFindLabel(cf, "my_file_names:");
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      rc = ESMC_ConfigFindLabel(cf, "my_table_name::");
+
+
+ESMC_ConfigFindNextLabel
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigFindNextLabel(cfs, label2, &present);
+
+
+ESMC_ConfigGetDim
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigGetDim (cf, &linecount, &colcount, ESMC_ArgLast);
+
+
+ESMC_ConfigGetLen
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigGetLen(cf, wordCountp, ESMC_ArgLast);
+
+
+ESMC_ConfigLoadFile
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigLoadFile(cf, fileName2,  ESMC_ArgLast);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigLoadFile(cf, fileName2, ESMCI_ConfigArgUniqueID, unique,
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigLoadFile(cf1, fileName, ESMCI_ConfigArgUniqueID, unique,
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      rc = ESMC_ConfigLoadFile(cf, fname, ESMC_ArgLast);
+
+
+ESMC_ConfigNextLine
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigNextLine(cf, &tableEnd);
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:        rc = ESMC_ConfigNextLine(cf, ESMC_ArgLast);
+
+
+ESMC_ConfigPrint
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigPrint(cfs);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigPrint(cfs);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigPrint(cfs);
+
+
+ESMC_ConfigValidate
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_ConfigValidate (cf, ESMC_ArgLast);
+
+
+ESMC_CplCompCreate
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  cplcomp = ESMC_CplCompCreate("coupler component in C", "comp.rc", clock, &rc);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  cplcomp = ESMC_CplCompCreate("coupler component in C with Fortran registration",
+
+
+ESMC_CplCompDestroy
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompDestroy(&cplcomp);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompDestroy(&cplcomp);
+
+
+ESMC_CplCompFinalize
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_CplCompFinalize() w/ myCplRegistrationInC() methods");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompFinalize(cplcomp, importState, exportState, clock, 1, NULL);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_CplCompFinalize() w/ my_RegistrationInFortran() meths");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompFinalize(cplcomp, importState, exportState, clock, 1, NULL);
+
+
+ESMC_CplCompGetInternalState
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  int *data = (int *)ESMC_CplCompGetInternalState(cplcomp, NULL);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  int *data = (int *)ESMC_CplCompGetInternalState(cplcomp, NULL);
+
+
+ESMC_CplCompInitialize
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompInitialize(cplcomp, importState, exportState, clock, 1, 
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_CplCompInitialize() w/ my_RegistrationInFortran() meths");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompInitialize(cplcomp, importState, exportState, clock, 1,
+
+
+ESMC_CplCompPrint
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_CplCompPrint(cplcomp);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompPrint(cplcomp);
+
+
+ESMC_CplCompRun
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_CplCompRun() w/ myCplRegistrationInC() methods");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompRun(cplcomp, importState, exportState, clock, 1, NULL);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_CplCompRun() w/ my_RegistrationInFortran() meths");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompRun(cplcomp, importState, exportState, clock, 1, NULL);
+
+
+ESMC_CplCompSetEntryPoint
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_CplCompSetEntryPoint(cplcomp, ESMF_METHOD_INITIALIZE, myCplInitInC, 1);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_CplCompSetEntryPoint(cplcomp, ESMF_METHOD_RUN, myCplRunInC, 1);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_CplCompSetEntryPoint(cplcomp, ESMF_METHOD_FINALIZE, myCplFinalInC, 1);
+
+
+ESMC_CplCompSetInternalState
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_CplCompSetInternalState(cplcomp, data);
+
+
+ESMC_CplCompSetServices
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_CplCompSetServices() using myCplRegistrationInC()");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompSetServices(cplcomp, myCplRegistrationInC, &userRc);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_CplCompSetServices() using my_RegistrationInFortran()");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_CplCompSetServices(cplcomp, FTN_X(my_cplregistrationinfortran),
+
+
+ESMC_DistGridCreate
+src/Superstructure/State/tests/ESMC_StateUTest.C:  distgrid = ESMC_DistGridCreate(minIndex, maxIndex, &rc);
+src/Infrastructure/DistGrid/tests/ESMC_DistGridUTest.C:  distgrid = ESMC_DistGridCreate(minIndex, maxIndex, &rc);
+src/Infrastructure/Array/tests/ESMC_ArrayUTest.C:  distgrid = ESMC_DistGridCreate(minIndex, maxIndex, &rc);
+
+
+ESMC_DistGridDestroy
+src/Superstructure/State/tests/ESMC_StateUTest.C:  rc = ESMC_DistGridDestroy(&distgrid);
+src/Infrastructure/DistGrid/tests/ESMC_DistGridUTest.C:  rc = ESMC_DistGridDestroy(&distgrid);
+src/Infrastructure/Array/tests/ESMC_ArrayUTest.C:  rc = ESMC_DistGridDestroy(&distgrid);
+
+
+ESMC_DistGridPrint
+src/Infrastructure/DistGrid/tests/ESMC_DistGridUTest.C:  rc = ESMC_DistGridPrint(distgrid);
+src/Infrastructure/DistGrid/tests/ESMC_DistGridUTest.C:  rc = ESMC_DistGridPrint(distgrid);
+
+
+ESMC_FieldCreateGridArraySpec
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  field=ESMC_FieldCreateGridArraySpec(grid, arrayspec, staggerloc, 0, 0, 0, "must have a name", &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  field=ESMC_FieldCreateGridArraySpec(grid, arrayspec, staggerloc, 0, 0, 0, 0, &rc);
+
+
+ESMC_FieldCreateGridTypeKind
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(dstgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(grid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  dstFracField = ESMC_FieldCreateGridTypeKind(grid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  dstAreaField = ESMC_FieldCreateGridTypeKind(grid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(dstgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(grid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(dstgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  srcFracField = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  srcAreaField = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(dstgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  dstfield = ESMC_FieldCreateGridTypeKind(dstgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  srcFracField = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  dstFracField = ESMC_FieldCreateGridTypeKind(dstgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  srcAreaField = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  dstAreaField = ESMC_FieldCreateGridTypeKind(dstgrid, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  srcfield = ESMC_FieldCreateGridTypeKind(srcgrid, ESMC_TYPEKIND_R8, 
+
+
+ESMC_FieldCreateLocStreamArraySpec
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  fieldls2 = ESMC_FieldCreateLocStreamArraySpec(locstream, arrayspec2,
+
+
+ESMC_FieldCreateLocStreamTypeKind
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  srcfield = ESMC_FieldCreateLocStreamTypeKind(srclocstream, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  dstfield = ESMC_FieldCreateLocStreamTypeKind(dstlocstream, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  fieldls1 = ESMC_FieldCreateLocStreamTypeKind(locstream, ESMC_TYPEKIND_R8,
+
+
+ESMC_FieldCreateMeshArraySpec
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  field = ESMC_FieldCreateMeshArraySpec(mesh, arrayspec, &i_gridToFieldMap, 
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  field = ESMC_FieldCreateMeshArraySpec(mesh, arrayspec,
+
+
+ESMC_FieldCreateMeshTypeKind
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  dstfield = ESMC_FieldCreateMeshTypeKind(dstmesh,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  srcfield = ESMC_FieldCreateMeshTypeKind(mesh, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  srcFracField = ESMC_FieldCreateMeshTypeKind(mesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  srcAreaField = ESMC_FieldCreateMeshTypeKind(mesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  srcfield = ESMC_FieldCreateMeshTypeKind(srcmesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  dstfield = ESMC_FieldCreateMeshTypeKind(dstmesh,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  srcfield = ESMC_FieldCreateMeshTypeKind(mesh,
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  srcfield = ESMC_FieldCreateMeshTypeKind(srcmesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  dstfield = ESMC_FieldCreateMeshTypeKind(dstmesh, 
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  srcFracField = ESMC_FieldCreateMeshTypeKind(srcmesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  dstFracField = ESMC_FieldCreateMeshTypeKind(dstmesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  srcAreaField = ESMC_FieldCreateMeshTypeKind(srcmesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  dstAreaField = ESMC_FieldCreateMeshTypeKind(dstmesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  dstfield = ESMC_FieldCreateMeshTypeKind(dstmesh, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  dstFracField = ESMC_FieldCreateMeshTypeKind(dstmesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  dstAreaField = ESMC_FieldCreateMeshTypeKind(dstmesh, ESMC_TYPEKIND_R8,
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  field2 = ESMC_FieldCreateMeshTypeKind(mesh,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  dstfield = ESMC_FieldCreateMeshTypeKind(dstmesh, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  exactfield = ESMC_FieldCreateMeshTypeKind(dstmesh, 
+
+
+ESMC_FieldDestroy
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_FieldDestroy(&field);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_FieldDestroy(&field);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_FieldDestroy(&field2);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_FieldDestroy(&srcfield);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_FieldDestroy(&dstfield);
+
+
+ESMC_FieldGetArray
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  array = ESMC_FieldGetArray(field, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  array2 = ESMC_FieldGetArray(field2, &rc);
+
+
+ESMC_FieldGetBounds
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldGetBounds(srcfield, 0, exLBound, exUBound, dimcount);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldGetBounds(dstfield, 0, exLBound2, exUBound2, dimcount);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_FieldGetBounds(srcfield, 0, exLBound, exUBound, dimcount);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_FieldGetBounds(dstfield, 0, exLBound2, exUBound2, dimcount);
+
+
+ESMC_FieldGetMesh
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  mesh1 = ESMC_FieldGetMesh(field, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  mesh2 = ESMC_FieldGetMesh(field2, &rc);
+
+
+ESMC_FieldGetPtr
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double *srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double *dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double *srcAreaFieldPtr = (double *)ESMC_FieldGetPtr(srcAreaField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double * dstAreaFieldPtr = (double *)ESMC_FieldGetPtr(dstAreaField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double * srcFracFieldPtr = (double *)ESMC_FieldGetPtr(srcFracField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double * dstFracFieldPtr = (double *)ESMC_FieldGetPtr(dstFracField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  double * srcFieldPtr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  double * dstFieldPtr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  double *srcAreaFieldPtr = (double *)ESMC_FieldGetPtr(srcAreaField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  double * dstAreaFieldPtr = (double *)ESMC_FieldGetPtr(dstAreaField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  double * srcFracFieldPtr = (double *)ESMC_FieldGetPtr(srcFracField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  double * dstFracFieldPtr = (double *)ESMC_FieldGetPtr(dstFracField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double *srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double *dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double *srcAreaFieldPtr = (double *)ESMC_FieldGetPtr(srcAreaField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double * dstAreaFieldPtr = (double *)ESMC_FieldGetPtr(dstAreaField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double * srcFracFieldPtr = (double *)ESMC_FieldGetPtr(srcFracField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double * dstFracFieldPtr = (double *)ESMC_FieldGetPtr(dstFracField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double * srcAreaFieldPtr = (double *)ESMC_FieldGetPtr(srcAreaField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double * dstAreaFieldPtr = (double *)ESMC_FieldGetPtr(dstAreaField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double * srcFracFieldPtr = (double *)ESMC_FieldGetPtr(srcFracField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double * dstFracFieldPtr = (double *)ESMC_FieldGetPtr(dstFracField, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  void * ptr = ESMC_FieldGetPtr(field, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  void * ptr2 = ESMC_FieldGetPtr(field2, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  fieldls1ptr = (double *)ESMC_FieldGetPtr(fieldls1, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  fieldls2ptr = (double *) ESMC_FieldGetPtr(fieldls2, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  double * srcfieldptr = (double *)ESMC_FieldGetPtr(srcfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  double * dstfieldptr = (double *)ESMC_FieldGetPtr(dstfield, 0, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  double * exactptr = (double *)ESMC_FieldGetPtr(exactfield, 0, &rc);
+
+
+ESMC_FieldPrint
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_FieldPrint(field);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_FieldPrint(field);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_FieldPrint(field2);
+
+
+ESMC_FieldRegrid
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, rh, NULL);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, rh2, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, &zeroregion);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, &zeroregion);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  strcpy(name, "Execute ESMC_FieldRegrid()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_FieldRegrid(srcfield, dstfield, routehandle, NULL);
+
+
+ESMC_FieldRegridGetArea
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  strcpy(name, "Execute ESMC_FieldRegridGetArea() - source");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldRegridGetArea(srcAreaField);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  strcpy(name, "Execute ESMC_FieldRegridGetArea() - destination");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldRegridGetArea(dstAreaField);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegridGetArea() - source");
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_FieldRegridGetArea(srcAreaField);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegridGetArea() - destination");
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_FieldRegridGetArea(dstAreaField);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegridGetArea() - source");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridGetArea(srcAreaField);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegridGetArea() - destination");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridGetArea(dstAreaField);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegridGetArea() - source");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridGetArea(srcAreaField);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_FieldRegridGetArea() - destination");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridGetArea(dstAreaField);
+
+
+ESMC_FieldRegridRelease
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegridRelease(&rh);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegridRelease(&rh2);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  strcpy(name, "Release an ESMC_RouteHandle via ESMC_FieldRegridRelease()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_FieldRegridRelease(&routehandle);
+
+
+ESMC_FieldRegridStore
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &rh, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  strcpy(name, "Create an InterArray for maskValues in ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, NULL, &routehandle,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &routehandle,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  strcpy(name, "Create an InterArray for maskValues in ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, NULL, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, &i_maskValues, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, &i_maskValues, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:   strcpy(name, "Create an InterArray for maskValues in ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield,
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  strcpy(name, "Set an InterArray for maskValues in ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, &i_maskValues, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  strcpy(name, "Create an InterArray for maskValues in ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, NULL, &routehandle,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, &i_maskValues, &routehandle,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, &i_maskValues, &routehandle,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &routehandle,
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  strcpy(name, "Create an InterArray for maskValues in ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, 
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, 
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, NULL, &routehandle,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &routehandle,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  strcpy(name, "Create an InterArray for maskValues in ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, NULL, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  strcpy(name, "Set an InterArray for maskValues in ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, &i_maskValues, NULL, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &routehandle, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  strcpy(name, "Create an ESMC_RouteHandle via ESMC_FieldRegridStore()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_FieldRegridStore(srcfield, dstfield, NULL, NULL, &routehandle, 
+
+
+ESMC_FieldRegridStoreFile
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_FieldRegridStoreFile(srcfield, dstfield, filename.c_str(),
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_FieldRegridStoreFile(srcfield, dstfield, 
+
+
+ESMC_FieldSMMStore
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:    rc = ESMC_FieldSMMStore(srcfield, dstfield, "data/weights_esmc_smmsff.nc", 
+
+
+ESMC_Finalize
+src/test_harness/src/ESMC_TestHarnessLatexPPUTest.C:          ESMC_Finalize ();
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      rc = ESMC_Finalize();
+
+
+ESMC_GridAddCoord
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddCoord(grid_np, ESMC_STAGGERLOC_CORNER);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddCoord(grid_tripole, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddCoord(grid_1p, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_GridAddCoord(dstgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  localrc = ESMC_GridAddCoord(outGrid, ESMC_STAGGERLOC_CORNER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_GridAddCoord(grid, ESMC_STAGGERLOC_CORNER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_GridAddCoord(grid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_GridAddCoord(dstgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_GridAddCoord(grid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  int rc = ESMC_GridAddCoord(grid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CORNER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  ESMC_GridAddCoord(dstgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CORNER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_GridAddCoord(dstgrid, ESMC_STAGGERLOC_CORNER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_GridAddCoord(dstgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_GridAddCoord(srcgrid, ESMC_STAGGERLOC_CORNER);
+
+
+ESMC_GridAddItem
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddItem(grid_np, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CORNER);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddItem(grid_1p, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridAddItem(grid_1p, ESMC_GRIDITEM_AREA, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_GridAddItem(srcgrid, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_GridAddItem(grid, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_GridAddItem(srcgrid, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_GridAddItem(dstgrid, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_GridAddItem(grid, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_GridAddItem(grid, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_GridAddItem(srcgrid, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_GridAddItem(srcgrid, ESMC_GRIDITEM_AREA, ESMC_STAGGERLOC_CENTER);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_GridAddItem(srcgrid, ESMC_GRIDITEM_MASK, ESMC_STAGGERLOC_CENTER);
+
+
+ESMC_GridCompCreate
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  gcomp = ESMC_GridCompCreate("gridded component in C", "comp.rc", clock, &rc);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  gcomp = ESMC_GridCompCreate("gridded Component in C with Fortran registration",
+
+
+ESMC_GridCompDestroy
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompDestroy(&gcomp);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompDestroy(&gcomp);
+
+
+ESMC_GridCompFinalize
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompFinalize() w/ myRegistrationInC() methods");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompFinalize(gcomp, importState, exportState, clock, 1, NULL);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompFinalize() w/ my_RegistrationInFortran() meths");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompFinalize(gcomp, importState, exportState, clock, 1, NULL);
+
+
+ESMC_GridCompGetInternalState
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  int *data = (int *)ESMC_GridCompGetInternalState(gcomp, NULL);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  int *data = (int *)ESMC_GridCompGetInternalState(gcomp, NULL);
+
+
+ESMC_GridCompInitialize
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompInitialize() before calling"     
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompInitialize(gcomp, importState, exportState, clock, 1, NULL);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompInitialize() w/ myRegistrationInC() methods");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompInitialize(gcomp, importState, exportState, clock, 1, NULL);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompInitialize() w/ my_RegistrationInFortran() meths");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompInitialize(gcomp, importState, exportState, clock, 1, NULL);
+
+
+ESMC_GridCompPrint
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:    *rc = ESMC_GridCompPrint(gcomp);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_GridCompPrint(gcomp);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompPrint(gcomp);
+
+
+ESMC_GridCompRun
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompRun() w/ myRegistrationInC() methods");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompRun(gcomp, importState, exportState, clock, 1, NULL);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompRun() w/ my_RegistrationInFortran() meths");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompRun(gcomp, importState, exportState, clock, 1, NULL);
+
+
+ESMC_GridCompSetEntryPoint
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:    *rc = ESMC_GridCompSetEntryPoint(gcomp, ESMF_METHOD_INITIALIZE,myInitInC,1);
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:    *rc = ESMC_GridCompSetEntryPoint(gcomp, ESMF_METHOD_RUN, myRunInC, 1);
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:    *rc = ESMC_GridCompSetEntryPoint(gcomp, ESMF_METHOD_FINALIZE,myFinalInC, 1);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_GridCompSetEntryPoint(gcomp, ESMF_METHOD_INITIALIZE, myInitInC, 1);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_GridCompSetEntryPoint(gcomp, ESMF_METHOD_RUN, myRunInC, 1);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_GridCompSetEntryPoint(gcomp, ESMF_METHOD_FINALIZE, myFinalInC, 1);
+
+
+ESMC_GridCompSetInternalState
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_GridCompSetInternalState(gcomp, data);
+
+
+ESMC_GridCompSetServices
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:    "ESMC_GridCompSetServices()");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompSetServices() using myRegistrationInC()");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompSetServices(gcomp, myRegistrationInC, &userRc);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  strcpy(name, "ESMC_GridCompSetServices() using my_RegistrationInFortran()");
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_GridCompSetServices(gcomp, FTN_X(my_registrationinfortran), &userRc);
+
+
+ESMC_GridCreate1PeriDim
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_1p = ESMC_GridCreate1PeriDim(&i_maxIndex, NULL, NULL, NULL, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_1p_pdim1 = ESMC_GridCreate1PeriDim(&i_maxIndex, NULL, &periodicDim, NULL, 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_1p_pdim2 = ESMC_GridCreate1PeriDim(&i_maxIndex, NULL, &periodicDim, &poleDim,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_tripole = ESMC_GridCreate1PeriDim(&i_maxIndex, &i_pkf, NULL, NULL, &coordsys, 
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  grid = ESMC_GridCreate1PeriDim(&i_maxIndex, &i_pkr, NULL, NULL, &coordsys, &typekind,
+
+
+ESMC_GridCreateCubedSphere
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_cs = ESMC_GridCreateCubedSphere(&tilesize, &i_rd, &i_sl, namecs, &rc);
+
+
+ESMC_GridCreateFromFile
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc",
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_from_file = ESMC_GridCreateFromFile("data/T42_grid.nc", 
+
+
+ESMC_GridCreateNoPeriDim
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  grid_np = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  dstgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex_d, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  outGrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, &indexflag, &localrc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  grid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  dstgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex_d, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  grid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, NULL, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, NULL, NULL, &indexflag, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  dstgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, NULL, NULL, &indexflag, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, &indexflag, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  dstgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex_d, &coordsys, &typekind, &indexflag, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  grid=ESMC_GridCreateNoPeriDim(&i_maxIndex, 0, 0, NULL, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  srcgrid = ESMC_GridCreateNoPeriDim(&i_maxIndex, &coordsys, &typekind, &indexflag, &rc);
+
+
+ESMC_GridDestroy
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridDestroy(&grid_cs);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_1p_pdim1);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_1p_pdim2);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    rc = ESMC_GridDestroy(&grid_from_file);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridDestroy(&grid_np);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc = ESMC_GridDestroy(&grid_1p);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_GridDestroy(&dstgrid);
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc = ESMC_GridDestroy(&(side_a_grids[0]));
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc = ESMC_GridDestroy(&(side_b_grids[0]));
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc = ESMC_GridDestroy(&(side_b_grids[1]));
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_GridDestroy(&grid);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc = ESMC_GridDestroy(&dstgrid);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_GridDestroy(&grid);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc = ESMC_GridDestroy(&dstgrid);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc = ESMC_GridDestroy(&dstgrid);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc = ESMC_GridDestroy(&dstgrid);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_GridDestroy(&srcgrid);
+
+
+ESMC_GridGetCoord
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  void *dummy = ESMC_GridGetCoord(grid_cs, 1, ESMC_STAGGERLOC_CENTER,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    double * coordx = static_cast<double *> (ESMC_GridGetCoord(grid_cs, 1,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:    double * coordy = static_cast<double *> (ESMC_GridGetCoord(grid_cs, 2,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridXCoord_tripole = (double *)ESMC_GridGetCoord(grid_tripole, 1,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridYCoord_tripole = (double *)ESMC_GridGetCoord(grid_tripole, 2, 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(grid_1p, 1,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(grid_1p, 2, 
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridXCoord_check = (double *)ESMC_GridGetCoord(grid_1p, 1,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridYCoord_check = (double *)ESMC_GridGetCoord(grid_1p, 2, 
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double *gridXCoord_d = (double *)ESMC_GridGetCoord(dstgrid, 1,
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  double *gridYCoord_d = (double *)ESMC_GridGetCoord(dstgrid, 2,
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  double *xCoord = (double *)ESMC_GridGetCoord(outGrid, 1,
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  double *yCoord = (double *)ESMC_GridGetCoord(outGrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double *gridXCorner = (double *)ESMC_GridGetCoord(grid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double *gridYCorner = (double *)ESMC_GridGetCoord(grid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double *gridXCenter = (double *)ESMC_GridGetCoord(grid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  double *gridYCenter = (double *)ESMC_GridGetCoord(grid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  double *gridXCoord_d = (double *)ESMC_GridGetCoord(dstgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  double *gridYCoord_d = (double *)ESMC_GridGetCoord(dstgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(grid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(grid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double *gridXCoord_c = (double *)ESMC_GridGetCoord(grid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double *gridYCoord_c = (double *)ESMC_GridGetCoord(grid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(grid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(grid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double *gridXCoord_s = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double *gridYCoord_s = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double *gridXCoord_d = (double *)ESMC_GridGetCoord(dstgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  double *gridYCoord_d = (double *)ESMC_GridGetCoord(dstgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double *gridXCorner = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double *gridYCorner = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double *gridXCenter = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double *gridYCenter = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  double *gridXCoord = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  double *gridYCoord = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  gridXCoord = (double *)ESMC_GridGetCoord(dstgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  gridYCoord = (double *)ESMC_GridGetCoord(dstgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double *gridXCorner = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double *gridYCorner = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double *gridXCenter = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double *gridYCenter = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double *gridXCorner_d = (double *)ESMC_GridGetCoord(dstgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double *gridYCorner_d = (double *)ESMC_GridGetCoord(dstgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double *gridXCenter_d = (double *)ESMC_GridGetCoord(dstgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  double *gridYCenter_d = (double *)ESMC_GridGetCoord(dstgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  double *gridXCorner = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  double *gridYCorner = (double *)ESMC_GridGetCoord(srcgrid, 2,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  double *gridXCenter = (double *)ESMC_GridGetCoord(srcgrid, 1,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  double *gridYCenter = (double *)ESMC_GridGetCoord(srcgrid, 2,
+
+
+ESMC_GridGetCoordBounds
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc=ESMC_GridGetCoordBounds(grid_np, 
+
+
+ESMC_GridGetItem
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  int *gridMask = (int *)ESMC_GridGetItem(grid_1p, ESMC_GRIDITEM_MASK,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  double *gridArea = (double *)ESMC_GridGetItem(grid_1p, ESMC_GRIDITEM_AREA,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  int *mask = (int *)ESMC_GridGetItem(srcgrid, ESMC_GRIDITEM_MASK,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  int *mask = (int *)ESMC_GridGetItem(grid, ESMC_GRIDITEM_MASK, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  int *mask = (int *)ESMC_GridGetItem(srcgrid, ESMC_GRIDITEM_MASK, 
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  int *dstmask = (int *)ESMC_GridGetItem(dstgrid, ESMC_GRIDITEM_MASK, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  int *mask = (int *)ESMC_GridGetItem(grid, ESMC_GRIDITEM_MASK,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  int *mask = (int *)ESMC_GridGetItem(grid, ESMC_GRIDITEM_MASK,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  int *mask = (int *)ESMC_GridGetItem(srcgrid, ESMC_GRIDITEM_MASK, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  double *area = (double *)ESMC_GridGetItem(srcgrid, ESMC_GRIDITEM_AREA,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  int *mask = (int *)ESMC_GridGetItem(srcgrid, ESMC_GRIDITEM_MASK, 
+
+
+ESMC_Initialize
+src/test_harness/src/ESMC_TestHarnessLatexPPUTest.C:          ESMC_Initialize (&localrc);
+src/Infrastructure/Config/tests/ESMC_ConfigUTest.C:  rc = ESMC_Initialize(NULL, ESMC_ArgLast);
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      rc = ESMC_Initialize(NULL, ESMC_ArgLast);
+
+
+ESMC_LocStreamAddKeyAlloc
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  rc = ESMC_LocStreamAddKeyAlloc(srclocstream,keyName,NULL);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_LocStreamAddKeyAlloc(dstlocstream,keyNameX,&local_typeKind);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_LocStreamAddKeyAlloc(dstlocstream,keyNameY,&local_typeKind);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_LocStreamAddKeyAlloc(dstlocstream,keyNameM,&local_typeKind);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_LocStreamAddKeyAlloc(locstream,keyNameX,&local_typeKind);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_LocStreamAddKeyAlloc(locstream,keyNameY,&local_typeKind);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_LocStreamAddKeyAlloc(locstream,keyNameM,&local_typeKind);
+
+
+ESMC_LocStreamCreateLocal
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  srclocstream = ESMC_LocStreamCreateLocal(ls_size, NULL, NULL,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  dstlocstream = ESMC_LocStreamCreateLocal(ls_size, NULL, &local_coordSys, &rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  locstream = ESMC_LocStreamCreateLocal(ls_size, NULL, &local_coordSys, &rc);
+
+
+ESMC_LocStreamDestroy
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  rc = ESMC_LocStreamDestroy(&srclocstream);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_LocStreamDestroy(&dstlocstream);
+
+
+ESMC_LocStreamGetBounds
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  rc = ESMC_LocStreamGetBounds(srclocstream,0,&cLBound,&cUBound);
+
+
+ESMC_LocStreamGetKeyArray
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  array = ESMC_LocStreamGetKeyArray(srclocstream,keyName,&rc);
+
+
+ESMC_LocStreamGetKeyPtr
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  farray = (double *) ESMC_LocStreamGetKeyPtr(srclocstream,keyName,0,&rc);
+src/Infrastructure/LocStream/tests/ESMC_LocStreamUTest.C:  farray2 = (double *) ESMC_LocStreamGetKeyPtr(srclocstream,keyName,0,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  farray = (double *) ESMC_LocStreamGetKeyPtr(dstlocstream,keyNameX,0,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  farray2 = (double *) ESMC_LocStreamGetKeyPtr(dstlocstream,keyNameY,0,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  farray3 = (int *) ESMC_LocStreamGetKeyPtr(dstlocstream,keyNameM,0,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  farray = (double *) ESMC_LocStreamGetKeyPtr(locstream,keyNameX,0,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  farray2 = (double *) ESMC_LocStreamGetKeyPtr(locstream,keyNameY,0,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  farray3 = (int *) ESMC_LocStreamGetKeyPtr(locstream,keyNameM,0,&rc);
+
+
+ESMC_LogSet
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Mesh/tests/ESMC_MBMeshUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Mesh/tests/ESMC_NearestUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Mesh/tests/ESMC_MBMeshRegridUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Mesh/tests/ESMC_MBMesh_ExtrapolateUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Mesh/tests/ESMC_MeshMOABUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Mesh/tests/ESMC_MBMesh_UtilUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Mesh/tests/ESMC_Proj4UTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/IO/tests/ESMC_IO_InqUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/LogErr/tests/ESMC_LogErrUTest.C:  rc = ESMC_LogSet(flush);
+src/Infrastructure/LogErr/tests/ESMC_LogErrUTest.C:  rc = ESMC_LogSet(flush);
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc=ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  ESMC_LogSet(true);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc=ESMC_LogSet(true);
+
+
+ESMC_LogWrite
+src/Infrastructure/LogErr/tests/ESMC_LogErrUTest.C:  rc = ESMC_LogWrite(msg, msgtype);
+src/Infrastructure/Base/tests/ESMC_BaseUTest.C:    ESMC_LogWrite(logmsg.c_str(), ESMC_LOGMSG_INFO);
+src/Infrastructure/Base/tests/ESMC_BaseUTest.C:    ESMC_LogWrite(logmsg.c_str(), ESMC_LOGMSG_INFO);
+src/Infrastructure/Base/tests/ESMC_BaseUTest.C:    ESMC_LogWrite(logmsg.c_str(), ESMC_LOGMSG_INFO);
+
+
+ESMC_MeshAddElements
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_MeshAddElements(mesh, num_elem, elemId, elemType, elemConn, 
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshAddElements(mesh, num_elem, elemId_s, elemType_s, elemConn_s,
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshAddElements(mesh, num_elem, elemId, elemType, elemConn, NULL, NULL, NULL);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_MeshAddElements(dstmesh, num_elem, elemId, elemType, elemConn,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_MeshAddElements(mesh, num_elem, elemId, elemType, elemConn, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_MeshAddElements(mesh, num_elem, elemId, elemType, elemConn, NULL, 
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshAddElements(srcmesh, num_elem_s, elemId_s, elemType_s,
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshAddElements(dstmesh, num_elem_d, elemId_d, elemType_d,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_MeshAddElements(mesh, num_elem, elemId, elemType, elemConn,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_MeshAddElements(mesh, num_elem, elemId, elemType, elemConn, NULL,
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshAddElements(srcmesh, num_elem_s, elemId_s, elemType_s, 
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshAddElements(srcmesh, num_elem_s, elemId_s, elemType_s, 
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshAddElements(dstmesh, num_elem_d, elemId_d, elemType_d, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_MeshAddElements(dstmesh, num_elem, elemId, elemType, elemConn, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_MeshAddElements(dstmesh, num_elem, elemId, elemType, elemConn, 
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_MeshAddElements(mesh, num_elem, elemId, elemType, elemConn, NULL,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_MeshAddElements(dstmesh, num_elem, elemId, elemType, elemConn, 
+
+
+ESMC_MeshAddNodes
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_MeshAddNodes(mesh, num_node, nodeId, nodeCoord, nodeOwner);
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshAddNodes(mesh, num_node, nodeId_s, nodeCoord_s, nodeOwner_s);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshAddNodes(mesh, num_node, nodeId, nodeCoord, nodeOwner);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_MeshAddNodes(dstmesh, num_node, nodeId, nodeCoord, nodeOwner);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_MeshAddNodes(mesh, num_node, nodeId, nodeCoord, nodeOwner);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshAddNodes(srcmesh, num_node_s, nodeId_s, nodeCoord_s, nodeOwner_s);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshAddNodes(dstmesh, num_node_d, nodeId_d, nodeCoord_d, nodeOwner_d);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_MeshAddNodes(mesh, num_node, nodeId, nodeCoord, nodeOwner);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshAddNodes(srcmesh, num_node_s, nodeId_s, nodeCoord_s, nodeOwner_s);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshAddNodes(dstmesh, num_node_d, nodeId_d, nodeCoord_d, nodeOwner_d);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_MeshAddNodes(dstmesh, num_node, nodeId, nodeCoord, nodeOwner);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_MeshAddNodes(mesh, num_node, nodeId, nodeCoord, nodeOwner);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_MeshAddNodes(dstmesh, num_node, nodeId, nodeCoord, nodeOwner);
+
+
+ESMC_MeshCreate
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  mesh = ESMC_MeshCreate(pdim, sdim, &local_coordSys, rc);
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  mesh = ESMC_MeshCreate(pdim,sdim,&local_coordSys,&rc);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  mesh = ESMC_MeshCreate(pdim,sdim,&local_coordSys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  dstmesh = ESMC_MeshCreate(pdim,sdim,&coordsys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  mesh = ESMC_MeshCreate(pdim,sdim,&coordsys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  srcmesh = ESMC_MeshCreate(pdim,sdim,&local_coordSys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  dstmesh = ESMC_MeshCreate(pdim,sdim,&local_coordSys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  mesh = ESMC_MeshCreate(pdim,sdim,&coordsys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  srcmesh = ESMC_MeshCreate(pdim,sdim,&local_coordSys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  dstmesh = ESMC_MeshCreate(pdim,sdim,&local_coordSys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  dstmesh = ESMC_MeshCreate(pdim,sdim,&coordsys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  mesh = ESMC_MeshCreate(pdim,sdim,&local_coordSys,&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  dstmesh = ESMC_MeshCreate(pdim,sdim,&coordsys,&rc);
+
+
+ESMC_MeshCreateFromFile
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  mesh = ESMC_MeshCreateFromFile("data/ne4np4-pentagons.nc", ESMC_FILEFORMAT_SCRIP,
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  mesh = ESMC_MeshCreateFromFile("data/ne4np4-esmf.nc", ESMC_FILEFORMAT_ESMFMESH,
+
+
+ESMC_MeshDestroy
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_MeshDestroy(&tmp_mesh);
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshDestroy(&mesh);
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshDestroy(&mesh);
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:   rc = ESMC_MeshDestroy(&mesh);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshDestroy(&mesh);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_MeshDestroy(&dstmesh);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_MeshDestroy(&mesh);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshDestroy(&dstmesh);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshDestroy(&srcmesh);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_MeshDestroy(&mesh);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshDestroy(&srcmesh);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshDestroy(&dstmesh);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_MeshDestroy(&dstmesh);
+src/Infrastructure/Field/tests/ESMC_FieldUTest.C:  rc = ESMC_MeshDestroy(&mesh);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_MeshDestroy(&dstmesh);
+
+
+ESMC_MeshFreeMemory
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshFreeMemory(mesh);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshFreeMemory(mesh);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshFreeMemory(mesh);
+
+
+ESMC_MeshGetConnectivity
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  ESMC_MeshGetConnectivity(mesh, connectivity, nodes_per_elem, &rc);
+
+
+ESMC_MeshGetCoord
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:   ESMC_MeshGetCoord(mesh, coords, &num_nodes, &num_dims, &rc);
+
+
+ESMC_MeshGetElemCoord
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  ESMC_MeshGetElemCoord(mesh, elem_coords, &num_elems, &num_dims, &rc);
+
+
+ESMC_MeshGetLocalElementCount
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshGetLocalElementCount(mesh, &num_elem_out);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshGetLocalElementCount(mesh, &num_elem_out);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshGetLocalElementCount(mesh, &num_elem_out);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_MeshGetLocalElementCount(dstmesh, &num_elem_out);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_MeshGetLocalElementCount(mesh, &num_elem_out);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshGetLocalElementCount(srcmesh, &num_elem_out_s);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshGetLocalElementCount(dstmesh, &num_elem_out_d);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_MeshGetLocalElementCount(mesh, &num_elem_out);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshGetLocalElementCount(srcmesh, &num_elem_out_s);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshGetLocalElementCount(dstmesh, &num_elem_out_d);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_MeshGetLocalElementCount(dstmesh, &num_elem_out);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_MeshGetLocalElementCount(dstmesh, &num_elem_out);
+
+
+ESMC_MeshGetLocalNodeCount
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshGetLocalNodeCount(mesh, &num_node_out);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshGetLocalNodeCount(mesh, &num_node_out);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshGetLocalNodeCount(mesh, &num_node_out);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc = ESMC_MeshGetLocalNodeCount(dstmesh, &num_node_out);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc = ESMC_MeshGetLocalNodeCount(mesh, &num_node_out);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshGetLocalNodeCount(srcmesh, &num_node_out_s);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_MeshGetLocalNodeCount(dstmesh, &num_node_out_d);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc = ESMC_MeshGetLocalNodeCount(mesh, &num_node_out);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshGetLocalNodeCount(srcmesh, &num_node_out_s);
+src/Infrastructure/Field/tests/ESMC_FieldRegridCsrvUTest.C:  rc = ESMC_MeshGetLocalNodeCount(dstmesh, &num_node_out_d);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_MeshGetLocalNodeCount(dstmesh, &num_node_out);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_MeshGetLocalNodeCount(dstmesh, &num_node_out);
+
+
+ESMC_MeshGetOwnedElementCount
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshGetOwnedElementCount(mesh, &num_elem_owned_out);
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshGetOwnedElementCount(mesh, &num_elem_owned_out);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshGetOwnedElementCount(mesh, &numOwnedElems2);
+
+
+ESMC_MeshGetOwnedNodeCount
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc = ESMC_MeshGetOwnedNodeCount(mesh, &num_node_owned_out);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc = ESMC_MeshGetOwnedNodeCount(mesh, &numOwnedNodes2);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc = ESMC_MeshGetOwnedNodeCount(dstmesh, &num_onode);
+
+
+ESMC_RouteHandleCreateFromFile
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rh2 = ESMC_RouteHandleCreateFromFile("rh_file.RH", &rc);
+
+
+ESMC_RouteHandlePrint
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  strcpy(name, "Execute ESMC_RouteHandlePrint()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_RouteHandlePrint(routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  strcpy(name, "Execute ESMC_RouteHandlePrint()");
+src/Infrastructure/Field/tests/ESMC_FieldRegridUTest.C:  rc = ESMC_RouteHandlePrint(routehandle);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  strcpy(name, "Execute ESMC_RouteHandlePrint()");
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc = ESMC_RouteHandlePrint(routehandle);
+
+
+ESMC_RouteHandleWrite
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc = ESMC_RouteHandleWrite(rh, "rh_file.RH");
+
+
+ESMC_SciCompCreate
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  scicomp = ESMC_SciCompCreate("science component in C", &rc);
+
+
+ESMC_SciCompDestroy
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_SciCompDestroy(&scicomp);
+
+
+ESMC_SciCompPrint
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_SciCompPrint(scicomp);
+
+
+ESMC_StateAddArray
+src/Superstructure/State/tests/ESMC_StateUTest.C:  rc = ESMC_StateAddArray(myState,array);
+
+
+ESMC_StateAddField
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_StateAddField(exportState, field);
+
+
+ESMC_StateCreate
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  importState = ESMC_StateCreate("my import state", &rc);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  exportState = ESMC_StateCreate("my export state", &rc);
+src/Superstructure/State/tests/ESMC_StateUTest.C:  myState = ESMC_StateCreate("name",&rc);
+
+
+ESMC_StateDestroy
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_StateDestroy(&importState);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_StateDestroy(&exportState);
+src/Superstructure/State/tests/ESMC_StateUTest.C:  rc = ESMC_StateDestroy(&myState);
+
+
+ESMC_StateGetArray
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc=ESMC_StateGetArray(importState, "array1", &retrievedArray);
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc=ESMC_StateGetArray(importState, "array1", &retrievedArray);
+src/Superstructure/State/tests/ESMC_StateUTest.C:  rc = ESMC_StateGetArray(myState, "array1", &retrievedArray);
+
+
+ESMC_StateGetField
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_StateGetField(exportState, "Field from C", &field);
+
+
+ESMC_StatePrint
+src/system_tests/ESMF_CompFortranAndC/user_CComponent.C:  *rc = ESMC_StatePrint(importState);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_StatePrint(importState);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_StatePrint(importState);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_StatePrint(importState);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_StatePrint(importState);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_StatePrint(importState);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  ESMC_StatePrint(importState);
+
+
+ESMC_TimeGet
+src/Infrastructure/TimeMgr/tests/ESMC_TimeUTest.C:  rc = ESMC_TimeGet(time1, &yy, &h, &calendarOut, &calKind, &tZ);
+
+
+ESMC_TimeIntervalGet
+src/Infrastructure/TimeMgr/tests/ESMC_TimeIntervalUTest.C:  rc = ESMC_TimeIntervalGet(timeInterval1, &s_I8, &h_R8);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_TimeIntervalGet(currSimTime, &currSec1, &currHour1);
+
+
+ESMC_TimeIntervalPrint
+src/Infrastructure/TimeMgr/tests/ESMC_TimeIntervalUTest.C:  rc = ESMC_TimeIntervalPrint(timeInterval1);
+
+
+ESMC_TimeIntervalSet
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_TimeIntervalSet(&timeStep, one);
+src/Infrastructure/TimeMgr/tests/ESMC_TimeIntervalUTest.C:  rc = ESMC_TimeIntervalSet(&timeInterval1, h1_I4);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_TimeIntervalSet(&timeStep, one);
+
+
+ESMC_TimePrint
+src/Infrastructure/TimeMgr/tests/ESMC_TimeUTest.C:  rc = ESMC_TimePrint(time1);
+
+
+ESMC_TimeSet
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_TimeSet(&startTime, yy1, h1, calendar, calKind1, tZ1);
+src/Superstructure/Component/tests/ESMC_ComponentUTest.C:  rc = ESMC_TimeSet(&stopTime, yy1, h2, calendar, calKind1, tZ1);
+src/Infrastructure/TimeMgr/tests/ESMC_TimeUTest.C:  rc = ESMC_TimeSet(&time1, yy1, h1, calendar, calKind1, tZ1);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_TimeSet(&startTime, yy1, h1, calendar, calKind1, tZ1);
+src/Infrastructure/TimeMgr/tests/ESMC_ClockUTest.C:  rc = ESMC_TimeSet(&stopTime, yy1, h2, calendar, calKind1, tZ1);
+
+
+ESMC_VMBarrier
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMBarrier(vm);
+
+
+ESMC_VMBroadcast
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMBroadcast(vm, bcast, len, &tk, root);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMBroadcast(vm, bcast, len, &tk, root);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMBroadcast(vm, bcast, len, &tk, root);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMBroadcast(vm, bcast, len, &tk, root);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMBroadcast(vm, bcast, len, &tk, root);
+
+
+ESMC_VMGet
+src/Superstructure/State/tests/ESMC_StateUTest.C:  rc = ESMC_VMGet (vm, &localPet, &petCount, NULL, NULL, NULL, NULL);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMGet(vm, &localPet, &petCount, &peCount, &mpiCommunicator,
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, 
+src/Infrastructure/Mesh/tests/ESMC_MBMeshUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Mesh/tests/ESMC_NearestUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Mesh/tests/ESMC_MBMeshRegridUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Mesh/tests/ESMC_MBMesh_ExtrapolateUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Mesh/tests/ESMC_MeshMOABUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, (int *)NULL, (int *)NULL);
+src/Infrastructure/Mesh/tests/ESMC_MBMesh_UtilUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, (int *)NULL, (int *)NULL);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, (int *)NULL, (int *)NULL);
+src/Infrastructure/Mesh/tests/ESMC_Proj4UTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, (int *)NULL, (int *)NULL);
+src/Infrastructure/IO/tests/ESMCI_IO_PIOUTest.C:  rc = ESMC_VMGet(vm, &localPet, &petCount, &peCount,
+src/Infrastructure/IO/tests/ESMC_IO_InqUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, 
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL, 
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  rc=ESMC_VMGet(vm, &localPet, &petCount, (int *)NULL, (MPI_Comm *)NULL,
+
+
+ESMC_VMGetCurrent
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  vmCurrent = ESMC_VMGetCurrent(&rc);
+
+
+ESMC_VMGetGlobal
+src/Superstructure/State/tests/ESMC_StateUTest.C:  ESMC_VM vm = ESMC_VMGetGlobal (&rc);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  vm = ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Grid/tests/ESMC_GridUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_MBMeshUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_NearestUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_MBMeshRegridUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_MBMesh_ExtrapolateUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_MeshMOABUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_MBMesh_UtilUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_MeshUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_MeshVTKUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Mesh/tests/ESMC_Proj4UTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/IO/tests/ESMCI_IO_PIOUTest.C:  vm = ESMC_VMGetGlobal(&rc);
+src/Infrastructure/IO/tests/ESMC_IO_InqUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Route/tests/ESMC_RouteHandleUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrv2UTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegrid2UTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldTripoleRegridUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridCsrvUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldSMMFromFileUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridGridRegridCsrvUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Field/tests/ESMC_FieldGridRegridParUTest.C:  vm=ESMC_VMGetGlobal(&rc);
+src/Infrastructure/Config/examples/ESMC_ConfigOverviewEx.C:      vm = ESMC_VMGetGlobal(&rc);
+
+
+ESMC_VMPrint
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMPrint(vm);
+
+
+ESMC_VMReduce
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMReduce(vm, in, out, len, &tk, &rd, root);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMReduce(vm, in, out, len, &tk, &rd, root);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMReduce(vm, in, out, len, &tk, &rd, root);
+src/Infrastructure/VM/tests/ESMC_VMUTest.C:  rc = ESMC_VMReduce(vm, in, out, len, &tk, &rd, root);
+
+
+ESMC_XGridCreate
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  xgrid=ESMC_XGridCreate(NUM_SIDE_A_GRIDS, side_a_grids, 
+
+
+ESMC_XGridDestroy
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  rc = ESMC_XGridDestroy(&xgrid);
+
+
+ESMC_XGridGetDimCount
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  int dimCount = ESMC_XGridGetDimCount(xgrid, &localrc);
+
+
+ESMC_XGridGetElementArea
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  ESMC_XGridGetElementArea(xgrid, elementArea, &localrc);
+
+
+ESMC_XGridGetElementCentroid
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  ESMC_XGridGetElementCentroid(xgrid, elementCentroid, &localrc);
+
+
+ESMC_XGridGetElementCount
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  int elementCount = ESMC_XGridGetElementCount(xgrid, &localrc);
+
+
+ESMC_XGridGetMesh
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  ESMC_Mesh mesh = ESMC_XGridGetMesh(xgrid, &localrc);
+
+
+ESMC_XGridGetSideAGridCount
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  int sideAGridCount = ESMC_XGridGetSideAGridCount(xgrid, &localrc);
+
+
+ESMC_XGridGetSideAMeshCount
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  int sideAMeshCount = ESMC_XGridGetSideAMeshCount(xgrid, &localrc);
+
+
+ESMC_XGridGetSideBGridCount
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  int sideBGridCount = ESMC_XGridGetSideBGridCount(xgrid, &localrc);
+
+
+ESMC_XGridGetSideBMeshCount
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  int sideBMeshCount = ESMC_XGridGetSideBMeshCount(xgrid, &localrc);
+
+
+ESMC_XGridGetSparseMatA2X
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  ESMC_XGridGetSparseMatA2X(xgrid,
+
+
+ESMC_XGridGetSparseMatB2X
+src/Infrastructure/XGrid/tests/ESMC_XGridUTest.C:  ESMC_XGridGetSparseMatB2X(xgrid,
+
+
+</span><br></span> </font></font></pre></body></html>
