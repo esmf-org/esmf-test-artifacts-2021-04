@@ -1,4 +1,4 @@
-build time -- 2021-04-22 07:44:18
+build time -- 2021-04-23 02:44:42
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -14,7 +14,7 @@ build time -- 2021-04-22 07:44:18
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.2.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05
+ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -34,7 +34,7 @@ ESMF_F90LINKER=gfortran
 
 ESMF_F90COMPILEOPTS=-O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp
 ESMF_F90COMPILEPATHS=-I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/mod/modO/Linux.gfortran.64.mpiuni.default -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/src/include -I/apps/gcc-8/netcdf-4.7.2/include -I/apps/gcc-8/netcdf-4.7.2/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -DESMF_MPIUNI
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=-ffree-form
 ESMF_F90COMPILEFIXCPP=-cpp -ffixed-form
@@ -53,7 +53,7 @@ ESMF_CXXLINKER=g++
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -O -DNDEBUG -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp
 ESMF_CXXCOMPILEPATHS= -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/src/include  -I/apps/gcc-8/netcdf-4.7.2/include -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni -I/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_MPIUNI
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpiuni -DESMF_DIR=/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_MPIUNI
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp
 ESMF_CXXLINKPATHS=-L/work/noaa/da/mpotts/sandbox/gfortran_8.3.0_mpiuni_O_develop/lib/libO/Linux.gfortran.64.mpiuni.default -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/apps/gcc-8/hdf5-1.10.5/lib -L/apps/gcc-8/netcdf-4.7.2/lib -L/usr/lib64 -L/apps/gcc-8/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64/
