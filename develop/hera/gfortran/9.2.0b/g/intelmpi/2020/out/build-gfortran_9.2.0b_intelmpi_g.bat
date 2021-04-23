@@ -2,7 +2,7 @@
 #SBATCH --account=da-cpu
 #SBATCH -o build-gfortran_9.2.0b_intelmpi_g.bat_%j.o
 #SBATCH -e build-gfortran_9.2.0b_intelmpi_g.bat_%j.e
-#SBATCH --time=1:00:00
+#SBATCH --time=1:20:00
 #SBATCH --partition=hera
 #SBATCH --qos=batch
 #SBATCH --nodes=1
