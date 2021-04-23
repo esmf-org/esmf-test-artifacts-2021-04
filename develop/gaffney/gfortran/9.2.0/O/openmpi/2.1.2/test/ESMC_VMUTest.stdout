@@ -1,4 +1,4 @@
-build time -- 2021-04-22 22:41:40
+build time -- 2021-04-23 06:14:03
 --------------------------------------------------------------------------
 WARNING: Open MPI will create a shared memory backing file in a
 directory that appears to be mounted on a network filesystem.
@@ -15,8 +15,8 @@ Note, too, that system administrators can set a list of filesystems
 where Open MPI is disallowed from creating temporary files by setting
 the MCA parameter "orte_no_session_dir".
 
-  Local host: r2i5n13
-  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i5n13_0/2598/1/shared_mem_pool.r2i5n13
+  Local host: r3i3n14
+  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r3i3n14_0/9992/1/shared_mem_pool.r3i3n14
 
 You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
 disable this message.
@@ -34,17 +34,17 @@ PASS VMGetCurrent, ESMC_VMUTest.C, line 68
 PASS VMGet, ESMC_VMUTest.C, line 78
 localPet= 0 , petCount= 4, peCount= 4, pthreadsEnabledFlag= 1, openMPEnabledFlag= 1 
 Beginning Test, file ESMC_VMUTest.C, line 44
+Beginning Test, file ESMC_VMUTest.C, line 44
 NUMBER_OF_PROCESSORS 4
+PASS VMGetGlobal, ESMC_VMUTest.C, line 59
+NUMBER_OF_PROCESSORS 4
+PASS VMGetCurrent, ESMC_VMUTest.C, line 68
 PASS VMGetGlobal, ESMC_VMUTest.C, line 59
 PASS VMGetCurrent, ESMC_VMUTest.C, line 68
 PASS VMGet, ESMC_VMUTest.C, line 78
 localPet= 1 , petCount= 4, peCount= 4, pthreadsEnabledFlag= 1, openMPEnabledFlag= 1 
-Beginning Test, file ESMC_VMUTest.C, line 44
-NUMBER_OF_PROCESSORS 4
-PASS VMGetGlobal, ESMC_VMUTest.C, line 59
-PASS VMGetCurrent, ESMC_VMUTest.C, line 68
-PASS VMGet, ESMC_VMUTest.C, line 78
 localPet= 3 , petCount= 4, peCount= 4, pthreadsEnabledFlag= 1, openMPEnabledFlag= 1 
+PASS VMGet, ESMC_VMUTest.C, line 78
 PASS VMBarrier, ESMC_VMUTest.C, line 90
 PASS VMBarrier, ESMC_VMUTest.C, line 90
 PASS VMBarrier, ESMC_VMUTest.C, line 90
@@ -53,21 +53,13 @@ PASS VMBarrier, ESMC_VMUTest.C, line 90
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
+--- ESMCI::VMId::print() start ---
 --- ESMCI::VMId::print() start ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0xF0000000
-  localID = 0
---- ESMCI::VMId::print() end ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
-  localID = 0
---- ESMCI::VMId::print() end ---
---- VMK::print() start ---
-vm located at: 0x61c250
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
@@ -91,11 +83,59 @@ threadsflag: 0
 ncores = 4
   cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
+  vmKeyWidth = 1
+  vmKey=0xF0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+--- VMK::print() start ---
+vm located at: 0x61c250
+npets = 4, mypet=2
+  pth_mutex =		 0x8453b0
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 2
+MPI_Comm_rank in MPI_COMM_WORLD: 2
+MPI thread level support: 2
+mpi_mutex_flag: 1
+mpionly: 1
+threadsflag: 0
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
   vmKey=0xF0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+--- VMK::print() start ---
+vm located at: 0x61c250
+npets = 4, mypet=0
+  pth_mutex =		 0x845780
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 0
+MPI_Comm_rank in MPI_COMM_WORLD: 0
+MPI thread level support: 2
+mpi_mutex_flag: 1
+mpionly: 1
+threadsflag: 0
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
+  cpuid[3]=3, ssiid[3]=0
+--- VMK::print() end ---
+--- ESMCI::VM::print() end ---
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
@@ -121,46 +161,6 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
---- VMK::print() start ---
-vm located at: 0x61c250
-npets = 4, mypet=2
-  pth_mutex =		 0x7fbb20
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 2
-MPI_Comm_rank in MPI_COMM_WORLD: 2
-MPI thread level support: 2
-mpi_mutex_flag: 1
-mpionly: 1
-threadsflag: 0
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
---- ESMCI::VM::print() end ---
-npets = 4, mypet=0
-  pth_mutex =		 0x845780
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 0
-MPI_Comm_rank in MPI_COMM_WORLD: 0
-MPI thread level support: 2
-mpi_mutex_flag: 1
-mpionly: 1
-threadsflag: 0
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
@@ -168,8 +168,6 @@ ncores = 4
 PASS VMPrint, ESMC_VMUTest.C, line 99
 PASS VMPrint, ESMC_VMUTest.C, line 99
 PASS VMPrint, ESMC_VMUTest.C, line 99
-PASS VMReduceI4, ESMC_VMUTest.C, line 124
-PASS VMReduceI8, ESMC_VMUTest.C, line 150
 PASS VMPrint, ESMC_VMUTest.C, line 99
 PASS VMReduceI4, ESMC_VMUTest.C, line 124
 PASS VMReduceI8, ESMC_VMUTest.C, line 150
@@ -181,26 +179,28 @@ PASS VMReduceR4, ESMC_VMUTest.C, line 176
 PASS VMReduceR8, ESMC_VMUTest.C, line 202
 PASS VMReduceI4, ESMC_VMUTest.C, line 124
 PASS VMReduceI8, ESMC_VMUTest.C, line 150
+PASS VMReduceI4, ESMC_VMUTest.C, line 124
+PASS VMReduceI8, ESMC_VMUTest.C, line 150
+PASS VMReduceR4, ESMC_VMUTest.C, line 176
 PASS VMReduceR4, ESMC_VMUTest.C, line 176
 PASS VMReduceR8, ESMC_VMUTest.C, line 202
-PASS VMReduceR4, ESMC_VMUTest.C, line 176
 PASS VMReduceR8, ESMC_VMUTest.C, line 202
 PASS VMBroadcastI4, ESMC_VMUTest.C, line 227
 PASS VMBroadcastI4, ESMC_VMUTest.C, line 227
-PASS VMBroadcastI8, ESMC_VMUTest.C, line 252
+PASS VMBroadcastI4, ESMC_VMUTest.C, line 227
 PASS VMBroadcastI4, ESMC_VMUTest.C, line 227
 PASS VMBroadcastI8, ESMC_VMUTest.C, line 252
-PASS VMBroadcastI4, ESMC_VMUTest.C, line 227
 PASS VMBroadcastI8, ESMC_VMUTest.C, line 252
 PASS VMBroadcastI8, ESMC_VMUTest.C, line 252
 PASS VMBroadcastR4, ESMC_VMUTest.C, line 277
 PASS VMBroadcastR8, ESMC_VMUTest.C, line 302
-PASS VMBroadcastLogical, ESMC_VMUTest.C, line 327
-PASS VMBroadcastR4, ESMC_VMUTest.C, line 277
-PASS VMBroadcastR8, ESMC_VMUTest.C, line 302
 PASS VMBroadcastR4, ESMC_VMUTest.C, line 277
 PASS VMBroadcastR8, ESMC_VMUTest.C, line 302
 PASS VMBroadcastLogical, ESMC_VMUTest.C, line 327
+PASS VMBroadcastI8, ESMC_VMUTest.C, line 252
+PASS VMBroadcastR4, ESMC_VMUTest.C, line 277
+PASS VMBroadcastR8, ESMC_VMUTest.C, line 302
+PASS VMBroadcastLogical, ESMC_VMUTest.C, line 327
 PASS VMBroadcastR4, ESMC_VMUTest.C, line 277
 PASS VMBroadcastR8, ESMC_VMUTest.C, line 302
 PASS VMBroadcastLogical, ESMC_VMUTest.C, line 327
@@ -209,9 +209,9 @@ Ending Test, file ESMC_VMUTest.C, line 358
 Ending Test, file ESMC_VMUTest.C, line 358
 Ending Test, file ESMC_VMUTest.C, line 358
 Ending Test, file ESMC_VMUTest.C, line 358
- PET 1 Test Elapsed Time  53.211000 msec.
- PET 3 Test Elapsed Time  53.214000 msec.
- PET 2 Test Elapsed Time  53.890000 msec.
- PET 0 Test Elapsed Time  53.698000 msec.
-[r2i5n13:233790] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
-[r2i5n13:233790] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+ PET 0 Test Elapsed Time  54.020000 msec.
+ PET 3 Test Elapsed Time  53.808000 msec.
+ PET 2 Test Elapsed Time  54.508000 msec.
+ PET 1 Test Elapsed Time  54.015000 msec.
+[r3i3n14:390237] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[r3i3n14:390237] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
