@@ -7,6 +7,8 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/gfortran_10.1.0_mpt_g_develop
+
+module load python
 module load gnu/10.1.0 mpt/2.23 netcdf/4.7.4
 module list >& module-test.log
 
