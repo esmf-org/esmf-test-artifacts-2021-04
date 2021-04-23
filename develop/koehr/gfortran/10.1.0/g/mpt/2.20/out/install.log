@@ -1,0 +1,526 @@
+ 
+Installing ESMF:
+ 
+mkdir -p /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/include
+cp -f /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include/ESMC.h /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/include
+cp -f /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include/ESMC_*.h /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/include
+cp -f /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/build_config/Linux.gfortran.default/ESMC_Conf.h /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/include
+mkdir -p /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/mod/modg/Linux.gfortran.64.mpt.default
+cp -f /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/mod/modg/Linux.gfortran.64.mpt.default/*.mod /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/mod/modg/Linux.gfortran.64.mpt.default
+mkdir -p /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default
+cp -f /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/lib/libg/Linux.gfortran.64.mpt.default/libesmf*.* /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default
+make ESMF_PRELOADDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default build_preload_script
+make[1]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+chmod 755 /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default/preload.sh
+make[1]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+ranlib /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default/libesmf*.a
+make install_apps
+make[1]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+mkdir -p /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default
+make build_apps ESMF_APPSDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default ESMF_LDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default ESMF_LIBDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default ESMF_MODDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/mod/modg/Linux.gfortran.64.mpt.default
+make[2]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+cd /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps; make ACTION=tree_build_apps tree
+make[3]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps'
+tree_build_apps in: /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfo
+make[4]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfo'
+make chkdir_locobj
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfo'
+Making directory /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_PrintInfo for apps output
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfo'
+mpif90 -c -fallow-argument-mismatch -fallow-invalid-boz -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfo -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/build_config/Linux.gfortran.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Superstructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/mod/modg/Linux.gfortran.64.mpt.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop ESMF_PrintInfo.F90 -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_PrintInfo/ESMF_PrintInfo.o
+make chkdir_apps
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfo'
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfo'
+mpif90     -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -L/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -Wl,-rpath,/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -Wl,-rpath,/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default/ESMF_PrintInfo /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_PrintInfo/ESMF_PrintInfo.o -lesmf  -lmpi++ -lrt -lstdc++ -ldl
+make[4]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfo'
+tree_build_apps in: /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC
+make[4]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC'
+make chkdir_locobj
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC'
+Making directory /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_PrintInfoC for apps output
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC'
+mpicxx -c -std=c++11 -g -Wall -Wextra -Wno-unused  -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC/../include -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/build_config/Linux.gfortran.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Superstructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure/stubs/pthread  -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include   -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop -D__SDIR__='"src/apps/ESMF_PrintInfoC"' -DESMF_CXXSTD=11 ESMF_PrintInfoC.c -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_PrintInfoC/ESMF_PrintInfoC.o
+In file included from /p/app/hpe/mpt-2.20/include/mpi.h:1817,
+                 from /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include/ESMC_VM.h:38,
+                 from /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include/ESMC.h:36,
+                 from ESMF_PrintInfoC.c:14:
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm_Null& MPI::Comm_Null::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2680:22: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+ 2680 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Comm& PMPI::Comm::operator=(const PMPI::Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:899:7: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+  899 | class Comm : public Comm_Null {
+      |       ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm& MPI::Comm::operator=(const MPI::Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2813:22: note: synthesized method ‘PMPI::Comm& PMPI::Comm::operator=(const PMPI::Comm&)’ first required here
+ 2813 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Comm& PMPI::Comm::operator=(PMPI::Comm&&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:899:7: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+  899 | class Comm : public Comm_Null {
+      |       ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm& MPI::Comm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2819:17: note: synthesized method ‘PMPI::Comm& PMPI::Comm::operator=(PMPI::Comm&&)’ first required here
+ 2819 |     pmpi_comm = tmp;
+      |                 ^~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI::Intracomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3270:22: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3270 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3275:34: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3275 |     pmpi_comm = (PMPI::Intracomm)data; return *this;
+      |                                  ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3280:17: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3280 |     pmpi_comm = data;
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3464:22: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3464 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:1220:7: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 1220 | class Cartcomm : public Intracomm {
+      |       ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3464:22: note: synthesized method ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ first required here
+ 3464 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3467:33: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3467 |     pmpi_comm = (PMPI::Cartcomm)data; return *this; }
+      |                                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3471:17: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3471 |     pmpi_comm = data; return *this; }
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3545:22: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3545 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:1269:7: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 1269 | class Graphcomm : public Intracomm {
+      |       ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3545:22: note: synthesized method ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ first required here
+ 3545 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3548:34: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3548 |     pmpi_comm = (PMPI::Graphcomm)data; return *this; }
+      |                                  ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3552:17: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3552 |     pmpi_comm = data; return *this; }
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI::Intercomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3628:22: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3628 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3632:20: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3632 |     pmpi_comm = ic.pmpi_comm; return *this; }
+      |                    ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3636:37: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3636 |     pmpi_comm = PMPI::Intercomm(data); return *this; }
+      |                                     ^
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+make chkdir_apps
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC'
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC'
+mpicxx    -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -L/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -Wl,-rpath,/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -Wl,-rpath,/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default/ESMF_PrintInfoC /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_PrintInfoC/ESMF_PrintInfoC.o -lesmf  -lrt -lgfortran -ldl
+make[4]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_PrintInfoC'
+tree_build_apps in: /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_RegridWeightGen
+make[4]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_RegridWeightGen'
+make chkdir_locobj
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_RegridWeightGen'
+Making directory /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_RegridWeightGen for apps output
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_RegridWeightGen'
+mpif90 -c -fallow-argument-mismatch -fallow-invalid-boz -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_RegridWeightGen -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/build_config/Linux.gfortran.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Superstructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/mod/modg/Linux.gfortran.64.mpt.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop ESMF_RegridWeightGen.F90 -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_RegridWeightGen/ESMF_RegridWeightGen.o
+make chkdir_apps
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_RegridWeightGen'
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_RegridWeightGen'
+mpif90     -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -L/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -Wl,-rpath,/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -Wl,-rpath,/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default/ESMF_RegridWeightGen /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_RegridWeightGen/ESMF_RegridWeightGen.o -lesmf  -lmpi++ -lrt -lstdc++ -ldl
+make[4]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_RegridWeightGen'
+tree_build_apps in: /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController
+make[4]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController'
+make chkdir_locobj
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController'
+Making directory /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_WebServController for apps output
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController'
+mpicxx -c -std=c++11 -g -Wall -Wextra -Wno-unused  -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController/../include -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/build_config/Linux.gfortran.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Superstructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure/stubs/pthread  -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include   -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop -D__SDIR__='"src/apps/ESMF_WebServController"' -DESMF_CXXSTD=11 ESMF_WebServController.C -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_WebServController/ESMF_WebServController.o
+In file included from /p/app/hpe/mpt-2.20/include/mpi.h:1817,
+                 from /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include/ESMC_VM.h:38,
+                 from /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include/ESMC.h:36,
+                 from ESMF_WebServController.C:9:
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm_Null& MPI::Comm_Null::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2680:22: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+ 2680 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Comm& PMPI::Comm::operator=(const PMPI::Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:899:7: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+  899 | class Comm : public Comm_Null {
+      |       ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm& MPI::Comm::operator=(const MPI::Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2813:22: note: synthesized method ‘PMPI::Comm& PMPI::Comm::operator=(const PMPI::Comm&)’ first required here
+ 2813 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Comm& PMPI::Comm::operator=(PMPI::Comm&&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:899:7: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+  899 | class Comm : public Comm_Null {
+      |       ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm& MPI::Comm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2819:17: note: synthesized method ‘PMPI::Comm& PMPI::Comm::operator=(PMPI::Comm&&)’ first required here
+ 2819 |     pmpi_comm = tmp;
+      |                 ^~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI::Intracomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3270:22: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3270 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3275:34: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3275 |     pmpi_comm = (PMPI::Intracomm)data; return *this;
+      |                                  ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3280:17: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3280 |     pmpi_comm = data;
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3464:22: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3464 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:1220:7: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 1220 | class Cartcomm : public Intracomm {
+      |       ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3464:22: note: synthesized method ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ first required here
+ 3464 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3467:33: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3467 |     pmpi_comm = (PMPI::Cartcomm)data; return *this; }
+      |                                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3471:17: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3471 |     pmpi_comm = data; return *this; }
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3545:22: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3545 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:1269:7: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 1269 | class Graphcomm : public Intracomm {
+      |       ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3545:22: note: synthesized method ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ first required here
+ 3545 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3548:34: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3548 |     pmpi_comm = (PMPI::Graphcomm)data; return *this; }
+      |                                  ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3552:17: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3552 |     pmpi_comm = data; return *this; }
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI::Intercomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3628:22: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3628 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3632:20: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3632 |     pmpi_comm = ic.pmpi_comm; return *this; }
+      |                    ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3636:37: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3636 |     pmpi_comm = PMPI::Intercomm(data); return *this; }
+      |                                     ^
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+make chkdir_apps
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController'
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController'
+mpicxx    -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -L/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -Wl,-rpath,/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -Wl,-rpath,/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default/ESMF_WebServController /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_WebServController/ESMF_WebServController.o -lesmf  -lrt -lgfortran -ldl
+make[4]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_WebServController'
+tree_build_apps in: /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct
+make[4]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct'
+make chkdir_locobj
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct'
+Making directory /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_Scrip2Unstruct for apps output
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct'
+mpicxx -c -std=c++11 -g -Wall -Wextra -Wno-unused  -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct/../include -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/build_config/Linux.gfortran.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Superstructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure/stubs/pthread  -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include   -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop -D__SDIR__='"src/apps/ESMF_Scrip2Unstruct"' -DESMF_CXXSTD=11 ESMF_Scrip2Unstruct.C -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_Scrip2Unstruct/ESMF_Scrip2Unstruct.o
+In file included from /p/app/hpe/mpt-2.20/include/mpi.h:1817,
+                 from /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include/ESMC_VM.h:38,
+                 from /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include/ESMC.h:36,
+                 from ESMF_Scrip2Unstruct.C:28:
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm_Null& MPI::Comm_Null::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2680:22: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+ 2680 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Comm& PMPI::Comm::operator=(const PMPI::Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:899:7: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+  899 | class Comm : public Comm_Null {
+      |       ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm& MPI::Comm::operator=(const MPI::Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2813:22: note: synthesized method ‘PMPI::Comm& PMPI::Comm::operator=(const PMPI::Comm&)’ first required here
+ 2813 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Comm& PMPI::Comm::operator=(PMPI::Comm&&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:899:7: warning: implicitly-declared ‘PMPI::Comm_Null& PMPI::Comm_Null::operator=(const PMPI::Comm_Null&)’ is deprecated [-Wdeprecated-copy]
+  899 | class Comm : public Comm_Null {
+      |       ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:876:3: note: because ‘PMPI::Comm_Null’ has user-provided ‘PMPI::Comm_Null::Comm_Null(const PMPI::Comm_Null&)’
+  876 |   Comm_Null(const Comm_Null& data) : mpi_comm(data.mpi_comm) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Comm& MPI::Comm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:2819:17: note: synthesized method ‘PMPI::Comm& PMPI::Comm::operator=(PMPI::Comm&&)’ first required here
+ 2819 |     pmpi_comm = tmp;
+      |                 ^~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI::Intracomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3270:22: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3270 |     pmpi_comm = data.pmpi_comm;
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3275:34: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3275 |     pmpi_comm = (PMPI::Intracomm)data; return *this;
+      |                                  ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intracomm& MPI::Intracomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3280:17: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 3280 |     pmpi_comm = data;
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3464:22: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3464 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:1220:7: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 1220 | class Cartcomm : public Intracomm {
+      |       ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Cartcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3464:22: note: synthesized method ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ first required here
+ 3464 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3467:33: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3467 |     pmpi_comm = (PMPI::Cartcomm)data; return *this; }
+      |                                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Cartcomm& MPI::Cartcomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3471:17: warning: implicitly-declared ‘PMPI::Cartcomm& PMPI::Cartcomm::operator=(const PMPI::Cartcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3471 |     pmpi_comm = data; return *this; }
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1225:3: note: because ‘PMPI::Cartcomm’ has user-provided ‘PMPI::Cartcomm::Cartcomm(const PMPI::Cartcomm&)’
+ 1225 |   Cartcomm(const Cartcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3545:22: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3545 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:1269:7: warning: implicitly-declared ‘PMPI::Intracomm& PMPI::Intracomm::operator=(const PMPI::Intracomm&)’ is deprecated [-Wdeprecated-copy]
+ 1269 | class Graphcomm : public Intracomm {
+      |       ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1189:3: note: because ‘PMPI::Intracomm’ has user-provided ‘PMPI::Intracomm::Intracomm(const PMPI::Intracomm&)’
+ 1189 |   Intracomm(const Intracomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Graphcomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3545:22: note: synthesized method ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ first required here
+ 3545 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3548:34: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3548 |     pmpi_comm = (PMPI::Graphcomm)data; return *this; }
+      |                                  ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Graphcomm& MPI::Graphcomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3552:17: warning: implicitly-declared ‘PMPI::Graphcomm& PMPI::Graphcomm::operator=(const PMPI::Graphcomm&)’ is deprecated [-Wdeprecated-copy]
+ 3552 |     pmpi_comm = data; return *this; }
+      |                 ^~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1274:3: note: because ‘PMPI::Graphcomm’ has user-provided ‘PMPI::Graphcomm::Graphcomm(const PMPI::Graphcomm&)’
+ 1274 |   Graphcomm(const Graphcomm& data) : Intracomm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI::Intercomm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3628:22: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3628 |     pmpi_comm = data.pmpi_comm; return *this; }
+      |                      ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI::Comm_Null&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3632:20: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3632 |     pmpi_comm = ic.pmpi_comm; return *this; }
+      |                    ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+/p/app/hpe/mpt-2.20/include/mpi++.h: In member function ‘MPI::Intercomm& MPI::Intercomm::operator=(const MPI_Comm&)’:
+/p/app/hpe/mpt-2.20/include/mpi++.h:3636:37: warning: implicitly-declared ‘PMPI::Intercomm& PMPI::Intercomm::operator=(const PMPI::Intercomm&)’ is deprecated [-Wdeprecated-copy]
+ 3636 |     pmpi_comm = PMPI::Intercomm(data); return *this; }
+      |                                     ^
+/p/app/hpe/mpt-2.20/include/mpi++.h:1319:3: note: because ‘PMPI::Intercomm’ has user-provided ‘PMPI::Intercomm::Intercomm(const PMPI::Intercomm&)’
+ 1319 |   Intercomm(const Intercomm& data) : Comm(data) { }
+      |   ^~~~~~~~~
+make chkdir_apps
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct'
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct'
+mpicxx    -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -L/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -Wl,-rpath,/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -Wl,-rpath,/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default/ESMF_Scrip2Unstruct /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_Scrip2Unstruct/ESMF_Scrip2Unstruct.o -lesmf  -lrt -lgfortran -ldl
+make[4]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Scrip2Unstruct'
+tree_build_apps in: /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Regrid
+make[4]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Regrid'
+make chkdir_locobj
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Regrid'
+Making directory /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_Regrid for apps output
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Regrid'
+mpif90 -c -fallow-argument-mismatch -fallow-invalid-boz -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Regrid -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/build_config/Linux.gfortran.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Infrastructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/Superstructure -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/mod/modg/Linux.gfortran.64.mpt.default -I/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_2_0_beta_snapshot_05-2-g3f3d15a"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpt -DESMF_DIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop ESMF_Regrid.F90 -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_Regrid/ESMF_Regrid.o
+make chkdir_apps
+make[5]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Regrid'
+make[5]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Regrid'
+mpif90     -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -L/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -Wl,-rpath,/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default  -Wl,-rpath,/p/app/gnu/10.1.0/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../lib64/ -o /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default/ESMF_Regrid /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/obj/objg/Linux.gfortran.64.mpt.default/src/apps/ESMF_Regrid/ESMF_Regrid.o -lesmf  -lmpi++ -lrt -lstdc++ -ldl
+make[4]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps/ESMF_Regrid'
+make[3]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/src/apps'
+ESMF apps built successfully.
+make[2]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+make[1]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+mkdir -p /p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/doc
+make install_info_mk
+make[1]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+make info_mk ESMF_APPSDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/bin/bing/Linux.gfortran.64.mpt.default ESMF_LDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default ESMF_LIBDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/lib/libg/Linux.gfortran.64.mpt.default ESMF_MODDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/mod/modg/Linux.gfortran.64.mpt.default ESMF_INCDIR=/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop/DEFAULTINSTALLDIR/include
+make[2]: Entering directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+make[2]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+make[1]: Leaving directory `/p/work1/mpotts/gfortran_10.1.0_mpt_g_develop'
+ 
+ESMF installation complete.
+ 
