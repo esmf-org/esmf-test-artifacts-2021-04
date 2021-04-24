@@ -1,4 +1,4 @@
-build time -- 2021-04-23 08:53:29
+build time -- 2021-04-24 00:23:42
   Beginning Test, file ESMF_VMComponentUTest.F90, line 216
   Beginning Test, file ESMF_VMComponentUTest.F90, line 216
   NUMBER_OF_PROCESSORS           4
@@ -7,8 +7,6 @@ build time -- 2021-04-23 08:53:29
   Beginning Test, file ESMF_VMComponentUTest.F90, line 216
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
---- ESMCI::VM::print() start ---
---- ESMCI::VMId::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
 --- ESMCI::VM::print() start ---
@@ -16,14 +14,16 @@ build time -- 2021-04-23 08:53:29
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
+--- ESMCI::VM::print() start ---
+--- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKeyWidth = 1
+  vmKey=0xF0000000
+  localID = 0
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
-  vmKey=0xF0000000
-  localID = 0
 --- ESMCI::VMId::print() end ---
   vmKey=0xF0000000
   localID = 0
@@ -32,9 +32,9 @@ build time -- 2021-04-23 08:53:29
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x2418c70
+vm located at: 0x2418b10
 npets = 4, mypet=0
-  pth_mutex =		 0x2471970
+  pth_mutex =		 0x2471810
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
@@ -55,32 +55,9 @@ ncores = 4
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
 --- VMK::print() start ---
-vm located at: 0x2418c70
-npets = 4, mypet=1
-  pth_mutex =		 0x2471870
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 1
-MPI_Comm_rank in MPI_COMM_WORLD: 1
-MPI thread level support: 2
-mpi_mutex_flag: 1
-mpionly: 1
-threadsflag: 0
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
---- ESMCI::VM::print() end ---
---- VMK::print() start ---
-vm located at: 0x2418c70
+vm located at: 0x2418b10
 npets = 4, mypet=2
-  pth_mutex =		 0x2471870
+  pth_mutex =		 0x2471710
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 2
@@ -101,9 +78,32 @@ ncores = 4
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
 --- VMK::print() start ---
-vm located at: 0x2418c70
+vm located at: 0x2418b10
+npets = 4, mypet=1
+  pth_mutex =		 0x2471710
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 1
+MPI_Comm_rank in MPI_COMM_WORLD: 1
+MPI thread level support: 2
+mpi_mutex_flag: 1
+mpionly: 1
+threadsflag: 0
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
+  cpuid[3]=3, ssiid[3]=0
+--- VMK::print() end ---
+--- ESMCI::VM::print() end ---
+--- VMK::print() start ---
+vm located at: 0x2418b10
 npets = 4, mypet=3
-  pth_mutex =		 0x2471870
+  pth_mutex =		 0x2471710
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 3
@@ -175,7 +175,7 @@ ncores = 4
   Ending Test, file ESMF_VMComponentUTest.F90, line 425
   PASS  Exhaustive Component Create/SetServices/Destroy ForcePthreads Test, ESMF_VMComponentUTest.F90, line 420
   Ending Test, file ESMF_VMComponentUTest.F90, line 425
-  PET           0  Test Elapsed Time    894.75800000000004       msec.
-  PET           1  Test Elapsed Time    933.64099999999996       msec.
-  PET           2  Test Elapsed Time    935.23000000000002       msec.
-  PET           3  Test Elapsed Time    934.27499999999998       msec.
+  PET           0  Test Elapsed Time    830.83799999999997       msec.
+  PET           1  Test Elapsed Time    853.17100000000005       msec.
+  PET           2  Test Elapsed Time    853.44999999999993       msec.
+  PET           3  Test Elapsed Time    853.10799999999995       msec.
