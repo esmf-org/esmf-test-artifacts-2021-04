@@ -1,4 +1,4 @@
-build time -- 2021-04-23 06:22:37
+build time -- 2021-04-24 06:02:46
  --------------------------------------- 
  Start of  System Test ESMF_XGridSerialSTest
  --------------------------------------- 
@@ -27,8 +27,8 @@ Note, too, that system administrators can set a list of filesystems
 where Open MPI is disallowed from creating temporary files by setting
 the MCA parameter "orte_no_session_dir".
 
-  Local host: r3i3n25
-  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r3i3n25_0/4234/1/shared_mem_pool.r3i3n25
+  Local host: r2i5n34
+  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i5n34_0/23908/1/shared_mem_pool.r2i5n34
 
 You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
 disable this message.
@@ -39,12 +39,12 @@ disable this message.
  Created component landrc =           0
  Created component oceanrc =           0
  Created component oceanrc =           0
+ Created component landrc =           0
  Created component oceanrc =           0
+ Created component landrc =           0
  Created component oceanrc =           0
  Created component landrc =           0
  Created component landrc =           0
- Created component landrc =           0
- Created component landrc =           0
  Created component user one-way coupler, rc =           0
  Comp Creates finished
  Created component user one-way coupler, rc =           0
@@ -59,19 +59,19 @@ disable this message.
  atmos SetVM finished, rc=            0           0
  Atmosphere Register starting
  Atmosphere Register starting
+ Registered Initialize, Run, and Finalize routines
+ Atmosphere Register returning
+ Registered Initialize, Run, and Finalize routines
+ Atmosphere Register returning
+ atmos SetServices finished, rc=            0
+ land SetVM finished, rc=            0
+ Atmosphere Register starting
+ Registered Initialize, Run, and Finalize routines
+ Atmosphere Register returning
  Atmosphere Register starting
  Registered Initialize, Run, and Finalize routines
  Atmosphere Register returning
  atmos SetServices finished, rc=            0
- Atmosphere Register starting
- Registered Initialize, Run, and Finalize routines
- Atmosphere Register returning
- Registered Initialize, Run, and Finalize routines
- Atmosphere Register returning
- atmos SetServices finished, rc=            0
- land SetVM finished, rc=            0
- Registered Initialize, Run, and Finalize routines
- Atmosphere Register returning
  atmos SetServices finished, rc=            0
  land SetVM finished, rc=            0
  atmos SetServices finished, rc=            0
@@ -79,12 +79,6 @@ disable this message.
  land SetVM finished, rc=            0
  Land Register starting
  Registered Initialize, Run, and Finalize routines
- Land Register returning
- land SetServices finished, rc=            0
- Land Register starting
- Registered Initialize, Run, and Finalize routines
- Land Register returning
- land SetServices finished, rc=            0
  Land Register starting
  Registered Initialize, Run, and Finalize routines
  Land Register returning
@@ -92,31 +86,42 @@ disable this message.
  Registered Initialize, Run, and Finalize routines
  Land Register returning
  land SetServices finished, rc=            0
+ Land Register starting
+ Registered Initialize, Run, and Finalize routines
+ Land Register returning
+ land SetServices finished, rc=            0
  land SetServices finished, rc=            0
  ocean SetVM finished, rc=            0
  ocean SetVM finished, rc=            0
+ Land Register returning
+ land SetServices finished, rc=            0
  ocean SetVM finished, rc=            0
  ocean SetVM finished, rc=            0
  Ocean Register starting
  Registered Initialize, Run, and Finalize routines
  Ocean Register returning
  ocean SetServices finished, rc=            0
- Ocean Register starting
- Registered Initialize, Run, and Finalize routines
- Ocean Register returning
- ocean SetServices finished, rc=            0
- Ocean Register starting
- Registered Initialize, Run, and Finalize routines
- Ocean Register returning
- ocean SetServices finished, rc=            0
+ Cpl SetVM finished, rc=            0
  Ocean Register starting
  Registered Initialize, Run, and Finalize routines
  Ocean Register returning
  ocean SetServices finished, rc=            0
  Cpl SetVM finished, rc=            0
+ Ocean Register starting
+ Registered Initialize, Run, and Finalize routines
+ Ocean Register returning
+ ocean SetServices finished, rc=            0
  Cpl SetVM finished, rc=            0
+ Ocean Register starting
+ Registered Initialize, Run, and Finalize routines
+ Ocean Register returning
+ ocean SetServices finished, rc=            0
  Cpl SetVM finished, rc=            0
- Cpl SetVM finished, rc=            0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
  User Coupler Register starting
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
@@ -125,23 +130,18 @@ disable this message.
  Registered Initialize, Run, and Finalize routines
  User Coupler Register returning
  Cpl SetServices finished, rc=            0
- User Coupler Register starting
- Registered Initialize, Run, and Finalize routines
+ Cpl SetServices finished, rc=            0
  User Coupler Register returning
  Cpl SetServices finished, rc=            0
- User Coupler Register starting
- Registered Initialize, Run, and Finalize routines
- User Coupler Register returning
- Cpl SetServices finished, rc=            0
- Land Init starting, localPet =           0
  Land Init starting, localPet =           2
+ Land Init starting, localPet =           0
  Land Init starting, localPet =           3
  Land Init starting, localPet =           1
- ESMF_StatePrint: (pet 3):
+ ESMF_StatePrint: (pet 2):
   State name: land_export
  ESMF_StatePrint: (pet 0):
   State name: land_export
- ESMF_StatePrint: (pet 2):
+ ESMF_StatePrint: (pet 3):
   State name: land_export
  ESMF_StatePrint: (pet 1):
   State name: land_export
@@ -186,8 +186,8 @@ disable this message.
  land Init returning
  Land Initialize finished, rc =           0
  Ocean Init starting, localPet =           0
- Ocean Init starting, localPet =           2
  Ocean Init starting, localPet =           3
+ Ocean Init starting, localPet =           2
  Ocean Init starting, localPet =           1
  ocean Init returning
  Ocean Initialize finished, rc =           0
@@ -197,9 +197,9 @@ disable this message.
  Ocean Initialize finished, rc =           0
  ocean Init returning
  Ocean Initialize finished, rc =           0
+ Atmosphere Init starting, localPet =           3
  Atmosphere Init starting, localPet =           2
  Atmosphere Init starting, localPet =           1
- Atmosphere Init starting, localPet =           3
  Atmosphere Init starting, localPet =           0
  Atmos Init returning
  Atmosphere Initialize finished, rc =           0
@@ -207,26 +207,28 @@ disable this message.
  Atmosphere Initialize finished, rc =           0
  Atmos Init returning
  Atmosphere Initialize finished, rc =           0
+ User Coupler Init starting, localPet =           3
+ User Coupler Init starting, localPet =           1
  Atmos Init returning
  Atmosphere Initialize finished, rc =           0
  User Coupler Init starting, localPet =           2
- User Coupler Init starting, localPet =           3
  User Coupler Init starting, localPet =           0
- User Coupler Init starting, localPet =           1
-[r3i3n25:349228] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
-[r3i3n25:349228] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[r2i5n34:328148] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[r2i5n34:328148] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  User Coupler Init returning
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  Land Run starting
- Land Run starting
- Coupler Initialize finished, rc =           0
- Land Run starting
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  Land Run starting
+ Coupler Initialize finished, rc =           0
+ Land Run starting
+ Land Run starting
+ Land Run returning
+ Land Run returned, rc =           0
  Land Run returning
  Land Run returned, rc =           0
  Ocean Run starting
@@ -236,8 +238,6 @@ disable this message.
  Land Run returning
  Land Run returned, rc =           0
  Ocean Run starting
- Land Run returning
- Land Run returned, rc =           0
  Ocean Run starting
  Ocean Run returning
  Ocean Run returned, rc =           0
@@ -258,6 +258,13 @@ disable this message.
  Atmosphere Run starting
  Atmosphere Run returning
  Atmosphere Run returned, rc =           0
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ Atmosphere Run starting
+ Atmosphere Run returning
+ User Coupler Final starting
+ Atmosphere Run returned, rc =           0
+ User Coupler Final starting
  Atmosphere Run starting
  Atmosphere Run returning
  Atmosphere Run returned, rc =           0
@@ -266,37 +273,31 @@ disable this message.
  Coupler Run returned, rc =           0
  Atmosphere Run starting
  Atmosphere Run returning
- User Coupler Run returning
- Coupler Run returned, rc =           0
- Atmosphere Run starting
- User Coupler Final starting
  Atmosphere Run returned, rc =           0
  User Coupler Final starting
- Atmosphere Run returning
- Atmosphere Run returned, rc =           0
- User Coupler Final starting
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0
  User Coupler Final returning
  Coupler Finalize finished, rc =           0
  Land Final starting
- User Coupler Final returning
- Coupler Finalize finished, rc =           0
  User Coupler Final returning
  Coupler Finalize finished, rc =           0
  Land Final starting
  Land Final returning
  Land Finalize finished, rc =           0
- Ocean Final starting
  User Coupler Final returning
  Coupler Finalize finished, rc =           0
  Land Final starting
+ Land Final returning
+ Land Finalize finished, rc =           0
  Land Final starting
  Land Final returning
- Land Finalize finished, rc =           0
  Ocean Final starting
- Land Final returning
- Land Finalize finished, rc =           0
- Ocean Final starting
- Land Final returning
+ Ocean Final returning
+ Ocean Finalize finished, rc =           0
+ Atmosphere Final starting
+ Atmosphere Final returning
+ Atmosphere Finalize finished, rc =           0
  Land Finalize finished, rc =           0
  Ocean Final starting
  Ocean Final returning
@@ -304,20 +305,19 @@ disable this message.
  Atmosphere Final starting
  Atmosphere Final returning
  Atmosphere Finalize finished, rc =           0
+ Land Final returning
+ Land Finalize finished, rc =           0
+ Ocean Final starting
  Ocean Final returning
  Ocean Finalize finished, rc =           0
  Atmosphere Final starting
  Atmosphere Final returning
- Ocean Final returning
- Ocean Finalize finished, rc =           0
- Atmosphere Final starting
+ Ocean Final starting
  Ocean Final returning
  Ocean Finalize finished, rc =           0
  Atmosphere Final starting
  Atmosphere Final returning
  Atmosphere Finalize finished, rc =           0
- Atmosphere Finalize finished, rc =           0
- Atmosphere Final returning
  Atmosphere Finalize finished, rc =           0
  All Destroy routines done
   System Test ESMF_XGridSerialSTest                                                                                                                                                                                                                               complete.
@@ -356,12 +356,12 @@ disable this message.
  ------------------------------------------------------------
  All Destroy routines done
   System Test ESMF_XGridSerialSTest                                                                                                                                                                                                                               complete.
+ ------------------------------------------------------------
+ ------------------------------------------------------------
  
   System Test ESMF_XGridSerialSTest
   SUCCESS:  System Test ESMF_XGridSerialSTest finished correctly.
  
- ------------------------------------------------------------
- ------------------------------------------------------------
  Test finished, localPet =            1
  ------------------------------------------------------------
  ------------------------------------------------------------

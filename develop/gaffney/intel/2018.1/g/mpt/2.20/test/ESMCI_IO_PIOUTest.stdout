@@ -1,15 +1,15 @@
-build time -- 2021-04-23 06:24:25
+build time -- 2021-04-24 06:04:26
 Beginning Test, file ESMCI_IO_PIOUTest.C, line 67
 NUMBER_OF_PROCESSORS 1
 PASS VMGetGlobal, ESMCI_IO_PIOUTest.C, line 82
 PASS Get VM pet info, ESMCI_IO_PIOUTest.C, line 92
 PASS Initialize a PIO instance, ESMCI_IO_PIOUTest.C, line 116
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 229915, Host: r3i2n16, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMCI_IO_PIOUTest
+	Process ID: 327928, Host: r3i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMCI_IO_PIOUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/229915/exe, process 229915
+MPT: Attaching to program: /proc/327928/exe, process 327928
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: done.
@@ -47,7 +47,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab071718c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab4bf7806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff6580 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 229915, Host: r3i2n16, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMCI_IO_PIOUTest\n\tMPT"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff6580 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 327928, Host: r3i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMCI_IO_PIOUTest\n\tMPT"...) at sig.c:340
 MPT: #3  0x00002aaab4bf7a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabb9c0080) at sig.c:489
 MPT: #4  0x00002aaab4bf7d9b in slave_sig_handler (signo=11, 
@@ -86,27 +86,27 @@ MPT:     cache_nelems=<error reading variable: Cannot access memory at address 0
 MPT:     cache_preemption=<error reading variable: Cannot access memory at address 0x0>, comm=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     info=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     .tmp.PATH.len_V$102f=20) at netcdf4_file.f90:134
-MPT: #20 0x00002aaaadd9f1f1 in esmfionf_mod::create_nf (file=..., 
+MPT: #20 0x00002aaaadd9f1d1 in esmfionf_mod::create_nf (file=..., 
 MPT:     fname='pio_file1c_netcdf.nc', amode=0, .tmp.FNAME.len_V$12f=20)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/ionf_mod.F90:109
-MPT: #21 0x00002aaaae2ff31a in esmfpiolib_mod::createfile (iosystem=..., file=..., 
+MPT: #21 0x00002aaaae2ff2fa in esmfpiolib_mod::createfile (iosystem=..., file=..., 
 MPT:     iotype=6, fname='pio_file1c_netcdf.nc', amode_in=0, 
 MPT:     .tmp.FNAME.len_V$22e2=20)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/piolib_mod.F90:2500
-MPT: #22 0x00002aaaae28c58c in esmcpio_cpp_createfile (iosystem_handle=1, 
+MPT: #22 0x00002aaaae28c56c in esmcpio_cpp_createfile (iosystem_handle=1, 
 MPT:     file=..., iotype=6, fname=..., amode_in=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:564
 MPT: #23 0x0000000000407928 in main () at ESMCI_IO_PIOUTest.C:134
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 229915] will be detached.
+MPT: 	Inferior 1 [process 327928] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/229915/exe, process 229915
-MPT: [Inferior 1 (process 229915) detached]
+MPT: Detaching from program: /proc/327928/exe, process 327928
+MPT: [Inferior 1 (process 327928) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i2n16, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMCI_IO_PIOUTest, Rank 0, Process 229915: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r3i2n15, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMCI_IO_PIOUTest, Rank 0, Process 327928: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11
