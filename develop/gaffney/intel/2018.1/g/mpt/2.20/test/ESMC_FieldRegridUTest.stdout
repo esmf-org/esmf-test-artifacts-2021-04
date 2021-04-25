@@ -1,4 +1,4 @@
-build time -- 2021-04-24 06:04:26
+build time -- 2021-04-25 07:02:38
 Beginning Test, file ESMC_FieldRegridUTest.C, line 68
 NUMBER_OF_PROCESSORS 1
 PASS MeshCreate, ESMC_FieldRegridUTest.C, line 125
@@ -17,11 +17,11 @@ PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTes
 PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.C, line 325
 PASS Create an InterArray for maskValues in ESMC_FieldRegridStore(), ESMC_FieldRegridUTest.C, line 343
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 339852, Host: r3i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest
+	Process ID: 287855, Host: r2i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/339852/exe, process 339852
+MPT: Attaching to program: /proc/287855/exe, process 287855
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: done.
@@ -59,7 +59,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab071718c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab4bf7806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff5d00 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 339852, Host: r3i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest\n"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff5d00 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 287855, Host: r2i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest\n"...) at sig.c:340
 MPT: #3  0x00002aaab4bf7a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabb9c0080) at sig.c:489
 MPT: #4  0x00002aaab4bf7d9b in slave_sig_handler (signo=11, 
@@ -190,8 +190,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\060\006\006\003', '\000' <repeats 20 times>, 'p\006\006\003', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\320\036\357\000\000\000\000\000\220ku\r', '\000' <repeats 28 times>, 'p\365\265\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
-MPT: 
+MPT: '\000' <repeats 24 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 17 times>, ' \357\000\000\000\000\000\060\314a\r', '\000' <repeats 28 times>, '\260\306\363\n', '\000' <repeats 20 times>, 'a\000\000\000\000\000\000\000\f\001\000\000\000\000\377\377', '\000' <repeats 17 times>, ' \357\000\000\000\000\000\340k\353\002', '\000' <repeats 28 times>, ' *B\003', '\000' <repeats 20 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: dstfile=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -201,10 +200,11 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\340\060\301\005', '\000' <repeats 20 times>, ' 1\301\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\320\036\357\000\000\000\000\000\220ku\r', '\000' <repeats 28 times>, '\020\016w\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
-MPT:     srcfiletype=<error reading variable: Cannot access memory at address 0x0>, dstfiletype=<error reading variable: Cannot access memory at address 0x0>, 
-MPT:     largefileflag=<error reading variable: Cannot access memory at address 0x0>, srcfracfield=<error reading variable: Cannot access memory at address 0x0>, 
-MPT:     dstfracfield=<error reading variable: Cannot access memory at address 0x0>, rc=18, .tmp.FILENAME.len_V$e8a4=18, .tmp.SRCFILE.len_V$e8bb=0, 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\340L\307\003', '\000' <repeats 20 times>, '\060\027@\005', '\000' <repeats 12 times>, '\241', '\000' <repeats 11 times>, '\t', '\000' <repeats 35 times>, '\001', '\000' <repeats 47 times>, '\200\f\a\b\000\000\000\000\200\f\a\b', '\000' <repeats 20 times>..., 
+MPT:     srcfiletype=<error reading variable: Cannot access memory at address 0x0>, 
+MPT:     dstfiletype=<error reading variable: Cannot access memory at address 0x0>, largefileflag=<error reading variable: Cannot access memory at address 0x0>, 
+MPT:     srcfracfield=<error reading variable: Cannot access memory at address 0x0>, dstfracfield=<error reading variable: Cannot access memory at address 0x0>, 
+MPT:     rc=18, .tmp.FILENAME.len_V$e8a4=18, .tmp.SRCFILE.len_V$e8bb=0, 
 MPT:     .tmp.DSTFILE.len_V$e8be=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Field/interface/ESMF_Field_C.F90:1292
 MPT: #33 0x00002aaaac24fe24 in ESMCI::Field::regridstorefile (fieldpsrc=0x17a5fa0, 
@@ -226,14 +226,14 @@ MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Field/
 MPT: #35 0x0000000000408719 in main () at ESMC_FieldRegridUTest.C:351
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 339852] will be detached.
+MPT: 	Inferior 1 [process 287855] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/339852/exe, process 339852
-MPT: [Inferior 1 (process 339852) detached]
+MPT: Detaching from program: /proc/287855/exe, process 287855
+MPT: [Inferior 1 (process 287855) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i2n15, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest, Rank 0, Process 339852: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r2i2n15, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_FieldRegridUTest, Rank 0, Process 287855: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11
