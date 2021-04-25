@@ -1,4 +1,16 @@
-build time -- 2021-04-24 07:50:58
+build time -- 2021-04-25 06:54:10
+  Beginning Test, file ESMF_VMUTest.F90, line 1113
+  NUMBER_OF_PROCESSORS           4
+  PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
+  PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
+  PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
+  PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
+  Beginning Test, file ESMF_VMUTest.F90, line 1113
+  NUMBER_OF_PROCESSORS           4
+  PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
+  PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
+  PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
+  PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
   Beginning Test, file ESMF_VMUTest.F90, line 1113
   NUMBER_OF_PROCESSORS           4
   PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
@@ -12,19 +24,7 @@ build time -- 2021-04-24 07:50:58
   PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
   PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
   PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
-  Beginning Test, file ESMF_VMUTest.F90, line 1113
-  NUMBER_OF_PROCESSORS           4
-  PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
-  PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
-  PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
-  PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
 --- ESMCI::VM::print() start ---
-  Beginning Test, file ESMF_VMUTest.F90, line 1113
-  NUMBER_OF_PROCESSORS           4
-  PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
-  PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
-  PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
-  PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
@@ -32,9 +32,11 @@ build time -- 2021-04-24 07:50:58
 --- ESMCI::VMId::print() start ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
+  vmKey=0xF0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
   vmKeyWidth = 1
   vmKeyWidth = 1
-  vmKey=0xF0000000
   vmKeyWidth = 1
   vmKey=0xF0000000
   vmKey=0xF0000000
@@ -43,23 +45,6 @@ build time -- 2021-04-24 07:50:58
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
-  localID = 0
---- ESMCI::VMId::print() end ---
-  localID = 0
---- ESMCI::VMId::print() end ---
---- VMK::print() start ---
-vm located at: 0x70d140
-npets = 4, mypet=0
-  pth_mutex =		 0x17912e0
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 0
-MPI_Comm_rank in MPI_COMM_WORLD: 0
---- VMK::print() start ---
-vm located at: 0x631de0
-npets = 4, mypet=1
-  pth_mutex =		 0x1793410
-  pth_finish_count =	 (nil)
 --- VMK::print() start ---
 vm located at: 0x631e70
 npets = 4, mypet=2
@@ -67,10 +52,35 @@ npets = 4, mypet=2
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 2
+MPI_Comm_rank in MPI_COMM_WORLD: 2
 MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
+  localID = 0
+--- ESMCI::VMId::print() end ---
+--- VMK::print() start ---
+vm located at: 0x70d140
+npets = 4, mypet=0
+--- VMK::print() start ---
+vm located at: 0x631f10
+npets = 4, mypet=3
+  pth_mutex =		 0x1793550
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+  pth_mutex =		 0x17912e0
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 0
+MPI_Comm_rank in MPI_COMM_WORLD: 0
+MPI thread level support: 3
+mpi_mutex_flag: 0
+mpionly: 1
+--- VMK::print() start ---
+vm located at: 0x631de0
+npets = 4, mypet=1
+  pth_mutex =		 0x1793410
+  pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
 MPI_Comm_rank in MPI_COMM_WORLD: 1
@@ -78,66 +88,56 @@ MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
-MPI_Comm_rank in MPI_COMM_WORLD: 2
-MPI thread level support: 3
-mpi_mutex_flag: 0
-mpionly: 1
-threadsflag: 0
---- VMK::print() start ---
-vm located at: 0x631f10
-npets = 4, mypet=3
-  pth_mutex =		 0x1793550
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
 MPI_Comm_rank in local MPI communicator: 3
 MPI_Comm_rank in MPI_COMM_WORLD: 3
 MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
+threadsflag: 0
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
   cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
---- ESMCI::VM::print() end ---
   cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
+  cpuid[3]=3, ssiid[3]=0
+--- VMK::print() end ---
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+  cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
+--- ESMCI::VM::print() end ---
 --- ESMCI::VM::print() end ---
   PASS  VM print Test, ESMF_VMUTest.F90, line 1162
   PASS  VM validate Test, ESMF_VMUTest.F90, line 1169
@@ -151,13 +151,13 @@ ncores = 4
   PASS  VM equality Test, ESMF_VMUTest.F90, line 129
   PASS  VM non-equality after destroy Test, ESMF_VMUTest.F90, line 137
   PASS  VM Time 5 Second Delay Test, ESMF_VMUTest.F90, line 154
- init_sec =          30
- end_sec =          35
- delay_time =           5
+ init_sec =          58
+ end_sec =           3
+ delay_time =         -55
  delay_time =           5
   PASS  Verify delay was 5 or 6 Seconds Test, ESMF_VMUTest.F90, line 169
   PASS  VM Time Prec. Test, ESMF_VMUTest.F90, line 176
- vm_prec =    1.6903504729270935E-007
+ vm_prec =    1.4808028936386108E-007
   PASS  VM Time Prec. Value Test, ESMF_VMUTest.F90, line 183
   PASS  VM Reduce ESMF_REDUCE_SUM Test: integer, ESMF_VMUTest.F90, line 212
  Global sum:
@@ -212,13 +212,13 @@ ncores = 4
   PASS  VM equality Test, ESMF_VMUTest.F90, line 129
   PASS  VM non-equality after destroy Test, ESMF_VMUTest.F90, line 137
   PASS  VM Time 5 Second Delay Test, ESMF_VMUTest.F90, line 154
- init_sec =          30
- end_sec =          35
- delay_time =           5
+ init_sec =          58
+ end_sec =           3
+ delay_time =         -55
  delay_time =           5
   PASS  Verify delay was 5 or 6 Seconds Test, ESMF_VMUTest.F90, line 169
   PASS  VM Time Prec. Test, ESMF_VMUTest.F90, line 176
- vm_prec =    1.7695128917694092E-007
+ vm_prec =    1.5133991837501526E-007
   PASS  VM Time Prec. Value Test, ESMF_VMUTest.F90, line 183
   PASS  VM Reduce ESMF_REDUCE_SUM Test: integer, ESMF_VMUTest.F90, line 212
  Global sum:
@@ -273,13 +273,13 @@ ncores = 4
   PASS  VM equality Test, ESMF_VMUTest.F90, line 129
   PASS  VM non-equality after destroy Test, ESMF_VMUTest.F90, line 137
   PASS  VM Time 5 Second Delay Test, ESMF_VMUTest.F90, line 154
- init_sec =          30
- end_sec =          35
- delay_time =           5
+ init_sec =          58
+ end_sec =           3
+ delay_time =         -55
  delay_time =           5
   PASS  Verify delay was 5 or 6 Seconds Test, ESMF_VMUTest.F90, line 169
   PASS  VM Time Prec. Test, ESMF_VMUTest.F90, line 176
- vm_prec =    1.6693957149982452E-007
+ vm_prec =    1.5506520867347717E-007
   PASS  VM Time Prec. Value Test, ESMF_VMUTest.F90, line 183
   PASS  VM Reduce ESMF_REDUCE_SUM Test: integer, ESMF_VMUTest.F90, line 212
  Global sum:
@@ -334,13 +334,13 @@ ncores = 4
   PASS  VM equality Test, ESMF_VMUTest.F90, line 129
   PASS  VM non-equality after destroy Test, ESMF_VMUTest.F90, line 137
   PASS  VM Time 5 Second Delay Test, ESMF_VMUTest.F90, line 154
- init_sec =          30
- end_sec =          35
- delay_time =           5
+ init_sec =          58
+ end_sec =           3
+ delay_time =         -55
  delay_time =           5
   PASS  Verify delay was 5 or 6 Seconds Test, ESMF_VMUTest.F90, line 169
   PASS  VM Time Prec. Test, ESMF_VMUTest.F90, line 176
- vm_prec =    1.7392449080944061E-007
+ vm_prec =    1.3876706361770630E-007
   PASS  VM Time Prec. Value Test, ESMF_VMUTest.F90, line 183
   PASS  VM Reduce ESMF_REDUCE_SUM Test: integer, ESMF_VMUTest.F90, line 212
  Global sum:
@@ -600,32 +600,6 @@ ncores = 4
   PASS  Verify Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R4, ESMF_VMUTest.F90, line 554
   PASS  VM All Full Reduce ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 718
   PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 726
-           3  func_results:          302  myresults:         302
-  PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R8, ESMF_VMUTest.F90, line 739
-  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R8, ESMF_VMUTest.F90, line 747
-           3  float_results:    302.00000000000000       my_float_results:   302.00000000000000     
-  PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R4, ESMF_VMUTest.F90, line 760
-  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R4, ESMF_VMUTest.F90, line 768
-           3  float4_results:    302.000000      my_float4_results:   302.000000    
-  PASS  VM All Reduce ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 973
-           3 array3(           1 )=         301 array3_soln(           1 )=         301
-           3 array3(           2 )=         302 array3_soln(           2 )=         302
-  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 986
-  PASS  VM All Reduce scalar ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 998
-  PASS  Verify All Reduce scalar ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 1004
-  PASS  VM All Reduce ESMF_REDUCE_MAXTest: ESMF_KIND_R8, ESMF_VMUTest.F90, line 1015
-           3 farray3(           1 )=   301.00000000000000      farray3_soln(           1 )=   301.00000000000000     
-           3 farray3(           2 )=   302.00000000000000      farray3_soln(           2 )=   302.00000000000000     
-  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R8, ESMF_VMUTest.F90, line 1028
-  PASS  VM All Reduce ESMF_REDUCE_MAXTest: ESMF_KIND_R4, ESMF_VMUTest.F90, line 1039
-           3 f4array3(           1 )=   301.000000     f4array3_soln(           1 )=   301.000000    
-           3 f4array3(           2 )=   302.000000     f4array3_soln(           2 )=   302.000000    
-  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R4, ESMF_VMUTest.F90, line 1052
-  PASS  VMId Create vmid1 Test, ESMF_VMUTest.F90, line 1275
-  PASS  VMId Create vmid2 Test, ESMF_VMUTest.F90, line 1283
-  PASS  VMId Compare Test, ESMF_VMUTest.F90, line 1290
-  PASS  VMId Set test values Test, ESMF_VMUTest.F90, line 1297
-  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 726
            0  func_results:          302  myresults:         302
   PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R8, ESMF_VMUTest.F90, line 739
   PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R8, ESMF_VMUTest.F90, line 747
@@ -678,8 +652,6 @@ ncores = 4
   PASS  VMId Compare Test, ESMF_VMUTest.F90, line 1290
   PASS  VMId Set test values Test, ESMF_VMUTest.F90, line 1297
 --- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0x7B000000
   PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 726
            2  func_results:          302  myresults:         302
   PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R8, ESMF_VMUTest.F90, line 739
@@ -709,7 +681,32 @@ ncores = 4
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0x7B000000
-  localID = 1234
+  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 726
+           3  func_results:          302  myresults:         302
+  PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R8, ESMF_VMUTest.F90, line 739
+  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R8, ESMF_VMUTest.F90, line 747
+           3  float_results:    302.00000000000000       my_float_results:   302.00000000000000     
+  PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R4, ESMF_VMUTest.F90, line 760
+  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R4, ESMF_VMUTest.F90, line 768
+           3  float4_results:    302.000000      my_float4_results:   302.000000    
+  PASS  VM All Reduce ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 973
+           3 array3(           1 )=         301 array3_soln(           1 )=         301
+           3 array3(           2 )=         302 array3_soln(           2 )=         302
+  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 986
+  PASS  VM All Reduce scalar ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 998
+  PASS  Verify All Reduce scalar ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 1004
+  PASS  VM All Reduce ESMF_REDUCE_MAXTest: ESMF_KIND_R8, ESMF_VMUTest.F90, line 1015
+           3 farray3(           1 )=   301.00000000000000      farray3_soln(           1 )=   301.00000000000000     
+           3 farray3(           2 )=   302.00000000000000      farray3_soln(           2 )=   302.00000000000000     
+  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R8, ESMF_VMUTest.F90, line 1028
+  PASS  VM All Reduce ESMF_REDUCE_MAXTest: ESMF_KIND_R4, ESMF_VMUTest.F90, line 1039
+           3 f4array3(           1 )=   301.000000     f4array3_soln(           1 )=   301.000000    
+           3 f4array3(           2 )=   302.000000     f4array3_soln(           2 )=   302.000000    
+  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R4, ESMF_VMUTest.F90, line 1052
+  PASS  VMId Create vmid1 Test, ESMF_VMUTest.F90, line 1275
+  PASS  VMId Create vmid2 Test, ESMF_VMUTest.F90, line 1283
+  PASS  VMId Compare Test, ESMF_VMUTest.F90, line 1290
+  PASS  VMId Set test values Test, ESMF_VMUTest.F90, line 1297
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0x7B000000
@@ -720,8 +717,11 @@ ncores = 4
   vmKey=0x7B000000
   localID = 1234
 --- ESMCI::VMId::print() end ---
+  vmKeyWidth = 1
+  vmKey=0x7B000000
   localID = 1234
 --- ESMCI::VMId::print() end ---
+  localID = 1234
 --- ESMCI::VMId::print() end ---
   PASS  VMId print test values Test, ESMF_VMUTest.F90, line 1304
   PASS  VMId Compare Test, ESMF_VMUTest.F90, line 1311
@@ -781,15 +781,12 @@ ncores = 4
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Base ID = 2, vmID:
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
  Proxy        = no
  Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
---- ESMCI::VMId::print() end ---
  Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
@@ -802,32 +799,23 @@ ncores = 4
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
+--- ESMCI::VMId::print() end ---
  Root Info (Attributes):
 {}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
  Grids Base ID =           2
   PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
 --- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0x00000000
-  localID = 0
 {}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
  Grids Base ID =           2
   PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
-  vmKey=0x00000000
-{}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
- Grids Base ID =           2
-  PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0x00000000
-  localID = 0
---- ESMCI::VMId::print() end ---
 {}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
  Grids Base ID =           2
   PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
@@ -836,9 +824,29 @@ ncores = 4
   vmKey=0x00000000
   localID = 0
 --- ESMCI::VMId::print() end ---
---- ESMCI::VMId::print() end ---
+{}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
+ Grids Base ID =           2
+  PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
+  vmKey=0x00000000
   localID = 0
 --- ESMCI::VMId::print() end ---
+  vmKeyWidth = 1
+  vmKey=0x00000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+  vmKey=0x00000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+  PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
+  PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
+--- ESMCI::VMId::print() start ---
+  PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
+  PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
+  vmKey=0xF0000000
   PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
   PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
 --- ESMCI::VMId::print() start ---
@@ -850,47 +858,51 @@ ncores = 4
   PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
-  PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
-  PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
-  PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
-  PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
---- ESMCI::VMId::print() start ---
+--- ESMCI::VMId::print() end ---
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
-  vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
---- ESMCI::VMId::print() end ---
   PASS  Write VMLogMemInfo into the default log w/o prefix, ESMF_VMUTest.F90, line 1432
   PASS  Write VMLogMemInfo into the default log w/ prefix, ESMF_VMUTest.F90, line 1442
   PASS  Write VMLogMemInfo into custom log w/o prefix, ESMF_VMUTest.F90, line 1456
   PASS  Write VMLogMemInfo into custom log w/ prefix, ESMF_VMUTest.F90, line 1466
   Ending Test, file ESMF_VMUTest.F90, line 1472
-  PET           1  Test Elapsed Time    5006.7870000000003       msec.
+  PET           0  Test Elapsed Time    5007.5769999999993       msec.
   PASS  Write VMLogMemInfo into the default log w/o prefix, ESMF_VMUTest.F90, line 1432
   PASS  Write VMLogMemInfo into the default log w/ prefix, ESMF_VMUTest.F90, line 1442
   PASS  Write VMLogMemInfo into custom log w/o prefix, ESMF_VMUTest.F90, line 1456
   PASS  Write VMLogMemInfo into custom log w/ prefix, ESMF_VMUTest.F90, line 1466
   Ending Test, file ESMF_VMUTest.F90, line 1472
-  PET           3  Test Elapsed Time    5007.4020000000000       msec.
+  PET           1  Test Elapsed Time    5007.3550000000005       msec.
   PASS  Write VMLogMemInfo into the default log w/o prefix, ESMF_VMUTest.F90, line 1432
   PASS  Write VMLogMemInfo into the default log w/ prefix, ESMF_VMUTest.F90, line 1442
   PASS  Write VMLogMemInfo into custom log w/o prefix, ESMF_VMUTest.F90, line 1456
   PASS  Write VMLogMemInfo into custom log w/ prefix, ESMF_VMUTest.F90, line 1466
   Ending Test, file ESMF_VMUTest.F90, line 1472
-  PET           0  Test Elapsed Time    5006.8729999999996       msec.
+  PET           2  Test Elapsed Time    5007.6629999999996       msec.
   PASS  Write VMLogMemInfo into the default log w/o prefix, ESMF_VMUTest.F90, line 1432
   PASS  Write VMLogMemInfo into the default log w/ prefix, ESMF_VMUTest.F90, line 1442
   PASS  Write VMLogMemInfo into custom log w/o prefix, ESMF_VMUTest.F90, line 1456
   PASS  Write VMLogMemInfo into custom log w/ prefix, ESMF_VMUTest.F90, line 1466
   Ending Test, file ESMF_VMUTest.F90, line 1472
-  PET           2  Test Elapsed Time    5007.0549999999994       msec.
+  PET           3  Test Elapsed Time    5007.9549999999999       msec.
+  Beginning Test, file ESMF_VMUTest.F90, line 1113
+  NUMBER_OF_PROCESSORS           4
+  PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
+  PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
+  PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
+  PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
+  Beginning Test, file ESMF_VMUTest.F90, line 1113
+  NUMBER_OF_PROCESSORS           4
+  PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
+  PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
+  PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
+  PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
   Beginning Test, file ESMF_VMUTest.F90, line 1113
   NUMBER_OF_PROCESSORS           4
   PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
@@ -904,19 +916,7 @@ ncores = 4
   PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
   PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
   PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
-  Beginning Test, file ESMF_VMUTest.F90, line 1113
-  NUMBER_OF_PROCESSORS           4
-  PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
-  PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
-  PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
-  PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
 --- ESMCI::VM::print() start ---
-  Beginning Test, file ESMF_VMUTest.F90, line 1113
-  NUMBER_OF_PROCESSORS           4
-  PASS  VM Get before initialization Test, ESMF_VMUTest.F90, line 1122
-  PASS  VM validate Test before valid VM, ESMF_VMUTest.F90, line 1129
-  PASS  VM Get Global Test, ESMF_VMUTest.F90, line 1136
-  PASS  VM Get Test, ESMF_VMUTest.F90, line 1144
 --- ESMCI::VM::print() start ---
 --- ESMCI::VM::print() start ---
 --- ESMCI::VMId::print() start ---
@@ -924,9 +924,11 @@ ncores = 4
 --- ESMCI::VMId::print() start ---
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
+  vmKey=0xF0000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
   vmKeyWidth = 1
   vmKeyWidth = 1
-  vmKey=0xF0000000
   vmKeyWidth = 1
   vmKey=0xF0000000
   vmKey=0xF0000000
@@ -935,23 +937,6 @@ ncores = 4
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
-  localID = 0
---- ESMCI::VMId::print() end ---
-  localID = 0
---- ESMCI::VMId::print() end ---
---- VMK::print() start ---
-vm located at: 0x70d140
-npets = 4, mypet=0
-  pth_mutex =		 0x17912e0
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
-MPI_Comm_rank in local MPI communicator: 0
-MPI_Comm_rank in MPI_COMM_WORLD: 0
---- VMK::print() start ---
-vm located at: 0x631de0
-npets = 4, mypet=1
-  pth_mutex =		 0x1793410
-  pth_finish_count =	 (nil)
 --- VMK::print() start ---
 vm located at: 0x631e70
 npets = 4, mypet=2
@@ -959,10 +944,35 @@ npets = 4, mypet=2
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 2
+MPI_Comm_rank in MPI_COMM_WORLD: 2
 MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
+  localID = 0
+--- ESMCI::VMId::print() end ---
+--- VMK::print() start ---
+vm located at: 0x70d140
+npets = 4, mypet=0
+--- VMK::print() start ---
+vm located at: 0x631f10
+npets = 4, mypet=3
+  pth_mutex =		 0x1793550
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+  pth_mutex =		 0x17912e0
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 4
+MPI_Comm_rank in local MPI communicator: 0
+MPI_Comm_rank in MPI_COMM_WORLD: 0
+MPI thread level support: 3
+mpi_mutex_flag: 0
+mpionly: 1
+--- VMK::print() start ---
+vm located at: 0x631de0
+npets = 4, mypet=1
+  pth_mutex =		 0x1793410
+  pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
 MPI_Comm_rank in MPI_COMM_WORLD: 1
@@ -970,66 +980,56 @@ MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
-MPI_Comm_rank in MPI_COMM_WORLD: 2
-MPI thread level support: 3
-mpi_mutex_flag: 0
-mpionly: 1
-threadsflag: 0
---- VMK::print() start ---
-vm located at: 0x631f10
-npets = 4, mypet=3
-  pth_mutex =		 0x1793550
-  pth_finish_count =	 (nil)
-MPI_Comm_size: 4
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
 MPI_Comm_rank in local MPI communicator: 3
 MPI_Comm_rank in MPI_COMM_WORLD: 3
 MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
+threadsflag: 0
   lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
   cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
-  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
-ncores = 4
-  cpuid[0]=0, ssiid[0]=0
-  cpuid[1]=1, ssiid[1]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[2]=2, ssiid[2]=0
-  cpuid[3]=3, ssiid[3]=0
---- VMK::print() end ---
---- ESMCI::VM::print() end ---
   cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
+ncores = 4
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
+  cpuid[3]=3, ssiid[3]=0
+--- VMK::print() end ---
+  cpuid[0]=0, ssiid[0]=0
+  cpuid[1]=1, ssiid[1]=0
+  cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
+  cpuid[2]=2, ssiid[2]=0
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
+--- ESMCI::VM::print() end ---
 --- ESMCI::VM::print() end ---
   PASS  VM print Test, ESMF_VMUTest.F90, line 1162
   PASS  VM validate Test, ESMF_VMUTest.F90, line 1169
@@ -1043,13 +1043,13 @@ ncores = 4
   PASS  VM equality Test, ESMF_VMUTest.F90, line 129
   PASS  VM non-equality after destroy Test, ESMF_VMUTest.F90, line 137
   PASS  VM Time 5 Second Delay Test, ESMF_VMUTest.F90, line 154
- init_sec =          30
- end_sec =          35
- delay_time =           5
+ init_sec =          58
+ end_sec =           3
+ delay_time =         -55
  delay_time =           5
   PASS  Verify delay was 5 or 6 Seconds Test, ESMF_VMUTest.F90, line 169
   PASS  VM Time Prec. Test, ESMF_VMUTest.F90, line 176
- vm_prec =    1.6903504729270935E-007
+ vm_prec =    1.4808028936386108E-007
   PASS  VM Time Prec. Value Test, ESMF_VMUTest.F90, line 183
   PASS  VM Reduce ESMF_REDUCE_SUM Test: integer, ESMF_VMUTest.F90, line 212
  Global sum:
@@ -1104,13 +1104,13 @@ ncores = 4
   PASS  VM equality Test, ESMF_VMUTest.F90, line 129
   PASS  VM non-equality after destroy Test, ESMF_VMUTest.F90, line 137
   PASS  VM Time 5 Second Delay Test, ESMF_VMUTest.F90, line 154
- init_sec =          30
- end_sec =          35
- delay_time =           5
+ init_sec =          58
+ end_sec =           3
+ delay_time =         -55
  delay_time =           5
   PASS  Verify delay was 5 or 6 Seconds Test, ESMF_VMUTest.F90, line 169
   PASS  VM Time Prec. Test, ESMF_VMUTest.F90, line 176
- vm_prec =    1.7695128917694092E-007
+ vm_prec =    1.5133991837501526E-007
   PASS  VM Time Prec. Value Test, ESMF_VMUTest.F90, line 183
   PASS  VM Reduce ESMF_REDUCE_SUM Test: integer, ESMF_VMUTest.F90, line 212
  Global sum:
@@ -1165,13 +1165,13 @@ ncores = 4
   PASS  VM equality Test, ESMF_VMUTest.F90, line 129
   PASS  VM non-equality after destroy Test, ESMF_VMUTest.F90, line 137
   PASS  VM Time 5 Second Delay Test, ESMF_VMUTest.F90, line 154
- init_sec =          30
- end_sec =          35
- delay_time =           5
+ init_sec =          58
+ end_sec =           3
+ delay_time =         -55
  delay_time =           5
   PASS  Verify delay was 5 or 6 Seconds Test, ESMF_VMUTest.F90, line 169
   PASS  VM Time Prec. Test, ESMF_VMUTest.F90, line 176
- vm_prec =    1.6693957149982452E-007
+ vm_prec =    1.5506520867347717E-007
   PASS  VM Time Prec. Value Test, ESMF_VMUTest.F90, line 183
   PASS  VM Reduce ESMF_REDUCE_SUM Test: integer, ESMF_VMUTest.F90, line 212
  Global sum:
@@ -1226,13 +1226,13 @@ ncores = 4
   PASS  VM equality Test, ESMF_VMUTest.F90, line 129
   PASS  VM non-equality after destroy Test, ESMF_VMUTest.F90, line 137
   PASS  VM Time 5 Second Delay Test, ESMF_VMUTest.F90, line 154
- init_sec =          30
- end_sec =          35
- delay_time =           5
+ init_sec =          58
+ end_sec =           3
+ delay_time =         -55
  delay_time =           5
   PASS  Verify delay was 5 or 6 Seconds Test, ESMF_VMUTest.F90, line 169
   PASS  VM Time Prec. Test, ESMF_VMUTest.F90, line 176
- vm_prec =    1.7392449080944061E-007
+ vm_prec =    1.3876706361770630E-007
   PASS  VM Time Prec. Value Test, ESMF_VMUTest.F90, line 183
   PASS  VM Reduce ESMF_REDUCE_SUM Test: integer, ESMF_VMUTest.F90, line 212
  Global sum:
@@ -1492,32 +1492,6 @@ ncores = 4
   PASS  Verify Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R4, ESMF_VMUTest.F90, line 554
   PASS  VM All Full Reduce ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 718
   PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 726
-           3  func_results:          302  myresults:         302
-  PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R8, ESMF_VMUTest.F90, line 739
-  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R8, ESMF_VMUTest.F90, line 747
-           3  float_results:    302.00000000000000       my_float_results:   302.00000000000000     
-  PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R4, ESMF_VMUTest.F90, line 760
-  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R4, ESMF_VMUTest.F90, line 768
-           3  float4_results:    302.000000      my_float4_results:   302.000000    
-  PASS  VM All Reduce ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 973
-           3 array3(           1 )=         301 array3_soln(           1 )=         301
-           3 array3(           2 )=         302 array3_soln(           2 )=         302
-  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 986
-  PASS  VM All Reduce scalar ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 998
-  PASS  Verify All Reduce scalar ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 1004
-  PASS  VM All Reduce ESMF_REDUCE_MAXTest: ESMF_KIND_R8, ESMF_VMUTest.F90, line 1015
-           3 farray3(           1 )=   301.00000000000000      farray3_soln(           1 )=   301.00000000000000     
-           3 farray3(           2 )=   302.00000000000000      farray3_soln(           2 )=   302.00000000000000     
-  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R8, ESMF_VMUTest.F90, line 1028
-  PASS  VM All Reduce ESMF_REDUCE_MAXTest: ESMF_KIND_R4, ESMF_VMUTest.F90, line 1039
-           3 f4array3(           1 )=   301.000000     f4array3_soln(           1 )=   301.000000    
-           3 f4array3(           2 )=   302.000000     f4array3_soln(           2 )=   302.000000    
-  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R4, ESMF_VMUTest.F90, line 1052
-  PASS  VMId Create vmid1 Test, ESMF_VMUTest.F90, line 1275
-  PASS  VMId Create vmid2 Test, ESMF_VMUTest.F90, line 1283
-  PASS  VMId Compare Test, ESMF_VMUTest.F90, line 1290
-  PASS  VMId Set test values Test, ESMF_VMUTest.F90, line 1297
-  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 726
            0  func_results:          302  myresults:         302
   PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R8, ESMF_VMUTest.F90, line 739
   PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R8, ESMF_VMUTest.F90, line 747
@@ -1570,8 +1544,6 @@ ncores = 4
   PASS  VMId Compare Test, ESMF_VMUTest.F90, line 1290
   PASS  VMId Set test values Test, ESMF_VMUTest.F90, line 1297
 --- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0x7B000000
   PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 726
            2  func_results:          302  myresults:         302
   PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R8, ESMF_VMUTest.F90, line 739
@@ -1601,7 +1573,32 @@ ncores = 4
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0x7B000000
-  localID = 1234
+  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 726
+           3  func_results:          302  myresults:         302
+  PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R8, ESMF_VMUTest.F90, line 739
+  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R8, ESMF_VMUTest.F90, line 747
+           3  float_results:    302.00000000000000       my_float_results:   302.00000000000000     
+  PASS  VM All Full Reduce ESMF_REDUCE_MAXTest:ESMF_KIND_R4, ESMF_VMUTest.F90, line 760
+  PASS  Verify All Full Reduce ESMF_REDUCE_MAXResults Test:ESMF_KIND_R4, ESMF_VMUTest.F90, line 768
+           3  float4_results:    302.000000      my_float4_results:   302.000000    
+  PASS  VM All Reduce ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 973
+           3 array3(           1 )=         301 array3_soln(           1 )=         301
+           3 array3(           2 )=         302 array3_soln(           2 )=         302
+  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 986
+  PASS  VM All Reduce scalar ESMF_REDUCE_MAXTest, ESMF_VMUTest.F90, line 998
+  PASS  Verify All Reduce scalar ESMF_REDUCE_MAXResults Test, ESMF_VMUTest.F90, line 1004
+  PASS  VM All Reduce ESMF_REDUCE_MAXTest: ESMF_KIND_R8, ESMF_VMUTest.F90, line 1015
+           3 farray3(           1 )=   301.00000000000000      farray3_soln(           1 )=   301.00000000000000     
+           3 farray3(           2 )=   302.00000000000000      farray3_soln(           2 )=   302.00000000000000     
+  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R8, ESMF_VMUTest.F90, line 1028
+  PASS  VM All Reduce ESMF_REDUCE_MAXTest: ESMF_KIND_R4, ESMF_VMUTest.F90, line 1039
+           3 f4array3(           1 )=   301.000000     f4array3_soln(           1 )=   301.000000    
+           3 f4array3(           2 )=   302.000000     f4array3_soln(           2 )=   302.000000    
+  PASS  Verify All Reduce ESMF_REDUCE_MAXResults Test: ESMF_KIND_R4, ESMF_VMUTest.F90, line 1052
+  PASS  VMId Create vmid1 Test, ESMF_VMUTest.F90, line 1275
+  PASS  VMId Create vmid2 Test, ESMF_VMUTest.F90, line 1283
+  PASS  VMId Compare Test, ESMF_VMUTest.F90, line 1290
+  PASS  VMId Set test values Test, ESMF_VMUTest.F90, line 1297
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0x7B000000
@@ -1612,8 +1609,11 @@ ncores = 4
   vmKey=0x7B000000
   localID = 1234
 --- ESMCI::VMId::print() end ---
+  vmKeyWidth = 1
+  vmKey=0x7B000000
   localID = 1234
 --- ESMCI::VMId::print() end ---
+  localID = 1234
 --- ESMCI::VMId::print() end ---
   PASS  VMId print test values Test, ESMF_VMUTest.F90, line 1304
   PASS  VMId Compare Test, ESMF_VMUTest.F90, line 1311
@@ -1673,15 +1673,12 @@ ncores = 4
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Base ID = 2, vmID:
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
  Proxy        = no
  Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
---- ESMCI::VMId::print() end ---
  Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
@@ -1694,32 +1691,23 @@ ncores = 4
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
+--- ESMCI::VMId::print() end ---
  Root Info (Attributes):
 {}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
  Grids Base ID =           2
   PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
 --- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0x00000000
-  localID = 0
 {}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
  Grids Base ID =           2
   PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
-  vmKey=0x00000000
-{}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
- Grids Base ID =           2
-  PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
-  vmKey=0x00000000
-  localID = 0
---- ESMCI::VMId::print() end ---
 {}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
  Grids Base ID =           2
   PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
@@ -1728,9 +1716,29 @@ ncores = 4
   vmKey=0x00000000
   localID = 0
 --- ESMCI::VMId::print() end ---
---- ESMCI::VMId::print() end ---
+{}  PASS  Access Base of Grid, ESMF_VMUTest.F90, line 1386
+ Grids Base ID =           2
+  PASS  Create temporary VMId, ESMF_VMUTest.F90, line 1398
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
+  vmKey=0x00000000
   localID = 0
 --- ESMCI::VMId::print() end ---
+  vmKeyWidth = 1
+  vmKey=0x00000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+  vmKey=0x00000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+  PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
+  PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
+--- ESMCI::VMId::print() start ---
+  PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
+  PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
+  vmKey=0xF0000000
   PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
   PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
 --- ESMCI::VMId::print() start ---
@@ -1742,44 +1750,36 @@ ncores = 4
   PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
-  PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
-  PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
-  PASS  Destroy VMId, ESMF_VMUTest.F90, line 1410
-  PASS  Access Base ID and VMId, ESMF_VMUTest.F90, line 1421
---- ESMCI::VMId::print() start ---
+--- ESMCI::VMId::print() end ---
   vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
-  vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
---- ESMCI::VMId::print() end ---
   PASS  Write VMLogMemInfo into the default log w/o prefix, ESMF_VMUTest.F90, line 1432
   PASS  Write VMLogMemInfo into the default log w/ prefix, ESMF_VMUTest.F90, line 1442
   PASS  Write VMLogMemInfo into custom log w/o prefix, ESMF_VMUTest.F90, line 1456
   PASS  Write VMLogMemInfo into custom log w/ prefix, ESMF_VMUTest.F90, line 1466
   Ending Test, file ESMF_VMUTest.F90, line 1472
-  PET           1  Test Elapsed Time    5006.7870000000003       msec.
+  PET           0  Test Elapsed Time    5007.5769999999993       msec.
   PASS  Write VMLogMemInfo into the default log w/o prefix, ESMF_VMUTest.F90, line 1432
   PASS  Write VMLogMemInfo into the default log w/ prefix, ESMF_VMUTest.F90, line 1442
   PASS  Write VMLogMemInfo into custom log w/o prefix, ESMF_VMUTest.F90, line 1456
   PASS  Write VMLogMemInfo into custom log w/ prefix, ESMF_VMUTest.F90, line 1466
   Ending Test, file ESMF_VMUTest.F90, line 1472
-  PET           3  Test Elapsed Time    5007.4020000000000       msec.
+  PET           1  Test Elapsed Time    5007.3550000000005       msec.
   PASS  Write VMLogMemInfo into the default log w/o prefix, ESMF_VMUTest.F90, line 1432
   PASS  Write VMLogMemInfo into the default log w/ prefix, ESMF_VMUTest.F90, line 1442
   PASS  Write VMLogMemInfo into custom log w/o prefix, ESMF_VMUTest.F90, line 1456
   PASS  Write VMLogMemInfo into custom log w/ prefix, ESMF_VMUTest.F90, line 1466
   Ending Test, file ESMF_VMUTest.F90, line 1472
-  PET           0  Test Elapsed Time    5006.8729999999996       msec.
+  PET           2  Test Elapsed Time    5007.6629999999996       msec.
   PASS  Write VMLogMemInfo into the default log w/o prefix, ESMF_VMUTest.F90, line 1432
   PASS  Write VMLogMemInfo into the default log w/ prefix, ESMF_VMUTest.F90, line 1442
   PASS  Write VMLogMemInfo into custom log w/o prefix, ESMF_VMUTest.F90, line 1456
   PASS  Write VMLogMemInfo into custom log w/ prefix, ESMF_VMUTest.F90, line 1466
   Ending Test, file ESMF_VMUTest.F90, line 1472
-  PET           2  Test Elapsed Time    5007.0549999999994       msec.
+  PET           3  Test Elapsed Time    5007.9549999999999       msec.
