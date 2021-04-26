@@ -8,21 +8,22 @@ commands:
     steps:
       - run:
           name: Checkout Code (esmf-test-artifacts)
-          command: echo "Host *" > ~/.ssh/config; echo "  StrictHostKeyChecking no" >> ~/.ssh/config;git clone -b ${CIRCLE_BRANCH} git@github.com:mark-a-potts/esmf-test-artifacts.git
+          command: mkdir -p ~/.ssh;echo "Host *" > ~/.ssh/config; echo "  StrictHostKeyChecking no" >> ~/.ssh/config;cd ~;echo $PWD;git clone -b ${CIRCLE_BRANCH} git@github.com:esmf-org/esmf-test-artifacts.git;echo $PWD
       - run:
           name: run scripts
-          command: cd esmf-test-artifacts;./.circleci/runscp.sh
+          command: cd ~;echo $PWD;ls;cd esmf-test-artifacts;echo $PWD;ls -la;git branch;ls -l .circleci;./.circleci/runscp.sh
 
 jobs:
   mt-test:
     docker:
-      - image: circleci/python
+      - image: cimg/base:stable-20.04
+    resource_class: large
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "3a:c8:f5:d7:b1:d5:51:d6:70:cf:4b:d2:9b:60:3d:44"
+            - "22:a5:e1:d5:16:a7:f3:fe:45:8e:d8:80:55:48:a6:3e"
       - merge-branch:
-          branch: plavac
+          branch: chianti
 
 workflows:
 
