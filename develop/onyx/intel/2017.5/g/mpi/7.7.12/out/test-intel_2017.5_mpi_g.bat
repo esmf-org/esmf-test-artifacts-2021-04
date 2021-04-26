@@ -27,5 +27,5 @@ export ESMF_TESTWITHTHREADS='ON'
 make info 2>&1| tee info.log 
 make install 2>&1| tee install_$JOBID.log 
 make all_tests 2>&1| tee test_$JOBID.log 
-ssh onyx02 /p/work/mpotts/intel_2017.5_mpi_g_develop/getres-test.sh
-ssh onyx02 /p/work/mpotts/intel_2017.5_mpi_g_develop/getres-test.sh
+ssh onyx /p/work/mpotts/intel_2017.5_mpi_g_develop/getres-test.sh
+ssh onyx /p/work/mpotts/intel_2017.5_mpi_g_develop/getres-test.sh
