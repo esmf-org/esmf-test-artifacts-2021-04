@@ -8,7 +8,7 @@ commands:
     steps:
       - run:
           name: Checkout Code (esmf-test-artifacts)
-          command: mkdir -p ~/.ssh;echo "Host *" > ~/.ssh/config; echo "  StrictHostKeyChecking no" >> ~/.ssh/config;cd ~;echo $PWD;git clone -b ${CIRCLE_BRANCH} git@github.com:esmf-org/esmf-test-artifacts.git;echo $PWD
+          command: mkdir -p ~/.ssh;echo "Host *" > ~/.ssh/config; echo "  StrictHostKeyChecking no" >> ~/.ssh/config;cd ~;echo $PWD;git clone git@github.com:esmf-org/esmf-test-artifacts.git;echo $PWD
       - run:
           name: run scripts
           command: cd ~;echo $PWD;ls;cd esmf-test-artifacts;echo $PWD;ls -la;git branch;ls -l .circleci;./.circleci/runscp.sh
