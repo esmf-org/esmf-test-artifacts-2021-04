@@ -1,11 +1,11 @@
-build time -- 2021-04-25 06:03:49.213427
+build time -- 2021-04-26 06:03:35.468929
+Beginning Test, file ESMC_DistGridUTest.C, line 44
 Beginning Test, file ESMC_DistGridUTest.C, line 44
 NUMBER_OF_PROCESSORS 4
+NUMBER_OF_PROCESSORS 4
 PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
-Beginning Test, file ESMC_DistGridUTest.C, line 44
+PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
 PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
-NUMBER_OF_PROCESSORS 4
-PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
 PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
 Beginning Test, file ESMC_DistGridUTest.C, line 44
 NUMBER_OF_PROCESSORS 4
@@ -16,18 +16,31 @@ NUMBER_OF_PROCESSORS 4
 PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
 PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 2
+tileCount = 1
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
 dimCount = 2
 tileCount = 1
 elementCountPTile: 50 
 regDecomp = YES
+elementCountPTile: 50 
+regDecomp = YES
+tileListPDe: 1 1 1 1 
+elementCountPDe: 20 10 10 10 
+contigFlagPDimPDe (dims separated by / ):
 tileListPDe: 1 1 1 1 
 elementCountPDe: 20 10 10 10 
 contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 1 / 
  for DE 1: 1 / 1 / 
-PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+ for DE 2: 1 / 1 / 
+ for DE 3: 1 / 1 / 
+ for DE 0: 1 / 1 / 
+ for DE 1: 1 / 1 / 
  for DE 2: 1 / 1 / 
  for DE 3: 1 / 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
@@ -36,11 +49,18 @@ PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
 indexTK: Integer*4
 dimCount = 2
 tileCount = 1
-elementCountPTile: 50 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 2) / (1, 10) / 
  for DE 1: (3, 3) / (1, 10) / 
  for DE 2: (4, 4) / (1, 10) / 
  for DE 3: (5, 5) / (1, 10) / 
 indexListPDimPLocalDe (dims separated by / ):
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+ for DE 1: (3, 3) / (1, 10) / 
+ for DE 2: (4, 4) / (1, 10) / 
+ for DE 3: (5, 5) / (1, 10) / 
+indexListPDimPLocalDe (dims separated by / ):
+elementCountPTile: 50 
 regDecomp = YES
 tileListPDe: 1 1 1 1 
 elementCountPDe: 20 10 10 10 
@@ -50,7 +70,13 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 2: 1 / 1 / 
  for DE 3: 1 / 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (1, 2) / (1, 10) / 
+ for localDE 0 - DE 3:  (5) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
+diffCollocationCount = 1
+collocationPDim:	1 / 1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 3 -  elementCountPCollPLocalDe 10:  default
+connectionCount = 0
+~ lower class' values ~
  for localDE 0 - DE 0:  (1, 2) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
 diffCollocationCount = 1
 collocationPDim:	1 / 1
@@ -58,12 +84,18 @@ arbSeqIndexListPCollPLocalDe:
  for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 20:  default
 connectionCount = 0
 ~ lower class' values ~
+deCount = 4
+Member on this PET appears to be an actual member.
+ for DE 0: (1, 2) / (1, 10) / 
  for DE 1: (3, 3) / (1, 10) / 
  for DE 2: (4, 4) / (1, 10) / 
  for DE 3: (5, 5) / (1, 10) / 
 indexListPDimPLocalDe (dims separated by / ):
 deCount = 4
 Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 3, CurrentVM: localPet = 3
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
 DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
@@ -79,67 +111,30 @@ Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
-PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
-PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
---- ESMCI::DistGrid::print start ---
-PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
-indexTK: Integer*4
-dimCount = 2
-tileCount = 1
-elementCountPTile: 50 
-regDecomp = YES
-tileListPDe: 1 1 1 1 
-elementCountPDe: 20 10 10 10 
-PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 1 / 
- for DE 1: 1 / 1 / 
- for DE 2: 1 / 1 / 
- for DE 3: 1 / 1 / 
-(min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (1, 2) / (1, 10) / 
- for DE 1: (3, 3) / (1, 10) / 
- for DE 2: (4, 4) / (1, 10) / 
- for DE 3: (5, 5) / (1, 10) / 
-PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
-indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 3:  (5) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
-diffCollocationCount = 1
-collocationPDim:	1 / 1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 3 -  elementCountPCollPLocalDe 10:  default
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
-Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 3, CurrentVM: localPet = 3
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
---- ESMCI::DistGrid::print end ---
-PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
 dimCount = 2
 tileCount = 1
 elementCountPTile: 50 
 regDecomp = YES
-tileListPDe: 1 1 1 1 
 PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
+tileListPDe: 1 1 1 1 
 elementCountPDe: 20 10 10 10 
 contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 1 / 
  for DE 1: 1 / 1 / 
-PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
-PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
  for DE 2: 1 / 1 / 
  for DE 3: 1 / 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
+PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
+PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
  for DE 0: (1, 2) / (1, 10) / 
  for DE 1: (3, 3) / (1, 10) / 
  for DE 2: (4, 4) / (1, 10) / 
  for DE 3: (5, 5) / (1, 10) / 
 indexListPDimPLocalDe (dims separated by / ):
-Ending Test, file ESMC_DistGridUTest.C, line 105
-Ending Test, file ESMC_DistGridUTest.C, line 105
 PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
  for localDE 0 - DE 2:  (4) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
 diffCollocationCount = 1
@@ -148,6 +143,7 @@ arbSeqIndexListPCollPLocalDe:
  for collocation 1, localDE 0 - DE 2 -  elementCountPCollPLocalDe 10:  default
 connectionCount = 0
 ~ lower class' values ~
+PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
 deCount = 4
 Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 2, CurrentVM: localPet = 2
@@ -155,21 +151,25 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
 PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
 PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
+PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
+PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
 PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
+Ending Test, file ESMC_DistGridUTest.C, line 105
+Ending Test, file ESMC_DistGridUTest.C, line 105
 Ending Test, file ESMC_DistGridUTest.C, line 105
 PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
 Ending Test, file ESMC_DistGridUTest.C, line 105
- PET 1 Test Elapsed Time  0.922000 msec.
- PET 2 Test Elapsed Time  0.739000 msec.
- PET 0 Test Elapsed Time  0.995000 msec.
- PET 3 Test Elapsed Time  0.841000 msec.
+ PET 1 Test Elapsed Time  0.793000 msec.
+ PET 2 Test Elapsed Time  0.722000 msec.
+ PET 3 Test Elapsed Time  0.867000 msec.
+ PET 0 Test Elapsed Time  0.868000 msec.
+Beginning Test, file ESMC_DistGridUTest.C, line 44
 Beginning Test, file ESMC_DistGridUTest.C, line 44
 NUMBER_OF_PROCESSORS 4
+NUMBER_OF_PROCESSORS 4
 PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
-Beginning Test, file ESMC_DistGridUTest.C, line 44
+PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
 PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
-NUMBER_OF_PROCESSORS 4
-PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
 PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
 Beginning Test, file ESMC_DistGridUTest.C, line 44
 NUMBER_OF_PROCESSORS 4
@@ -180,18 +180,31 @@ NUMBER_OF_PROCESSORS 4
 PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
 PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 2
+tileCount = 1
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
 dimCount = 2
 tileCount = 1
 elementCountPTile: 50 
 regDecomp = YES
+elementCountPTile: 50 
+regDecomp = YES
+tileListPDe: 1 1 1 1 
+elementCountPDe: 20 10 10 10 
+contigFlagPDimPDe (dims separated by / ):
 tileListPDe: 1 1 1 1 
 elementCountPDe: 20 10 10 10 
 contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 1 / 
  for DE 1: 1 / 1 / 
-PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+ for DE 2: 1 / 1 / 
+ for DE 3: 1 / 1 / 
+ for DE 0: 1 / 1 / 
+ for DE 1: 1 / 1 / 
  for DE 2: 1 / 1 / 
  for DE 3: 1 / 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
@@ -200,11 +213,18 @@ PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
 indexTK: Integer*4
 dimCount = 2
 tileCount = 1
-elementCountPTile: 50 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 2) / (1, 10) / 
  for DE 1: (3, 3) / (1, 10) / 
  for DE 2: (4, 4) / (1, 10) / 
  for DE 3: (5, 5) / (1, 10) / 
 indexListPDimPLocalDe (dims separated by / ):
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+ for DE 1: (3, 3) / (1, 10) / 
+ for DE 2: (4, 4) / (1, 10) / 
+ for DE 3: (5, 5) / (1, 10) / 
+indexListPDimPLocalDe (dims separated by / ):
+elementCountPTile: 50 
 regDecomp = YES
 tileListPDe: 1 1 1 1 
 elementCountPDe: 20 10 10 10 
@@ -214,7 +234,13 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 2: 1 / 1 / 
  for DE 3: 1 / 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (1, 2) / (1, 10) / 
+ for localDE 0 - DE 3:  (5) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
+diffCollocationCount = 1
+collocationPDim:	1 / 1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 3 -  elementCountPCollPLocalDe 10:  default
+connectionCount = 0
+~ lower class' values ~
  for localDE 0 - DE 0:  (1, 2) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
 diffCollocationCount = 1
 collocationPDim:	1 / 1
@@ -222,12 +248,18 @@ arbSeqIndexListPCollPLocalDe:
  for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 20:  default
 connectionCount = 0
 ~ lower class' values ~
+deCount = 4
+Member on this PET appears to be an actual member.
+ for DE 0: (1, 2) / (1, 10) / 
  for DE 1: (3, 3) / (1, 10) / 
  for DE 2: (4, 4) / (1, 10) / 
  for DE 3: (5, 5) / (1, 10) / 
 indexListPDimPLocalDe (dims separated by / ):
 deCount = 4
 Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 3, CurrentVM: localPet = 3
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
 DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
@@ -243,67 +275,30 @@ Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
-PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
-PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
---- ESMCI::DistGrid::print start ---
-PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
-indexTK: Integer*4
-dimCount = 2
-tileCount = 1
-elementCountPTile: 50 
-regDecomp = YES
-tileListPDe: 1 1 1 1 
-elementCountPDe: 20 10 10 10 
-PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 1 / 
- for DE 1: 1 / 1 / 
- for DE 2: 1 / 1 / 
- for DE 3: 1 / 1 / 
-(min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (1, 2) / (1, 10) / 
- for DE 1: (3, 3) / (1, 10) / 
- for DE 2: (4, 4) / (1, 10) / 
- for DE 3: (5, 5) / (1, 10) / 
-PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
-indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 3:  (5) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
-diffCollocationCount = 1
-collocationPDim:	1 / 1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 3 -  elementCountPCollPLocalDe 10:  default
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
-Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 3, CurrentVM: localPet = 3
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
---- ESMCI::DistGrid::print end ---
-PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
 dimCount = 2
 tileCount = 1
 elementCountPTile: 50 
 regDecomp = YES
-tileListPDe: 1 1 1 1 
 PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
+tileListPDe: 1 1 1 1 
 elementCountPDe: 20 10 10 10 
 contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 1 / 
  for DE 1: 1 / 1 / 
-PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
-PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
  for DE 2: 1 / 1 / 
  for DE 3: 1 / 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
+PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
+PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
  for DE 0: (1, 2) / (1, 10) / 
  for DE 1: (3, 3) / (1, 10) / 
  for DE 2: (4, 4) / (1, 10) / 
  for DE 3: (5, 5) / (1, 10) / 
 indexListPDimPLocalDe (dims separated by / ):
-Ending Test, file ESMC_DistGridUTest.C, line 105
-Ending Test, file ESMC_DistGridUTest.C, line 105
 PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
  for localDE 0 - DE 2:  (4) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
 diffCollocationCount = 1
@@ -312,6 +307,7 @@ arbSeqIndexListPCollPLocalDe:
  for collocation 1, localDE 0 - DE 2 -  elementCountPCollPLocalDe 10:  default
 connectionCount = 0
 ~ lower class' values ~
+PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
 deCount = 4
 Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 2, CurrentVM: localPet = 2
@@ -319,11 +315,15 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
 PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
 PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
+PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
+PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
 PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
+Ending Test, file ESMC_DistGridUTest.C, line 105
+Ending Test, file ESMC_DistGridUTest.C, line 105
 Ending Test, file ESMC_DistGridUTest.C, line 105
 PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
 Ending Test, file ESMC_DistGridUTest.C, line 105
- PET 1 Test Elapsed Time  0.922000 msec.
- PET 2 Test Elapsed Time  0.739000 msec.
- PET 0 Test Elapsed Time  0.995000 msec.
- PET 3 Test Elapsed Time  0.841000 msec.
+ PET 1 Test Elapsed Time  0.793000 msec.
+ PET 2 Test Elapsed Time  0.722000 msec.
+ PET 3 Test Elapsed Time  0.867000 msec.
+ PET 0 Test Elapsed Time  0.868000 msec.
