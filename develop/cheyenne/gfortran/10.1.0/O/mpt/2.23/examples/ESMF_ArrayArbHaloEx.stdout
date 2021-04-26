@@ -1,11 +1,9 @@
-build time -- 2021-04-25 05:44:18.437652
+build time -- 2021-04-26 05:44:23.465548
  seqIndexOffset=        1099511627776
  seqIndexOffset=        1099511627776
  seqIndexOffset=        1099511627776
  seqIndexOffset=        1099511627776
 --- ESMCI::DistGrid::print start ---
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*8
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*8
 --- ESMCI::DistGrid::print start ---
@@ -17,16 +15,13 @@ dimCount = 1
 tileCount = 1
 elementCountPTile: 20 
 regDecomp = NO
-tileListPDe: 1 1 1 1 
-elementCountPDe: 5 5 5 5 
 dimCount = 1
 tileCount = 1
 elementCountPTile: 20 
 regDecomp = NO
 tileListPDe: 1 1 1 1 
-elementCountPDe: 5 5 5 5 
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*8
 dimCount = 1
 tileCount = 1
 elementCountPTile: 20 
@@ -34,9 +29,6 @@ regDecomp = NO
 tileListPDe: 1 1 1 1 
 elementCountPDe: 5 5 5 5 
 contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 
- for DE 1: 1 / 
- for DE 2: 1 / 
 elementCountPTile: 20 
 regDecomp = NO
 tileListPDe: 1 1 1 1 
@@ -49,6 +41,8 @@ contigFlagPDimPDe (dims separated by / ):
 (min,max)IndexPDimPDe (dims separated by / ):
  for DE 0: (1, 5) / 
  for DE 1: (6, 10) / 
+tileListPDe: 1 1 1 1 
+elementCountPDe: 5 5 5 5 
 contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 
  for DE 1: 1 / 
@@ -60,6 +54,9 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 2: (11, 15) / 
  for DE 3: (16, 20) / 
 indexListPDimPLocalDe (dims separated by / ):
+elementCountPDe: 5 5 5 5 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
  for DE 1: 1 / 
  for DE 2: 1 / 
  for DE 3: 1 / 
@@ -69,6 +66,9 @@ indexListPDimPLocalDe (dims separated by / ):
  for DE 2: (11, 15) / 
  for DE 3: (16, 20) / 
 indexListPDimPLocalDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+ for DE 2: 1 / 
  for DE 3: 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
  for DE 0: (1, 5) / 
@@ -87,10 +87,6 @@ arbSeqIndexListPCollPLocalDe:
 diffCollocationCount = 1
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 5: (1, 5, 9, 13, 17)
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
  for localDE 0 - DE 1:  (6, 7, 8, 9, 10) /
 diffCollocationCount = 1
 collocationPDim:	1
@@ -100,8 +96,6 @@ connectionCount = 0
 ~ lower class' values ~
 deCount = 4
 Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
  for localDE 0 - DE 2:  (11, 12, 13, 14, 15) /
 diffCollocationCount = 1
 collocationPDim:	1
@@ -113,6 +107,7 @@ deCount = 4
 Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 2, CurrentVM: localPet = 2
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
  for collocation 1, localDE 0 - DE 3 -  elementCountPCollPLocalDe 5: (4, 8, 12, 16, 20)
 connectionCount = 0
 ~ lower class' values ~
@@ -121,11 +116,16 @@ Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 3, CurrentVM: localPet = 3
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 5: (1, 5, 9, 13, 17)
+connectionCount = 0
+~ lower class' values ~
+deCount = 4
 Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
---- ESMCI::DistGrid::print end ---
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
  farrayPtr1d:    1099511627777.0000        1099511627781.0000        1099511627785.0000        1099511627789.0000        1099511627793.0000        0.0000000000000000     
  farrayPtr1d:    1099511627778.0000        1099511627782.0000        1099511627786.0000        1099511627790.0000        1099511627794.0000        0.0000000000000000        0.0000000000000000     
@@ -152,35 +152,27 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 indexTK: Integer*8
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*8
+dimCount = 1
+tileCount = 1
+indexTK: Integer*8
+dimCount = 1
+tileCount = 1
+elementCountPTile: 20 
+regDecomp = NO
+dimCount = 1
+tileCount = 1
+elementCountPTile: 20 
+regDecomp = NO
+tileListPDe: 1 1 1 1 
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*8
 dimCount = 1
 tileCount = 1
-indexTK: Integer*8
-dimCount = 1
-tileCount = 1
-elementCountPTile: 20 
-regDecomp = NO
-tileListPDe: 1 1 1 1 
-elementCountPDe: 5 5 5 5 
-dimCount = 1
-tileCount = 1
 elementCountPTile: 20 
 regDecomp = NO
 tileListPDe: 1 1 1 1 
 elementCountPDe: 5 5 5 5 
 contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 
-dimCount = 1
-tileCount = 1
-elementCountPTile: 20 
-regDecomp = NO
-tileListPDe: 1 1 1 1 
-elementCountPDe: 5 5 5 5 
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 
- for DE 1: 1 / 
- for DE 2: 1 / 
 elementCountPTile: 20 
 regDecomp = NO
 tileListPDe: 1 1 1 1 
@@ -193,6 +185,8 @@ contigFlagPDimPDe (dims separated by / ):
 (min,max)IndexPDimPDe (dims separated by / ):
  for DE 0: (1, 5) / 
  for DE 1: (6, 10) / 
+tileListPDe: 1 1 1 1 
+elementCountPDe: 5 5 5 5 
 contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 
  for DE 1: 1 / 
@@ -204,6 +198,9 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 2: (11, 15) / 
  for DE 3: (16, 20) / 
 indexListPDimPLocalDe (dims separated by / ):
+elementCountPDe: 5 5 5 5 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
  for DE 1: 1 / 
  for DE 2: 1 / 
  for DE 3: 1 / 
@@ -213,6 +210,9 @@ indexListPDimPLocalDe (dims separated by / ):
  for DE 2: (11, 15) / 
  for DE 3: (16, 20) / 
 indexListPDimPLocalDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+ for DE 2: 1 / 
  for DE 3: 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
  for DE 0: (1, 5) / 
@@ -231,10 +231,6 @@ arbSeqIndexListPCollPLocalDe:
 diffCollocationCount = 1
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 5: (1, 5, 9, 13, 17)
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
  for localDE 0 - DE 1:  (6, 7, 8, 9, 10) /
 diffCollocationCount = 1
 collocationPDim:	1
@@ -244,8 +240,6 @@ connectionCount = 0
 ~ lower class' values ~
 deCount = 4
 Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
  for localDE 0 - DE 2:  (11, 12, 13, 14, 15) /
 diffCollocationCount = 1
 collocationPDim:	1
@@ -257,6 +251,7 @@ deCount = 4
 Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 2, CurrentVM: localPet = 2
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
  for collocation 1, localDE 0 - DE 3 -  elementCountPCollPLocalDe 5: (4, 8, 12, 16, 20)
 connectionCount = 0
 ~ lower class' values ~
@@ -265,11 +260,16 @@ Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 3, CurrentVM: localPet = 3
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 5: (1, 5, 9, 13, 17)
+connectionCount = 0
+~ lower class' values ~
+deCount = 4
 Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
---- ESMCI::DistGrid::print end ---
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
  farrayPtr1d:    1099511627777.0000        1099511627781.0000        1099511627785.0000        1099511627789.0000        1099511627793.0000        0.0000000000000000     
  farrayPtr1d:    1099511627778.0000        1099511627782.0000        1099511627786.0000        1099511627790.0000        1099511627794.0000        0.0000000000000000        0.0000000000000000     
