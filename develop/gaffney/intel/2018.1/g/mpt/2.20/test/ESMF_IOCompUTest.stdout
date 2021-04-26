@@ -1,4 +1,4 @@
-build time -- 2021-04-25 07:02:38
+build time -- 2021-04-26 06:02:03
   Beginning Test, file ESMF_IOCompUTest.F90, line 77
   Beginning Test, file ESMF_IOCompUTest.F90, line 77
   Beginning Test, file ESMF_IOCompUTest.F90, line 77
@@ -8,23 +8,23 @@ build time -- 2021-04-25 07:02:38
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   INFO  ESMF was built with NetCDF support
+  INFO  Create Cubed Sphere Grid
+  INFO  ESMF was built with NetCDF support
+  INFO  Create Cubed Sphere Grid
   INFO  ESMF was built with NetCDF support
   INFO  Create Cubed Sphere Grid
   INFO  ESMF was built with NetCDF support
   INFO  Create Cubed Sphere Grid
-  INFO  Create Cubed Sphere Grid
-  INFO  ESMF was built with NetCDF support
-  INFO  Create Cubed Sphere Grid
   PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 110
   PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 110
   PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 110
   PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 110
-MPT ERROR: Rank 3(g:3) received signal SIGSEGV(11).
-	Process ID: 306700, Host: r2i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOCompUTest
+MPT ERROR: Rank 2(g:2) received signal SIGSEGV(11).
+	Process ID: 121222, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOCompUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/306700/exe, process 306700
+MPT: Attaching to program: /proc/121222/exe, process 121222
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -62,7 +62,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab177c18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab1eb5806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff6180 "MPT ERROR: Rank 3(g:3) received signal SIGSEGV(11).\n\tProcess ID: 306700, Host: r2i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOCompUTest\n\tMPT "...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff6180 "MPT ERROR: Rank 2(g:2) received signal SIGSEGV(11).\n\tProcess ID: 121222, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOCompUTest\n\tMPT "...) at sig.c:340
 MPT: #3  0x00002aaab1eb5a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5c0080) at sig.c:489
 MPT: #4  0x00002aaab1eb5d9b in slave_sig_handler (signo=11, 
@@ -91,9 +91,9 @@ MPT: #16 0x00002aaab0d90701 in NC_create ()
 MPT:    from /app/CSE/CSEIntel.20200724/Datamodels/netcdf-4.7.4/lib/libnetcdf.so.18
 MPT: #17 0x00002aaab0d90435 in nc__create ()
 MPT:    from /app/CSE/CSEIntel.20200724/Datamodels/netcdf-4.7.4/lib/libnetcdf.so.18
-MPT: #18 0x00002aaab11c7940 in nf_create (path='./restart.tile4.nc', cmode=0, 
+MPT: #18 0x00002aaab11c7940 in nf_create (path='./restart.tile3.nc', cmode=0, 
 MPT:     ncid=-858993460, .tmp.PATH.len_V$cc=18) at nf_control.F90:64
-MPT: #19 0x00002aaab121acde in netcdf::nf90_create (path='./restart.tile4.nc', 
+MPT: #19 0x00002aaab121acde in netcdf::nf90_create (path='./restart.tile3.nc', 
 MPT:     cmode=0, ncid=-858993460, 
 MPT:     initialsize=<error reading variable: Cannot access memory at address 0x0>, chunksize=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     cache_size=<error reading variable: Cannot access memory at address 0x0>, 
@@ -118,14 +118,14 @@ MPT: #24 0x00002aaab2d7a555 in __libc_start_main () from /lib64/libc.so.6
 MPT: #25 0x000000000040bfa9 in _start ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 306700] will be detached.
+MPT: 	Inferior 1 [process 121222] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/306700/exe, process 306700
-MPT: [Inferior 1 (process 306700) detached]
+MPT: Detaching from program: /proc/121222/exe, process 121222
+MPT: [Inferior 1 (process 121222) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r2i2n15, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOCompUTest, Rank 3, Process 306700: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
-MPT ERROR: MPI_COMM_WORLD rank 3 has terminated without calling MPI_Finalize()
+MPT: On host r3i1n28, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_IOCompUTest, Rank 2, Process 121222: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT ERROR: MPI_COMM_WORLD rank 2 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

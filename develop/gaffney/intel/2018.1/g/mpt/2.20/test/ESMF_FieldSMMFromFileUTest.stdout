@@ -1,4 +1,4 @@
-build time -- 2021-04-25 07:02:38
+build time -- 2021-04-26 06:02:03
   Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 288
   Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 288
   Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 288
@@ -7,12 +7,12 @@ build time -- 2021-04-25 07:02:38
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
-MPT ERROR: Rank 1(g:1) received signal SIGSEGV(11).
-	Process ID: 292002, Host: r2i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FieldSMMFromFileUTest
+MPT ERROR: Rank 3(g:3) received signal SIGSEGV(11).
+	Process ID: 106525, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FieldSMMFromFileUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/292002/exe, process 292002
+MPT: Attaching to program: /proc/106525/exe, process 106525
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -50,7 +50,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab177c18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab1eb5806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff4380 "MPT ERROR: Rank 1(g:1) received signal SIGSEGV(11).\n\tProcess ID: 292002, Host: r2i2n15, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FieldSMMFromFileU"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff4380 "MPT ERROR: Rank 3(g:3) received signal SIGSEGV(11).\n\tProcess ID: 106525, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FieldSMMFromFileU"...) at sig.c:340
 MPT: #3  0x00002aaab1eb5a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5c0080) at sig.c:489
 MPT: #4  0x00002aaab1eb5d9b in slave_sig_handler (signo=11, 
@@ -100,7 +100,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\340\352j\003', '\000' <repeats 20 times>, ' \353j\003', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\360\036\357\000\000\000\000\000\260\375J\r', '\000' <repeats 28 times>, '@Yz\003', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., rc=-1, 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\300\353j\003', '\000' <repeats 21 times>, '\354j\003', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\320\037\357\000\000\000\000\000\220\376J\r', '\000' <repeats 28 times>, ' Zz\003', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., rc=-1, 
 MPT:     .tmp.FILENAME.len_V$158=16, .tmp.VARNAME.len_V$15c=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/interface/ESMF_IOFileTypeCheck.F90:108
 MPT: #21 0x00002aaaad9ff54e in esmf_regridweightgenmod::esmf_regridweightgenfile (
@@ -115,7 +115,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '`F\335\005', '\000' <repeats 20 times>, '\240F\335\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\360\036\357\000\000\000\000\000\260\375J\r', '\000' <repeats 28 times>, '\220/q\004', '\000' <repeats 20 times>, 'A', '\000' <repeats 24 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '@G\335\005', '\000' <repeats 20 times>, '\200G\335\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\320\037\357\000\000\000\000\000\220\376J\r', '\000' <repeats 28 times>, 'p0q\004', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
 MPT:     regridmethod=<error reading variable: Cannot access memory at address 0x0>, polemethod=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     regridpolenpnts=<error reading variable: Cannot access memory at address 0x0>, linetype=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     normtype=<error reading variable: Cannot access memory at address 0x0>, 
@@ -134,8 +134,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '`\257\200\005', '\000' <repeats 20 times>, '\240\257\200\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\360\036\357\000\000\000\000\000\260\375J\r', '\000' <repeats 29 times>, '\220\262\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 24 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
-MPT: 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '@\260\200\005', '\000' <repeats 20 times>, '\200\260\200\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\320\037\357\000\000\000\000\000\220\376J\r', '\000' <repeats 28 times>, '\340\220\262\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: dstmeshname=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -145,7 +144,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'Q\000\000\000\000\000\000\000@\037\304\001\000\000\000\000\200&\241\005\000\000\000\000\320\374F\005\000\000\000\000libgcc-4.8.5-44.el7.x86_64\000\005\000\000\000\000\310\027쬪*\000\000P\000\000\000\000\000\000\000\360\017\000\000\000\000\000\000\370\230\331\002\000\000\000\000`Q\331\002\000\000\000\000y\351\066\001\000\000\000\000std::_Vector_base<float*, std::allocator<float*> >::_Vector_base(s'..., 
+MPT: '\000' <repeats 24 times>, 'Q\000\000\000\000\000\000\000  \304\001\000\000\000\000`\'\241\005\000\000\000\000\260\375F\005\000\000\000\000libgcc-4.8.5-44.el7.x86_64\000\005\000\000\000\000\310\027쬪*\000\000P\000\000\000\000\000\000\000\360\017\000\000\000\000\000\000ؙ\331\002\000\000\000\000@R\331\002\000\000\000\000Y\352\066\001\000\000\000\000std::_Vector_base<float*, std::allocator<float*> >::_Vector_base(st'..., 
 MPT:     srcmissingvalueflag=<error reading variable: Cannot access memory at address 0x0>, warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: srcmissingvaluevar=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -156,7 +155,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\320^\211\005', '\000' <repeats 20 times>, '\020_\211\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\360\036\357\000\000\000\000\000\260\375J\r', '\000' <repeats 28 times>, '\240 x\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\260_\211\005', '\000' <repeats 20 times>, '\360_\211\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\320\037\357\000\000\000\000\000\220\376J\r', '\000' <repeats 28 times>, '\200!x\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
 MPT:     dstmissingvalueflag=<error reading variable: Cannot access memory at address 0x0>, warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: dstmissingvaluevar=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -167,7 +166,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\220.i\005', '\000' <repeats 20 times>, '\020\061i\005', '\000' <repeats 12 times>, '\241', '\000' <repeats 11 times>, '\t', '\000' <repeats 35 times>, '\001', '\000' <repeats 47 times>, ' \310\335\a\000\000\000\000 \310\335\a', '\000' <repeats 20 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, 'p/i\005', '\000' <repeats 20 times>, '\360\061i\005', '\000' <repeats 12 times>, '\241', '\000' <repeats 11 times>, '\t', '\000' <repeats 35 times>, '\001', '\000' <repeats 48 times>, '\311\335\a\000\000\000\000\000\311\335\a', '\000' <repeats 20 times>..., 
 MPT:     usesrccoordflag=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     srccoordinatevars=<error reading variable: Cannot resolve DW_OP_push_object_address for a missing object>, 
 MPT:     usedstcoordflag=<error reading variable: Cannot access memory at address 0x0>, 
@@ -187,8 +186,8 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, ' S\005\n', '\000' <repeats 20 times>, '@\370\205\n', '\000' <repeats 12 times>, '\241', '\000' <repeats 11 times>, '\t', '\000' <repeats 35 times>, '\001', '\000' <repeats 47 times>, ' \310\335\a\000\000\000\000 \310\335\a', '\000' <repeats 20 times>..., 
-MPT:     verboseflag=<error reading variable: Cannot access memory at address 0x0>, rc=-858993460, .tmp.SRCFILE.len_V$5319=16, .tmp.DSTFILE.len_V$531c=16, 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 24 times>, 'T\005\n', '\000' <repeats 20 times>, ' \371\205\n', '\000' <repeats 12 times>, '\241', '\000' <repeats 11 times>, '\t', '\000' <repeats 35 times>, '\001', '\000' <repeats 48 times>, '\311\335\a\000\000\000\000\000\311\335\a', '\000' <repeats 20 times>..., verboseflag=<error reading variable: Cannot access memory at address 0x0>, 
+MPT:     rc=-858993460, .tmp.SRCFILE.len_V$5319=16, .tmp.DSTFILE.len_V$531c=16, 
 MPT:     .tmp.WEIGHTFILE.len_V$5320=34, .tmp.RHFILE.len_V$5323=0, 
 MPT:     .tmp.SRCMESHNAME.len_V$5335=0, .tmp.DSTMESHNAME.len_V$5338=0, 
 MPT:     .tmp.SRCMISSINGVALUEVAR.len_V$533c=0, 
@@ -206,14 +205,14 @@ MPT: #25 0x00002aaab2d7a555 in __libc_start_main () from /lib64/libc.so.6
 MPT: #26 0x000000000040bce9 in _start ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 292002] will be detached.
+MPT: 	Inferior 1 [process 106525] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/292002/exe, process 292002
-MPT: [Inferior 1 (process 292002) detached]
+MPT: Detaching from program: /proc/106525/exe, process 106525
+MPT: [Inferior 1 (process 106525) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r2i2n15, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FieldSMMFromFileUTest, Rank 1, Process 292002: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
-MPT ERROR: MPI_COMM_WORLD rank 1 has terminated without calling MPI_Finalize()
+MPT: On host r3i1n28, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FieldSMMFromFileUTest, Rank 3, Process 106525: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT ERROR: MPI_COMM_WORLD rank 3 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11
