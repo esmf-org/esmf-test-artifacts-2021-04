@@ -1,11 +1,11 @@
-build time -- 2021-04-25 06:54:35
+build time -- 2021-04-26 06:53:08
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET1'
- ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET0'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET2'
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET0'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET3'
  Starting LogErr Tests
   Beginning Test, file ESMF_LogErrUTest.F90, line 119
@@ -143,8 +143,7 @@ build time -- 2021-04-25 06:54:35
   PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 630
   rc2 =           -1
   PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
- default Log file name = PET0.LogErrUTest.Log
- ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
+ default Log file name = PET2.LogErrUTest.Log
  Starting LogErr Tests
   Beginning Test, file ESMF_LogErrUTest.F90, line 119
   NUMBER_OF_PROCESSORS           4
@@ -212,8 +211,8 @@ build time -- 2021-04-25 06:54:35
   PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 630
   rc2 =           -1
   PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
- default Log file name = PET2.LogErrUTest.Log
- ESMF_LogOpen(): This ESMF_Log is already open with file 'PET1.Log_Test_File_2'
+ default Log file name = PET0.LogErrUTest.Log
+ ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
  Starting LogErr Tests
   Beginning Test, file ESMF_LogErrUTest.F90, line 119
@@ -284,6 +283,7 @@ build time -- 2021-04-25 06:54:35
   PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
  default Log file name = PET3.LogErrUTest.Log
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'PET1.Log_Test_File_2'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET0.Log_Test_File_2'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET2.Log_Test_File_2'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET3.Log_Test_File_2'
@@ -296,32 +296,32 @@ build time -- 2021-04-25 06:54:35
   PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
   rc =           19
   PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
- Log file name = PET3.Log_Test_File_2
+ Log file name = PET0.Log_Test_File_2
   PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
  size of random seed =            8
- generated a random seed based on current time =            0           0           0           0           0           0           0           0
- Random string is MDXEH
+ generated a random seed based on current time =          102         204         306         408         510         612         714         816
+ Random string is MDWPU
   PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
   PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
   PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
   PASS  Close a closed Log Test, ESMF_LogErrUTest.F90, line 784
   PASS  Open Log file with Fortran IO Test, ESMF_LogErrUTest.F90, line 794
-  filename = PET3.Log_Test_File_2
+  filename = PET0.Log_Test_File_2
   iostat =            0
   PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
  rc =            0
- msg_string is PET3MDXEH
+ msg_string is PET0MDWPU
   PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
   my_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
   log_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
   PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
@@ -338,8 +338,8 @@ end Time -------------------------------
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
  size of random seed =            8
- generated a random seed based on current time =            0           0           0           0           0           0           0           0
- Random string is MDXEH
+ generated a random seed based on current time =          102         204         306         408         510         612         714         816
+ Random string is MDWPU
   PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
   PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
   PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
@@ -349,20 +349,19 @@ end Time -------------------------------
   iostat =            0
   PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
  rc =            0
- msg_string is PET1MDXEH
+ msg_string is PET1MDWPU
   PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
   my_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+ ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
+2021-04-26T06:58:44
 end Time -------------------------------
 
   log_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
- ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
- ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
   PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
   PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 657
   PASS  Write without opening log file Test, ESMF_LogErrUTest.F90, line 665
@@ -372,32 +371,33 @@ end Time -------------------------------
   PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
   rc =           19
   PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
- Log file name = PET0.Log_Test_File_2
+ Log file name = PET3.Log_Test_File_2
   PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
  size of random seed =            8
- generated a random seed based on current time =            0           0           0           0           0           0           0           0
- Random string is MDXEH
+ generated a random seed based on current time =          102         204         306         408         510         612         714         816
+ Random string is MDWPU
   PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
   PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
   PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
   PASS  Close a closed Log Test, ESMF_LogErrUTest.F90, line 784
   PASS  Open Log file with Fortran IO Test, ESMF_LogErrUTest.F90, line 794
-  filename = PET0.Log_Test_File_2
+  filename = PET3.Log_Test_File_2
   iostat =            0
   PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
  rc =            0
- msg_string is PET0MDXEH
+ msg_string is PET3MDWPU
   PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
   my_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+ ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
+2021-04-26T06:58:44
 end Time -------------------------------
 
   log_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
   PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
@@ -414,8 +414,8 @@ end Time -------------------------------
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
  size of random seed =            8
- generated a random seed based on current time =            0           0           0           0           0           0           0           0
- Random string is MDXEH
+ generated a random seed based on current time =          102         204         306         408         510         612         714         816
+ Random string is MDWPU
   PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
   PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
   PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
@@ -425,128 +425,28 @@ end Time -------------------------------
   iostat =            0
   PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
  rc =            0
- msg_string is PET2MDXEH
+ msg_string is PET2MDWPU
   PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
   my_time is 
-Time -----------------------------------
  ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
-2021-04-25T07:00:00
+Time -----------------------------------
+2021-04-26T06:58:44
 end Time -------------------------------
 
   log_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
  ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
- ESMF_LogOpen(): This ESMF_Log is already open with file 'PET3.LogErrUTest.Log'
- ESMF_LogOpenDefault(): Unable to open file 
- ESMF_LogOpen(): This ESMF_Log is already open with file 'PET2.LogErrUTest.Log'
- ESMF_LogOpenDefault(): Unable to open file 
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET0.LogErrUTest.Log'
  ESMF_LogOpenDefault(): Unable to open file 
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET1.LogErrUTest.Log'
  ESMF_LogOpenDefault(): Unable to open file 
-  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
-  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
-  My PET char is PET3, and I read: PET3                                                                                                                                                                                                                                                            
-  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
-  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
-  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
-  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
-  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
-  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
-  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
-  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
-  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
-  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
-  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
-  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
-  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
-  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
-  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
-  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
-  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
-  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
-  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
-  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
-  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
-  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
-  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
-  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
-  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
-  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
-  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
-  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
-  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
-  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
-  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
-  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
-  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
-  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
-  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
-  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
-  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
-  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
-  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
-  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
-  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
-  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
-  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
-  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
-  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
-  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
-  My PET char is PET2, and I read: PET2                                                                                                                                                                                                                                                            
-  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
-  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
-  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
-  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
-  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
-  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
-  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
-  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
-  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
-  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
-  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
-  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
-  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
-  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
-  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
-  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
-  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
-  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
-  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
-  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
-  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
-  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
-  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
-  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
-  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
-  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
-  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
-  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
-  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
-  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
-  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
-  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
-  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
-  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
-  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
-  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
-  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
-  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
-  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
-  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
-  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
-  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
-  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
-  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'PET3.LogErrUTest.Log'
+ ESMF_LogOpenDefault(): Unable to open file 
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'PET2.LogErrUTest.Log'
+ ESMF_LogOpenDefault(): Unable to open file 
   PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
   PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
   My PET char is PET0, and I read: PET0                                                                                                                                                                                                                                                            
@@ -647,6 +547,106 @@ end Time -------------------------------
   PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
   PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
   PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
+  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
+  My PET char is PET3, and I read: PET3                                                                                                                                                                                                                                                            
+  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
+  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
+  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
+  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
+  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
+  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
+  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
+  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
+  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
+  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
+  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
+  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
+  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
+  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
+  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
+  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
+  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
+  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
+  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
+  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
+  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
+  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
+  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
+  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
+  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
+  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
+  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
+  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
+  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
+  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
+  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
+  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
+  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
+  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
+  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
+  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
+  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
+  My PET char is PET2, and I read: PET2                                                                                                                                                                                                                                                            
+  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
+  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
+  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
+  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
+  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
+  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
+  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
+  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
+  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
+  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
+  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
+  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
+  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
+  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
+  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
+  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
+  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
+  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
+  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
+  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
+  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
+  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
+  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
+  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
+  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
+  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
+  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
+  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
+  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
+  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
+  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
+  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
+  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
+  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
+  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
+  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message =  PASS  Close default log test, ESMF_LogErrUTest.F90, line 1437
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message =  PASS  Close default log test, ESMF_LogErrUTest.F90, line 1437
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message =  PASS  Close default log test, ESMF_LogErrUTest.F90, line 1437
@@ -663,7 +663,7 @@ end Time -------------------------------
   PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
   Ending Test, file ESMF_LogErrUTest.F90, line 1500
-  PET           1  Test Elapsed Time    2066.1179999999999       msec.
+  PET           1  Test Elapsed Time    2692.0580000000004       msec.
   PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
   PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
@@ -676,7 +676,7 @@ end Time -------------------------------
   PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
   Ending Test, file ESMF_LogErrUTest.F90, line 1500
-  PET           2  Test Elapsed Time    2066.5209999999997       msec.
+  PET           2  Test Elapsed Time    2691.2459999999996       msec.
   PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
   PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
@@ -689,7 +689,7 @@ end Time -------------------------------
   PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
   Ending Test, file ESMF_LogErrUTest.F90, line 1500
-  PET           3  Test Elapsed Time    2066.3689999999997       msec.
+  PET           0  Test Elapsed Time    2692.6940000000000       msec.
   PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
   PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
@@ -702,14 +702,14 @@ end Time -------------------------------
   PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
   Ending Test, file ESMF_LogErrUTest.F90, line 1500
-  PET           0  Test Elapsed Time    2066.2990000000004       msec.
+  PET           3  Test Elapsed Time    2691.9249999999997       msec.
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Pre-initialize message
  ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET1'
- ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET0'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET2'
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET0'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'Single_log_File.PET3'
  Starting LogErr Tests
   Beginning Test, file ESMF_LogErrUTest.F90, line 119
@@ -847,8 +847,7 @@ end Time -------------------------------
   PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 630
   rc2 =           -1
   PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
- default Log file name = PET0.LogErrUTest.Log
- ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
+ default Log file name = PET2.LogErrUTest.Log
  Starting LogErr Tests
   Beginning Test, file ESMF_LogErrUTest.F90, line 119
   NUMBER_OF_PROCESSORS           4
@@ -916,8 +915,8 @@ end Time -------------------------------
   PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 630
   rc2 =           -1
   PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
- default Log file name = PET2.LogErrUTest.Log
- ESMF_LogOpen(): This ESMF_Log is already open with file 'PET1.Log_Test_File_2'
+ default Log file name = PET0.LogErrUTest.Log
+ ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
  Starting LogErr Tests
   Beginning Test, file ESMF_LogErrUTest.F90, line 119
@@ -988,6 +987,7 @@ end Time -------------------------------
   PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
  default Log file name = PET3.LogErrUTest.Log
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = Log Write One
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'PET1.Log_Test_File_2'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET0.Log_Test_File_2'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET2.Log_Test_File_2'
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET3.Log_Test_File_2'
@@ -1000,32 +1000,32 @@ end Time -------------------------------
   PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
   rc =           19
   PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
- Log file name = PET3.Log_Test_File_2
+ Log file name = PET0.Log_Test_File_2
   PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
  size of random seed =            8
- generated a random seed based on current time =            0           0           0           0           0           0           0           0
- Random string is MDXEH
+ generated a random seed based on current time =          102         204         306         408         510         612         714         816
+ Random string is MDWPU
   PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
   PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
   PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
   PASS  Close a closed Log Test, ESMF_LogErrUTest.F90, line 784
   PASS  Open Log file with Fortran IO Test, ESMF_LogErrUTest.F90, line 794
-  filename = PET3.Log_Test_File_2
+  filename = PET0.Log_Test_File_2
   iostat =            0
   PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
  rc =            0
- msg_string is PET3MDXEH
+ msg_string is PET0MDWPU
   PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
   my_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
   log_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
   PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
@@ -1042,8 +1042,8 @@ end Time -------------------------------
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
  size of random seed =            8
- generated a random seed based on current time =            0           0           0           0           0           0           0           0
- Random string is MDXEH
+ generated a random seed based on current time =          102         204         306         408         510         612         714         816
+ Random string is MDWPU
   PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
   PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
   PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
@@ -1053,20 +1053,19 @@ end Time -------------------------------
   iostat =            0
   PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
  rc =            0
- msg_string is PET1MDXEH
+ msg_string is PET1MDWPU
   PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
   my_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+ ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
+2021-04-26T06:58:44
 end Time -------------------------------
 
   log_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
- ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
- ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
   PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
   PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 657
   PASS  Write without opening log file Test, ESMF_LogErrUTest.F90, line 665
@@ -1076,32 +1075,33 @@ end Time -------------------------------
   PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
   rc =           19
   PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
- Log file name = PET0.Log_Test_File_2
+ Log file name = PET3.Log_Test_File_2
   PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
  size of random seed =            8
- generated a random seed based on current time =            0           0           0           0           0           0           0           0
- Random string is MDXEH
+ generated a random seed based on current time =          102         204         306         408         510         612         714         816
+ Random string is MDWPU
   PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
   PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
   PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
   PASS  Close a closed Log Test, ESMF_LogErrUTest.F90, line 784
   PASS  Open Log file with Fortran IO Test, ESMF_LogErrUTest.F90, line 794
-  filename = PET0.Log_Test_File_2
+  filename = PET3.Log_Test_File_2
   iostat =            0
   PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
  rc =            0
- msg_string is PET0MDXEH
+ msg_string is PET3MDWPU
   PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
   my_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+ ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
+2021-04-26T06:58:44
 end Time -------------------------------
 
   log_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
   PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
@@ -1118,8 +1118,8 @@ end Time -------------------------------
  Starting a no-op loop to wait before testing time and date
  Ending the no-op loop
  size of random seed =            8
- generated a random seed based on current time =            0           0           0           0           0           0           0           0
- Random string is MDXEH
+ generated a random seed based on current time =          102         204         306         408         510         612         714         816
+ Random string is MDWPU
   PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
   PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
   PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
@@ -1129,128 +1129,28 @@ end Time -------------------------------
   iostat =            0
   PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
  rc =            0
- msg_string is PET2MDXEH
+ msg_string is PET2MDWPU
   PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
   my_time is 
-Time -----------------------------------
  ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
-2021-04-25T07:00:00
+Time -----------------------------------
+2021-04-26T06:58:44
 end Time -------------------------------
 
   log_time is 
 Time -----------------------------------
-2021-04-25T07:00:00
+2021-04-26T06:58:44
 end Time -------------------------------
 
  ESMF_LogFlush(): ESMF_Log not open -- cannot ESMF_LogFlush().
- ESMF_LogOpen(): This ESMF_Log is already open with file 'PET3.LogErrUTest.Log'
- ESMF_LogOpenDefault(): Unable to open file 
- ESMF_LogOpen(): This ESMF_Log is already open with file 'PET2.LogErrUTest.Log'
- ESMF_LogOpenDefault(): Unable to open file 
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET0.LogErrUTest.Log'
  ESMF_LogOpenDefault(): Unable to open file 
  ESMF_LogOpen(): This ESMF_Log is already open with file 'PET1.LogErrUTest.Log'
  ESMF_LogOpenDefault(): Unable to open file 
-  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
-  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
-  My PET char is PET3, and I read: PET3                                                                                                                                                                                                                                                            
-  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
-  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
-  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
-  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
-  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
-  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
-  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
-  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
-  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
-  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
-  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
-  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
-  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
-  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
-  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
-  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
-  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
-  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
-  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
-  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
-  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
-  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
-  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
-  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
-  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
-  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
-  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
-  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
-  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
-  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
-  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
-  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
-  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
-  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
-  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
-  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
-  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
-  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
-  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
-  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
-  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
-  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
-  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
-  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
-  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
-  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
-  My PET char is PET2, and I read: PET2                                                                                                                                                                                                                                                            
-  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
-  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
-  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
-  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
-  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
-  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
-  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
-  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
-  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
-  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
-  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
-  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
-  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
-  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
-  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
-  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
-  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
-  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
-  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
-  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
-  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
-  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
-  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
-  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
-  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
-  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
-  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
-  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
-  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
-  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
-  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
-  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
-  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
-  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
-  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
-  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
-  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
-  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
-  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
-  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
-  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
-  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
-  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
-  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
-  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'PET3.LogErrUTest.Log'
+ ESMF_LogOpenDefault(): Unable to open file 
+ ESMF_LogOpen(): This ESMF_Log is already open with file 'PET2.LogErrUTest.Log'
+ ESMF_LogOpenDefault(): Unable to open file 
   PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
   PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
   My PET char is PET0, and I read: PET0                                                                                                                                                                                                                                                            
@@ -1351,6 +1251,106 @@ end Time -------------------------------
   PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
   PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
   PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
+  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
+  My PET char is PET3, and I read: PET3                                                                                                                                                                                                                                                            
+  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
+  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
+  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
+  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
+  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
+  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
+  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
+  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
+  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
+  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
+  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
+  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
+  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
+  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
+  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
+  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
+  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
+  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
+  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
+  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
+  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
+  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
+  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
+  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
+  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
+  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
+  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
+  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
+  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
+  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
+  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
+  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
+  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
+  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
+  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
+  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
+  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
+  My PET char is PET2, and I read: PET2                                                                                                                                                                                                                                                            
+  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
+  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
+  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
+  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
+  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
+  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
+  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
+  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
+  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
+  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
+  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
+  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
+  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
+  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
+  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
+  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
+  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
+  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
+  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
+  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
+  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
+  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
+  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
+  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
+  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
+  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
+  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
+  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
+  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
+  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
+  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
+  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
+  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
+  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
+  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
+  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
+  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
+  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message =  PASS  Close default log test, ESMF_LogErrUTest.F90, line 1437
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message =  PASS  Close default log test, ESMF_LogErrUTest.F90, line 1437
  ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message =  PASS  Close default log test, ESMF_LogErrUTest.F90, line 1437
@@ -1367,7 +1367,7 @@ end Time -------------------------------
   PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
   Ending Test, file ESMF_LogErrUTest.F90, line 1500
-  PET           1  Test Elapsed Time    2066.1179999999999       msec.
+  PET           1  Test Elapsed Time    2692.0580000000004       msec.
   PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
   PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
@@ -1380,7 +1380,7 @@ end Time -------------------------------
   PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
   Ending Test, file ESMF_LogErrUTest.F90, line 1500
-  PET           2  Test Elapsed Time    2066.5209999999997       msec.
+  PET           2  Test Elapsed Time    2691.2459999999996       msec.
   PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
   PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
@@ -1393,7 +1393,7 @@ end Time -------------------------------
   PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
   Ending Test, file ESMF_LogErrUTest.F90, line 1500
-  PET           3  Test Elapsed Time    2066.3689999999997       msec.
+  PET           0  Test Elapsed Time    2692.6940000000000       msec.
   PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
   PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
@@ -1406,4 +1406,4 @@ end Time -------------------------------
   PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
   PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
   Ending Test, file ESMF_LogErrUTest.F90, line 1500
-  PET           0  Test Elapsed Time    2066.2990000000004       msec.
+  PET           3  Test Elapsed Time    2691.9249999999997       msec.
