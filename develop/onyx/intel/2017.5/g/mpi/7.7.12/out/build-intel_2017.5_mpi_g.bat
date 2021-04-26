@@ -28,4 +28,4 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 44 clean 2>&1| tee clean_$JOBID.log 
 make -j 44 2>&1| tee build_$JOBID.log
 
-ssh onyx02 /p/work/mpotts/intel_2017.5_mpi_g_develop/getres-build.sh
+ssh onyx /p/work/mpotts/intel_2017.5_mpi_g_develop/getres-build.sh
