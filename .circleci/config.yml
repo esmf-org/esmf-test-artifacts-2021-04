@@ -11,7 +11,7 @@ commands:
           command: mkdir -p ~/.ssh;echo "Host *" > ~/.ssh/config; echo "  StrictHostKeyChecking no" >> ~/.ssh/config;cd ~;echo $PWD;git clone -b ${CIRCLE_BRANCH} git@github.com:esmf-org/esmf-test-artifacts.git;echo $PWD
       - run:
           name: run scripts
-          command: cd ~;echo $PWD;ls;cd esmf-test-artifacts;echo $PWD;ls -l;git branch;ls -l .circleci;$PWD/.circleci/runscp.sh
+          command: cd ~;echo $PWD;ls;cd esmf-test-artifacts;echo $PWD;ls -la;git branch;ls -la /root/esmf-test-artifacts/.circleci;/root/esmf-test-artifacts/.circleci/runscp.sh
 
 jobs:
   mt-test:
