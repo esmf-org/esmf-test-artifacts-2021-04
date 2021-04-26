@@ -1,7 +1,7 @@
 #!/bin/sh -l
 #PBS -N build-gfortran_7.2.0_mpiuni_g.bat
 #PBS -l walltime=1:00:00
-#PBS -l walltime=2:00:00
+#PBS -l walltime=1:00:00
 #PBS -q standard
 #PBS -A NRLMR03795024
 #PBS -l select=1:ncpus=44:mpiprocs=44
@@ -27,4 +27,4 @@ export ESMF_TESTWITHTHREADS='ON'
 make -j 44 clean 2>&1| tee clean_$JOBID.log 
 make -j 44 2>&1| tee build_$JOBID.log
 
-ssh onyx02 /p/work/mpotts/gfortran_7.2.0_mpiuni_g_develop/getres-build.sh
+ssh onyx /p/work/mpotts/gfortran_7.2.0_mpiuni_g_develop/getres-build.sh
