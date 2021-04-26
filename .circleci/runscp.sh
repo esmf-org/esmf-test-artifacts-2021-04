@@ -12,6 +12,7 @@ git branch
 #export host=`git show -s --format=%s |  awk -F " " '{print $10}'`
 export host=${CIRCLE_BRANCH}
 export branch=`git show -s --format=%s |  awk -F " " '{print $5}' | awk -F"_._" '{print $2}'`
+export branch=${branch:-'develop'}
 export hash=`git show -s --format=%s |  awk -F " " '{print $8}'`
 export message=`git show -s --format=%s`
 echo $host
