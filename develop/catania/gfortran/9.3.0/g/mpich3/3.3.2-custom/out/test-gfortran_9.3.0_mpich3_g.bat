@@ -1,7 +1,8 @@
-#!/bin/bash -l
+#!/home/mpotts/bin/bash -l
 export JOBID=12346
 
 module use /project/esmf/stack/modulefiles
+export LIBRARY_PATH=$LIBRARY_PATH:/project/esmf/stack/install/gcc/10.2.0/mpich/3.3.2/lib
 module load gnu/9.3.0/compiler gnu/9.3.0/mpich3/3.3.2-custom gnu/9.3.0/netcdf-c/4.7.4
 module load gnu/9.3.0/netcdf-fortran/4.5.3 
 module list >& module-test.log

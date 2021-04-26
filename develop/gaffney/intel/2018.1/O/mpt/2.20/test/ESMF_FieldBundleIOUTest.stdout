@@ -1,4 +1,4 @@
-build time -- 2021-04-21 21:04:02
+build time -- 2021-04-26 06:06:49
   Beginning Test, file ESMF_FieldBundleIOUTest.F90, line 71
   Beginning Test, file ESMF_FieldBundleIOUTest.F90, line 71
   Beginning Test, file ESMF_FieldBundleIOUTest.F90, line 71
@@ -164,11 +164,11 @@ build time -- 2021-04-21 21:04:02
   PASS  Set attribute values on FieldBundle single Test, ESMF_FieldBundleIOUTest
  .F90, line 342
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 369108, Host: r3i3n22, Program: /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_FieldBundleIOUTest
+	Process ID: 249580, Host: r2i4n8, Program: /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_FieldBundleIOUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/369108/exe, process 369108
+MPT: Attaching to program: /proc/249580/exe, process 249580
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -206,7 +206,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaaae4eb18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaaaec24806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff8080 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 369108, Host: r3i3n22, Program: /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_FieldBundleIOUTes"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff8080 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 249580, Host: r2i4n8, Program: /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_FieldBundleIOUTest"...) at sig.c:340
 MPT: #3  0x00002aaaaec24a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaab9320080) at sig.c:489
 MPT: #4  0x00002aaaaec24d9b in slave_sig_handler (signo=11, 
@@ -235,32 +235,32 @@ MPT: #16 0x00002aaaadaff701 in NC_create ()
 MPT:    from /app/CSE/CSEIntel.20200724/Datamodels/netcdf-4.7.4/lib/libnetcdf.so.18
 MPT: #17 0x00002aaaadaff435 in nc__create ()
 MPT:    from /app/CSE/CSEIntel.20200724/Datamodels/netcdf-4.7.4/lib/libnetcdf.so.18
-MPT: #18 0x00002aaaaba30595 in ESMCI::PIO_Handler::open(bool, int*) ()
+MPT: #18 0x00002aaaaba30605 in ESMCI::PIO_Handler::open(bool, int*) ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
-MPT: #19 0x00002aaaab5e65c4 in ESMCI::IO_Handler::open(std::string const&, ESMC_FileStatus_Flag, bool, bool, int*) ()
+MPT: #19 0x00002aaaab5e6634 in ESMCI::IO_Handler::open(std::string const&, ESMC_FileStatus_Flag, bool, bool, int*) ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
-MPT: #20 0x00002aaaab5f40a1 in ESMCI::IO::open(std::string const&, ESMC_FileStatus_Flag, ESMC_IOFmt_Flag, bool, bool) ()
+MPT: #20 0x00002aaaab5f4111 in ESMCI::IO::open(std::string const&, ESMC_FileStatus_Flag, ESMC_IOFmt_Flag, bool, bool) ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
-MPT: #21 0x00002aaaab5f7267 in ESMCI::IO::write(std::string const&, ESMC_IOFmt_Flag, bool, ESMC_FileStatus_Flag, int*) ()
+MPT: #21 0x00002aaaab5f72d7 in ESMCI::IO::write(std::string const&, ESMC_IOFmt_Flag, bool, ESMC_FileStatus_Flag, int*) ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
-MPT: #22 0x00002aaaab5e1f66 in c_esmc_iowrite_ ()
+MPT: #22 0x00002aaaab5e1fd6 in c_esmc_iowrite_ ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
-MPT: #23 0x00002aaaac0b478d in esmf_iomod_mp_esmf_iowrite_ ()
+MPT: #23 0x00002aaaac0b4afd in esmf_iomod_mp_esmf_iowrite_ ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
-MPT: #24 0x00002aaaabe10615 in esmf_fieldbundlemod_mp_esmf_fieldbundlewrite_ ()
+MPT: #24 0x00002aaaabe10955 in esmf_fieldbundlemod_mp_esmf_fieldbundlewrite_ ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
 MPT: #25 0x000000000040f8ac in MAIN__ ()
 MPT: #26 0x000000000040c11e in main ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 369108] will be detached.
+MPT: 	Inferior 1 [process 249580] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/369108/exe, process 369108
-MPT: [Inferior 1 (process 369108) detached]
+MPT: Detaching from program: /proc/249580/exe, process 249580
+MPT: [Inferior 1 (process 249580) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i3n22, Program /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_FieldBundleIOUTest, Rank 0, Process 369108: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default
+MPT: On host r2i4n8, Program /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_FieldBundleIOUTest, Rank 0, Process 249580: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

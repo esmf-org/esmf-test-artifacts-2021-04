@@ -8,6 +8,8 @@
 JOBID="`echo $PBS_JOBID | cut -d. -f1`"
 
 cd /glade/scratch/mpotts/gfortran_7.4.0_openmpi_O_develop
+
+module load python
 module load gnu/7.4.0 openmpi/4.0.3 netcdf/4.7.3
 module list >& module-build.log
 

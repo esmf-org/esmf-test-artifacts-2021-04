@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/home/mpotts/bin/bash -l
 export JOBID=12346
 
 module use /project/esmf/stack/modulefiles

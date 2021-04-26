@@ -1,4 +1,4 @@
-build time -- 2021-04-22 07:52:00
+build time -- 2021-04-26 02:33:04
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
 MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
@@ -14,16 +14,16 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  
  === Second Order Conservative Mesh to Mesh ===
  Conservation:
- Rel Error =   3.010269495911342E-016
- SRC mass =   2.881342481683071E-003
+ Rel Error =   1.505134747955671E-016
   PASS  Second-order conservative regridding Mesh to Mesh., ESMF_FieldRegridCsrv
  2ndUTest.F90, line 76
- DST mass =   2.881342481683070E-003
-  
+ SRC mass =   2.881342481683071E-003
   PASS  Second-order conservative regridding Mesh to Mesh. interpolation error, 
  ESMF_FieldRegridCsrv2ndUTest.F90, line 88
   PASS  Second-order conservative regridding Mesh to Mesh. conservation error, E
  SMF_FieldRegridCsrv2ndUTest.F90, line 100
+ DST mass =   2.881342481683071E-003
+  
  Interpolation:
  Max Error =   2.730020642428476E-003
  Min Error =   1.692092066044282E-005
@@ -50,7 +50,12 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  === Second Order Conservative Mesh to Mesh with Masks ===
  Conservation:
   PASS  Second-order conservative Mesh to Mesh with masks., ESMF_FieldRegridCsrv
+ 2ndUTest.F90, line 117
  Rel Error =   0.000000000000000E+000
+  PASS  Second-order conservative Mesh to Mesh with masks interpolation error, E
+ SMF_FieldRegridCsrv2ndUTest.F90, line 129
+  PASS  Second-order conservative Mesh to Mesh with masks. conservation error, E
+ SMF_FieldRegridCsrv2ndUTest.F90, line 141
  SRC mass =   2.172146590883028E-003
  DST mass =   2.172146590883028E-003
   
@@ -60,22 +65,17 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   
   PASS  Second-order conservative Mesh to Mesh with masks., ESMF_FieldRegridCsrv
  2ndUTest.F90, line 117
-  PASS  Second-order conservative Mesh to Mesh with masks., ESMF_FieldRegridCsrv
- 2ndUTest.F90, line 117
-  PASS  Second-order conservative Mesh to Mesh with masks interpolation error, E
-  PASS  Second-order conservative Mesh to Mesh with masks interpolation error, E
- SMF_FieldRegridCsrv2ndUTest.F90, line 129
-  PASS  Second-order conservative Mesh to Mesh with masks. conservation error, E
- SMF_FieldRegridCsrv2ndUTest.F90, line 141
- SMF_FieldRegridCsrv2ndUTest.F90, line 129
-  PASS  Second-order conservative Mesh to Mesh with masks. conservation error, E
- SMF_FieldRegridCsrv2ndUTest.F90, line 141
- 2ndUTest.F90, line 117
   PASS  Second-order conservative Mesh to Mesh with masks interpolation error, E
  SMF_FieldRegridCsrv2ndUTest.F90, line 129
   PASS  Second-order conservative Mesh to Mesh with masks. conservation error, E
  SMF_FieldRegridCsrv2ndUTest.F90, line 141
   PASS  Second-order conservative Mesh to Mesh with masks., ESMF_FieldRegridCsrv
+  PASS  Second-order conservative Mesh to Mesh with masks., ESMF_FieldRegridCsrv
+ 2ndUTest.F90, line 117
+  PASS  Second-order conservative Mesh to Mesh with masks interpolation error, E
+ SMF_FieldRegridCsrv2ndUTest.F90, line 129
+  PASS  Second-order conservative Mesh to Mesh with masks. conservation error, E
+ SMF_FieldRegridCsrv2ndUTest.F90, line 141
  2ndUTest.F90, line 117
   PASS  Second-order conservative Mesh to Mesh with masks interpolation error, E
  SMF_FieldRegridCsrv2ndUTest.F90, line 129
@@ -96,18 +96,18 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Min Error =   6.985065583717741E-010
  Avg Error =   1.745646186464498E-003
   
- rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 170
   PASS  Second-order conservative with small number of neighbors., ESMF_FieldReg
-  PASS  Second-order conservative with small number of neighbors conservation er
- ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 182
+  PASS  Second-order conservative with small number of neighbors., ESMF_FieldReg
+ ridCsrv2ndUTest.F90, line 158
  ridCsrv2ndUTest.F90, line 158
   PASS  Second-order conservative with small number of neighbors interpolation e
  rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 170
   PASS  Second-order conservative with small number of neighbors conservation er
  ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 182
-  PASS  Second-order conservative with small number of neighbors., ESMF_FieldReg
- ridCsrv2ndUTest.F90, line 158
   PASS  Second-order conservative with small number of neighbors interpolation e
+ rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 170
+  PASS  Second-order conservative with small number of neighbors conservation er
+ ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 182
  rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 170
   PASS  Second-order conservative with small number of neighbors conservation er
  ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 182
@@ -120,9 +120,14 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  
  === Second Order with Spherical Grids ===
  Conservation:
- Rel Error =   0.000000000000000E+000
- SRC mass =    23.0464441022400     
   PASS  Second-order conservative regridding Grid to Grid., ESMF_FieldRegridCsrv
+ 2ndUTest.F90, line 198
+ Rel Error =   0.000000000000000E+000
+  PASS  Second-order conservative regridding Grid to Grid. interpolation error, 
+ ESMF_FieldRegridCsrv2ndUTest.F90, line 210
+  PASS  Second-order conservative regridding Grid to Grid. conservation error, E
+ SMF_FieldRegridCsrv2ndUTest.F90, line 222
+ SRC mass =    23.0464441022400     
  DST mass =    23.0464441022400     
   
  Interpolation:
@@ -131,16 +136,11 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   
   PASS  Second-order conservative regridding Grid to Grid., ESMF_FieldRegridCsrv
  2ndUTest.F90, line 198
+  PASS  Second-order conservative regridding Grid to Grid. interpolation error, 
+ ESMF_FieldRegridCsrv2ndUTest.F90, line 210
+  PASS  Second-order conservative regridding Grid to Grid. conservation error, E
+ SMF_FieldRegridCsrv2ndUTest.F90, line 222
   PASS  Second-order conservative regridding Grid to Grid., ESMF_FieldRegridCsrv
- 2ndUTest.F90, line 198
-  PASS  Second-order conservative regridding Grid to Grid. interpolation error, 
-  PASS  Second-order conservative regridding Grid to Grid. interpolation error, 
- ESMF_FieldRegridCsrv2ndUTest.F90, line 210
-  PASS  Second-order conservative regridding Grid to Grid. conservation error, E
- SMF_FieldRegridCsrv2ndUTest.F90, line 222
- ESMF_FieldRegridCsrv2ndUTest.F90, line 210
-  PASS  Second-order conservative regridding Grid to Grid. conservation error, E
- SMF_FieldRegridCsrv2ndUTest.F90, line 222
  2ndUTest.F90, line 198
   PASS  Second-order conservative regridding Grid to Grid. interpolation error, 
  ESMF_FieldRegridCsrv2ndUTest.F90, line 210
@@ -157,14 +157,11 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Conservation:
   PASS  Second-order conservative regridding on a sphere with user areas, ESMF_F
  ieldRegridCsrv2ndUTest.F90, line 242
- Rel Error =   1.672274256764640E-015
+ Rel Error =   1.449304355862688E-015
  SRC mass =   0.995850130563912     
-  PASS  Second-order conservative regridding on a sphere with user areas: interp
- olation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 253
-  PASS  Second-order conservative regridding on a sphere with user areas: conser
- vation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 264
  DST mass =   0.995850130563910     
   
+  PASS  Second-order conservative regridding on a sphere with user areas: interp
  Interpolation:
  Max Error =   5.042711111121159E-002
  Min Error =   4.901021619069374E-004
@@ -172,12 +169,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Second-order conservative regridding on a sphere with user areas, ESMF_F
  ieldRegridCsrv2ndUTest.F90, line 242
   PASS  Second-order conservative regridding on a sphere with user areas: interp
- olation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 253
-  PASS  Second-order conservative regridding on a sphere with user areas: conser
- vation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 264
   PASS  Second-order conservative regridding on a sphere with user areas, ESMF_F
  ieldRegridCsrv2ndUTest.F90, line 242
+ olation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 253
   PASS  Second-order conservative regridding on a sphere with user areas: interp
+ olation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 253
+  PASS  Second-order conservative regridding on a sphere with user areas: conser
+  PASS  Second-order conservative regridding on a sphere with user areas: conser
+ vation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 264
+ vation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 264
  olation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 253
   PASS  Second-order conservative regridding on a sphere with user areas: conser
  vation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 264
@@ -190,20 +190,20 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  === 2nd order with sph concave quads ===
  Conservation:
  Rel Error =   0.000000000000000E+000
- SRC mass =    3.52877954907456     
- DST mass =    3.52877954907456     
   PASS  Second-order conservative regridding with sph concave element., ESMF_Fie
  ldRegridCsrv2ndUTest.F90, line 282
+ SRC mass =    3.52877954907456     
+ DST mass =    3.52877954907456     
   
  Interpolation:
  Max Error =   2.127659574468070E-002
-  PASS  Second-order conservative regridding with sph concave element. interpola
- tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 294
-  PASS  Second-order conservative regridding with sph concave element. conservat
- ion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 306
  Min Error =   0.000000000000000E+000
   
+  PASS  Second-order conservative regridding with sph concave element. interpola
+ tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 294
   PASS  Second-order conservative regridding with sph concave element., ESMF_Fie
+  PASS  Second-order conservative regridding with sph concave element. conservat
+ ion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 306
  ldRegridCsrv2ndUTest.F90, line 282
   PASS  Second-order conservative regridding with sph concave element. interpola
  tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 294
@@ -222,55 +222,55 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Second-order conservative regridding with sph concave element. conservat
  ion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 306
  
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid., ESMF_Fi
- eldRegridCsrv2ndUTest.F90, line 324
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid., ESMF_Fi
- eldRegridCsrv2ndUTest.F90, line 324
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. interpol
- ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 336
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. conserva
- tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 348
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. interpol
- ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 336
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. conserva
- tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 348
  === Second Order with Cubed Sphere Grids ===
  Conservation:
  Rel Error =   0.000000000000000E+000
- SRC mass =    22.6653112394971     
- DST mass =    22.6653112394971     
   PASS  Second-order conservative regridding Cubed Sphere Grid to Grid., ESMF_Fi
  eldRegridCsrv2ndUTest.F90, line 324
-  
+ SRC mass =    22.6653112394971     
   PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. interpol
  ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 336
+ DST mass =    22.6653112394971     
+  
+ Interpolation:
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. conserva
+ Max Error =   9.311304291205968E-003
+ Min Error =   2.244337751998540E-007
+  
+ tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 348
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid., ESMF_Fi
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid., ESMF_Fi
+ eldRegridCsrv2ndUTest.F90, line 324
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. interpol
+ ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 336
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. conserva
+ tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 348
+ eldRegridCsrv2ndUTest.F90, line 324
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. interpol
+ ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 336
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid., ESMF_Fi
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. conserva
+ tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 348
+ eldRegridCsrv2ndUTest.F90, line 324
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. interpol
+ ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 336
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. conserva
+ tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 348
+ 
+ === Second Order with Cubed Sphere Grids ===
+ Conservation:
+ Rel Error =   0.000000000000000E+000
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid with with
+  masks., ESMF_FieldRegridCsrv2ndUTest.F90, line 368
+ SRC mass =    22.6653112394971     
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid with mask
+ s interpolation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 380
+  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid with mask
+ s conservation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 392
+ DST mass =    22.6653112394971     
+  
  Interpolation:
  Max Error =   9.311304291205968E-003
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. conserva
- Min Error =   2.244337754215336E-007
-  
- tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 348
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid., ESMF_Fi
- eldRegridCsrv2ndUTest.F90, line 324
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. interpol
- ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 336
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid. conserva
- tion error, ESMF_FieldRegridCsrv2ndUTest.F90, line 348
- 
- === Second Order with Cubed Sphere Grids ===
- Conservation:
- Rel Error =   0.000000000000000E+000
- SRC mass =    22.6653112394971     
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid with with
-  masks., ESMF_FieldRegridCsrv2ndUTest.F90, line 368
- DST mass =    22.6653112394971     
-  
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid with mask
- s interpolation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 380
-  PASS  Second-order conservative regridding Cubed Sphere Grid to Grid with mask
- s conservation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 392
- Interpolation:
- Max Error =   9.311304291205753E-003
  Min Error =   2.244337754215336E-007
   
   PASS  Second-order conservative regridding Cubed Sphere Grid to Grid with with
@@ -292,28 +292,28 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Second-order conservative regridding Cubed Sphere Grid to Grid with mask
  s conservation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 392
  
-  PASS  Second-order conservative regridding Cart. Mesh to Mesh., ESMF_FieldRegr
- idCsrv2ndUTest.F90, line 408
-  PASS  Second-order conservative regridding Cart. Mesh to Mesh., ESMF_FieldRegr
- idCsrv2ndUTest.F90, line 408
-  PASS  Second-order conservative regridding Cart. Mesh to Mesh. interpolation e
-  PASS  Second-order conservative regridding Cart. Mesh to Mesh. interpolation e
- rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 420
- rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 420
-  PASS  Second-order conservative regridding Cart. Mesh to Mesh. conservation er
-  PASS  Second-order conservative regridding Cart. Mesh to Mesh. conservation er
- ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 432
- ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 432
  === Second Order Conservative Cart. Mesh to Mesh ===
  Conservation:
  Rel Error =   0.000000000000000E+000
  SRC mass =    45.0000000000000     
  DST mass =    45.0000000000000     
   
+  PASS  Second-order conservative regridding Cart. Mesh to Mesh., ESMF_FieldRegr
+ idCsrv2ndUTest.F90, line 408
  Interpolation:
  Max Error =   5.367222222222242E-002
+  PASS  Second-order conservative regridding Cart. Mesh to Mesh. interpolation e
+ rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 420
+  PASS  Second-order conservative regridding Cart. Mesh to Mesh. conservation er
+ ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 432
  Min Error =   3.333333333088717E-006
   
+  PASS  Second-order conservative regridding Cart. Mesh to Mesh., ESMF_FieldRegr
+ idCsrv2ndUTest.F90, line 408
+  PASS  Second-order conservative regridding Cart. Mesh to Mesh. interpolation e
+ rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 420
+  PASS  Second-order conservative regridding Cart. Mesh to Mesh. conservation er
+ ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 432
   PASS  Second-order conservative regridding Cart. Mesh to Mesh., ESMF_FieldRegr
  idCsrv2ndUTest.F90, line 408
   PASS  Second-order conservative regridding Cart. Mesh to Mesh. interpolation e
@@ -330,17 +330,23 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Conservation:
  Rel Error =   0.000000000000000E+000
   PASS  Second-order conservative regridding with Cart. concave element., ESMF_F
- ieldRegridCsrv2ndUTest.F90, line 450
  SRC mass =    70.2849988543988     
-  PASS  Second-order conservative regridding with Cart. concave element. interpo
- lation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 461
  DST mass =    70.2849988543988     
   
  Interpolation:
-  PASS  Second-order conservative regridding with Cart. concave element. conserv
  Max Error =   2.202643698113943E-003
  Min Error =   0.000000000000000E+000
   
+ ieldRegridCsrv2ndUTest.F90, line 450
+  PASS  Second-order conservative regridding with Cart. concave element., ESMF_F
+  PASS  Second-order conservative regridding with Cart. concave element. interpo
+ lation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 461
+  PASS  Second-order conservative regridding with Cart. concave element. conserv
+ ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 472
+ ieldRegridCsrv2ndUTest.F90, line 450
+  PASS  Second-order conservative regridding with Cart. concave element. interpo
+ lation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 461
+  PASS  Second-order conservative regridding with Cart. concave element. conserv
  ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 472
   PASS  Second-order conservative regridding with Cart. concave element., ESMF_F
  ieldRegridCsrv2ndUTest.F90, line 450
@@ -349,12 +355,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   PASS  Second-order conservative regridding with Cart. concave element. conserv
  ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 472
   PASS  Second-order conservative regridding with Cart. concave element., ESMF_F
-  PASS  Second-order conservative regridding with Cart. concave element., ESMF_F
- ieldRegridCsrv2ndUTest.F90, line 450
-  PASS  Second-order conservative regridding with Cart. concave element. interpo
- lation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 461
-  PASS  Second-order conservative regridding with Cart. concave element. conserv
- ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 472
  ieldRegridCsrv2ndUTest.F90, line 450
   PASS  Second-order conservative regridding with Cart. concave element. interpo
  lation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 461
@@ -362,34 +362,34 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  ation error, ESMF_FieldRegridCsrv2ndUTest.F90, line 472
  === Cartesian Grid to Grid  with masks ===
  Conservation:
+ Rel Error =   0.000000000000000E+000
   PASS  Second-order conservative regridding Cart. Grid to Grid., ESMF_FieldRegr
- idCsrv2ndUTest.F90, line 488
- Rel Error =   1.978841385062653E-016
-  PASS  Second-order conservative regridding Cart. Grid to Grid. interpolation e
- rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 500
-  PASS  Second-order conservative regridding Cart. Grid to Grid. conservation er
  SRC mass =    2298.04851626380     
  DST mass =    2298.04851626380     
   
  Interpolation:
- Max Error =   7.754743317997714E-004
+ Max Error =   7.754743317996247E-004
  Min Error =   0.000000000000000E+000
- Avg Error =   3.877371658998857E-004
+ Avg Error =   3.877371658998124E-004
   
   PASS  Second-order conservative regridding Cart. Grid to Grid., ESMF_FieldRegr
- idCsrv2ndUTest.F90, line 488
-  PASS  Second-order conservative regridding Cart. Grid to Grid., ESMF_FieldRegr
-  PASS  Second-order conservative regridding Cart. Grid to Grid. interpolation e
- idCsrv2ndUTest.F90, line 488
-  PASS  Second-order conservative regridding Cart. Grid to Grid. interpolation e
- rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 500
-  PASS  Second-order conservative regridding Cart. Grid to Grid. conservation er
- ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 512
- rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 500
-  PASS  Second-order conservative regridding Cart. Grid to Grid. conservation er
- ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 512
   PASS  Second-order conservative regridding Cart. Grid to Grid., ESMF_FieldRegr
  idCsrv2ndUTest.F90, line 488
+ idCsrv2ndUTest.F90, line 488
+  PASS  Second-order conservative regridding Cart. Grid to Grid. interpolation e
+ rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 500
+  PASS  Second-order conservative regridding Cart. Grid to Grid. conservation er
+ ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 512
+  PASS  Second-order conservative regridding Cart. Grid to Grid. interpolation e
+ rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 500
+  PASS  Second-order conservative regridding Cart. Grid to Grid. conservation er
+ ror, ESMF_FieldRegridCsrv2ndUTest.F90, line 512
+  PASS  Second-order conservative regridding Cart. Grid to Grid., ESMF_FieldRegr
+ idCsrv2ndUTest.F90, line 488
+  PASS  Second-order conservative regridding Cart. Grid to Grid. interpolation e
+ rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 500
+ idCsrv2ndUTest.F90, line 488
+  PASS  Second-order conservative regridding Cart. Grid to Grid. conservation er
   PASS  Second-order conservative regridding Cart. Grid to Grid. interpolation e
  rror, ESMF_FieldRegridCsrv2ndUTest.F90, line 500
   PASS  Second-order conservative regridding Cart. Grid to Grid. conservation er
@@ -407,7 +407,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
   Ending Test, file ESMF_FieldRegridCsrv2ndUTest.F90, line 535
  , line 528
   Ending Test, file ESMF_FieldRegridCsrv2ndUTest.F90, line 535
-  PET           0  Test Elapsed Time    73231.0840000000       msec.
-  PET           3  Test Elapsed Time    73304.6410000000       msec.
-  PET           1  Test Elapsed Time    73317.2160000000       msec.
-  PET           2  Test Elapsed Time    73376.4200000000       msec.
+  PET           0  Test Elapsed Time    80574.0930000000       msec.
+  PET           2  Test Elapsed Time    80570.6810000000       msec.
+  PET           3  Test Elapsed Time    80572.9690000000       msec.
+  PET           1  Test Elapsed Time    80583.0380000000       msec.

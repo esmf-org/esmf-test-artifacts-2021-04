@@ -1,18 +1,18 @@
-build time -- 2021-04-21 21:04:02
+build time -- 2021-04-26 06:06:49
   Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
   Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
-  NUMBER_OF_PROCESSORS           4
-  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
-  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
-MPT ERROR: Rank 3(g:3) received signal SIGSEGV(11).
-	Process ID: 347247, Host: r3i3n22, Program: /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_ArraySMMFromFileUTest
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+MPT ERROR: Rank 1(g:1) received signal SIGSEGV(11).
+	Process ID: 227658, Host: r2i4n8, Program: /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_ArraySMMFromFileUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/347247/exe, process 347247
+MPT: Attaching to program: /proc/227658/exe, process 227658
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -50,7 +50,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaaae4eb18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaaaec24806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff7300 "MPT ERROR: Rank 3(g:3) received signal SIGSEGV(11).\n\tProcess ID: 347247, Host: r3i3n22, Program: /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_ArraySMMFromFileU"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff7300 "MPT ERROR: Rank 1(g:1) received signal SIGSEGV(11).\n\tProcess ID: 227658, Host: r2i4n8, Program: /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_ArraySMMFromFileUT"...) at sig.c:340
 MPT: #3  0x00002aaaaec24a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaab9320080) at sig.c:489
 MPT: #4  0x00002aaaaec24d9b in slave_sig_handler (signo=11, 
@@ -89,9 +89,9 @@ MPT:     cache_nelems=<error reading variable: Cannot access memory at address 0
 MPT:     cache_preemption=<error reading variable: Cannot access memory at address 0x0>, comm=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     info=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     .tmp.PATH.len_V$1016=16) at netcdf4_file.f90:64
-MPT: #20 0x00002aaaac09a15a in esmf_iofiletypecheckmod_mp_esmf_filetypecheck_ ()
+MPT: #20 0x00002aaaac09a4ca in esmf_iofiletypecheckmod_mp_esmf_filetypecheck_ ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
-MPT: #21 0x00002aaaac206a89 in esmf_regridweightgenmod_mp_esmf_regridweightgenfile_
+MPT: #21 0x00002aaaac206df9 in esmf_regridweightgenmod_mp_esmf_regridweightgenfile_
 MPT:     ()
 MPT:    from /p/work1/mpotts/intel_2018.1_mpt_O_develop/lib/libO/Linux.intel.64.mpt.default/libesmf.so
 MPT: #22 0x000000000040bc4a in esmf_arraysmmfromfileutestmod_mp_test_smm_from_file_
@@ -100,14 +100,14 @@ MPT: #23 0x000000000040b8cc in MAIN__ ()
 MPT: #24 0x000000000040b75e in main ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 347247] will be detached.
+MPT: 	Inferior 1 [process 227658] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/347247/exe, process 347247
-MPT: [Inferior 1 (process 347247) detached]
+MPT: Detaching from program: /proc/227658/exe, process 227658
+MPT: [Inferior 1 (process 227658) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i3n22, Program /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_ArraySMMFromFileUTest, Rank 3, Process 347247: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default
-MPT ERROR: MPI_COMM_WORLD rank 3 has terminated without calling MPI_Finalize()
+MPT: On host r2i4n8, Program /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default/ESMF_ArraySMMFromFileUTest, Rank 1, Process 227658: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_O_develop/test/testO/Linux.intel.64.mpt.default
+MPT ERROR: MPI_COMM_WORLD rank 1 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

@@ -1,4 +1,4 @@
-build time -- 2021-04-21 20:23:07
+build time -- 2021-04-26 16:38:18
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -23,26 +23,26 @@ ESMF_VERSION_PUBLIC='F'
 ESMF_VERSION_BETASNAPSHOT='T'
 
 
-ESMF_APPSDIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/apps/appsg/Linux.intel.64.mpi.default
-ESMF_LIBSDIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
+ESMF_APPSDIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/apps/appsg/Linux.intel.64.mpi.default
+ESMF_LIBSDIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
 
 
 ESMF_F90COMPILER=ftn
 ESMF_F90LINKER=ftn
 
 ESMF_F90COMPILEOPTS=-g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -pthread -threads  -qopenmp
-ESMF_F90COMPILEPATHS=-I/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/mod/modg/Linux.intel.64.mpi.default -I/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/src/include 
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop
+ESMF_F90COMPILEPATHS=-I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/mod/modg/Linux.intel.64.mpi.default -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/src/include 
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=
 ESMF_F90COMPILEFIXCPP=
 ESMF_F90COMPILEFIXNOCPP=
 
 ESMF_F90LINKOPTS=  -m64 -mcmodel=small -pthread -threads -Wl,--no-as-needed  -qopenmp
-ESMF_F90LINKPATHS=-L/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default  
-ESMF_F90ESMFLINKPATHS=-L/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
-ESMF_F90LINKRPATHS=-Wl,-rpath,/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default 
-ESMF_F90ESMFLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
+ESMF_F90LINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default  
+ESMF_F90ESMFLINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
+ESMF_F90LINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default 
+ESMF_F90ESMFLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
 ESMF_F90LINKLIBS= -lmpi -lfmpich -cxxlib -lrt -ldl -lnetcdff
 ESMF_F90ESMFLINKLIBS=-lesmf  -lmpi -lfmpich -cxxlib -lrt -ldl -lnetcdff
 
@@ -50,14 +50,14 @@ ESMF_CXXCOMPILER=CC
 ESMF_CXXLINKER=CC
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -traceback -Wcheck -fPIC -m64 -mcmodel=small -pthread  -qopenmp
-ESMF_CXXCOMPILEPATHS= -I/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/src/include   -I/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-fPIC -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11
+ESMF_CXXCOMPILEPATHS= -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/src/include   -I/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/src/prologue/yaml-cpp/include
+ESMF_CXXCOMPILECPPFLAGS=-fPIC -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mpi -DESMF_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11
 
 ESMF_CXXLINKOPTS=-fPIC -lnetcdff -lnetcdff  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -qopenmp
-ESMF_CXXLINKPATHS=-L/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default  -L/apps/prod/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin/
-ESMF_CXXESMFLINKPATHS=-L/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
-ESMF_CXXLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default  -Wl,-rpath,/apps/prod/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin/
-ESMF_CXXESMFLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
+ESMF_CXXLINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default  -L/apps/prod/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin/
+ESMF_CXXESMFLINKPATHS=-L/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
+ESMF_CXXLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default  -Wl,-rpath,/apps/prod/intel/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin/
+ESMF_CXXESMFLINKRPATHS=-Wl,-rpath,/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default
 ESMF_CXXLINKLIBS= -lmpi -lfmpich -lsci_intel_mpi_mp -lsci_intel_mp -ldl -ldsmml -limf -lm -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -liomp5 -lintlc -lpthread -lsvml -ldl -lgcc -lgcc_s -lirc_s -ldl -lrt -ldl -lnetcdff
 ESMF_CXXESMFLINKLIBS=-lesmf  -lmpi -lfmpich -lsci_intel_mpi_mp -lsci_intel_mp -ldl -ldsmml -limf -lm -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -liomp5 -lintlc -lpthread -lsvml -ldl -lgcc -lgcc_s -lirc_s -ldl -lrt -ldl -lnetcdff
 
@@ -79,18 +79,18 @@ ESMF_OPENACC_CXXCOMPILEOPTS=
 ESMF_OPENACC_CXXLINKOPTS=
 
 # ESMF Tracing compile/link options
-ESMF_TRACE_LDPRELOAD=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default/libesmftrace_preload.so
+ESMF_TRACE_LDPRELOAD=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/lib/libg/Linux.intel.64.mpi.default/libesmftrace_preload.so
 ESMF_TRACE_STATICLINKOPTS=-static -Wl,--wrap=c_esmftrace_notify_wrappers -Wl,--wrap=c_esmftrace_isinitialized -Wl,--wrap=write -Wl,--wrap=writev -Wl,--wrap=pwrite -Wl,--wrap=read -Wl,--wrap=open -Wl,--wrap=MPI_Allgather -Wl,--wrap=MPI_Allgatherv -Wl,--wrap=MPI_Allreduce -Wl,--wrap=MPI_Alltoall -Wl,--wrap=MPI_Alltoallv -Wl,--wrap=MPI_Alltoallw -Wl,--wrap=MPI_Barrier -Wl,--wrap=MPI_Bcast -Wl,--wrap=MPI_Bsend -Wl,--wrap=MPI_Gather -Wl,--wrap=MPI_Gatherv -Wl,--wrap=MPI_Iprobe -Wl,--wrap=MPI_Irecv -Wl,--wrap=MPI_Irsend -Wl,--wrap=MPI_Isend -Wl,--wrap=MPI_Issend -Wl,--wrap=MPI_Probe -Wl,--wrap=MPI_Recv -Wl,--wrap=MPI_Reduce -Wl,--wrap=MPI_Rsend -Wl,--wrap=MPI_Scan -Wl,--wrap=MPI_Scatter -Wl,--wrap=MPI_Scatterv -Wl,--wrap=MPI_Send -Wl,--wrap=MPI_Sendrecv -Wl,--wrap=MPI_Test -Wl,--wrap=MPI_Testall -Wl,--wrap=MPI_Testany -Wl,--wrap=MPI_Testsome -Wl,--wrap=MPI_Wait -Wl,--wrap=MPI_Waitall -Wl,--wrap=MPI_Waitany -Wl,--wrap=MPI_Waitsome -Wl,--wrap=mpi_allgather_ -Wl,--wrap=mpi_allgather__ -Wl,--wrap=mpi_allgatherv_ -Wl,--wrap=mpi_allgatherv__ -Wl,--wrap=mpi_allreduce_ -Wl,--wrap=mpi_allreduce__ -Wl,--wrap=mpi_alltoall_ -Wl,--wrap=mpi_alltoall__ -Wl,--wrap=mpi_alltoallv_ -Wl,--wrap=mpi_alltoallv__ -Wl,--wrap=mpi_alltoallw_ -Wl,--wrap=mpi_alltoallw__ -Wl,--wrap=mpi_barrier_ -Wl,--wrap=mpi_barrier__ -Wl,--wrap=mpi_bcast_ -Wl,--wrap=mpi_bcast__ -Wl,--wrap=mpi_bsend_ -Wl,--wrap=mpi_bsend__ -Wl,--wrap=mpi_exscan_ -Wl,--wrap=mpi_exscan__ -Wl,--wrap=mpi_gather_ -Wl,--wrap=mpi_gather__ -Wl,--wrap=mpi_gatherv_ -Wl,--wrap=mpi_gatherv__ -Wl,--wrap=mpi_iprobe_ -Wl,--wrap=mpi_iprobe__ -Wl,--wrap=mpi_irecv_ -Wl,--wrap=mpi_irecv__ -Wl,--wrap=mpi_irsend_ -Wl,--wrap=mpi_irsend__ -Wl,--wrap=mpi_isend_ -Wl,--wrap=mpi_isend__ -Wl,--wrap=mpi_issend_ -Wl,--wrap=mpi_issend__ -Wl,--wrap=mpi_probe_ -Wl,--wrap=mpi_probe__ -Wl,--wrap=mpi_recv_ -Wl,--wrap=mpi_recv__ -Wl,--wrap=mpi_reduce_ -Wl,--wrap=mpi_reduce__ -Wl,--wrap=mpi_reduce_scatter_ -Wl,--wrap=mpi_reduce_scatter__ -Wl,--wrap=mpi_rsend_ -Wl,--wrap=mpi_rsend__ -Wl,--wrap=mpi_scatter_ -Wl,--wrap=mpi_scatter__ -Wl,--wrap=mpi_scatterv_ -Wl,--wrap=mpi_scatterv__ -Wl,--wrap=mpi_scan_ -Wl,--wrap=mpi_scan__ -Wl,--wrap=mpi_send_ -Wl,--wrap=mpi_send__ -Wl,--wrap=mpi_sendrecv_ -Wl,--wrap=mpi_sendrecv__ -Wl,--wrap=mpi_test_ -Wl,--wrap=mpi_test__ -Wl,--wrap=mpi_testall_ -Wl,--wrap=mpi_testall__ -Wl,--wrap=mpi_testany_ -Wl,--wrap=mpi_testany__ -Wl,--wrap=mpi_testsome_ -Wl,--wrap=mpi_testsome__ -Wl,--wrap=mpi_wait_ -Wl,--wrap=mpi_wait__ -Wl,--wrap=mpi_waitall_ -Wl,--wrap=mpi_waitall__ -Wl,--wrap=mpi_waitany_ -Wl,--wrap=mpi_waitany__
 ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 # Internal ESMF variables, do NOT depend on these!
 
-ESMF_INTERNAL_DIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop
+ESMF_INTERNAL_DIR=/lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop
 
 #
 # !!! The following options were used on this ESMF build !!!
 #
-# ESMF_DIR: /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop
+# ESMF_DIR: /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop
 # ESMF_OS: Linux
 # ESMF_MACHINE: x86_64
 # ESMF_ABI: 64
@@ -114,7 +114,7 @@ ESMF_INTERNAL_DIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/inte
 # ESMF_MOAB:              internal
 # ESMF_LAPACK:            internal
 # ESMF_ACC_SOFTWARE_STACK:            none
-# ESMF_NETCDF:            /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/intel_2019.3_mpi_g_develop/nc-config
+# ESMF_NETCDF:            /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/nc-config
 # ESMF_NFCONFIG:          /bin/nf-config
 # ESMF_NETCDFF_LIBS:      -lnetcdff
 # ESMF_PIO:               internal

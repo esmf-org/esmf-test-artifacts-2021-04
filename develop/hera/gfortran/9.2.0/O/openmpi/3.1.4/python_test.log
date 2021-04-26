@@ -1,12 +1,12 @@
-build time -- 2021-04-22 12:22:31
+build time -- 2021-04-26 06:09:16
 running test
+[1619419517.649018] [h25c26:103086:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1619419517.653206] [h25c26:103086:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
 test_assertNumpyAll_bad_mask (ESMF.test.base_test.Test) ... ok
 test_assertNumpyAll_type_differs (ESMF.test.base_test.Test) ... ok
 test_copy (ESMF.test.test_api.test_array.TestMaskedArray) ... ok
 test_del (ESMF.test.test_api.test_array.TestMaskedArray) ... ok
-test_doublebuffer (ESMF.test.test_api.test_array.TestMaskedArray) ... [1619096307.596779] [h10c03:4355 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-[1619096307.601212] [h10c03:4355 :0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
-ok
+test_doublebuffer (ESMF.test.test_api.test_array.TestMaskedArray) ... ok
 test_mul (ESMF.test.test_api.test_array.TestMaskedArray) ... ok
 test_new (ESMF.test.test_api.test_array.TestMaskedArray) ... ok
 test_ownership (ESMF.test.test_api.test_array.TestMaskedArray) ... ok
@@ -55,8 +55,7 @@ test_grid_coords_3D (ESMF.test.test_api.test_grid.TestGrid) ... ok
 test_grid_copy (ESMF.test.test_api.test_grid.TestGrid) ... ok
 test_grid_create_cubed_sphere (ESMF.test.test_api.test_grid.TestGrid) ... /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_openmpi_O_develop/src/addon/ESMPy/src/ESMF/interface/cbindings.py:597: UserWarning: Call to a beta function ESMP_GridCreateCubedSphere.
   def ESMP_GridCreateCubedSphere(tilesize, regDecompPTile=None,
-ok
-test_grid_create_from_file_gridspec1D (ESMF.test.test_api.test_grid.TestGrid) ... Grid Bounds:
+Grid Bounds:
     exclusiveLBounds = [0 0]
 <type 'numpy.ndarray'>
     exclusiveUBounds = [12 20]
@@ -67,6 +66,7 @@ Grid Bounds:
     exclusiveUBounds = [10 20 30]
 int32
 ok
+test_grid_create_from_file_gridspec1D (ESMF.test.test_api.test_grid.TestGrid) ... ok
 test_grid_create_from_file_scrip (ESMF.test.test_api.test_grid.TestGrid) ... ok
 test_grid_create_from_file_scrip_decomp_balanced_balanced (ESMF.test.test_api.test_grid.TestGrid) ... ok
 test_grid_create_from_file_scrip_decomp_balanced_cyclic (ESMF.test.test_api.test_grid.TestGrid) ... SKIP
@@ -106,7 +106,13 @@ test_mesh_50_mask_area (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_50_ngons (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_copy (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_mesh_create_from_file_esmfmesh (ESMF.test.test_api.test_mesh.TestMesh) ... ok
-test_mesh_create_from_file_scrip (ESMF.test.test_api.test_mesh.TestMesh) ... ok
+test_mesh_create_from_file_scrip (ESMF.test.test_api.test_mesh.TestMesh) ... LocStream:
+    name = 'Test LocStream' 
+    lower_bounds = array([0], dtype=int32) 
+    upper_bounds = array([5], dtype=int32) 
+    keys = [('ESMF:Y', array([7, 7, 7, 7, 7])), ('ESMF:X', array([1, 2, 3, 4, 5])), ('ESMF:Mask', array([0, 0, 1, 1, 1]))] 
+
+ok
 test_mesh_slicing (ESMF.test.test_api.test_mesh.TestMesh) ... ok
 test_slice_mesh_created_from_file_elem_coords (ESMF.test.test_api.test_mesh.TestMesh) ... SKIP
 test_slice_mesh_created_from_file_esmfmesh (ESMF.test.test_api.test_mesh.TestMesh) ... ok
@@ -121,12 +127,12 @@ test_log (ESMF.test.test_cbindings.TestCbindings) ... ok
 test_version_compare (ESMF.test.test_cbindings.TestCbindings) ... ok
 test_vm (ESMF.test.test_cbindings.TestCbindings) ... ok
 
-LocStream:
-    name = 'Test LocStream' 
-    lower_bounds = array([0], dtype=int32) 
-    upper_bounds = array([5], dtype=int32) 
-    keys = [('ESMF:Y', array([7, 7, 7, 7, 7])), ('ESMF:X', array([1, 2, 3, 4, 5])), ('ESMF:Mask', array([0, 0, 1, 1, 1]))] 
+----------------------------------------------------------------------
+XML: /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_openmpi_O_develop/src/addon/ESMPy/nosetests.xml
+----------------------------------------------------------------------
+Ran 88 tests in 1.564s
 
+OK (SKIP=12)
 ('mesh.coords[0][0].shape = ', (866,))
 
 local_pet = 0
@@ -134,9 +140,3 @@ local_pet = 0
 
 pet_count = 1
 
-----------------------------------------------------------------------
-XML: /scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_openmpi_O_develop/src/addon/ESMPy/nosetests.xml
-----------------------------------------------------------------------
-Ran 88 tests in 0.830s
-
-OK (SKIP=12)
