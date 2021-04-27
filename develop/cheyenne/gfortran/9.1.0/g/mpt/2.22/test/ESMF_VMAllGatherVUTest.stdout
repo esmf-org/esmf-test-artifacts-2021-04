@@ -1,11 +1,11 @@
-build time -- 2021-04-26 05:47:47.358246
+build time -- 2021-04-27 05:50:38.797643
   Beginning Test, file ESMF_VMAllGatherVUTest.F90, line 75
   Beginning Test, file ESMF_VMAllGatherVUTest.F90, line 75
   Beginning Test, file ESMF_VMAllGatherVUTest.F90, line 75
   NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMAllGatherVUTest.F90, line 75
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   PASS  AllGatherV Integer Test, ESMF_VMAllGatherVUTest.F90, line 153
   PASS  AllGatherV Integer Test, ESMF_VMAllGatherVUTest.F90, line 153
@@ -15,6 +15,7 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Verifying array1 integer data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 164
   PASS  Verifying array1 integer data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 164
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
+           2  array1:            1
            2  array1:            1
   PASS  Verifying array1 integer data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 164
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
@@ -45,7 +46,6 @@ build time -- 2021-04-26 05:47:47.358246
            1  array1:            2
            1  array1:            3
            1  array1:            4
-           2  array1:            1
            2  array1:            2
            2  array1:            1
            2  array1:            2
@@ -69,7 +69,6 @@ build time -- 2021-04-26 05:47:47.358246
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
            2  i4array1:            1
            2  i4array1:            1
-           2  i4array1:            2
   PASS  Verifying i4array1 4 byte integer data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 193
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
            3  i4array1:            1
@@ -78,8 +77,6 @@ build time -- 2021-04-26 05:47:47.358246
            3  i4array1:            1
            3  i4array1:            2
            3  i4array1:            3
-           3  i4array1:            1
-           3  i4array1:            2
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
            0  i4array1:            1
            0  i4array1:            1
@@ -102,6 +99,7 @@ build time -- 2021-04-26 05:47:47.358246
            1  i4array1:            2
            1  i4array1:            3
            1  i4array1:            4
+           2  i4array1:            2
            2  i4array1:            1
            2  i4array1:            2
            2  i4array1:            3
@@ -109,6 +107,8 @@ build time -- 2021-04-26 05:47:47.358246
            2  i4array1:            2
            2  i4array1:            3
            2  i4array1:            4
+           3  i4array1:            1
+           3  i4array1:            2
            3  i4array1:            3
            3  i4array1:            4
   PASS  AllGatherV R8 Test, ESMF_VMAllGatherVUTest.F90, line 211
@@ -118,24 +118,28 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Verifying farray1 R8 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 222
   PASS  Verifying farray1 R8 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 222
   PASS  Verifying farray1 R8 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 222
+ contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
   PASS  Verifying farray1 R8 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 222
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
- contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
+           1  farray1:    1.0000000000000000     
+           1  farray1:    3.0000000000000000     
            3  farray1:    1.0000000000000000     
            3  farray1:    3.0000000000000000     
            3  farray1:    4.0000000000000000     
+           3  farray1:    5.0000000000000000     
            0  farray1:    1.0000000000000000     
            0  farray1:    3.0000000000000000     
            0  farray1:    4.0000000000000000     
-           0  farray1:    5.0000000000000000     
-           0  farray1:    6.0000000000000000     
-           1  farray1:    1.0000000000000000     
-           1  farray1:    3.0000000000000000     
            1  farray1:    4.0000000000000000     
            1  farray1:    5.0000000000000000     
            1  farray1:    6.0000000000000000     
+           1  farray1:    7.0000000000000000     
+           1  farray1:    7.0000000000000000     
+           1  farray1:    8.0000000000000000     
+           1  farray1:    9.0000000000000000     
+           1  farray1:    10.000000000000000     
            2  farray1:    1.0000000000000000     
            2  farray1:    3.0000000000000000     
            2  farray1:    4.0000000000000000     
@@ -145,24 +149,20 @@ build time -- 2021-04-26 05:47:47.358246
            2  farray1:    7.0000000000000000     
            2  farray1:    8.0000000000000000     
            2  farray1:    9.0000000000000000     
-           2  farray1:    10.000000000000000     
-           3  farray1:    5.0000000000000000     
            3  farray1:    6.0000000000000000     
            3  farray1:    7.0000000000000000     
            3  farray1:    7.0000000000000000     
            3  farray1:    8.0000000000000000     
            3  farray1:    9.0000000000000000     
            3  farray1:    10.000000000000000     
+           0  farray1:    5.0000000000000000     
+           0  farray1:    6.0000000000000000     
            0  farray1:    7.0000000000000000     
            0  farray1:    7.0000000000000000     
            0  farray1:    8.0000000000000000     
            0  farray1:    9.0000000000000000     
            0  farray1:    10.000000000000000     
-           1  farray1:    7.0000000000000000     
-           1  farray1:    7.0000000000000000     
-           1  farray1:    8.0000000000000000     
-           1  farray1:    9.0000000000000000     
-           1  farray1:    10.000000000000000     
+           2  farray1:    10.000000000000000     
   PASS  AllGatherV R4 Test, ESMF_VMAllGatherVUTest.F90, line 241
   PASS  AllGatherV R4 Test, ESMF_VMAllGatherVUTest.F90, line 241
   PASS  AllGatherV R4 Test, ESMF_VMAllGatherVUTest.F90, line 241
@@ -172,9 +172,16 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Verifying f4array1 R4 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 252
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
   PASS  Verifying f4array1 R4 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 252
+ contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
+           3  f4array1:    1.00000000    
+           3  f4array1:    3.00000000    
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
            0  f4array1:    1.00000000    
            0  f4array1:    3.00000000    
+           0  f4array1:    4.00000000    
+           0  f4array1:    5.00000000    
+           0  f4array1:    6.00000000    
+           0  f4array1:    7.00000000    
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
            1  f4array1:    1.00000000    
            1  f4array1:    3.00000000    
@@ -183,7 +190,7 @@ build time -- 2021-04-26 05:47:47.358246
            1  f4array1:    6.00000000    
            1  f4array1:    7.00000000    
            1  f4array1:    7.00000000    
- contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
+           1  f4array1:    8.00000000    
            2  f4array1:    1.00000000    
            2  f4array1:    3.00000000    
            2  f4array1:    4.00000000    
@@ -194,8 +201,6 @@ build time -- 2021-04-26 05:47:47.358246
            2  f4array1:    8.00000000    
            2  f4array1:    9.00000000    
            2  f4array1:    10.0000000    
-           3  f4array1:    1.00000000    
-           3  f4array1:    3.00000000    
            3  f4array1:    4.00000000    
            3  f4array1:    5.00000000    
            3  f4array1:    6.00000000    
@@ -204,15 +209,10 @@ build time -- 2021-04-26 05:47:47.358246
            3  f4array1:    8.00000000    
            3  f4array1:    9.00000000    
            3  f4array1:    10.0000000    
-           0  f4array1:    4.00000000    
-           0  f4array1:    5.00000000    
-           0  f4array1:    6.00000000    
-           0  f4array1:    7.00000000    
            0  f4array1:    7.00000000    
            0  f4array1:    8.00000000    
            0  f4array1:    9.00000000    
            0  f4array1:    10.0000000    
-           1  f4array1:    8.00000000    
            1  f4array1:    9.00000000    
            1  f4array1:    10.0000000    
   PASS  Creating VMId solutions array, ESMF_VMAllGatherVUTest.F90, line 269
@@ -226,11 +226,11 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Creating VMId source array, ESMF_VMAllGatherVUTest.F90, line 290
   PASS  Creating VMId source array, ESMF_VMAllGatherVUTest.F90, line 290
   PASS  Creating VMId source array, ESMF_VMAllGatherVUTest.F90, line 290
+  PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
   PASS  Creating VMId source array, ESMF_VMAllGatherVUTest.F90, line 290
   PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
   PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
   PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
-  PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
   PASS  AllGatherVing VMId data Test, ESMF_VMAllGatherVUTest.F90, line 314
   PASS  AllGatherVing VMId data Test, ESMF_VMAllGatherVUTest.F90, line 314
   PASS  AllGatherVing VMId data Test, ESMF_VMAllGatherVUTest.F90, line 314
@@ -251,21 +251,21 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Releasing VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 361
   PASS  Releasing VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 361
   Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
-  Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
-  Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
   PASS  Releasing VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 361
   Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
-  PET           2  Test Elapsed Time   0.77500000000000047       msec.
-  PET           0  Test Elapsed Time   0.77500000000000047       msec.
-  PET           1  Test Elapsed Time   0.75800000000000001       msec.
-  PET           3  Test Elapsed Time   0.78299999999999981       msec.
+  Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
+  Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
+  PET           0  Test Elapsed Time   0.72700000000000020       msec.
+  PET           1  Test Elapsed Time   0.74100000000000033       msec.
+  PET           2  Test Elapsed Time   0.73400000000000032       msec.
+  PET           3  Test Elapsed Time   0.76700000000000035       msec.
   Beginning Test, file ESMF_VMAllGatherVUTest.F90, line 75
   Beginning Test, file ESMF_VMAllGatherVUTest.F90, line 75
   Beginning Test, file ESMF_VMAllGatherVUTest.F90, line 75
   NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
-  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMAllGatherVUTest.F90, line 75
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   PASS  AllGatherV Integer Test, ESMF_VMAllGatherVUTest.F90, line 153
   PASS  AllGatherV Integer Test, ESMF_VMAllGatherVUTest.F90, line 153
@@ -275,6 +275,7 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Verifying array1 integer data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 164
   PASS  Verifying array1 integer data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 164
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
+           2  array1:            1
            2  array1:            1
   PASS  Verifying array1 integer data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 164
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
@@ -305,7 +306,6 @@ build time -- 2021-04-26 05:47:47.358246
            1  array1:            2
            1  array1:            3
            1  array1:            4
-           2  array1:            1
            2  array1:            2
            2  array1:            1
            2  array1:            2
@@ -329,7 +329,6 @@ build time -- 2021-04-26 05:47:47.358246
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
            2  i4array1:            1
            2  i4array1:            1
-           2  i4array1:            2
   PASS  Verifying i4array1 4 byte integer data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 193
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
            3  i4array1:            1
@@ -338,8 +337,6 @@ build time -- 2021-04-26 05:47:47.358246
            3  i4array1:            1
            3  i4array1:            2
            3  i4array1:            3
-           3  i4array1:            1
-           3  i4array1:            2
  contents after allgather (should be /1,1,2,1,2,3,1,2,3,4/)
            0  i4array1:            1
            0  i4array1:            1
@@ -362,6 +359,7 @@ build time -- 2021-04-26 05:47:47.358246
            1  i4array1:            2
            1  i4array1:            3
            1  i4array1:            4
+           2  i4array1:            2
            2  i4array1:            1
            2  i4array1:            2
            2  i4array1:            3
@@ -369,6 +367,8 @@ build time -- 2021-04-26 05:47:47.358246
            2  i4array1:            2
            2  i4array1:            3
            2  i4array1:            4
+           3  i4array1:            1
+           3  i4array1:            2
            3  i4array1:            3
            3  i4array1:            4
   PASS  AllGatherV R8 Test, ESMF_VMAllGatherVUTest.F90, line 211
@@ -378,24 +378,28 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Verifying farray1 R8 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 222
   PASS  Verifying farray1 R8 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 222
   PASS  Verifying farray1 R8 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 222
+ contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
   PASS  Verifying farray1 R8 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 222
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
- contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
+           1  farray1:    1.0000000000000000     
+           1  farray1:    3.0000000000000000     
            3  farray1:    1.0000000000000000     
            3  farray1:    3.0000000000000000     
            3  farray1:    4.0000000000000000     
+           3  farray1:    5.0000000000000000     
            0  farray1:    1.0000000000000000     
            0  farray1:    3.0000000000000000     
            0  farray1:    4.0000000000000000     
-           0  farray1:    5.0000000000000000     
-           0  farray1:    6.0000000000000000     
-           1  farray1:    1.0000000000000000     
-           1  farray1:    3.0000000000000000     
            1  farray1:    4.0000000000000000     
            1  farray1:    5.0000000000000000     
            1  farray1:    6.0000000000000000     
+           1  farray1:    7.0000000000000000     
+           1  farray1:    7.0000000000000000     
+           1  farray1:    8.0000000000000000     
+           1  farray1:    9.0000000000000000     
+           1  farray1:    10.000000000000000     
            2  farray1:    1.0000000000000000     
            2  farray1:    3.0000000000000000     
            2  farray1:    4.0000000000000000     
@@ -405,24 +409,20 @@ build time -- 2021-04-26 05:47:47.358246
            2  farray1:    7.0000000000000000     
            2  farray1:    8.0000000000000000     
            2  farray1:    9.0000000000000000     
-           2  farray1:    10.000000000000000     
-           3  farray1:    5.0000000000000000     
            3  farray1:    6.0000000000000000     
            3  farray1:    7.0000000000000000     
            3  farray1:    7.0000000000000000     
            3  farray1:    8.0000000000000000     
            3  farray1:    9.0000000000000000     
            3  farray1:    10.000000000000000     
+           0  farray1:    5.0000000000000000     
+           0  farray1:    6.0000000000000000     
            0  farray1:    7.0000000000000000     
            0  farray1:    7.0000000000000000     
            0  farray1:    8.0000000000000000     
            0  farray1:    9.0000000000000000     
            0  farray1:    10.000000000000000     
-           1  farray1:    7.0000000000000000     
-           1  farray1:    7.0000000000000000     
-           1  farray1:    8.0000000000000000     
-           1  farray1:    9.0000000000000000     
-           1  farray1:    10.000000000000000     
+           2  farray1:    10.000000000000000     
   PASS  AllGatherV R4 Test, ESMF_VMAllGatherVUTest.F90, line 241
   PASS  AllGatherV R4 Test, ESMF_VMAllGatherVUTest.F90, line 241
   PASS  AllGatherV R4 Test, ESMF_VMAllGatherVUTest.F90, line 241
@@ -432,9 +432,16 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Verifying f4array1 R4 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 252
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
   PASS  Verifying f4array1 R4 data after allgatherv Test, ESMF_VMAllGatherVUTest.F90, line 252
+ contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
+           3  f4array1:    1.00000000    
+           3  f4array1:    3.00000000    
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
            0  f4array1:    1.00000000    
            0  f4array1:    3.00000000    
+           0  f4array1:    4.00000000    
+           0  f4array1:    5.00000000    
+           0  f4array1:    6.00000000    
+           0  f4array1:    7.00000000    
  contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
            1  f4array1:    1.00000000    
            1  f4array1:    3.00000000    
@@ -443,7 +450,7 @@ build time -- 2021-04-26 05:47:47.358246
            1  f4array1:    6.00000000    
            1  f4array1:    7.00000000    
            1  f4array1:    7.00000000    
- contents after allgather (should be /1,3,4,5,6,7,7,8,9,10/)
+           1  f4array1:    8.00000000    
            2  f4array1:    1.00000000    
            2  f4array1:    3.00000000    
            2  f4array1:    4.00000000    
@@ -454,8 +461,6 @@ build time -- 2021-04-26 05:47:47.358246
            2  f4array1:    8.00000000    
            2  f4array1:    9.00000000    
            2  f4array1:    10.0000000    
-           3  f4array1:    1.00000000    
-           3  f4array1:    3.00000000    
            3  f4array1:    4.00000000    
            3  f4array1:    5.00000000    
            3  f4array1:    6.00000000    
@@ -464,15 +469,10 @@ build time -- 2021-04-26 05:47:47.358246
            3  f4array1:    8.00000000    
            3  f4array1:    9.00000000    
            3  f4array1:    10.0000000    
-           0  f4array1:    4.00000000    
-           0  f4array1:    5.00000000    
-           0  f4array1:    6.00000000    
-           0  f4array1:    7.00000000    
            0  f4array1:    7.00000000    
            0  f4array1:    8.00000000    
            0  f4array1:    9.00000000    
            0  f4array1:    10.0000000    
-           1  f4array1:    8.00000000    
            1  f4array1:    9.00000000    
            1  f4array1:    10.0000000    
   PASS  Creating VMId solutions array, ESMF_VMAllGatherVUTest.F90, line 269
@@ -486,11 +486,11 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Creating VMId source array, ESMF_VMAllGatherVUTest.F90, line 290
   PASS  Creating VMId source array, ESMF_VMAllGatherVUTest.F90, line 290
   PASS  Creating VMId source array, ESMF_VMAllGatherVUTest.F90, line 290
+  PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
   PASS  Creating VMId source array, ESMF_VMAllGatherVUTest.F90, line 290
   PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
   PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
   PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
-  PASS  Inserting dummy data into VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 303
   PASS  AllGatherVing VMId data Test, ESMF_VMAllGatherVUTest.F90, line 314
   PASS  AllGatherVing VMId data Test, ESMF_VMAllGatherVUTest.F90, line 314
   PASS  AllGatherVing VMId data Test, ESMF_VMAllGatherVUTest.F90, line 314
@@ -511,11 +511,11 @@ build time -- 2021-04-26 05:47:47.358246
   PASS  Releasing VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 361
   PASS  Releasing VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 361
   Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
-  Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
-  Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
   PASS  Releasing VMId source array Test, ESMF_VMAllGatherVUTest.F90, line 361
   Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
-  PET           2  Test Elapsed Time   0.77500000000000047       msec.
-  PET           0  Test Elapsed Time   0.77500000000000047       msec.
-  PET           1  Test Elapsed Time   0.75800000000000001       msec.
-  PET           3  Test Elapsed Time   0.78299999999999981       msec.
+  Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
+  Ending Test, file ESMF_VMAllGatherVUTest.F90, line 382
+  PET           0  Test Elapsed Time   0.72700000000000020       msec.
+  PET           1  Test Elapsed Time   0.74100000000000033       msec.
+  PET           2  Test Elapsed Time   0.73400000000000032       msec.
+  PET           3  Test Elapsed Time   0.76700000000000035       msec.
