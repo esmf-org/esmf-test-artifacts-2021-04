@@ -25,3 +25,9 @@ git add $branch
 git pull -X theirs --no-edit origin main
 git commit -a -m"$message"
 git push origin main
+while [ $? -ne 0 ]
+do
+  git pull -X theirs --no-edit origin main
+  git push origin main
+done
+
