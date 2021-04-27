@@ -1,11 +1,11 @@
-build time -- 2021-04-27 06:55:31
-  Beginning Test, file ESMF_GridCreateUTest.F90, line 100
+build time -- 2021-04-27 20:55:32
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   NUMBER_OF_PROCESSORS           4
   PASS  Testing Grid IsCreated for uncreated object, ESMF_GridCreateUTest.F90, l
  ine 119
@@ -57,11 +57,11 @@ build time -- 2021-04-27 06:55:31
  Proxy        = no
  Status: Base = Ready,  object = Ready
  Proxy        = no
- Base ID = 2, vmID:
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Base ID = 2, vmID:
  Base ID = 2, vmID:
+ Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
 --- ESMCI::VMId::print() start ---
@@ -69,8 +69,7 @@ build time -- 2021-04-27 06:55:31
  Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
+  vmKey=0xF0000000
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
@@ -79,11 +78,12 @@ build time -- 2021-04-27 06:55:31
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
-  vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
@@ -243,13 +243,9 @@ build time -- 2021-04-27 06:55:31
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
- StaggerLoc Print Begins =====>
-    staggerloc =   -858993460
  StaggerLoc Print Begins =====>
     staggerloc =   -858993460
  StaggerLoc Print Ends   =====>
-  PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
- ne 693
  StaggerLoc Print Begins =====>
     staggerloc =   -858993460
  StaggerLoc Print Ends   =====>
@@ -260,7 +256,11 @@ build time -- 2021-04-27 06:55:31
  StaggerLoc Print Ends   =====>
   PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
  ne 693
+ StaggerLoc Print Begins =====>
+    staggerloc =   -858993460
  StaggerLoc Print Ends   =====>
+  PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
+ ne 693
   PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
  ne 693
   PASS  Creating a Grid with a non-default name, ESMF_GridCreateUTest.F90, line 
@@ -433,10 +433,10 @@ build time -- 2021-04-27 06:55:31
   PASS  Creating/Destroying an Empty Grid, ESMF_GridCreateUTest.F90, line 1395
   PASS  Creating a 2D distributed Grid with 1 undistributed dim. with CreateShap
  eTileIrreg and no-default gridEdgeWidths, ESMF_GridCreateUTest.F90, line 1340
+  PASS  Creating a Grid with default coordDeps, ESMF_GridCreateUTest.F90, line 1
+ 378
   PASS  Creating a 2D non periodic Grid with GridCreateNoPeriDimReg, ESMF_GridCr
  eateUTest.F90, line 1424
-  PASS  Creating a Grid with default coordDeps, ESMF_GridCreateUTest.F90, line 1
- 378
   PASS  Creating/Destroying an Empty Grid, ESMF_GridCreateUTest.F90, line 1395
   PASS  Creating a 2D non periodic Grid with GridCreateNoPeriDimReg, ESMF_GridCr
  eateUTest.F90, line 1424
@@ -505,10 +505,10 @@ build time -- 2021-04-27 06:55:31
  90, line 1654
   PASS  Creating a 2D  Grid with non-default 2D regDecomp with CreateShapeTileRe
  g, ESMF_GridCreateUTest.F90, line 1627
-  PASS  Creating a 2D  1 DE Grid with CreateShapeTileReg, ESMF_GridCreateUTest.F
- 90, line 1654
   PASS  Creating a 2D  Grid with non-default 2D regDecomp with CreateShapeTileRe
  g, ESMF_GridCreateUTest.F90, line 1627
+  PASS  Creating a 2D  1 DE Grid with CreateShapeTileReg, ESMF_GridCreateUTest.F
+ 90, line 1654
   PASS  Creating a Grid with CreateShapeTileReg and non-default gridEdgeWidths, 
  ESMF_GridCreateUTest.F90, line 1692
   PASS  Creating a Grid with CreateShapeTileReg and non-default gridEdgeWidths, 
@@ -695,6 +695,8 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  Test.F90, line 2707
   PASS  Test ESMF_GridCreate1PeriDimUfrm with two bipole flags, ESMF_GridCreateU
  Test.F90, line 2707
+  PASS  Test getting tile number from localDE, ESMF_GridCreateUTest.F90, line 27
+ 78
   PASS  Test ESMF_GridCreate1PeriDimUfrm with two bipole flags, ESMF_GridCreateU
  Test.F90, line 2707
   PASS  Test ESMF_GridCreate1PeriDimUfrm with two bipole flags, ESMF_GridCreateU
@@ -705,8 +707,6 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  78
   PASS  Test getting tile number from localDE, ESMF_GridCreateUTest.F90, line 27
  78
-  PASS  Test getting tile number from localDE, ESMF_GridCreateUTest.F90, line 27
- 78
   PASS  Testing GridCreateCubedSphere, ESMF_GridCreateUTest.F90, line 2849
   PASS  Testing GridCreateCubedSphere, ESMF_GridCreateUTest.F90, line 2849
   PASS  Testing GridCreateCubedSphere, ESMF_GridCreateUTest.F90, line 2849
@@ -733,9 +733,9 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  est.F90, line 3045
   PASS  Test ESMF_GridCreate with different coordTypeKind with GRIDSPEC supergri
  d tile file, ESMF_GridCreateUTest.F90, line 3114
+  Ending Test, file ESMF_GridCreateUTest.F90, line 3120
   PASS  Test ESMF_GridCreate with different coordTypeKind with GRIDSPEC supergri
  d tile file, ESMF_GridCreateUTest.F90, line 3114
-  Ending Test, file ESMF_GridCreateUTest.F90, line 3120
   Ending Test, file ESMF_GridCreateUTest.F90, line 3120
   PASS  Testing GridCreateMosaic with different CoordTypeKind, ESMF_GridCreateUT
  est.F90, line 3045
@@ -747,17 +747,17 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
   PASS  Test ESMF_GridCreate with different coordTypeKind with GRIDSPEC supergri
  d tile file, ESMF_GridCreateUTest.F90, line 3114
   Ending Test, file ESMF_GridCreateUTest.F90, line 3120
-  PET           1  Test Elapsed Time    162.810000000000       msec.
-  PET           2  Test Elapsed Time    163.793000000000       msec.
-  PET           3  Test Elapsed Time    163.671000000000       msec.
-  PET           0  Test Elapsed Time    161.952000000000       msec.
-  Beginning Test, file ESMF_GridCreateUTest.F90, line 100
+  PET           1  Test Elapsed Time    162.615000000000       msec.
+  PET           3  Test Elapsed Time    162.622000000000       msec.
+  PET           0  Test Elapsed Time    160.303000000000       msec.
+  PET           2  Test Elapsed Time    162.945000000000       msec.
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_GridCreateUTest.F90, line 100
   NUMBER_OF_PROCESSORS           4
   PASS  Testing Grid IsCreated for uncreated object, ESMF_GridCreateUTest.F90, l
  ine 119
@@ -809,11 +809,11 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  Proxy        = no
  Status: Base = Ready,  object = Ready
  Proxy        = no
- Base ID = 2, vmID:
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Base ID = 2, vmID:
  Base ID = 2, vmID:
+ Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
 --- ESMCI::VMId::print() start ---
@@ -821,8 +821,7 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  Base ID = 2, vmID:
 --- ESMCI::VMId::print() start ---
   vmKeyWidth = 1
---- ESMCI::VMId::print() start ---
-  vmKeyWidth = 1
+  vmKey=0xF0000000
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
@@ -831,11 +830,12 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
   vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
-  vmKey=0xF0000000
   localID = 0
 --- ESMCI::VMId::print() end ---
  Root Info (Attributes):
@@ -995,13 +995,9 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
   PASS  Destroying a Grid, ESMF_GridCreateUTest.F90, line 684
- StaggerLoc Print Begins =====>
-    staggerloc =   -858993460
  StaggerLoc Print Begins =====>
     staggerloc =   -858993460
  StaggerLoc Print Ends   =====>
-  PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
- ne 693
  StaggerLoc Print Begins =====>
     staggerloc =   -858993460
  StaggerLoc Print Ends   =====>
@@ -1012,7 +1008,11 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  StaggerLoc Print Ends   =====>
   PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
  ne 693
+ StaggerLoc Print Begins =====>
+    staggerloc =   -858993460
  StaggerLoc Print Ends   =====>
+  PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
+ ne 693
   PASS  Test ESMF_StaggerLocPrint public interface, ESMF_GridCreateUTest.F90, li
  ne 693
   PASS  Creating a Grid with a non-default name, ESMF_GridCreateUTest.F90, line 
@@ -1185,10 +1185,10 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
   PASS  Creating/Destroying an Empty Grid, ESMF_GridCreateUTest.F90, line 1395
   PASS  Creating a 2D distributed Grid with 1 undistributed dim. with CreateShap
  eTileIrreg and no-default gridEdgeWidths, ESMF_GridCreateUTest.F90, line 1340
+  PASS  Creating a Grid with default coordDeps, ESMF_GridCreateUTest.F90, line 1
+ 378
   PASS  Creating a 2D non periodic Grid with GridCreateNoPeriDimReg, ESMF_GridCr
  eateUTest.F90, line 1424
-  PASS  Creating a Grid with default coordDeps, ESMF_GridCreateUTest.F90, line 1
- 378
   PASS  Creating/Destroying an Empty Grid, ESMF_GridCreateUTest.F90, line 1395
   PASS  Creating a 2D non periodic Grid with GridCreateNoPeriDimReg, ESMF_GridCr
  eateUTest.F90, line 1424
@@ -1257,10 +1257,10 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  90, line 1654
   PASS  Creating a 2D  Grid with non-default 2D regDecomp with CreateShapeTileRe
  g, ESMF_GridCreateUTest.F90, line 1627
-  PASS  Creating a 2D  1 DE Grid with CreateShapeTileReg, ESMF_GridCreateUTest.F
- 90, line 1654
   PASS  Creating a 2D  Grid with non-default 2D regDecomp with CreateShapeTileRe
  g, ESMF_GridCreateUTest.F90, line 1627
+  PASS  Creating a 2D  1 DE Grid with CreateShapeTileReg, ESMF_GridCreateUTest.F
+ 90, line 1654
   PASS  Creating a Grid with CreateShapeTileReg and non-default gridEdgeWidths, 
  ESMF_GridCreateUTest.F90, line 1692
   PASS  Creating a Grid with CreateShapeTileReg and non-default gridEdgeWidths, 
@@ -1447,6 +1447,8 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  Test.F90, line 2707
   PASS  Test ESMF_GridCreate1PeriDimUfrm with two bipole flags, ESMF_GridCreateU
  Test.F90, line 2707
+  PASS  Test getting tile number from localDE, ESMF_GridCreateUTest.F90, line 27
+ 78
   PASS  Test ESMF_GridCreate1PeriDimUfrm with two bipole flags, ESMF_GridCreateU
  Test.F90, line 2707
   PASS  Test ESMF_GridCreate1PeriDimUfrm with two bipole flags, ESMF_GridCreateU
@@ -1457,8 +1459,6 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  78
   PASS  Test getting tile number from localDE, ESMF_GridCreateUTest.F90, line 27
  78
-  PASS  Test getting tile number from localDE, ESMF_GridCreateUTest.F90, line 27
- 78
   PASS  Testing GridCreateCubedSphere, ESMF_GridCreateUTest.F90, line 2849
   PASS  Testing GridCreateCubedSphere, ESMF_GridCreateUTest.F90, line 2849
   PASS  Testing GridCreateCubedSphere, ESMF_GridCreateUTest.F90, line 2849
@@ -1485,9 +1485,9 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
  est.F90, line 3045
   PASS  Test ESMF_GridCreate with different coordTypeKind with GRIDSPEC supergri
  d tile file, ESMF_GridCreateUTest.F90, line 3114
+  Ending Test, file ESMF_GridCreateUTest.F90, line 3120
   PASS  Test ESMF_GridCreate with different coordTypeKind with GRIDSPEC supergri
  d tile file, ESMF_GridCreateUTest.F90, line 3114
-  Ending Test, file ESMF_GridCreateUTest.F90, line 3120
   Ending Test, file ESMF_GridCreateUTest.F90, line 3120
   PASS  Testing GridCreateMosaic with different CoordTypeKind, ESMF_GridCreateUT
  est.F90, line 3045
@@ -1499,7 +1499,7 @@ ESMF_GridCreateUT  000000000040F069  Unknown               Unknown  Unknown
   PASS  Test ESMF_GridCreate with different coordTypeKind with GRIDSPEC supergri
  d tile file, ESMF_GridCreateUTest.F90, line 3114
   Ending Test, file ESMF_GridCreateUTest.F90, line 3120
-  PET           1  Test Elapsed Time    162.810000000000       msec.
-  PET           2  Test Elapsed Time    163.793000000000       msec.
-  PET           3  Test Elapsed Time    163.671000000000       msec.
-  PET           0  Test Elapsed Time    161.952000000000       msec.
+  PET           1  Test Elapsed Time    162.615000000000       msec.
+  PET           3  Test Elapsed Time    162.622000000000       msec.
+  PET           0  Test Elapsed Time    160.303000000000       msec.
+  PET           2  Test Elapsed Time    162.945000000000       msec.
