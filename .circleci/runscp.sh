@@ -20,8 +20,12 @@ echo $hash
 echo $host
 echo $branch
 echo $message
+which column
 git checkout $hash $branch/$host
-find $branch -iname summary.dat | xargs grep -l "$branchhash" | xargs grep "test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $2,$3,$4,$6,$7,$5,$12,$14}' > "$branch/$bmessage.summary"
+find $branch -iname summary.dat | xargs grep -l "$branchhash" | xargs grep "unit test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $2,$3,$4,$6,$7,$5,$12,$14}' > unit
+find $branch -iname summary.dat | xargs grep -l "$branchhash" | xargs grep "unit test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $12,$14}' > sys
+find $branch -iname summary.dat | xargs grep -l "$branchhash" | xargs grep "unit test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $12,$14}' > examp
+paste -d " " unit sys examp > "$branch/$bmessage.summary"
 git add $branch
 git pull -X theirs --no-edit origin main
 git commit -a -m"$message"
