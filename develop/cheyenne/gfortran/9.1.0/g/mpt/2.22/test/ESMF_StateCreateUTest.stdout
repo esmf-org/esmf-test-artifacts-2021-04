@@ -1,4 +1,4 @@
-build time -- 2021-04-27 05:50:38.797643
+build time -- 2021-04-27 14:26:38.718863
   Beginning Test, file ESMF_StateCreateUTest.F90, line 106
   Beginning Test, file ESMF_StateCreateUTest.F90, line 106
   NUMBER_OF_PROCESSORS           4
@@ -27,12 +27,12 @@ build time -- 2021-04-27 05:50:38.797643
   PASS  State equality after destroy Test, ESMF_StateCreateUTest.F90, line 148
   PASS  State equality after destroy Test, ESMF_StateCreateUTest.F90, line 148
   PASS  State equality after destroy Test, ESMF_StateCreateUTest.F90, line 148
+  PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  Double StateDestroy through alias Test, ESMF_StateCreateUTest.F90, line 163
   PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  Double StateDestroy through alias Test, ESMF_StateCreateUTest.F90, line 163
-  PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  Double StateDestroy through alias Test, ESMF_StateCreateUTest.F90, line 163
   PASS  Double StateDestroy through alias Test, ESMF_StateCreateUTest.F90, line 163
   PASS  Creating an empty State Test, ESMF_StateCreateUTest.F90, line 173
@@ -45,31 +45,31 @@ build time -- 2021-04-27 05:50:38.797643
  ESMF_StatePrint: (pet 0):
   State name: Atmosphere Import
   State name: Atmosphere Import
+     status: Import State, object count: 0
+  State name: Atmosphere Import
+     status: Import State, object count: 0
+     status: Import State, object count: 0
+     reconcile needed: F
+     reconcile needed: F
   State name: Atmosphere Import
      status: Import State, object count: 0
      reconcile needed: F
-  State name: Atmosphere Import
-     status: Import State, object count: 0
-     reconcile needed: F
-     status: Import State, object count: 0
-     reconcile needed: F
-     status: Import State, object count: 0
      reconcile needed: F
  Base name    = Atmosphere Import
  Base name    = Atmosphere Import
  Base name    = Atmosphere Import
- Status: Base = Ready,  object = Ready
+ Base name    = Atmosphere Import
  Status: Base = Ready,  object = Ready
  Proxy        = no
- Root Info (Attributes):
- Base name    = Atmosphere Import
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
  Proxy        = no
+ Root Info (Attributes):
  Root Info (Attributes):
 {}  PASS  Printing an empty State Test, ESMF_StateCreateUTest.F90, line 182
 {}  PASS  Printing an empty State Test, ESMF_StateCreateUTest.F90, line 182
@@ -101,7 +101,7 @@ build time -- 2021-04-27 05:50:38.797643
   PASS  Removing user method from empty State Test, ESMF_StateCreateUTest.F90, line 228
   PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
  Hi from myUserMethod
- ESMF_StatePrint: (pet 3):
+ ESMF_StatePrint: (pet 2):
   State name: Atmosphere Import
      status: Import State, object count: 0
      reconcile needed: F
@@ -112,497 +112,308 @@ build time -- 2021-04-27 05:50:38.797643
 {}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
   PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
   PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
-  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
-Container::print() multipmap:item=0 key=testField1 value=0x2de6b40
-Container::print()      list:item=0 key=testField1 value=0x2de6b40
-  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
- string in siwOut: test this string                                                                                                                                                                                                                                                
- string in si: test this string                                                                                                                                                                                                                                                
-  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
- string in siw%si: test this string                                                                                                                                                                                                                                                
-  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
-  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
-  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
- ESMF_StatePrint: (pet 3):
-  State name: Ocean Export
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
-  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
- ESMF_StatePrint: (pet 3):
-  State name: Ocean Export
-     status: Export State, object count: 2
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-     object: 2,name: Temperature
-            type: FieldBundle
-  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
-  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
   PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
  Hi from myUserMethod
  ESMF_StatePrint: (pet 1):
   State name: Atmosphere Import
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
      status: Import State, object count: 0
      reconcile needed: F
  Base name    = Atmosphere Import
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
-{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
-  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
-  PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
-  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
-Container::print() multipmap:item=0 key=testField1 value=0x2de7af0
-Container::print()      list:item=0 key=testField1 value=0x2de7af0
-  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
- string in siwOut: test this string                                                                                                                                                                                                                                                
- string in si: test this string                                                                                                                                                                                                                                                
-  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
- string in siw%si: test this string                                                                                                                                                                                                                                                
   PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
-  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
+  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
  Hi from myUserMethod
- ESMF_StatePrint: (pet 0):
+ ESMF_StatePrint: (pet 3):
   State name: Atmosphere Import
-  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
      status: Import State, object count: 0
      reconcile needed: F
+  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
  Base name    = Atmosphere Import
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+Container::print() multipmap:item=0 key=testField1 value=0x23b4c70
 {}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
-  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
-  PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
-  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
- ESMF_StatePrint: (pet 1):
-  State name: Ocean Export
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
-  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
-  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
-  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
-  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
-Container::print() multipmap:item=0 key=testField1 value=0x2de7bf0
-Container::print()      list:item=0 key=testField1 value=0x2de7bf0
-  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
- ESMF_StatePrint: (pet 1):
-  State name: Ocean Export
-     status: Export State, object count: 2
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-     object: 2,name: Temperature
-            type: FieldBundle
- string in siwOut: test this string                                                                                                                                                                                                                                                
- string in si: test this string                                                                                                                                                                                                                                                
-  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
-  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
-  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
- string in siw%si: test this string                                                                                                                                                                                                                                                
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
-  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
-  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
-  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
- ESMF_StatePrint: (pet 0):
-  State name: Ocean Export
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
-  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
-  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
   PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
-  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
+  PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
+Container::print()      list:item=0 key=testField1 value=0x23b4c70
+  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
  Hi from myUserMethod
- ESMF_StatePrint: (pet 2):
-  State name: Atmosphere Import
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
+  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
  ESMF_StatePrint: (pet 0):
-  State name: Ocean Export
+  State name: Atmosphere Import
      status: Import State, object count: 0
      reconcile needed: F
  Base name    = Atmosphere Import
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-     status: Export State, object count: 2
-     reconcile needed: T
- Base name    = Ocean Export
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Surface pressure
-{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
-  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
-            type: FieldBundle
-     object: 2,name: Temperature
-            type: FieldBundle
-  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
-  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
-  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
   PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
-  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
-  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
-  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
-  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
-  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
-  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
-Container::print() multipmap:item=0 key=testField1 value=0x2de7b70
-Container::print()      list:item=0 key=testField1 value=0x2de7b70
-  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
-  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
-  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
-  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
   PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
  string in siwOut: test this string                                                                                                                                                                                                                                                
  string in si: test this string                                                                                                                                                                                                                                                
- ESMF_StatePrint: (pet 3):
-  State name: Coupler Statelist
-     status: Unspecified intent direction, object count: 2
+{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
   PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
-     reconcile needed: T
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
+  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
+  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
   PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
-{}     object: 1,name: Atmosphere Import
+  PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
  string in siw%si: test this string                                                                                                                                                                                                                                                
-            type: State, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
-  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
   PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
- testName: Atmosphere Import
-  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
- item count:            2
-  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
+Container::print() multipmap:item=0 key=testField1 value=0x23b4bb0
+  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
+Container::print()      list:item=0 key=testField1 value=0x23b4bb0
+  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
   PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
+Container::print() multipmap:item=0 key=testField1 value=0x23b4d30
+Container::print()      list:item=0 key=testField1 value=0x23b4d30
+  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
   PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
-  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
-  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
- size(names) =           2
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_STATE:       Ocean Export
- ESMF_StatePrint: (pet 3):
-  State name: Coupler Statelist
-     status: Unspecified intent direction, object count: 2
-     reconcile needed: T
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
+  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
+ string in siwOut: test this string                                                                                                                                                                                                                                                
+ string in si: test this string                                                                                                                                                                                                                                                
+  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
+ string in siwOut: test this string                                                                                                                                                                                                                                                
+ string in si: test this string                                                                                                                                                                                                                                                
+  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
+Container::print() multipmap:item=0 key=testField1 value=0x23b4cf0
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
+Container::print()      list:item=0 key=testField1 value=0x23b4cf0
+  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
+ string in siw%si: test this string                                                                                                                                                                                                                                                
   PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
  ESMF_StatePrint: (pet 2):
   State name: Ocean Export
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
- -> State name: Atmosphere Import
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
+ string in siw%si: test this string                                                                                                                                                                                                                                                
+  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
      status: Export State, object count: 1
      reconcile needed: T
  Base name    = Ocean Export
- ->    status: Import State, object count: 1
- ->    reconcile needed: F
- -> Base name    = Atmosphere Import
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} ->  ->  object: 1,name: Temperature
- ->           type: FieldBundle, proxy flag: no
-  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
- -> State name: Ocean Export
- ->    status: Export State, object count: 0
- ->    reconcile needed: F
- -> Base name    = Ocean Export
+  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+ string in siwOut: test this string                                                                                                                                                                                                                                                
+ string in si: test this string                                                                                                                                                                                                                                                
+  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
+  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
 {}     object: 1,name: Surface pressure
             type: FieldBundle
   PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
+  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+ string in siw%si: test this string                                                                                                                                                                                                                                                
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
+  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
+  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
+  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
+ ESMF_StatePrint: (pet 1):
+  State name: Ocean Export
+     status: Export State, object count: 1
+     reconcile needed: T
+ ESMF_StatePrint: (pet 2):
+  State name: Ocean Export
+     status: Export State, object count: 2
+     reconcile needed: T
+ ESMF_StatePrint: (pet 3):
+  State name: Ocean Export
+     status: Export State, object count: 1
+     reconcile needed: T
+ Base name    = Ocean Export
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+ Base name    = Ocean Export
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
-  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
- nested item count:            3
-  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
-  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
-  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
-  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
- ESMF_StatePrint: (pet 2):
-  State name: Ocean Export
-  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
- size(names) =           3
-     status: Export State, object count: 2
-     reconcile needed: T
  Base name    = Ocean Export
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
- ESMF_STATEITEM_STATE:       Ocean Export
-  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
-  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: Surface pressure
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {}     object: 1,name: Surface pressure
             type: FieldBundle
+  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
+            type: FieldBundle
      object: 2,name: Temperature
-  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
             type: FieldBundle
   PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
-  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
-  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
+  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
   PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
-  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
-  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
+ ESMF_StatePrint: (pet 0):
+  State name: Ocean Export
+     status: Export State, object count: 1
+     reconcile needed: T
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
+ Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
+  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
+ ESMF_StatePrint: (pet 3):
+  State name: Ocean Export
+     status: Export State, object count: 2
+     reconcile needed: T
+ Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
+ ESMF_StatePrint: (pet 1):
+  State name: Ocean Export
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+     object: 2,name: Temperature
+            type: FieldBundle
+  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
+     status: Export State, object count: 2
+     reconcile needed: T
+ Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+     object: 2,name: Temperature
+            type: FieldBundle
+  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
+ ESMF_StatePrint: (pet 0):
+  State name: Ocean Export
+  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
+     status: Export State, object count: 2
+     reconcile needed: T
+ Base name    = Ocean Export
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+     object: 2,name: Temperature
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
+            type: FieldBundle
+  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
+  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
   PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
-  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
-  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
   PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
-  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
-  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
-  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
-  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
-  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
- ESMF_StatePrint: (pet 1):
-  State name: Coupler Statelist
-  Ending Test, file ESMF_StateCreateUTest.F90, line 799
-     status: Unspecified intent direction, object count: 2
-     reconcile needed: T
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
- Proxy        = no
-  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
- Root Info (Attributes):
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
-  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
-  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
- testName: Atmosphere Import
-  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
- item count:            2
-  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
-  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
-  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
-  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
- size(names) =           2
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_STATE:       Ocean Export
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
- ESMF_StatePrint: (pet 1):
-  State name: Coupler Statelist
-     status: Unspecified intent direction, object count: 2
-     reconcile needed: T
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
-  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
- -> State name: Atmosphere Import
- ->    status: Import State, object count: 1
-  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
- ->    reconcile needed: F
- -> Base name    = Atmosphere Import
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} ->  ->  object: 1,name: Temperature
- ->           type: FieldBundle, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
-  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
- -> State name: Ocean Export
- ->    status: Export State, object count: 0
- ->    reconcile needed: F
- -> Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
- nested item count:            3
-  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
-  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
-  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
-  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
-  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
   PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
- size(names) =           3
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
-  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
- ESMF_STATEITEM_STATE:       Ocean Export
- ESMF_StatePrint: (pet 0):
-  State name: Coupler Statelist
-  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
   PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
-     status: Unspecified intent direction, object count: 2
-     reconcile needed: T
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
-  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
-  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
- testName: Atmosphere Import
-  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
-  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
- item count:            2
-  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
-  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
-  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
- size(names) =           2
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_STATE:       Ocean Export
- ESMF_StatePrint: (pet 0):
-  State name: Coupler Statelist
-     status: Unspecified intent direction, object count: 2
-     reconcile needed: T
-  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
- -> State name: Atmosphere Import
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
- ->    status: Import State, object count: 1
- ->    reconcile needed: F
- -> Base name    = Atmosphere Import
-  Ending Test, file ESMF_StateCreateUTest.F90, line 799
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
+  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
+  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
+  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
+  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
+  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
   PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
-{} ->  ->  object: 1,name: Temperature
- ->           type: FieldBundle, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
- -> State name: Ocean Export
- ->    status: Export State, object count: 0
- ->    reconcile needed: F
- -> Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
+  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
+  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
+  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
   PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
-{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
- nested item count:            3
-  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
+  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
+  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
+  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
   PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
-  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
+  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
+  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
+  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
-  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
   PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
- size(names) =           3
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
- ESMF_STATEITEM_STATE:       Ocean Export
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
   PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
-  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
-  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
+  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
   PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
   PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
-  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
+  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
+  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
+  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
   PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
-  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
+  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
+  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
+  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
   PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
+  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
+  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
   PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
+  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
+  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
+  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
   PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
   PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
-  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
+  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
+  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
+  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
   PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
-  Ending Test, file ESMF_StateCreateUTest.F90, line 799
+  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
+  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
+  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
  ESMF_StatePrint: (pet 2):
+  State name: Coupler Statelist
+ ESMF_StatePrint: (pet 0):
+  State name: Coupler Statelist
+     status: Unspecified intent direction, object count: 2
+     reconcile needed: T
+ Base name    = Coupler Statelist
+ ESMF_StatePrint: (pet 3):
+  State name: Coupler Statelist
+     status: Unspecified intent direction, object count: 2
+     reconcile needed: T
+ Base name    = Coupler Statelist
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+     status: Unspecified intent direction, object count: 2
+     reconcile needed: T
+ Base name    = Coupler Statelist
+ Status: Base = Ready,  object = Ready
+ ESMF_StatePrint: (pet 1):
   State name: Coupler Statelist
      status: Unspecified intent direction, object count: 2
      reconcile needed: T
@@ -611,27 +422,160 @@ Container::print()      list:item=0 key=testField1 value=0x2de7b70
  Proxy        = no
  Root Info (Attributes):
 {}     object: 1,name: Atmosphere Import
+ Root Info (Attributes):
+{}     object: 1,name: Atmosphere Import
+            type: State, proxy flag: no
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: Atmosphere Import
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+            type: State, proxy flag: no
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
+            type: State, proxy flag: no
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
+{}     object: 1,name: Atmosphere Import
             type: State, proxy flag: no
      object: 2,name: Ocean Export
             type: State, proxy flag: no
   PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
  testName: Atmosphere Import
   PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
+ testName: Atmosphere Import
+  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
+ testName: Atmosphere Import
+  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
+ item count:            2
+  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
+ item count:            2
+  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
+ item count:            2
+  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
+ testName: Atmosphere Import
+  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
  item count:            2
   PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
   PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
+  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
+  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
+  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
   PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
  size(names) =           2
  ESMF_STATEITEM_STATE:       Atmosphere Import
+  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
+ size(names) =           2
+ size(names) =           2
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_STATE:       Ocean Export
  ESMF_STATEITEM_STATE:       Ocean Export
  ESMF_StatePrint: (pet 2):
   State name: Coupler Statelist
      status: Unspecified intent direction, object count: 2
      reconcile needed: T
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_STATE:       Ocean Export
+ ESMF_StatePrint: (pet 3):
+  State name: Coupler Statelist
+     status: Unspecified intent direction, object count: 2
+ ESMF_StatePrint: (pet 0):
+  State name: Coupler Statelist
+     status: Unspecified intent direction, object count: 2
+     reconcile needed: T
+ Base name    = Coupler Statelist
+ Status: Base = Ready,  object = Ready
+  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
  Base name    = Coupler Statelist
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+     reconcile needed: T
+ Base name    = Coupler Statelist
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: Atmosphere Import
+            type: State, proxy flag: no
+ -> State name: Atmosphere Import
+  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
+{}     object: 1,name: Atmosphere Import
+            type: State, proxy flag: no
+ -> State name: Atmosphere Import
+ ->    status: Import State, object count: 1
+ ->    reconcile needed: F
+ -> Base name    = Atmosphere Import
+ Status: Base = Ready,  object = Ready
+{}     object: 1,name: Atmosphere Import
+            type: State, proxy flag: no
+ -> State name: Atmosphere Import
+ ->    status: Import State, object count: 1
+ ->    reconcile needed: F
+ ->    status: Import State, object count: 1
+ ->    reconcile needed: F
+ -> Base name    = Atmosphere Import
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ size(names) =           2
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_STATE:       Ocean Export
+ ESMF_StatePrint: (pet 1):
+  State name: Coupler Statelist
+     status: Unspecified intent direction, object count: 2
+     reconcile needed: T
+ Proxy        = no
+ Root Info (Attributes):
+{} ->  ->  object: 1,name: Temperature
+ ->           type: FieldBundle, proxy flag: no
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+ -> State name: Ocean Export
+ -> Base name    = Atmosphere Import
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} ->  ->  object: 1,name: Temperature
+ ->           type: FieldBundle, proxy flag: no
+     object: 2,name: Ocean Export
+{} ->  ->  object: 1,name: Temperature
+ ->           type: FieldBundle, proxy flag: no
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+ -> State name: Ocean Export
+ ->    status: Export State, object count: 0
+ ->    reconcile needed: F
+ -> Base name    = Ocean Export
+ Base name    = Coupler Statelist
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ ->    status: Export State, object count: 0
+ ->    reconcile needed: F
+ -> Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+            type: State, proxy flag: no
+ -> State name: Ocean Export
+ ->    status: Export State, object count: 0
+ ->    reconcile needed: F
+ -> Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
 {}     object: 1,name: Atmosphere Import
             type: State, proxy flag: no
  -> State name: Atmosphere Import
@@ -641,40 +585,96 @@ Container::print()      list:item=0 key=testField1 value=0x2de7b70
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
+ nested item count:            3
+{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
+ nested item count:            3
+  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
 {} ->  ->  object: 1,name: Temperature
  ->           type: FieldBundle, proxy flag: no
      object: 2,name: Ocean Export
             type: State, proxy flag: no
  -> State name: Ocean Export
+  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
  ->    status: Export State, object count: 0
  ->    reconcile needed: F
  -> Base name    = Ocean Export
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
  nested item count:            3
   PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
   PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
+{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
+  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
+  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
+  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
+  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
+ nested item count:            3
+  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
+ size(names) =           3
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
+ ESMF_STATEITEM_STATE:       Ocean Export
+ size(names) =           3
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
+ ESMF_STATEITEM_STATE:       Ocean Export
   PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
  size(names) =           3
  ESMF_STATEITEM_STATE:       Atmosphere Import
  ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
  ESMF_STATEITEM_STATE:       Ocean Export
+  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
   PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
+  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
+  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
+ size(names) =           3
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
+ ESMF_STATEITEM_STATE:       Ocean Export
   PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
   PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
+  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
+  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
+  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
+  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
+  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
   PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
+  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
+  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
+  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
+  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
+  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
+  Ending Test, file ESMF_StateCreateUTest.F90, line 799
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  Ending Test, file ESMF_StateCreateUTest.F90, line 799
+  Ending Test, file ESMF_StateCreateUTest.F90, line 799
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
   PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
   Ending Test, file ESMF_StateCreateUTest.F90, line 799
-  PET           3  Test Elapsed Time    5.9689999999999994       msec.
-  PET           0  Test Elapsed Time    4.6829999999999998       msec.
-  PET           2  Test Elapsed Time    4.0340000000000007       msec.
-  PET           1  Test Elapsed Time    5.0990000000000002       msec.
+  PET           1  Test Elapsed Time    4.6099999999999994       msec.
+  PET           2  Test Elapsed Time    4.8360000000000003       msec.
+  PET           3  Test Elapsed Time    4.5800000000000001       msec.
+  PET           0  Test Elapsed Time    4.4870000000000001       msec.
   Beginning Test, file ESMF_StateCreateUTest.F90, line 106
   Beginning Test, file ESMF_StateCreateUTest.F90, line 106
   NUMBER_OF_PROCESSORS           4
@@ -703,12 +703,12 @@ Container::print()      list:item=0 key=testField1 value=0x2de7b70
   PASS  State equality after destroy Test, ESMF_StateCreateUTest.F90, line 148
   PASS  State equality after destroy Test, ESMF_StateCreateUTest.F90, line 148
   PASS  State equality after destroy Test, ESMF_StateCreateUTest.F90, line 148
+  PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  Double StateDestroy through alias Test, ESMF_StateCreateUTest.F90, line 163
   PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  Double StateDestroy through alias Test, ESMF_StateCreateUTest.F90, line 163
-  PASS  State non-equality after destroy Test, ESMF_StateCreateUTest.F90, line 156
   PASS  Double StateDestroy through alias Test, ESMF_StateCreateUTest.F90, line 163
   PASS  Double StateDestroy through alias Test, ESMF_StateCreateUTest.F90, line 163
   PASS  Creating an empty State Test, ESMF_StateCreateUTest.F90, line 173
@@ -721,31 +721,31 @@ Container::print()      list:item=0 key=testField1 value=0x2de7b70
  ESMF_StatePrint: (pet 0):
   State name: Atmosphere Import
   State name: Atmosphere Import
+     status: Import State, object count: 0
+  State name: Atmosphere Import
+     status: Import State, object count: 0
+     status: Import State, object count: 0
+     reconcile needed: F
+     reconcile needed: F
   State name: Atmosphere Import
      status: Import State, object count: 0
      reconcile needed: F
-  State name: Atmosphere Import
-     status: Import State, object count: 0
-     reconcile needed: F
-     status: Import State, object count: 0
-     reconcile needed: F
-     status: Import State, object count: 0
      reconcile needed: F
  Base name    = Atmosphere Import
  Base name    = Atmosphere Import
  Base name    = Atmosphere Import
- Status: Base = Ready,  object = Ready
+ Base name    = Atmosphere Import
  Status: Base = Ready,  object = Ready
  Proxy        = no
- Root Info (Attributes):
- Base name    = Atmosphere Import
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
  Proxy        = no
+ Root Info (Attributes):
  Root Info (Attributes):
 {}  PASS  Printing an empty State Test, ESMF_StateCreateUTest.F90, line 182
 {}  PASS  Printing an empty State Test, ESMF_StateCreateUTest.F90, line 182
@@ -777,7 +777,7 @@ Container::print()      list:item=0 key=testField1 value=0x2de7b70
   PASS  Removing user method from empty State Test, ESMF_StateCreateUTest.F90, line 228
   PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
  Hi from myUserMethod
- ESMF_StatePrint: (pet 3):
+ ESMF_StatePrint: (pet 2):
   State name: Atmosphere Import
      status: Import State, object count: 0
      reconcile needed: F
@@ -788,526 +788,470 @@ Container::print()      list:item=0 key=testField1 value=0x2de7b70
 {}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
   PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
   PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
-  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
-Container::print() multipmap:item=0 key=testField1 value=0x2de6b40
-Container::print()      list:item=0 key=testField1 value=0x2de6b40
-  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
- string in siwOut: test this string                                                                                                                                                                                                                                                
- string in si: test this string                                                                                                                                                                                                                                                
-  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
- string in siw%si: test this string                                                                                                                                                                                                                                                
-  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
-  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
-  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
- ESMF_StatePrint: (pet 3):
-  State name: Ocean Export
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
-  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
- ESMF_StatePrint: (pet 3):
-  State name: Ocean Export
-     status: Export State, object count: 2
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-     object: 2,name: Temperature
-            type: FieldBundle
-  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
-  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
   PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
  Hi from myUserMethod
  ESMF_StatePrint: (pet 1):
   State name: Atmosphere Import
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
      status: Import State, object count: 0
      reconcile needed: F
  Base name    = Atmosphere Import
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
-{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
-  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
-  PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
-  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
-Container::print() multipmap:item=0 key=testField1 value=0x2de7af0
-Container::print()      list:item=0 key=testField1 value=0x2de7af0
-  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
- string in siwOut: test this string                                                                                                                                                                                                                                                
- string in si: test this string                                                                                                                                                                                                                                                
-  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
- string in siw%si: test this string                                                                                                                                                                                                                                                
   PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
-  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
+  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
  Hi from myUserMethod
+ ESMF_StatePrint: (pet 3):
+  State name: Atmosphere Import
+     status: Import State, object count: 0
+     reconcile needed: F
+  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
+ Base name    = Atmosphere Import
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+Container::print() multipmap:item=0 key=testField1 value=0x23b4c70
+{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
+  PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
+  PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
+Container::print()      list:item=0 key=testField1 value=0x23b4c70
+  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
+ Hi from myUserMethod
+  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
  ESMF_StatePrint: (pet 0):
   State name: Atmosphere Import
-  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
      status: Import State, object count: 0
      reconcile needed: F
  Base name    = Atmosphere Import
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
-{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
-  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
   PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
-  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
- ESMF_StatePrint: (pet 1):
-  State name: Ocean Export
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
-  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
-  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
-  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
-  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
-Container::print() multipmap:item=0 key=testField1 value=0x2de7bf0
-Container::print()      list:item=0 key=testField1 value=0x2de7bf0
-  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
- ESMF_StatePrint: (pet 1):
-  State name: Ocean Export
-     status: Export State, object count: 2
-     reconcile needed: T
- Base name    = Ocean Export
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
   PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-     object: 2,name: Temperature
-            type: FieldBundle
+ string in siwOut: test this string                                                                                                                                                                                                                                                
+ string in si: test this string                                                                                                                                                                                                                                                
+{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
+  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
+  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
+  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
+  PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
+ string in siw%si: test this string                                                                                                                                                                                                                                                
+  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+Container::print() multipmap:item=0 key=testField1 value=0x23b4bb0
+  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
+Container::print()      list:item=0 key=testField1 value=0x23b4bb0
+  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
+  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
+Container::print() multipmap:item=0 key=testField1 value=0x23b4d30
+Container::print()      list:item=0 key=testField1 value=0x23b4d30
+  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
+  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
  string in siwOut: test this string                                                                                                                                                                                                                                                
  string in si: test this string                                                                                                                                                                                                                                                
   PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
-  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
-  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
+ string in siwOut: test this string                                                                                                                                                                                                                                                
+ string in si: test this string                                                                                                                                                                                                                                                
+  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
+Container::print() multipmap:item=0 key=testField1 value=0x23b4cf0
   PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
+Container::print()      list:item=0 key=testField1 value=0x23b4cf0
+  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
  string in siw%si: test this string                                                                                                                                                                                                                                                
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
-  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
-  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
   PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
- ESMF_StatePrint: (pet 0):
-  State name: Ocean Export
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
-  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
-  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
-  PASS  Removing non-existing user method from empty State Test, ESMF_StateCreateUTest.F90, line 238
-  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
- Hi from myUserMethod
  ESMF_StatePrint: (pet 2):
-  State name: Atmosphere Import
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
- ESMF_StatePrint: (pet 0):
   State name: Ocean Export
-     status: Import State, object count: 0
-     reconcile needed: F
- Base name    = Atmosphere Import
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
+ string in siw%si: test this string                                                                                                                                                                                                                                                
+  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+     status: Export State, object count: 1
+     reconcile needed: T
+ Base name    = Ocean Export
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+ string in siwOut: test this string                                                                                                                                                                                                                                                
+ string in si: test this string                                                                                                                                                                                                                                                
+  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
+  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
+  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
+  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+ string in siw%si: test this string                                                                                                                                                                                                                                                
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
+  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
+  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
+  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
+ ESMF_StatePrint: (pet 1):
+  State name: Ocean Export
+     status: Export State, object count: 1
+     reconcile needed: T
+ ESMF_StatePrint: (pet 2):
+  State name: Ocean Export
      status: Export State, object count: 2
      reconcile needed: T
+ ESMF_StatePrint: (pet 3):
+  State name: Ocean Export
+     status: Export State, object count: 1
+     reconcile needed: T
  Base name    = Ocean Export
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+ Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Base name    = Ocean Export
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
 {}     object: 1,name: Surface pressure
-{}  PASS  Executing user method in an empty State Test, ESMF_StateCreateUTest.F90, line 248
-  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
             type: FieldBundle
      object: 2,name: Temperature
             type: FieldBundle
   PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
-  PASS  Destroying an empty State Test, ESMF_StateCreateUTest.F90, line 258
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
+  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
   PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
-  PASS  Container Create Test, ESMF_StateCreateUTest.F90, line 271
-  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
+ ESMF_StatePrint: (pet 0):
+  State name: Ocean Export
+     status: Export State, object count: 1
+     reconcile needed: T
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
-  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
+ Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
   PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
+  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
   PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
-  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
+ ESMF_StatePrint: (pet 3):
+  State name: Ocean Export
+     status: Export State, object count: 2
+     reconcile needed: T
+ Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
+ ESMF_StatePrint: (pet 1):
+  State name: Ocean Export
   PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
-  PASS  Container Add si Test, ESMF_StateCreateUTest.F90, line 285
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+     object: 2,name: Temperature
+            type: FieldBundle
+  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
+     status: Export State, object count: 2
+     reconcile needed: T
+ Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+     object: 2,name: Temperature
+            type: FieldBundle
+  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
+ ESMF_StatePrint: (pet 0):
+  State name: Ocean Export
+  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
+     status: Export State, object count: 2
+     reconcile needed: T
+ Base name    = Ocean Export
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
+{}     object: 1,name: Surface pressure
+            type: FieldBundle
+     object: 2,name: Temperature
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
+            type: FieldBundle
+  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
+  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
   PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
-  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
-Container::print() multipmap:item=0 key=testField1 value=0x2de7b70
-Container::print()      list:item=0 key=testField1 value=0x2de7b70
-  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
-  PASS  Container Print Test, ESMF_StateCreateUTest.F90, line 292
+  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
   PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
+  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
+  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
+  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
+  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
+  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
+  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
+  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
+  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
+  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
+  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
+  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
+  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
+  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
+  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
+  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
+  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
+  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
+  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
+  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
+  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
+  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
+  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
+  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
+  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
+  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
+  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
+  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
+  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
+  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
+  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
+  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
+  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
+  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
+  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
+  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
+  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
+  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
+  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
+  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
+  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
   PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 300
- string in siwOut: test this string                                                                                                                                                                                                                                                
- string in si: test this string                                                                                                                                                                                                                                                
+  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
+  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
+  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
+ ESMF_StatePrint: (pet 2):
+  State name: Coupler Statelist
+ ESMF_StatePrint: (pet 0):
+  State name: Coupler Statelist
+     status: Unspecified intent direction, object count: 2
+     reconcile needed: T
+ Base name    = Coupler Statelist
  ESMF_StatePrint: (pet 3):
   State name: Coupler Statelist
      status: Unspecified intent direction, object count: 2
-  PASS  Verify Container Get item Test, ESMF_StateCreateUTest.F90, line 309
+     reconcile needed: T
+ Base name    = Coupler Statelist
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+     status: Unspecified intent direction, object count: 2
+     reconcile needed: T
+ Base name    = Coupler Statelist
+ Status: Base = Ready,  object = Ready
+ ESMF_StatePrint: (pet 1):
+  State name: Coupler Statelist
+     status: Unspecified intent direction, object count: 2
      reconcile needed: T
  Base name    = Coupler Statelist
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-  PASS  Container Get item Test, ESMF_StateCreateUTest.F90, line 319
 {}     object: 1,name: Atmosphere Import
- string in siw%si: test this string                                                                                                                                                                                                                                                
+ Root Info (Attributes):
+{}     object: 1,name: Atmosphere Import
+            type: State, proxy flag: no
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: Atmosphere Import
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
             type: State, proxy flag: no
      object: 2,name: Ocean Export
             type: State, proxy flag: no
   PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
-  PASS  Container Destroy Test, ESMF_StateCreateUTest.F90, line 330
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
+            type: State, proxy flag: no
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
+{}     object: 1,name: Atmosphere Import
+            type: State, proxy flag: no
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
+ testName: Atmosphere Import
+  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
+ testName: Atmosphere Import
+  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
  testName: Atmosphere Import
   PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
  item count:            2
   PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
-  PASS  Creating an empty export State Test, ESMF_StateCreateUTest.F90, line 347
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 356
+ item count:            2
+  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
+ item count:            2
+  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
+ testName: Atmosphere Import
+  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
+ item count:            2
+  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
+  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
+  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
   PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
   PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
+  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
  size(names) =           2
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
+ size(names) =           2
+ size(names) =           2
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_STATE:       Ocean Export
+ ESMF_STATEITEM_STATE:       Ocean Export
+ ESMF_StatePrint: (pet 2):
+  State name: Coupler Statelist
+     status: Unspecified intent direction, object count: 2
+     reconcile needed: T
  ESMF_STATEITEM_STATE:       Atmosphere Import
  ESMF_STATEITEM_STATE:       Ocean Export
  ESMF_StatePrint: (pet 3):
   State name: Coupler Statelist
      status: Unspecified intent direction, object count: 2
-     reconcile needed: T
-  PASS  Adding a FieldBundle to a State, ESMF_StateCreateUTest.F90, line 364
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
- ESMF_StatePrint: (pet 2):
-  State name: Ocean Export
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
- -> State name: Atmosphere Import
-     status: Export State, object count: 1
-     reconcile needed: T
- Base name    = Ocean Export
- ->    status: Import State, object count: 1
- ->    reconcile needed: F
- -> Base name    = Atmosphere Import
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} ->  ->  object: 1,name: Temperature
- ->           type: FieldBundle, proxy flag: no
-  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
- -> State name: Ocean Export
- ->    status: Export State, object count: 0
- ->    reconcile needed: F
- -> Base name    = Ocean Export
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-  PASS  Printing a State with 1 FieldBundle, ESMF_StateCreateUTest.F90, line 372
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
-  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
-  PASS  Creating an empty bundle for State Test, ESMF_StateCreateUTest.F90, line 381
- nested item count:            3
-  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
-  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
-  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
-  PASS  Adding a second FieldBundle to a State, ESMF_StateCreateUTest.F90, line 389
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
- ESMF_StatePrint: (pet 2):
-  State name: Ocean Export
-  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
- size(names) =           3
-     status: Export State, object count: 2
-     reconcile needed: T
- Base name    = Ocean Export
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
- ESMF_STATEITEM_STATE:       Ocean Export
-  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
-  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Surface pressure
-            type: FieldBundle
-     object: 2,name: Temperature
-  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
-            type: FieldBundle
-  PASS  Printing a State with 2 FieldBundles, ESMF_StateCreateUTest.F90, line 397
-  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
-  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
-  PASS  Getting a FieldBundle from a State by name, ESMF_StateCreateUTest.F90, line 405
-  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
-  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 413
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 421
-  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
-  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 429
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 439
-  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
-  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
-  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
-  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
-  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
- ESMF_StatePrint: (pet 1):
-  State name: Coupler Statelist
-  Ending Test, file ESMF_StateCreateUTest.F90, line 799
-     status: Unspecified intent direction, object count: 2
-     reconcile needed: T
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
- Proxy        = no
-  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
- Root Info (Attributes):
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
-  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
-  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
- testName: Atmosphere Import
-  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
- item count:            2
-  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
-  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
-  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
-  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
- size(names) =           2
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_STATE:       Ocean Export
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
- ESMF_StatePrint: (pet 1):
-  State name: Coupler Statelist
-     status: Unspecified intent direction, object count: 2
-     reconcile needed: T
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
-  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
- Proxy        = no
- Root Info (Attributes):
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
- -> State name: Atmosphere Import
- ->    status: Import State, object count: 1
-  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
- ->    reconcile needed: F
- -> Base name    = Atmosphere Import
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{} ->  ->  object: 1,name: Temperature
- ->           type: FieldBundle, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
-  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
- -> State name: Ocean Export
- ->    status: Export State, object count: 0
- ->    reconcile needed: F
- -> Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
- nested item count:            3
-  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
-  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
-  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
-  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
-  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
-  PASS  Adding a name only, ESMF_StateCreateUTest.F90, line 449
- size(names) =           3
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
-  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
- ESMF_STATEITEM_STATE:       Ocean Export
- ESMF_StatePrint: (pet 0):
-  State name: Coupler Statelist
-  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
-  PASS  Marking an item needed, ESMF_StateCreateUTest.F90, line 459
-     status: Unspecified intent direction, object count: 2
-     reconcile needed: T
- Base name    = Coupler Statelist
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
-  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
-  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
- testName: Atmosphere Import
-  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
-  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
- item count:            2
-  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
-  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
-  PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
- size(names) =           2
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_STATE:       Ocean Export
  ESMF_StatePrint: (pet 0):
   State name: Coupler Statelist
      status: Unspecified intent direction, object count: 2
      reconcile needed: T
-  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
+ Base name    = Coupler Statelist
+ Status: Base = Ready,  object = Ready
+  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
  Base name    = Coupler Statelist
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-{}     object: 1,name: Atmosphere Import
-            type: State, proxy flag: no
- -> State name: Atmosphere Import
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
- ->    status: Import State, object count: 1
- ->    reconcile needed: F
- -> Base name    = Atmosphere Import
-  Ending Test, file ESMF_StateCreateUTest.F90, line 799
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Querying if an item is needed, ESMF_StateCreateUTest.F90, line 468
-{} ->  ->  object: 1,name: Temperature
- ->           type: FieldBundle, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
- -> State name: Ocean Export
- ->    status: Export State, object count: 0
- ->    reconcile needed: F
- -> Base name    = Ocean Export
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-  PASS  Creating a FieldBundle, ESMF_StateCreateUTest.F90, line 476
-{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
- nested item count:            3
-  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
-  PASS  Replacing a name placeholder with a bundle, ESMF_StateCreateUTest.F90, line 484
-  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 493
-  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
-  PASS  Destroying a FieldBundle, ESMF_StateCreateUTest.F90, line 501
- size(names) =           3
- ESMF_STATEITEM_STATE:       Atmosphere Import
- ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
- ESMF_STATEITEM_STATE:       Ocean Export
-  PASS  Creating a State for nested State test, ESMF_StateCreateUTest.F90, line 517
-  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
-  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 526
-  PASS  Creating an empty bundle for nested State Test, ESMF_StateCreateUTest.F90, line 535
-  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
-  PASS  Adding a FieldBundle to a nested State, ESMF_StateCreateUTest.F90, line 543
-  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
-  PASS  Add a nested State into another State, ESMF_StateCreateUTest.F90, line 551
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
-  PASS  Creating a State, ESMF_StateCreateUTest.F90, line 560
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
-  PASS  Add a second nested State into another State, ESMF_StateCreateUTest.F90, line 568
-  PASS  Validating a nested State - single level, ESMF_StateCreateUTest.F90, line 576
-  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
-  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
-  PASS  Validating a nested State - nested, ESMF_StateCreateUTest.F90, line 584
-  Ending Test, file ESMF_StateCreateUTest.F90, line 799
- ESMF_StatePrint: (pet 2):
-  State name: Coupler Statelist
-     status: Unspecified intent direction, object count: 2
      reconcile needed: T
  Base name    = Coupler Statelist
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ Proxy        = no
+ Root Info (Attributes):
 {}     object: 1,name: Atmosphere Import
             type: State, proxy flag: no
-     object: 2,name: Ocean Export
-            type: State, proxy flag: no
-  PASS  Printing a nested State - single level, ESMF_StateCreateUTest.F90, line 592
- testName: Atmosphere Import
-  PASS  Getting a FieldBundle from a nested State, ESMF_StateCreateUTest.F90, line 603
- item count:            2
-  PASS  Getting item count from a nested State - single level, ESMF_StateCreateUTest.F90, line 613
-  PASS  Getting item name list from a nested State - single level, ESMF_StateCreateUTest.F90, line 623
+ -> State name: Atmosphere Import
   PASS  Getting item type list from a nested State - single level, ESMF_StateCreateUTest.F90, line 633
+{}     object: 1,name: Atmosphere Import
+            type: State, proxy flag: no
+ -> State name: Atmosphere Import
+ ->    status: Import State, object count: 1
+ ->    reconcile needed: F
+ -> Base name    = Atmosphere Import
+ Status: Base = Ready,  object = Ready
+{}     object: 1,name: Atmosphere Import
+            type: State, proxy flag: no
+ -> State name: Atmosphere Import
+ ->    status: Import State, object count: 1
+ ->    reconcile needed: F
+ ->    status: Import State, object count: 1
+ ->    reconcile needed: F
+ -> Base name    = Atmosphere Import
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
  size(names) =           2
  ESMF_STATEITEM_STATE:       Atmosphere Import
  ESMF_STATEITEM_STATE:       Ocean Export
- ESMF_StatePrint: (pet 2):
+ ESMF_StatePrint: (pet 1):
   State name: Coupler Statelist
      status: Unspecified intent direction, object count: 2
      reconcile needed: T
+ Proxy        = no
+ Root Info (Attributes):
+{} ->  ->  object: 1,name: Temperature
+ ->           type: FieldBundle, proxy flag: no
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+ -> State name: Ocean Export
+ -> Base name    = Atmosphere Import
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{} ->  ->  object: 1,name: Temperature
+ ->           type: FieldBundle, proxy flag: no
+     object: 2,name: Ocean Export
+{} ->  ->  object: 1,name: Temperature
+ ->           type: FieldBundle, proxy flag: no
+     object: 2,name: Ocean Export
+            type: State, proxy flag: no
+ -> State name: Ocean Export
+ ->    status: Export State, object count: 0
+ ->    reconcile needed: F
+ -> Base name    = Ocean Export
  Base name    = Coupler Statelist
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+ ->    status: Export State, object count: 0
+ ->    reconcile needed: F
+ -> Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+            type: State, proxy flag: no
+ -> State name: Ocean Export
+ ->    status: Export State, object count: 0
+ ->    reconcile needed: F
+ -> Base name    = Ocean Export
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
 {}     object: 1,name: Atmosphere Import
             type: State, proxy flag: no
  -> State name: Atmosphere Import
@@ -1317,37 +1261,93 @@ Container::print()      list:item=0 key=testField1 value=0x2de7b70
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
+{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
+ nested item count:            3
+{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
+ nested item count:            3
+  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
 {} ->  ->  object: 1,name: Temperature
  ->           type: FieldBundle, proxy flag: no
      object: 2,name: Ocean Export
             type: State, proxy flag: no
  -> State name: Ocean Export
+  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
  ->    status: Export State, object count: 0
  ->    reconcile needed: F
  -> Base name    = Ocean Export
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
  nested item count:            3
   PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
   PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
+{}  PASS  Printing a nested State - nested, ESMF_StateCreateUTest.F90, line 644
+  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
+  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
+  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
+  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
+ nested item count:            3
+  PASS  Getting item count from a nested State - nested, ESMF_StateCreateUTest.F90, line 655
+ size(names) =           3
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
+ ESMF_STATEITEM_STATE:       Ocean Export
+ size(names) =           3
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
+ ESMF_STATEITEM_STATE:       Ocean Export
   PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
  size(names) =           3
  ESMF_STATEITEM_STATE:       Atmosphere Import
  ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
  ESMF_STATEITEM_STATE:       Ocean Export
+  PASS  Getting item name list from a nested State - nested, ESMF_StateCreateUTest.F90, line 666
   PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Getting item type list from a nested State - nested, ESMF_StateCreateUTest.F90, line 676
+  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
+  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
+ size(names) =           3
+ ESMF_STATEITEM_STATE:       Atmosphere Import
+ ESMF_STATEITEM_FIELDBUNDLE: Atmosphere Import/Temperature
+ ESMF_STATEITEM_STATE:       Ocean Export
   PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
   PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
+  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
+  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
+  PASS  Getting nested non-existant FieldBundle from a nested State using nestedFlag, ESMF_StateCreateUTest.F90, line 698
+  PASS  Getting nested FieldBundle from a nested State using path style, ESMF_StateCreateUTest.F90, line 707
+  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
+  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
   PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
+  PASS  Getting nested FieldBundle from a nested State using path style - bad end item, ESMF_StateCreateUTest.F90, line 716
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
+  PASS  Getting nested non-existant FieldBundle from a nested State using path style - bad nested name, ESMF_StateCreateUTest.F90, line 725
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
+  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
+  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
+  PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 744
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
+  Ending Test, file ESMF_StateCreateUTest.F90, line 799
+  PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 752
+  Ending Test, file ESMF_StateCreateUTest.F90, line 799
+  Ending Test, file ESMF_StateCreateUTest.F90, line 799
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 760
   PASS  Create a State, ESMF_StateCreateUTest.F90, line 774
   PASS  Destroying a State, ESMF_StateCreateUTest.F90, line 786
   Ending Test, file ESMF_StateCreateUTest.F90, line 799
-  PET           3  Test Elapsed Time    5.9689999999999994       msec.
-  PET           0  Test Elapsed Time    4.6829999999999998       msec.
-  PET           2  Test Elapsed Time    4.0340000000000007       msec.
-  PET           1  Test Elapsed Time    5.0990000000000002       msec.
+  PET           1  Test Elapsed Time    4.6099999999999994       msec.
+  PET           2  Test Elapsed Time    4.8360000000000003       msec.
+  PET           3  Test Elapsed Time    4.5800000000000001       msec.
+  PET           0  Test Elapsed Time    4.4870000000000001       msec.
