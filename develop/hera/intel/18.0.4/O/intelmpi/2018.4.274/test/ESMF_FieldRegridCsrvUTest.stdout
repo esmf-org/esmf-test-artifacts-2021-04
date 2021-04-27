@@ -1,4 +1,4 @@
-build time -- 2021-04-26 06:15:51
+build time -- 2021-04-27 06:15:05
   Beginning Test, file ESMF_FieldRegridCsrvUTest.F90, line 53
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_FieldRegridCsrvUTest.F90, line 53
@@ -22,10 +22,14 @@ build time -- 2021-04-26 06:15:51
   79
   PASS  Conservative regridding on a sphere, ESMF_FieldRegridCsrvUTest.F90, line
   79
+  PASS  Conservative regridding on a sphere interpolation error, ESMF_FieldRegri
+ dCsrvUTest.F90, line 90
   PASS  Conservative regridding on a sphere, ESMF_FieldRegridCsrvUTest.F90, line
   79
   PASS  Conservative regridding on a sphere interpolation error, ESMF_FieldRegri
  dCsrvUTest.F90, line 90
+  PASS  Conservative regridding on a sphere conservation error, ESMF_FieldRegrid
+ CsrvUTest.F90, line 101
   PASS  Conservative regridding on a sphere interpolation error, ESMF_FieldRegri
  dCsrvUTest.F90, line 90
   PASS  Conservative regridding on a sphere conservation error, ESMF_FieldRegrid
@@ -34,10 +38,6 @@ build time -- 2021-04-26 06:15:51
   79
   PASS  Conservative regridding on a sphere interpolation error, ESMF_FieldRegri
  dCsrvUTest.F90, line 90
-  PASS  Conservative regridding on a sphere interpolation error, ESMF_FieldRegri
- dCsrvUTest.F90, line 90
-  PASS  Conservative regridding on a sphere conservation error, ESMF_FieldRegrid
- CsrvUTest.F90, line 101
   PASS  Conservative regridding on a sphere conservation error, ESMF_FieldRegrid
  CsrvUTest.F90, line 101
   PASS  Conservative regridding on a sphere conservation error, ESMF_FieldRegrid
@@ -57,16 +57,6 @@ build time -- 2021-04-26 06:15:51
  rvUTest.F90, line 133
   PASS  MOAB Conservative regridding on a sphere interpolation error, ESMF_Field
  RegridCsrvUTest.F90, line 144
-  PASS  MOAB Conservative regridding between spherical Grids, ESMF_FieldRegridCs
- rvUTest.F90, line 133
-  PASS  MOAB Conservative regridding on a sphere interpolation error, ESMF_Field
- RegridCsrvUTest.F90, line 144
-  PASS  MOAB Conservative regridding between spherical Grids, ESMF_FieldRegridCs
- rvUTest.F90, line 133
-  PASS  MOAB Conservative regridding on a sphere interpolation error, ESMF_Field
- RegridCsrvUTest.F90, line 144
-  PASS  MOAB Conservative regridding on a sphere conservation error, ESMF_FieldR
- egridCsrvUTest.F90, line 155
   PASS  MOAB Conservative regridding on a sphere conservation error, ESMF_FieldR
  egridCsrvUTest.F90, line 155
   PASS  MOAB Conservative regridding between spherical Grids, ESMF_FieldRegridCs
@@ -75,6 +65,16 @@ build time -- 2021-04-26 06:15:51
  RegridCsrvUTest.F90, line 144
   PASS  MOAB Conservative regridding on a sphere conservation error, ESMF_FieldR
  egridCsrvUTest.F90, line 155
+  PASS  MOAB Conservative regridding between spherical Grids, ESMF_FieldRegridCs
+ rvUTest.F90, line 133
+  PASS  MOAB Conservative regridding on a sphere interpolation error, ESMF_Field
+ RegridCsrvUTest.F90, line 144
+  PASS  MOAB Conservative regridding on a sphere conservation error, ESMF_FieldR
+ egridCsrvUTest.F90, line 155
+  PASS  MOAB Conservative regridding between spherical Grids, ESMF_FieldRegridCs
+ rvUTest.F90, line 133
+  PASS  MOAB Conservative regridding on a sphere interpolation error, ESMF_Field
+ RegridCsrvUTest.F90, line 144
   PASS  MOAB Conservative regridding on a sphere conservation error, ESMF_FieldR
  egridCsrvUTest.F90, line 155
  === Spherical grids with masks ===
@@ -162,10 +162,6 @@ build time -- 2021-04-26 06:15:51
  egridCsrvUTest.F90, line 275
   PASS  MOAB Conservative regridding on a Cartesian Grid with masks, ESMF_FieldR
  egridCsrvUTest.F90, line 275
-  PASS  MOAB Conservative regridding on a Cartesian Grid with masks interpolatio
- n error, ESMF_FieldRegridCsrvUTest.F90, line 286
-  PASS  MOAB Conservative regridding on a Cartesian Grid with Masks conservation
-  error, ESMF_FieldRegridCsrvUTest.F90, line 297
   PASS  MOAB Conservative regridding on a Cartesian Grid with masks, ESMF_FieldR
  egridCsrvUTest.F90, line 275
   PASS  MOAB Conservative regridding on a Cartesian Grid with masks interpolatio
@@ -178,20 +174,24 @@ build time -- 2021-04-26 06:15:51
   error, ESMF_FieldRegridCsrvUTest.F90, line 297
   PASS  MOAB Conservative regridding on a Cartesian Grid with masks, ESMF_FieldR
  egridCsrvUTest.F90, line 275
+  PASS  MOAB Conservative regridding on a Cartesian Grid with masks interpolatio
+ n error, ESMF_FieldRegridCsrvUTest.F90, line 286
+  PASS  MOAB Conservative regridding on a Cartesian Grid with Masks conservation
+  error, ESMF_FieldRegridCsrvUTest.F90, line 297
   PASS  MOAB Conservative regridding on a Cartesian Grid with masks interpolatio
  n error, ESMF_FieldRegridCsrvUTest.F90, line 286
   PASS  MOAB Conservative regridding on a Cartesian Grid with Masks conservation
   error, ESMF_FieldRegridCsrvUTest.F90, line 297
  === 3D Cartesian grid with masks ===
  Conservation:
- Rel Error =   3.248195363474745E-016
+ Rel Error =   1.624097681737373E-016
  SRC mass =    22400.0000000000     
  DST mass =    22400.0000000000     
   
  Interpolation:
- Max Error =   4.016064257028397E-003
+ Max Error =   4.016064257028569E-003
  Min Error =   5.698005697997115E-004
- Avg Error =   2.292932413414054E-003
+ Avg Error =   2.292932413414140E-003
   
   PASS  Conservative regridding on a 3D cartesian grid with masks, ESMF_FieldReg
  ridCsrvUTest.F90, line 317
@@ -235,7 +235,6 @@ build time -- 2021-04-26 06:15:51
   PASS  Conservative regridding on a 3D cartesian Mesh interpolation error, ESMF
  _FieldRegridCsrvUTest.F90, line 367
   PASS  Conservative regridding on a 3D cartesian Mesh conservation error, ESMF_
- FieldRegridCsrvUTest.F90, line 378
   PASS  Conservative regridding on a 3D cartesian Mesh, ESMF_FieldRegridCsrvUTes
  t.F90, line 355
   PASS  Conservative regridding on a 3D cartesian Mesh interpolation error, ESMF
@@ -251,6 +250,7 @@ build time -- 2021-04-26 06:15:51
   PASS  Conservative regridding on a 3D cartesian Mesh interpolation error, ESMF
  _FieldRegridCsrvUTest.F90, line 367
   PASS  Conservative regridding on a 3D cartesian Mesh conservation error, ESMF_
+ FieldRegridCsrvUTest.F90, line 378
  FieldRegridCsrvUTest.F90, line 378
  === Spherical grids with masks and user area ===
  Conservation:
@@ -267,18 +267,18 @@ build time -- 2021-04-26 06:15:51
  vUTest.F90, line 396
   PASS  Conservative regridding on a sphere with user areas, ESMF_FieldRegridCsr
  vUTest.F90, line 396
+  PASS  Conservative regridding on a sphere with user areas, ESMF_FieldRegridCsr
+ vUTest.F90, line 396
   PASS  Conservative regridding on a sphere with user areas: interpolation error
  , ESMF_FieldRegridCsrvUTest.F90, line 407
   PASS  Conservative regridding on a sphere with user areas, ESMF_FieldRegridCsr
  vUTest.F90, line 396
+  PASS  Conservative regridding on a sphere with user areas: interpolation error
+ , ESMF_FieldRegridCsrvUTest.F90, line 407
   PASS  Conservative regridding on a sphere with user areas: interpolation error
  , ESMF_FieldRegridCsrvUTest.F90, line 407
   PASS  Conservative regridding on a sphere with user areas: conservation error,
   ESMF_FieldRegridCsrvUTest.F90, line 418
-  PASS  Conservative regridding on a sphere with user areas, ESMF_FieldRegridCsr
- vUTest.F90, line 396
-  PASS  Conservative regridding on a sphere with user areas: interpolation error
- , ESMF_FieldRegridCsrvUTest.F90, line 407
   PASS  Conservative regridding on a sphere with user areas: conservation error,
   ESMF_FieldRegridCsrvUTest.F90, line 418
   PASS  Conservative regridding on a sphere with user areas: interpolation error
@@ -300,6 +300,8 @@ build time -- 2021-04-26 06:15:51
   
   PASS  Conservative regridding on a Mesh with a pentagon and hexagon, ESMF_Fiel
  dRegridCsrvUTest.F90, line 440
+  PASS  Conservative regridding on a Mesh with a pentagon and hexagon interpolat
+ ion error, ESMF_FieldRegridCsrvUTest.F90, line 452
   PASS  Conservative regridding on a Mesh with a pentagon and hexagon, ESMF_Fiel
  dRegridCsrvUTest.F90, line 440
   PASS  Conservative regridding on a Mesh with a pentagon and hexagon interpolat
@@ -316,8 +318,6 @@ build time -- 2021-04-26 06:15:51
  ion error, ESMF_FieldRegridCsrvUTest.F90, line 452
   PASS  Conservative regridding on a Mesh with a pentagon and hexagon conservati
  on error, ESMF_FieldRegridCsrvUTest.F90, line 464
-  PASS  Conservative regridding on a Mesh with a pentagon and hexagon interpolat
- ion error, ESMF_FieldRegridCsrvUTest.F90, line 452
   PASS  Conservative regridding on a Mesh with a pentagon and hexagon conservati
  on error, ESMF_FieldRegridCsrvUTest.F90, line 464
   PASS  Conservative regridding on a Mesh with a pentagon and hexagon conservati
@@ -339,14 +339,11 @@ build time -- 2021-04-26 06:15:51
  _FieldRegridCsrvUTest.F90, line 495
   PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs., ESMF
  _FieldRegridCsrvUTest.F90, line 495
-  PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs. inter
- polation error, ESMF_FieldRegridCsrvUTest.F90, line 507
   PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs., ESMF
  _FieldRegridCsrvUTest.F90, line 495
   PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs. inter
  polation error, ESMF_FieldRegridCsrvUTest.F90, line 507
   PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs. conse
- rvation error, ESMF_FieldRegridCsrvUTest.F90, line 518
   PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs. inter
  polation error, ESMF_FieldRegridCsrvUTest.F90, line 507
   PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs. conse
@@ -355,7 +352,10 @@ build time -- 2021-04-26 06:15:51
  polation error, ESMF_FieldRegridCsrvUTest.F90, line 507
   PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs. conse
  rvation error, ESMF_FieldRegridCsrvUTest.F90, line 518
+  PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs. inter
+ polation error, ESMF_FieldRegridCsrvUTest.F90, line 507
   PASS  MOAB conservative regridding on a Cart. Mesh with masks and fracs. conse
+ rvation error, ESMF_FieldRegridCsrvUTest.F90, line 518
  rvation error, ESMF_FieldRegridCsrvUTest.F90, line 518
  === Spherical grids with frac normalization ===
  Conservation:
@@ -372,25 +372,25 @@ build time -- 2021-04-26 06:15:51
  ridCsrvUTest.F90, line 537
   PASS  Conservative regridding on a sphere with frac norm option, ESMF_FieldReg
  ridCsrvUTest.F90, line 537
+  PASS  Conservative regridding on a sphere with frac norm option: interpolation
+  error, ESMF_FieldRegridCsrvUTest.F90, line 548
+  PASS  Conservative regridding on a sphere with frac norm option: conservation 
+ error, ESMF_FieldRegridCsrvUTest.F90, line 559
   PASS  Conservative regridding on a sphere with frac norm option, ESMF_FieldReg
  ridCsrvUTest.F90, line 537
   PASS  Conservative regridding on a sphere with frac norm option, ESMF_FieldReg
  ridCsrvUTest.F90, line 537
   PASS  Conservative regridding on a sphere with frac norm option: interpolation
   error, ESMF_FieldRegridCsrvUTest.F90, line 548
-  PASS  Conservative regridding on a sphere with frac norm option: conservation 
- error, ESMF_FieldRegridCsrvUTest.F90, line 559
-  PASS  Conservative regridding on a sphere with frac norm option: interpolation
-  error, ESMF_FieldRegridCsrvUTest.F90, line 548
   PASS  Conservative regridding on a sphere with frac norm option: interpolation
   error, ESMF_FieldRegridCsrvUTest.F90, line 548
   PASS  Conservative regridding on a sphere with frac norm option: conservation 
- error, ESMF_FieldRegridCsrvUTest.F90, line 559
   PASS  Conservative regridding on a sphere with frac norm option: conservation 
  error, ESMF_FieldRegridCsrvUTest.F90, line 559
   PASS  Conservative regridding on a sphere with frac norm option: interpolation
   error, ESMF_FieldRegridCsrvUTest.F90, line 548
   PASS  Conservative regridding on a sphere with frac norm option: conservation 
+ error, ESMF_FieldRegridCsrvUTest.F90, line 559
  error, ESMF_FieldRegridCsrvUTest.F90, line 559
  === Mesh with Pentagons and Hexagons using frac. normalization ===
  Conservation:
@@ -404,7 +404,6 @@ build time -- 2021-04-26 06:15:51
  Avg Error =   7.899342021549674E-003
   
   PASS  Conservative regridding on a pentagon and hexagon with frac norm, ESMF_F
- ieldRegridCsrvUTest.F90, line 576
   PASS  Conservative regridding on a pentagon and hexagon with frac norm, ESMF_F
  ieldRegridCsrvUTest.F90, line 576
   PASS  Conservative regridding on a pentagon and hexagon with frac norm: interp
@@ -423,6 +422,7 @@ build time -- 2021-04-26 06:15:51
  olation error, ESMF_FieldRegridCsrvUTest.F90, line 588
   PASS  Conservative regridding on a pentagon and hexagon with frac norm: conser
  vation error, ESMF_FieldRegridCsrvUTest.F90, line 600
+ ieldRegridCsrvUTest.F90, line 576
   PASS  Conservative regridding on a pentagon and hexagon with frac norm: interp
  olation error, ESMF_FieldRegridCsrvUTest.F90, line 588
   PASS  Conservative regridding on a pentagon and hexagon with frac norm: conser
@@ -545,18 +545,18 @@ build time -- 2021-04-26 06:15:51
   
   PASS  Conservative regridding MOAB Mesh to Mesh., ESMF_FieldRegridCsrvUTest.F9
  0, line 748
-  PASS  Conservative regridding MOAB Mesh to Mesh., ESMF_FieldRegridCsrvUTest.F9
- 0, line 748
-  PASS  Conservative regridding MOAB Mesh to Mesh., ESMF_FieldRegridCsrvUTest.F9
- 0, line 748
+  PASS  Conservative regridding MOAB Mesh to Mesh. interpolation error, ESMF_Fie
+ ldRegridCsrvUTest.F90, line 760
   PASS  Conservative regridding MOAB Mesh to Mesh., ESMF_FieldRegridCsrvUTest.F9
  0, line 748
   PASS  Conservative regridding MOAB Mesh to Mesh. interpolation error, ESMF_Fie
  ldRegridCsrvUTest.F90, line 760
+  PASS  Conservative regridding MOAB Mesh to Mesh., ESMF_FieldRegridCsrvUTest.F9
+ 0, line 748
   PASS  Conservative regridding MOAB Mesh to Mesh. interpolation error, ESMF_Fie
  ldRegridCsrvUTest.F90, line 760
-  PASS  Conservative regridding MOAB Mesh to Mesh. interpolation error, ESMF_Fie
- ldRegridCsrvUTest.F90, line 760
+  PASS  Conservative regridding MOAB Mesh to Mesh., ESMF_FieldRegridCsrvUTest.F9
+ 0, line 748
   PASS  Conservative regridding MOAB Mesh to Mesh. interpolation error, ESMF_Fie
  ldRegridCsrvUTest.F90, line 760
   PASS  Conservative regridding MOAB Mesh to Mesh. conservation error, ESMF_Fiel
@@ -653,8 +653,6 @@ build time -- 2021-04-26 06:15:51
  .F90, line 873
   PASS  Conservative regridding on an easy elems Mesh, ESMF_FieldRegridCsrvUTest
  .F90, line 873
-  PASS  Conservative regridding on an easy elems Mesh, ESMF_FieldRegridCsrvUTest
- .F90, line 873
   PASS  Conservative regridding on an easy elems Mesh interpolation error, ESMF_
  FieldRegridCsrvUTest.F90, line 885
   PASS  Conservative regridding on an easy elems Mesh conservation error, ESMF_F
@@ -665,6 +663,8 @@ build time -- 2021-04-26 06:15:51
  FieldRegridCsrvUTest.F90, line 885
   PASS  Conservative regridding on an easy elems Mesh conservation error, ESMF_F
  ieldRegridCsrvUTest.F90, line 897
+  PASS  Conservative regridding on an easy elems Mesh, ESMF_FieldRegridCsrvUTest
+ .F90, line 873
   PASS  Conservative regridding on an easy elems Mesh interpolation error, ESMF_
  FieldRegridCsrvUTest.F90, line 885
   PASS  Conservative regridding on an easy elems Mesh conservation error, ESMF_F
@@ -701,7 +701,7 @@ build time -- 2021-04-26 06:15:51
   Ending Test, file ESMF_FieldRegridCsrvUTest.F90, line 967
   PASS  Test overlap error checking, ESMF_FieldRegridCsrvUTest.F90, line 959
   Ending Test, file ESMF_FieldRegridCsrvUTest.F90, line 967
-  PET           1  Test Elapsed Time    2166.42800000000       msec.
-  PET           2  Test Elapsed Time    2166.43000000000       msec.
-  PET           0  Test Elapsed Time    2168.50400000000       msec.
-  PET           3  Test Elapsed Time    2169.46000000000       msec.
+  PET           2  Test Elapsed Time    2150.21600000000       msec.
+  PET           1  Test Elapsed Time    2150.73800000000       msec.
+  PET           3  Test Elapsed Time    2150.57900000000       msec.
+  PET           0  Test Elapsed Time    2152.89300000000       msec.
