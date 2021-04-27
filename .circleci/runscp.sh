@@ -158,6 +158,7 @@ find $branch -iname summary.dat | xargs grep -l "$branchhash" | xargs grep "syst
 find $branch -iname summary.dat | xargs grep -l "$branchhash" | xargs grep "example test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $12,$14}' > examp
 echo "host compilier version mpi-type mpi-ver O/g unit-pass unit-fail sys-pass sys-fail ex-pass ex-fail" > $branch/$bmessage.summary
 paste -d " " unit sys examp >> "$branch/$bmessage.summary"
+column -t $branch/$bmessage.summary > "$branch/$bmessage.summary2"
 git add $branch
 git pull -X theirs --no-edit origin main
 git commit -a -m"$message"
