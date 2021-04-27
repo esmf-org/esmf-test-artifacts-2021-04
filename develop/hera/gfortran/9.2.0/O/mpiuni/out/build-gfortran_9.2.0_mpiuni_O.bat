@@ -9,6 +9,7 @@
 #SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+export ESMF_MPIRUN=/scratch1/NCEPDEV/stmp2/Mark.Potts/gfortran_9.2.0_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load gnu/9.2.0  netcdf/4.7.2
 module load hdf5/1.10.5 
 module list >& module-build.log
