@@ -1,4 +1,4 @@
-build time -- 2021-04-27 05:58:25
+build time -- 2021-04-27 20:13:42
 --------------------------------------------------------------------------
 WARNING: Open MPI will create a shared memory backing file in a
 directory that appears to be mounted on a network filesystem.
@@ -15,8 +15,8 @@ Note, too, that system administrators can set a list of filesystems
 where Open MPI is disallowed from creating temporary files by setting
 the MCA parameter "orte_no_session_dir".
 
-  Local host: r2i1n32
-  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i1n32_0/8922/1/2/vader_segment.r2i1n32.2
+  Local host: r2i6n31
+  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i6n31_0/48712/1/shared_mem_pool.r2i6n31
 
 You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
 disable this message.
@@ -24,31 +24,14 @@ disable this message.
 Beginning Test, file ESMC_DistGridUTest.C, line 44
 NUMBER_OF_PROCESSORS 4
 PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
-Beginning Test, file ESMC_DistGridUTest.C, line 44
-PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
-NUMBER_OF_PROCESSORS 4
-PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
 PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
 dimCount = 2
 tileCount = 1
 elementCountPTile: 50 
 regDecomp = YES
-dimCount = 2
-tileCount = 1
-elementCountPTile: 50 
-regDecomp = YES
-tileListPDe: 1 1 1 1 
-elementCountPDe: 20 10 10 10 
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 1 / 
- for DE 1: 1 / 1 / 
- for DE 2: 1 / 1 / 
-PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
 tileListPDe: 1 1 1 1 
 elementCountPDe: 20 10 10 10 
 contigFlagPDimPDe (dims separated by / ):
@@ -64,6 +47,37 @@ contigFlagPDimPDe (dims separated by / ):
 indexListPDimPLocalDe (dims separated by / ):
  for localDE 0 - DE 2:  (4) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
 diffCollocationCount = 1
+collocationPDim:	1 / 1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 2 -  elementCountPCollPLocalDe 10:  default
+connectionCount = 0
+~ lower class' values ~
+deCount = 4
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 2, CurrentVM: localPet = 2
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
+PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
+PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
+PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
+Ending Test, file ESMC_DistGridUTest.C, line 105
+Beginning Test, file ESMC_DistGridUTest.C, line 44
+NUMBER_OF_PROCESSORS 4
+PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
+PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 2
+tileCount = 1
+elementCountPTile: 50 
+regDecomp = YES
+tileListPDe: 1 1 1 1 
+elementCountPDe: 20 10 10 10 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 1 / 
+ for DE 1: 1 / 1 / 
+ for DE 2: 1 / 1 / 
  for DE 3: 1 / 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
  for DE 0: (1, 2) / (1, 10) / 
@@ -74,17 +88,6 @@ indexListPDimPLocalDe (dims separated by / ):
  for localDE 0 - DE 0:  (1, 2) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) /
 diffCollocationCount = 1
 collocationPDim:	1 / 1
-collocationPDim:	1 / 1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 2 -  elementCountPCollPLocalDe 10:  default
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
-Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 2, CurrentVM: localPet = 2
-Beginning Test, file ESMC_DistGridUTest.C, line 44
-Beginning Test, file ESMC_DistGridUTest.C, line 44
-NUMBER_OF_PROCESSORS 4
 arbSeqIndexListPCollPLocalDe:
  for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 20:  default
 connectionCount = 0
@@ -94,30 +97,15 @@ Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
---- ESMCI::DistGrid::print end ---
 PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
 PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
+PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
+Ending Test, file ESMC_DistGridUTest.C, line 105
+Beginning Test, file ESMC_DistGridUTest.C, line 44
 NUMBER_OF_PROCESSORS 4
 PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
 PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
-PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
-PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
-PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
-PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
-PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
-PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
-PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
-Ending Test, file ESMC_DistGridUTest.C, line 105
-Ending Test, file ESMC_DistGridUTest.C, line 105
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
-dimCount = 2
-tileCount = 1
-elementCountPTile: 50 
-regDecomp = YES
-tileListPDe: 1 1 1 1 
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
 dimCount = 2
@@ -129,15 +117,6 @@ elementCountPDe: 20 10 10 10
 contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 1 / 
  for DE 1: 1 / 1 / 
-elementCountPDe: 20 10 10 10 
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 1 / 
- for DE 1: 1 / 1 / 
- for DE 2: 1 / 1 / 
- for DE 3: 1 / 1 / 
-(min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (1, 2) / (1, 10) / 
- for DE 1: (3, 3) / (1, 10) / 
  for DE 2: 1 / 1 / 
  for DE 3: 1 / 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
@@ -154,6 +133,35 @@ arbSeqIndexListPCollPLocalDe:
 connectionCount = 0
 ~ lower class' values ~
 deCount = 4
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 3, CurrentVM: localPet = 3
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
+PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
+PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
+PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
+Ending Test, file ESMC_DistGridUTest.C, line 105
+Beginning Test, file ESMC_DistGridUTest.C, line 44
+NUMBER_OF_PROCESSORS 4
+PASS Set up minIndex, ESMC_DistGridUTest.C, line 54
+PASS Set up maxIndex, ESMC_DistGridUTest.C, line 65
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_DistGridUTest.C, line 73
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 2
+tileCount = 1
+elementCountPTile: 50 
+regDecomp = YES
+tileListPDe: 1 1 1 1 
+elementCountPDe: 20 10 10 10 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 1 / 
+ for DE 1: 1 / 1 / 
+ for DE 2: 1 / 1 / 
+ for DE 3: 1 / 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 2) / (1, 10) / 
+ for DE 1: (3, 3) / (1, 10) / 
  for DE 2: (4, 4) / (1, 10) / 
  for DE 3: (5, 5) / (1, 10) / 
 indexListPDimPLocalDe (dims separated by / ):
@@ -162,9 +170,6 @@ diffCollocationCount = 1
 collocationPDim:	1 / 1
 arbSeqIndexListPCollPLocalDe:
  for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 10:  default
-Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 3, CurrentVM: localPet = 3
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 connectionCount = 0
 ~ lower class' values ~
 deCount = 4
@@ -172,18 +177,13 @@ Member on this PET appears to be an actual member.
 DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
---- ESMCI::DistGrid::print end ---
-PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
 PASS Print ESMC_DistGrid object, ESMC_DistGridUTest.C, line 85
 PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
-PASS Destroy ESMC_DistGrid object, ESMC_DistGridUTest.C, line 93
-PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
 PASS Print destroyed ESMC_DistGrid object, ESMC_DistGridUTest.C, line 101
 Ending Test, file ESMC_DistGridUTest.C, line 105
-Ending Test, file ESMC_DistGridUTest.C, line 105
- PET 0 Test Elapsed Time  -946.703000 msec.
- PET 1 Test Elapsed Time  -946.925000 msec.
- PET 3 Test Elapsed Time  -946.851000 msec.
- PET 2 Test Elapsed Time  -946.423000 msec.
-[r2i1n32:396269] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
-[r2i1n32:396269] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+ PET 1 Test Elapsed Time  48.020000 msec.
+ PET 3 Test Elapsed Time  54.120000 msec.
+ PET 2 Test Elapsed Time  56.755000 msec.
+ PET 0 Test Elapsed Time  55.942000 msec.
+[r2i6n31:345950] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[r2i6n31:345950] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
