@@ -1,4 +1,4 @@
-build time -- 2021-04-27 17:57:07
+build time -- 2021-04-27 20:16:52
   Beginning Test, file ESMF_DistGridCreateGetUTest.F90, line 101
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_DistGridCreateGetUTest.F90, line 101
@@ -15,7 +15,15 @@ build time -- 2021-04-27 17:57:07
   PASS  Destroy test DistGrid for DECOMP_SYMMEDGEMAX, ESMF_DistGridCreateGetUTest.F90, line 189
   PASS  DistGridCreate() 2D - DECOMP_SYMMEDGEMAX, ESMF_DistGridCreateGetUTest.F90, line 199
   PASS  Destroy test DistGrid 2D for DECOMP_SYMMEDGEMAX, ESMF_DistGridCreateGetUTest.F90, line 209
-  Beginning Test, file ESMF_DistGridCreateGetUTest.F90, line 101
+  PASS  DistGridCreate() - 1D Single Tile Default, ESMF_DistGridCreateGetUTest.F90, line 217
+  PASS  DistGrid equality before assignment Test, ESMF_DistGridCreateGetUTest.F90, line 224
+  PASS  DistGrid assignment and equality Test, ESMF_DistGridCreateGetUTest.F90, line 233
+  PASS  DistGridDestroy Test, ESMF_DistGridCreateGetUTest.F90, line 240
+  PASS  DistGrid equality after destroy Test, ESMF_DistGridCreateGetUTest.F90, line 248
+  PASS  DistGrid non-equality after destroy Test, ESMF_DistGridCreateGetUTest.F90, line 256
+  PASS  Double DistGridDestroy through alias Test, ESMF_DistGridCreateGetUTest.F90, line 263
+  PASS  DistGridCreate() - 1D Single Tile Default, ESMF_DistGridCreateGetUTest.F90, line 270
+  PASS  DistGridGet() - dimCount, tileCount, deCount, reg  Beginning Test, file ESMF_DistGridCreateGetUTest.F90, line 101
   NUMBER_OF_PROCESSORS           4
   PASS  Testing DistGrid IsCreated for uncreated object, ESMF_DistGridCreateGetUTest.F90, line 117
   PASS  Testing DistGrid IsCreated return value for uncreated object, ESMF_DistGridCreateGetUTest.F90, line 124
@@ -80,15 +88,7 @@ build time -- 2021-04-27 17:57:07
   PASS  Double DistGridDestroy through alias Test, ESMF_DistGridCreateGetUTest.F90, line 263
   PASS  DistGridCreate() - 1D Single Tile Default, ESMF_DistGridCreateGetUTest.F90, line 270
   PASS  DistGridGet() - dimCount, tileCount, deCount, regDecompFlag, DELayout, ESMF_DistGridCreateGetUTest.F90, line 280
-  PASS  Verify indexflag, ESMF_DistG  PASS  DistGridCreate() - 1D Single Tile Default, ESMF_DistGridCreateGetUTest.F90, line 217
-  PASS  DistGrid equality before assignment Test, ESMF_DistGridCreateGetUTest.F90, line 224
-  PASS  DistGrid assignment and equality Test, ESMF_DistGridCreateGetUTest.F90, line 233
-  PASS  DistGridDestroy Test, ESMF_DistGridCreateGetUTest.F90, line 240
-  PASS  DistGrid equality after destroy Test, ESMF_DistGridCreateGetUTest.F90, line 248
-  PASS  DistGrid non-equality after destroy Test, ESMF_DistGridCreateGetUTest.F90, line 256
-  PASS  Double DistGridDestroy through alias Test, ESMF_DistGridCreateGetUTest.F90, line 263
-  PASS  DistGridCreate() - 1D Single Tile Default, ESMF_DistGridCreateGetUTest.F90, line 270
-  PASS  DistGridGet() - dimCount, tileCount, deCount, regDecompFlag, DELayout, ESMF_DistGridCreateGetUTest.F90, line 280
+  PASS  Verify indexflag, ESMF_DistGDecompFlag, DELayout, ESMF_DistGridCreateGetUTest.F90, line 280
   PASS  Verify indexflag, ESMF_DistGridCreateGetUTest.F90, line 287
   PASS  Verify dimCount, ESMF_DistGridCreateGetUTest.F90, line 294
   PASS  Verify tileCount, ESMF_DistGridCreateGetUTest.F90, line 301
@@ -104,7 +104,17 @@ build time -- 2021-04-27 17:57:07
   PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 377
   PASS  Verify elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 384
   PASS  DistGridGet() - minIndexPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 393
-  PASS  Verify minIndexPDe(:,:), ESMF_DistGridCreateGetUTest.F90, lineDecompFlag, DELayout, ESMF_DistGridCreateGetUTest.F90, line 280
+  PASS  Verify minIndexPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 400
+  PASS  DistGridGet() - maxIndexPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 409
+  PASS  Verify maxIndexPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 416
+  PASS  DistGridGet() - elementCountPDe(:), ESMF_DistGridCreateGetUTest.F90, line 425
+  PASS  Verify elementCountPDe(:), ESMF_DistGridCreateGetUTest.F90, line 438
+  PASS  DistGridGet() - deToTileMap(:), ESMF_DistGridCreateGetUTest.F90, line 446
+  PASS  Verify deToTileMap(:), ESMF_DistGridCreateGetUTest.F90, line 457
+  PASS  DistGridGet() - indexCountPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 466
+  PASS  Verify indexCountPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 479
+  PASS  DELayoutGet() - localDeToDeMap, ESMF_DistGridCreateGetUTest.F90, line 487
+  PASS  Verify localDeToDeMap, ESMF_DistGrDecompFlag, DELayout, ESMF_DistGridCreateGetUTest.F90, line 280
   PASS  Verify indexflag, ESMF_DistGridCreateGetUTest.F90, line 287
   PASS  Verify dimCount, ESMF_DistGridCreateGetUTest.F90, line 294
   PASS  Verify tileCount, ESMF_DistGridCreateGetUTest.F90, line 301
@@ -182,17 +192,7 @@ build time -- 2021-04-27 17:57:07
   PASS  Verify indexCountPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 479
   PASS  DELayoutGet() - localDeToDeMap, ESMF_DistGridCreateGetUTest.F90, line 487
   PASS  Verify localDeToDeMap, ESMF_DistGridCreateGetUTest.F90, line 494
-  PASS  DistGridGet() - localDe -> de and tile, ESMF_DistGridCreateGe 400
-  PASS  DistGridGet() - maxIndexPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 409
-  PASS  Verify maxIndexPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 416
-  PASS  DistGridGet() - elementCountPDe(:), ESMF_DistGridCreateGetUTest.F90, line 425
-  PASS  Verify elementCountPDe(:), ESMF_DistGridCreateGetUTest.F90, line 438
-  PASS  DistGridGet() - deToTileMap(:), ESMF_DistGridCreateGetUTest.F90, line 446
-  PASS  Verify deToTileMap(:), ESMF_DistGridCreateGetUTest.F90, line 457
-  PASS  DistGridGet() - indexCountPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 466
-  PASS  Verify indexCountPDe(:,:), ESMF_DistGridCreateGetUTest.F90, line 479
-  PASS  DELayoutGet() - localDeToDeMap, ESMF_DistGridCreateGetUTest.F90, line 487
-  PASS  Verify localDeToDeMap, ESMF_DistGridCreateGetUTest.F90, line 494
+  PASS  DistGridGet() - localDe -> de and tile, ESMF_DistGridCreateGeidCreateGetUTest.F90, line 494
   PASS  DistGridGet() - localDe -> de and tile, ESMF_DistGridCreateGetUTest.F90, line 501
   PASS  DistGridGet() - indexList(:), ESMF_DistGridCreateGetUTest.F90, line 509
   PASS  DistGridGet() - elementCount, ESMF_DistGridCreateGetUTest.F90, line 518
@@ -207,7 +207,24 @@ build time -- 2021-04-27 17:57:07
   PASS  DistGridMatch() - invalid DistGrid object, ESMF_DistGridCreateGetUTest.F90, line 591
   PASS  DistGridMatch() - invalid DistGrid object - matchResult, ESMF_DistGridCreateGetUTest.F90, line 597
   PASS  DistGridMatch() - identical DistGrid aliases, ESMF_DistGridCreateGetUTest.F90, line 605
-  PASS  DistGridMatch() - identical DistGridCreateGetUTest.F90, line 494
+  PASS  DistGridMatch() - identical DistGrid aliases - matchResult, ESMF_DistGridCreateGetUTest.F90, line 611
+  PASS  DistGridCreate() - 1D Single Tile Default, ESMF_DistGridCreateGetUTest.F90, line 618
+  PASS  DistGridMatch() - different DistGrids that are exact match, ESMF_DistGridCreateGetUTest.F90, line 625
+  PASS  DistGridMatch() - different DistGrids that are exact match - matchResult, ESMF_DistGridCreateGetUTest.F90, line 631
+  PASS  DistGridCreate() - from DistGrid (deep copy), ESMF_DistGridCreateGetUTest.F90, line 638
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 1000 
+regDecomp = YES
+tileListPDe: 1 1 1 1 
+elementCountPDe: 250 250 250 250 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+ for DE 2: 1 / 
+ for DE idCreateGetUTest.F90, line 494
   PASS  DistGridGet() - localDe -> de and tile, ESMF_DistGridCreateGetUTest.F90, line 501
   PASS  DistGridGet() - indexList(:), ESMF_DistGridCreateGetUTest.F90, line 509
   PASS  DistGridGet() - elementCount, ESMF_DistGridCreateGetUTest.F90, line 518
@@ -305,31 +322,28 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 3: 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
  for DE 0: (1, 250) / 
- for DE 1: (251, 500) /id aliases - matchResult, ESMF_DistGridCreateGetUTest.F90, line 611
-  PASS  DistGridCreate() - 1D Single Tile Default, ESMF_DistGridCreateGetUTest.F90, line 618
-  PASS  DistGridMatch() - different DistGrids that are exact match, ESMF_DistGridCreateGetUTest.F90, line 625
-  PASS  DistGridMatch() - different DistGrids that are exact match - matchResult, ESMF_DistGridCreateGetUTest.F90, line 631
-  PASS  DistGridCreate() - from DistGrid (deep copy), ESMF_DistGridCreateGetUTest.F90, line 638
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
-dimCount = 1
-tileCount = 1
-elementCountPTile: 1000 
-regDecomp = YES
-tileListPDe: 1 1 1 1 
-elementCountPDe: 250 250 250 250 
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 
- for DE 1: 1 / 
- for DE 2: 1 / 
- for DE 3: 1 / 
+ for DE 1: (251, 500) /3: 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
  for DE 0: (1, 250) / 
  for DE 1: (251, 500) / 
  for DE 2: (501, 750) / 
  for DE 3: (751, 1000) / 
 indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 1:  (251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461,3: 1 / 
+ for localDE 0 - DE 1:  (251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 250:  default
+connectionCount = 0
+~ lower class' values ~
+deCount = 4
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
+  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 645
+  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 652
+  PASS  DistGridCreate() - from DistG3: 1 / 
 (min,max)IndexPDimPDe (dims separated by / ):
  for DE 0: (1, 250) / 
  for DE 1: (251, 500) / 
@@ -396,21 +410,7 @@ dimCount = 1
 tileCount = 1
 elementCountPTile: 1000 
 regDecomp = YES
-tileListPDe: 1 1 1 1  462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500) /
-diffCollocationCount = 1
-collocationPDim:	1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 250:  default
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
-Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
---- ESMCI::DistGrid::print end ---
-  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 645
-  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 652
-  PASS  DistGridCreate() - from DistGrid re-created copy, ESMF_DistGridCreateGetUTest.F90, line 659
+tileListPDe: 1 1 1 1 rid re-created copy, ESMF_DistGridCreateGetUTest.F90, line 659
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
 dimCount = 1
@@ -430,7 +430,15 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 2: (501, 750) / 
  for DE 3: (751, 1000) / 
 indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 1:  (251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393rid re-created copy, ESMF_DistGridCreateGetUTest.F90, line 659
+ for localDE 0 - DE 1:  (251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 250:  default
+connectionCount = 0
+~ lower class' values ~
+deCount = 4
+Member on this PET arid re-created copy, ESMF_DistGridCreateGetUTest.F90, line 659
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
 dimCount = 1
@@ -513,15 +521,7 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
   PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 666
   PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 673
-  PASS  Dist, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500) /
-diffCollocationCount = 1
-collocationPDim:	1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 250:  default
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
-Member on this PET appears to be an actual member.
+  PASS  Distppears to be an actual member.
 DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
@@ -547,7 +547,7 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 2: (501, 750) / 
  for DE 3: (751, 1005) / 
 indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 1:  (251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323ppears to be an actual member.
+ for localDE 0 - DE 1:  (251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 47ppears to be an actual member.
 DistGrid-VM: localPet = 2, CurrentVM: localPet = 2
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
@@ -628,7 +628,7 @@ connectionCount = 0
 ~ lower class' values ~
 deCount = 4
 Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 0, CurrentVM: lo, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500) /
+DistGrid-VM: localPet = 0, CurrentVM: lo7, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500) /
 diffCollocationCount = 1
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
@@ -648,7 +648,15 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
   PASS  ESMF_DistGridConnectionGet() - Validate tileA, ESMF_DistGridCreateGetUTest.F90, line 725
   PASS  ESMF_DistGridConnectionGet() - Validate tileB, ESMF_DistGridCreateGetUTest.F90, line 731
   PASS  ESMF_DistGridConnectionGet() - Validate dimCount, ESMF_DistGridCreateGetUTest.F90, line 737
-  PASS  ESMF_DistGridConnectionGet() - Get pos7, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750) /
+  PASS  ESMF_DistGridConnectionGet() - Get position, orientation vectors, ESMF_DistGridCreateGetUTest.F90, line 747
+  PASS  ESMF_DistGridConnectionGet() - Validate position vector, ESMF_DistGridCreateGetUTest.F90, line 753
+  PASS  ESMF_DistGridConnectionGet() - Validate orientation vector, ESMF_DistGridCreateGetUTest.F90, line 760
+ DistGridConnectionPrint - elementCount=           4
+ DistGridConnectionPrint - connection=           1           1        1000           1
+  PASS  DistGridConnectionPrint(), ESMF_DistGridCreateGetUTest.F90, line 768
+  PASS  DistGridCreate() - 1D Single Tile Default with connectionList, ESMF_DistGridCreateGetUTest.F90, line 776
+  PASS  DistGridGet() - connectionCount, ESMF_DistGridCreateGetUTest.F90, line 784
+  PASS  verify connectionCount, ESMF_DistGridCreateGetUTest.F90, line7, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750) /
 diffCollocationCount = 1
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
@@ -729,15 +737,7 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
  DistGridConnectionPrint - connection=           1           1        1000           1
   PASS  DistGridConnectionPrint(), ESMF_DistGridCreateGetUTest.F90, line 806
   PASS  DistGridMatch() - different DistGrids, ESMF_DistGridCreateGetUTest.F90, line 814
-  PASS  DistGridMatch() - diition, orientation vectors, ESMF_DistGridCreateGetUTest.F90, line 747
-  PASS  ESMF_DistGridConnectionGet() - Validate position vector, ESMF_DistGridCreateGetUTest.F90, line 753
-  PASS  ESMF_DistGridConnectionGet() - Validate orientation vector, ESMF_DistGridCreateGetUTest.F90, line 760
- DistGridConnectionPrint - elementCount=           4
- DistGridConnectionPrint - connection=           1           1        1000           1
-  PASS  DistGridConnectionPrint(), ESMF_DistGridCreateGetUTest.F90, line 768
-  PASS  DistGridCreate() - 1D Single Tile Default with connectionList, ESMF_DistGridCreateGetUTest.F90, line 776
-  PASS  DistGridGet() - connectionCount, ESMF_DistGridCreateGetUTest.F90, line 784
-  PASS  verify connectionCount, ESMF_DistGridCreateGetUTest.F90, line 791
+  PASS  DistGridMatch() - di 791
   PASS  DistGridGet() - connectionList, ESMF_DistGridCreateGetUTest.F90, line 799
  DistGridConnectionPrint - elementCount=           4
  DistGridConnectionPrint - connection=           1           1        1000           1
@@ -766,7 +766,24 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 2: (51, 75) / 
  for DE 3: (76, 100) / 
 indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 1:  (26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 3 791
+ for localDE 0 - DE 1:  (26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 25:  default
+connectionCount = 0
+~ lower class' values ~
+deCount = 4
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
+  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 848
+  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 855
+  PASS  DistGridCreate() - 1D Single Tile Default - no multiple of 4, ESMF_DistGridCreateGetUTest.F90, line 863
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount =  791
   PASS  DistGridGet() - connectionList, ESMF_DistGridCreateGetUTest.F90, line 799
  DistGridConnectionPrint - elementCount=           4
  DistGridConnectionPrint - connection=           1           1        1000           1
@@ -913,24 +930,7 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 2: (44, 62) / 
  for DE 3: (63, 90) / 
 indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 0:  (1, 2, 3, 7, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50) /
-diffCollocationCount = 1
-collocationPDim:	1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 25:  default
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
-Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
---- ESMCI::DistGrid::print end ---
-  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 848
-  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 855
-  PASS  DistGridCreate() - 1D Single Tile Default - no multiple of 4, ESMF_DistGridCreateGetUTest.F90, line 863
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
-dimCount = 1
+ for localDE 0 - DE 0:  (1, 2, 3, 1
 tileCount = 1
 elementCountPTile: 90 
 regDecomp = YES
@@ -963,7 +963,31 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
   PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 877
   PASS  DistGridCreate() - 1D Single Tile w/ deBlockList incorrect deCount, ESMF_DistGridCreateGetUTest.F90, line 887
   PASS  DistGridCreate() - 1D Single Tile w/ deBlockList out-of-range, ESMF_DistGridCreateGetUTest.F90, line 903
-  PASS  Dis1
+  PASS  DistGridCreate() - 1D Single Tile w/ deBlockList, ESMF_DistGridCreateGetUTest.F90, line 917
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 100 
+regDecomp = NO
+tileListPDe: 1 1 1 1 
+elementCountPDe: 20 20 20 40 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+ for DE 2: 1 / 
+ for DE 3: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 20) / 
+ for DE 1: (21, 40) / 
+ for DE 2: (41, 60) / 
+ for DE 3: (61, 100) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1
 tileCount = 1
 elementCountPTile: 90 
 regDecomp = YES
@@ -1124,31 +1148,7 @@ DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
 DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
   PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 925
-  PASS  DistGridCreate() - from DistGrid re-created copy, ESMF_DistGridCreateGetUtGridCreate() - 1D Single Tile w/ deBlockList, ESMF_DistGridCreateGetUTest.F90, line 917
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
-dimCount = 1
-tileCount = 1
-elementCountPTile: 100 
-regDecomp = NO
-tileListPDe: 1 1 1 1 
-elementCountPDe: 20 20 20 40 
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 
- for DE 1: 1 / 
- for DE 2: 1 / 
- for DE 3: 1 / 
-(min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (1, 20) / 
- for DE 1: (21, 40) / 
- for DE 2: (41, 60) / 
- for DE 3: (61, 100) / 
-indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 1:  (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40) /
-diffCollocationCount = 1
-collocationPDim:	1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 20:  default
+  PASS  DistGridCreate() - from DistGrid re-created copy, ESMF_DistGridCreateGetU1 -  elementCountPCollPLocalDe 20:  default
 connectionCount = 0
 ~ lower class' values ~
 deCount = 4
@@ -1185,7 +1185,30 @@ arbSeqIndexListPCollPLocalDe:
 connectionCount = 0
 ~ lower class' values ~
 deCount = 4
-Member on this PET appears to be an actual  elementCountPCollPLocalDe 20:  default
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
+  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 939
+  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 946
+  PASS  DistGridCreate() - from DistGrid with extra edge elements, ESMF_DistGridCreateGetUTest.F90, line 954
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 105 
+regDecomp = NO
+tileListPDe: 1 1 1 1 
+elementCountPDe: 22 20 20 43 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+ for DE 2: 1 / 
+ for DE 3: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (-1, 20) / 
+ for DE 1: (21, 40) / 
+ for DE elementCountPCollPLocalDe 20:  default
 connectionCount = 0
 ~ lower class' values ~
 deCount = 4
@@ -1362,30 +1385,7 @@ arbSeqIndexListPCollPLocalDe:
 connectionCount = 0
 ~ lower class' values ~
 deCount = 4
-Member on this PET appears to be an actual memember.
-DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
---- ESMCI::DistGrid::print end ---
-  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 939
-  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 946
-  PASS  DistGridCreate() - from DistGrid with extra edge elements, ESMF_DistGridCreateGetUTest.F90, line 954
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
-dimCount = 1
-tileCount = 1
-elementCountPTile: 105 
-regDecomp = NO
-tileListPDe: 1 1 1 1 
-elementCountPDe: 22 20 20 43 
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 
- for DE 1: 1 / 
- for DE 2: 1 / 
- for DE 3: 1 / 
-(min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (-1, 20) / 
- for DE 1: (21, 40) / 
- for DE 2: (41, 60) / 
+Member on this PET appears to be an actual me 2: (41, 60) / 
  for DE 3: (61, 103) / 
 indexListPDimPLocalDe (dims separated by / ):
  for localDE 0 - DE 1:  (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40) /
@@ -1414,7 +1414,31 @@ elementCountPTile: 20
 regDecomp = NO
 tileListPDe: 1 1 1 1 
 elementCountPDe: 2 4 6 8 
-contigFlagPDimPDe (dims separate(41, 60) / 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+ for DE 2: 1 / 
+ for DE 3: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 2) / 
+ for DE 1: (3, 6) / 
+ for DE 2: (7, 12) / 
+ for DE 3: (13, 20) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (3, 4, 5, 6) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 4: (11, 12, 13, 14)
+connectionCount = 0
+~ lower class' values ~
+deCount = 4
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
+  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 1009
+  PAS(41, 60) / 
  for DE 3: (61, 103) / 
 indexListPDimPLocalDe (dims separated by / ):
  for localDE 0 - DE 2:  (41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60) /
@@ -1575,31 +1599,7 @@ contigFlagPDimPDe (dims separated by / ):
  for DE 0: 1 / 
  for DE 1: 1 / 
  for DE 2: 1 / 
- for DE 3: 1d by / ):
- for DE 0: 1 / 
- for DE 1: 1 / 
- for DE 2: 1 / 
- for DE 3: 1 / 
-(min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (1, 2) / 
- for DE 1: (3, 6) / 
- for DE 2: (7, 12) / 
- for DE 3: (13, 20) / 
-indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 1:  (3, 4, 5, 6) /
-diffCollocationCount = 1
-collocationPDim:	1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 4: (11, 12, 13, 14)
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
-Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
---- ESMCI::DistGrid::print end ---
-  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 1009
-  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 1016
+ for DE 3: 1S  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 1016
   PASS  DistGridCreate() - 1D arbitrary seq indices 1 DE/PET with general API case, ESMF_DistGridCreateGetUTest.F90, line 1029
 --- ESMCI::DistGrid::print start ---
 indexTK: Integer*4
@@ -1634,7 +1634,35 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
 --- ESMCI::DistGrid::print end ---
   PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 1038
   PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 1045
-  PASS  DistGridCreate() - 1D arbitrary seq indicesne 1009
+  PASS  DistGridCreate() - 1D arbitrary seq indices general DE/PET case, ESMF_DistGridCreateGetUTest.F90, line 1062
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 32 
+regDecomp = NO
+tileListPDe: 1 1 1 1 1 1 
+elementCountPDe: 4 4 6 4 6 8 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+ for DE 2: 1 / 
+ for DE 3: 1 / 
+ for DE 4: 1 / 
+ for DE 5: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 4) / 
+ for DE 1: (5, 8) / 
+ for DE 2: (9, 14) / 
+ for DE 3: (15, 18) / 
+ for DE 4: (19, 24) / 
+ for DE 5: (25, 32) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1, 2, 3, 4) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCounne 1009
   PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 1016
   PASS  DistGridCreate() - 1D arbitrary seq indices 1 DE/PET with general API case, ESMF_DistGridCreateGetUTest.F90, line 1029
 --- ESMCI::DistGrid::print start ---
@@ -1816,35 +1844,7 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
   PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 1080
   PASS  DistGridCreate() - insert 1D arbitrary seq indices into regular 2D tile at arbDim=2 -> 3D total, ESMF_DistGridCreateGetUTest.F90, line 1093
 --- ESMCI::DistGrid::print start ---
-in general DE/PET case, ESMF_DistGridCreateGetUTest.F90, line 1062
---- ESMCI::DistGrid::print start ---
-indexTK: Integer*4
-dimCount = 1
-tileCount = 1
-elementCountPTile: 32 
-regDecomp = NO
-tileListPDe: 1 1 1 1 1 1 
-elementCountPDe: 4 4 6 4 6 8 
-contigFlagPDimPDe (dims separated by / ):
- for DE 0: 1 / 
- for DE 1: 1 / 
- for DE 2: 1 / 
- for DE 3: 1 / 
- for DE 4: 1 / 
- for DE 5: 1 / 
-(min,max)IndexPDimPDe (dims separated by / ):
- for DE 0: (1, 4) / 
- for DE 1: (5, 8) / 
- for DE 2: (9, 14) / 
- for DE 3: (15, 18) / 
- for DE 4: (19, 24) / 
- for DE 5: (25, 32) / 
-indexListPDimPLocalDe (dims separated by / ):
- for localDE 0 - DE 0:  (1, 2, 3, 4) /
-diffCollocationCount = 1
-collocationPDim:	1
-arbSeqIndexListPCollPLocalDe:
- for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 4: (11, 12, 13, 14)
+intPCollPLocalDe 4: (11, 12, 13, 14)
 connectionCount = 0
 ~ lower class' values ~
 deCount = 6
@@ -1877,7 +1877,21 @@ indexListPDimPLocalDe (dims separated by / ):
  for localDE 0 - DE 1:  (1, 2, 3, 4, 5) / (3, 4, 5, 6) / (1, 2, 3, 4, 5, 6, 7) /
 diffCollocationCount = 2
 collocationPDim:	2 / 1 / 2
-arbSeqIndexLisrbSeqIndexListPCollPLocalDe:
+arbSeqIndexListPCollPLocalDe:
+ for collocation 2, localDE 0 - DE 1 -  elementCountPCollPLocalDe 35:  default
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 4: (11, 12, 13, 14)
+connectionCount = 0
+~ lower class' values ~
+deCount = 4
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
+--- ESMCI::DistGrid::print end ---
+  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 1101
+  PASS  DistGridGet() - dimCount, collocation, ESMF_DistGridCreateGetUTest.F90, line 1110
+  PASS  Verify dimCount, ESMF_DistGridCreateGetUTest.F90, line 1116
+  PASS  Obtain arbSeqIndexFlag for dim=1, ESMF_DistGridCreateGetUTest.F90, line 1124
+  PASS  Verify arbSeqIndexFlag forbSeqIndexListPCollPLocalDe:
  for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 4: (21, 22, 23, 24)
  for collocation 1, localDE 1 - DE 2 -  elementCountPCollPLocalDe 6: (21, 22, 23, 24, 25, 26)
 connectionCount = 0
@@ -2016,21 +2030,7 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
   PASS  Verify arbSeqIndexFlag for dim=3, ESMF_DistGridCreateGetUTest.F90, line 1158
  computed serialization buffer length =        2140  bytes
   PASS  Computing space for serialization buffer, ESMF_DistGridCreateGetUTest.F90, line 1176
-  PASS  Allocate serialization buffer, ESMF_DistGridCreateGetUTest.F90, linetPCollPLocalDe:
- for collocation 2, localDE 0 - DE 1 -  elementCountPCollPLocalDe 35:  default
- for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 4: (11, 12, 13, 14)
-connectionCount = 0
-~ lower class' values ~
-deCount = 4
-Member on this PET appears to be an actual member.
-DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
-DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
---- ESMCI::DistGrid::print end ---
-  PASS  DistGridPrint(), ESMF_DistGridCreateGetUTest.F90, line 1101
-  PASS  DistGridGet() - dimCount, collocation, ESMF_DistGridCreateGetUTest.F90, line 1110
-  PASS  Verify dimCount, ESMF_DistGridCreateGetUTest.F90, line 1116
-  PASS  Obtain arbSeqIndexFlag for dim=1, ESMF_DistGridCreateGetUTest.F90, line 1124
-  PASS  Verify arbSeqIndexFlag for dim=1, ESMF_DistGridCreateGetUTest.F90, line 1130
+  PASS  Allocate serialization buffer, ESMF_DistGridCreateGetUTest.F90, liner dim=1, ESMF_DistGridCreateGetUTest.F90, line 1130
   PASS  Obtain arbSeqIndexFlag for dim=2, ESMF_DistGridCreateGetUTest.F90, line 1138
   PASS  Verify arbSeqIndexFlag for dim=2, ESMF_DistGridCreateGetUTest.F90, line 1144
   PASS  Obtain arbSeqIndexFlag for dim=3, ESMF_DistGridCreateGetUTest.F90, line 1152
@@ -2045,7 +2045,17 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
   PASS  DistGridGet() - seqIndexList(:), ESMF_DistGridCreateGetUTest.F90, line 1253
   PASS  Verify seqIndexList(:), ESMF_DistGridCreateGetUTest.F90, line 1264
   PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 1272
-  PASS  DistGridCreate() - 2D Multi Tile w/ deBlockList, ESMF_DistGridCreateGetUTest.F90, line 13291110
+  PASS  DistGridCreate() - 2D Multi Tile w/ deBlockList, ESMF_DistGridCreateGetUTest.F90, line 1329
+  PASS  DistGridGet() - delayout, ESMF_DistGridCreateGetUTest.F90, line 1337
+  PASS  DELayoutGet() - deCount, localDeCount, ESMF_DistGridCreateGetUTest.F90, line 1345
+  PASS  DELayoutGet() - localDeToDeMap, ESMF_DistGridCreateGetUTest.F90, line 1353
+  PASS  Verify seqIndexList(:), ESMF_DistGridCreateGetUTest.F90, line 1377
+  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 1386
+  PASS  DistGridCreate() - 2D Multi Tile with DECOMP_SYMMEDGEMAX, ESMF_DistGridCreateGetUTest.F90, line 1421
+  PASS  DistGridGet() - deCount, ESMF_DistGridCreateGetUTest.F90, line 1431
+  PASS  DistGridGet() - deCount check value, ESMF_DistGridCreateGetUTest.F90, line 1437
+  PASS  DistGridGet() - elementCountPDe, ESMF_DistGridCreateGetUTest.F90, line 1445
+  PASS  DistGrid1110
   PASS  Verify dimCount, ESMF_DistGridCreateGetUTest.F90, line 1116
   PASS  Obtain arbSeqIndexFlag for dim=1, ESMF_DistGridCreateGetUTest.F90, line 1124
   PASS  Verify arbSeqIndexFlag for dim=1, ESMF_DistGridCreateGetUTest.F90, line 1130
@@ -2123,17 +2133,7 @@ DistGrid-VM: petCount = 4, CurrentVM: petCount = 4
   PASS  DistGrid create DistGrid Test, ESMF_DistGridCreateGetUTest.F90, line 1489
   PASS  DistGrid Validate of created DistGrid Test, ESMF_DistGridCreateGetUTest.F90, line 1496
   PASS  DistGrid destroy DistGrid Test, ESMF_DistGridCreateGetUTest.F90, line 1503
-  PASS  DistGrid Validate of destroyed DistGrid Test, ESMF_DistGridCre
-  PASS  DistGridGet() - delayout, ESMF_DistGridCreateGetUTest.F90, line 1337
-  PASS  DELayoutGet() - deCount, localDeCount, ESMF_DistGridCreateGetUTest.F90, line 1345
-  PASS  DELayoutGet() - localDeToDeMap, ESMF_DistGridCreateGetUTest.F90, line 1353
-  PASS  Verify seqIndexList(:), ESMF_DistGridCreateGetUTest.F90, line 1377
-  PASS  DistGridDestroy(), ESMF_DistGridCreateGetUTest.F90, line 1386
-  PASS  DistGridCreate() - 2D Multi Tile with DECOMP_SYMMEDGEMAX, ESMF_DistGridCreateGetUTest.F90, line 1421
-  PASS  DistGridGet() - deCount, ESMF_DistGridCreateGetUTest.F90, line 1431
-  PASS  DistGridGet() - deCount check value, ESMF_DistGridCreateGetUTest.F90, line 1437
-  PASS  DistGridGet() - elementCountPDe, ESMF_DistGridCreateGetUTest.F90, line 1445
-  PASS  DistGridGet() - elementCountPDe check values, ESMF_DistGridCreateGetUTest.F90, line 1460
+  PASS  DistGrid Validate of destroyed DistGrid Test, ESMF_DistGridCreGet() - elementCountPDe check values, ESMF_DistGridCreateGetUTest.F90, line 1460
   PASS  DistGridDestroy() - 2D Multi Tile with DECOMP_SYMMEDGEMAX, ESMF_DistGridCreateGetUTest.F90, line 1467
   PASS  DistGrid Validate of non-created DistGrid Test, ESMF_DistGridCreateGetUTest.F90, line 1482
   PASS  DistGrid create DistGrid Test, ESMF_DistGridCreateGetUTest.F90, line 1489
@@ -2174,6 +2174,17 @@ ateGetUTest.F90, line 1510
   PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1542
   PASS  Verify tileCount, ESMF_DistGridCreateGetUTest.F90, line 1548
   PASS  Verify localDeCount, ESMF_DistGridCreateGetUTest.F90, line 1554
+  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1534
+ indexTK=           3
+  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1542
+  PASS  Verify tileCount, ESMF_DistGridCreateGetUTest.F90, line 1548
+  PASS  Verify localDeCount, ESMF_DistGridCreateGetUTest.F90, line 1554
+  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1562
+ elementCountPTile=  2048000000
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1570
+  PASS  DistGridGet() - elementCount, ESMF_DistGridCreateGetUTest.F90, line 1579
+ elementCount(on localDe)=   512000000
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1588
   PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1562
  elementCountPTile=  2048000000
   PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1570
@@ -2190,23 +2201,13 @@ ateGetUTest.F90, line 1510
   PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1570
   PASS  DistGridGet() - elementCount, ESMF_DistGridCreateGetUTest.F90, line 1579
  elementCount(on localDe)=   512000000
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1588
-  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1534
- indexTK=           3
-  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1542
-  PASS  Verify tileCount, ESMF_DistGridCreateGetUTest.F90, line 1548
-  PASS  Verify localDeCount, ESMF_DistGridCreateGetUTest.F90, line 1554
-  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1562
- elementCountPTile=  2048000000
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1570
-  PASS  DistGridGet() - elementCount, ESMF_DistGridCreateGetUTest.F90, line 1579
- elementCount(on localDe)=   512000000
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1588
   PASS  DistGridCreate() - below 32-bit limit - automatic indexTK, ESMF_DistGridCreateGetUTest.F90, line 1524
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1534
  indexTK=           3
   PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1542
   PASS  Verify tileCount, ESMF_DistGridCreateGetUTest.F90, line 1548
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1588
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1588
   PASS  Verify localDeCount, ESMF_DistGridCreateGetUTest.F90, line 1554
   PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1562
  elementCountPTile=  2048000000
@@ -2214,17 +2215,6 @@ ateGetUTest.F90, line 1510
   PASS  DistGridGet() - elementCount, ESMF_DistGridCreateGetUTest.F90, line 1579
  elementCount(on localDe)=   512000000
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1588
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1588
-  PASS  DistGridCreate() - above 32-bit limit - automatic indexTK, ESMF_DistGridCreateGetUTest.F90, line 1599
-  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1609
- indexTK=           4
-  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1617
-  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1625
- elementCountPTile= -2118967296
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1633
-  PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1643
- elementCountPTileI8=           2176000000
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1651
   PASS  DistGridCreate() - above 32-bit limit - automatic indexTK, ESMF_DistGridCreateGetUTest.F90, line 1599
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1609
  indexTK=           4
@@ -2257,16 +2247,19 @@ ateGetUTest.F90, line 1510
   PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1643
  elementCountPTileI8=           2176000000
   PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1651
+  PASS  DistGridCreate() - above 32-bit limit - automatic indexTK, ESMF_DistGridCreateGetUTest.F90, line 1599
+  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1609
+ indexTK=           4
+  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1617
+  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1625
+ elementCountPTile= -2118967296
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1633
+  PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1643
+ elementCountPTileI8=           2176000000
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1651
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1660
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1660
   PASS  DistGridCreate() - below 32-bit limit - specified indexTK=ESMF_TYPEKIND_I4, ESMF_DistGridCreateGetUTest.F90, line 1671
-  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1681
- indexTK=           3
-  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1689
-  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1697
- elementCountPTile=  2048000000
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1705
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1714
   PASS  DistGridCreate() - below 32-bit limit - specified indexTK=ESMF_TYPEKIND_I4, ESMF_DistGridCreateGetUTest.F90, line 1671
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1681
  indexTK=           3
@@ -2283,6 +2276,13 @@ ateGetUTest.F90, line 1510
  elementCountPTile=  2048000000
   PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1705
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1714
+  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1681
+ indexTK=           3
+  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1689
+  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1697
+ elementCountPTile=  2048000000
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1705
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1714
   PASS  DistGridCreate() - below 32-bit limit - specified indexTK=ESMF_TYPEKIND_I4, ESMF_DistGridCreateGetUTest.F90, line 1671
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1681
  indexTK=           3
@@ -2292,14 +2292,6 @@ ateGetUTest.F90, line 1510
   PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1705
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1714
   PASS  DistGridCreate() - below 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1725
-  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1735
- indexTK=           4
-  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1743
-  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1751
- elementCountPTile=  2048000000
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1759
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1768
-  PASS  DistGridCreate() - below 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1725
   PASS  DistGridCreate() - below 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1725
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1735
  indexTK=           4
@@ -2323,10 +2315,51 @@ ateGetUTest.F90, line 1510
  elementCountPTile=  2048000000
   PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1759
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1768
+  PASS  DistGridCreate() - below 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1725
+  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1735
+ indexTK=           4
+  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1743
+  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1751
+ elementCountPTile=  2048000000
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1759
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1768
   PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I4, ESMF_DistGridCreateGetUTest.F90, line 1779
   PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I4, ESMF_DistGridCreateGetUTest.F90, line 1779
   PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I4, ESMF_DistGridCreateGetUTest.F90, line 1779
   PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I4, ESMF_DistGridCreateGetUTest.F90, line 1779
+  PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1790
+  PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1790
+  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1800
+ indexTK=           4
+  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1808
+  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1816
+  PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1790
+  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1800
+ indexTK=           4
+  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1808
+  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1816
+ elementCountPTile= -2118967296
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1824
+  PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1834
+ elementCountPTileI8=           2176000000
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1842
+  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1800
+ indexTK=           4
+  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1808
+  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1816
+ elementCountPTile= -2118967296
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1824
+  PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1834
+ elementCountPTileI8=           2176000000
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1842
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1851
+ elementCountPTile= -2118967296
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1824
+  PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1834
+ elementCountPTileI8=           2176000000
+  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1842
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1851
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1851
   PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1790
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1800
  indexTK=           4
@@ -2338,39 +2371,8 @@ ateGetUTest.F90, line 1510
  elementCountPTileI8=           2176000000
   PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1842
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1851
-  PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1790
-  PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1790
-  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1800
- indexTK=           4
-  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1808
-  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1816
- elementCountPTile= -2118967296
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1824
-  PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1834
-  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1800
- indexTK=           4
-  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1808
-  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1816
- elementCountPTile= -2118967296
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1824
-  PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1834
- elementCountPTileI8=           2176000000
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1842
- elementCountPTileI8=           2176000000
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1842
-  PASS  DistGridCreate() - above 32-bit limit - specified indexTK=ESMF_TYPEKIND_I8, ESMF_DistGridCreateGetUTest.F90, line 1790
-  PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1800
- indexTK=           4
-  PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1808
-  PASS  DistGridGet() - elementCountPTile(:), ESMF_DistGridCreateGetUTest.F90, line 1816
- elementCountPTile= -2118967296
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1824
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1851
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1851
-  PASS  DistGridGet() - elementCountPTileI8(:), ESMF_DistGridCreateGetUTest.F90, line 1834
- elementCountPTileI8=           2176000000
-  PASS  Verify elementCountPTile, ESMF_DistGridCreateGetUTest.F90, line 1842
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1851
+  PASS  DistGridCreate() - canonical seqIndices below 32-bit limit, ESMF_DistGridCreateGetUTest.F90, line 1863
+  PASS  DistGridCreate() - canonical seqIndices below 32-bit limit, ESMF_DistGridCreateGetUTest.F90, line 1863
   PASS  DistGridCreate() - canonical seqIndices below 32-bit limit, ESMF_DistGridCreateGetUTest.F90, line 1863
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1874
  indexTK=           3
@@ -2379,9 +2381,6 @@ ateGetUTest.F90, line 1510
   PASS  Verify localDeCount, ESMF_DistGridCreateGetUTest.F90, line 1894
   PASS  DistGridGet() - elementCount, ESMF_DistGridCreateGetUTest.F90, line 1901
  elementCount(on localDe)=    51200000
-  PASS  DistGridCreate() - canonical seqIndices below 32-bit limit, ESMF_DistGridCreateGetUTest.F90, line 1863
-  PASS  DistGridCreate() - canonical seqIndices below 32-bit limit, ESMF_DistGridCreateGetUTest.F90, line 1863
-  PASS  DistGridCreate() - canonical seqIndices below 32-bit limit, ESMF_DistGridCreateGetUTest.F90, line 1863
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1874
  indexTK=           3
   PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1882
@@ -2396,6 +2395,7 @@ ateGetUTest.F90, line 1510
   PASS  Verify localDeCount, ESMF_DistGridCreateGetUTest.F90, line 1894
   PASS  DistGridGet() - elementCount, ESMF_DistGridCreateGetUTest.F90, line 1901
  elementCount(on localDe)=    51200000
+  PASS  DistGridCreate() - canonical seqIndices below 32-bit limit, ESMF_DistGridCreateGetUTest.F90, line 1863
   PASS  DistGridGet() - indexTK, ESMF_DistGridCreateGetUTest.F90, line 1874
  indexTK=           3
   PASS  Verify indexTK, ESMF_DistGridCreateGetUTest.F90, line 1882
@@ -2414,16 +2414,16 @@ ateGetUTest.F90, line 1510
   PASS  DistGridGet() - seqIndexList, ESMF_DistGridCreateGetUTest.F90, line 1942
   PASS  DistGridGet() - seqIndexList, ESMF_DistGridCreateGetUTest.F90, line 1942
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1953
-  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1953
   Ending Test, file ESMF_DistGridCreateGetUTest.F90, line 1962
-  Ending Test, file ESMF_DistGridCreateGetUTest.F90, line 1962
-  PASS  DistGridGet() - seqIndexList, ESMF_DistGridCreateGetUTest.F90, line 1942
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1953
   Ending Test, file ESMF_DistGridCreateGetUTest.F90, line 1962
   PASS  DistGridGet() - seqIndexList, ESMF_DistGridCreateGetUTest.F90, line 1942
   PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1953
   Ending Test, file ESMF_DistGridCreateGetUTest.F90, line 1962
-  PET           2  Test Elapsed Time    1191.0080000000000       msec.
-  PET           1  Test Elapsed Time    1190.9430000000000       msec.
-  PET           3  Test Elapsed Time    1190.9199999999998       msec.
-  PET           0  Test Elapsed Time    1190.7669999999998       msec.
+  PASS  DistGridGet() - seqIndexList, ESMF_DistGridCreateGetUTest.F90, line 1942
+  PASS  Destroy test DistGrid, ESMF_DistGridCreateGetUTest.F90, line 1953
+  Ending Test, file ESMF_DistGridCreateGetUTest.F90, line 1962
+  PET           0  Test Elapsed Time    1148.8190000000000       msec.
+  PET           2  Test Elapsed Time    1148.9290000000001       msec.
+  PET           3  Test Elapsed Time    1148.9509999999998       msec.
+  PET           1  Test Elapsed Time    1149.0760000000000       msec.
