@@ -1,4 +1,4 @@
-build time -- 2021-04-26 16:33:06
+build time -- 2021-04-27 16:33:09
   Beginning Test, file ESMF_DELayoutUTest.F90, line 82
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_DELayoutUTest.F90, line 82
@@ -16,6 +16,7 @@ build time -- 2021-04-26 16:33:06
   PASS  DELayout Get DEMatchPET Test, ESMF_DELayoutUTest.F90, line 183
   PASS  Verify matches, ESMF_DELayoutUTest.F90, line 192
   PASS  Default OLDSTYLE DELayout Destroy Test, ESMF_DELayoutUTest.F90, line 202
+  PASS  Testing DELayout IsCreated for uncreated object, ESMF_DELayoutUTest.F90, line 213
   Beginning Test, file ESMF_DELayoutUTest.F90, line 82
   NUMBER_OF_PROCESSORS           4
   PASS  Default OLDSTYLE DELayout Create Test, ESMF_DELayoutUTest.F90, line 97
@@ -40,6 +41,7 @@ build time -- 2021-04-26 16:33:06
   PASS  Testing DELayout IsCreated for destroyed object, ESMF_DELayoutUTest.F90, line 261
   PASS  Testing DELayout IsCreated for destroyed object, ESMF_DELayoutUTest.F90, line 269
   PASS  Default DELayout Create Test, ESMF_DELayoutUTest.F90, line 277
+  PASS  DELayout equality before assignment Test, ESMF_DELayoutUTest.F90, line 284
   Beginning Test, file ESMF_DELayoutUTest.F90, line 82
   NUMBER_OF_PROCESSORS           4
   PASS  Default OLDSTYLE DELayout Create Test, ESMF_DELayoutUTest.F90, line 97
@@ -92,8 +94,7 @@ build time -- 2021-04-26 16:33:06
   PASS  DELayout assignment and equality Test, ESMF_DELayoutUTest.F90, line 293
   PASS  DELayoutDestroy Test, ESMF_DELayoutUTest.F90, line 300
   PASS  DELayout equality after destroy Test, ESMF_DELayoutUTest.F90, line 308
-  PASS    PASS  Testing DELayout IsCreated for uncreated object, ESMF_DELayoutUTest.F90, line 213
-  PASS  Testing DELayout IsCreated for uncreated object, ESMF_DELayoutUTest.F90, line 221
+  PASS    PASS  Testing DELayout IsCreated for uncreated object, ESMF_DELayoutUTest.F90, line 221
   PASS  Create test DELayout for IsCreated, ESMF_DELayoutUTest.F90, line 229
   PASS  Testing DELayout IsCreated for created object, ESMF_DELayoutUTest.F90, line 237
   PASS  Testing DELayout IsCreated for created object, ESMF_DELayoutUTest.F90, line 245
@@ -116,8 +117,8 @@ build time -- 2021-04-26 16:33:06
   PASS  DELayout with petList Destroy Test, ESMF_DELayoutUTest.F90, line 375
   PASS  DELayout with deCount Create Test, ESMF_DELayoutUTest.F90, line 383
   PASS  DELayout with deCount Destroy Test, ESMF_DELayoutUTest.F90, line 392
- deGrouping:            1           2           3           4           3           2           1         PASS  DELayout equality before assignment Test, ESMF_DELayoutUTest.F90, line 284
-  PASS  DELayout assignment and equality Test, ESMF_DELayoutUTest.F90, line 293
+ deGrouping:            1           2           3           4           3           2           1           0
+  PASS  DELayout with deCount and deGrouping Create Test, ESMF_DELayoutUTest.F90, li  PASS  DELayout assignment and equality Test, ESMF_DELayoutUTest.F90, line 293
   PASS  DELayoutDestroy Test, ESMF_DELayoutUTest.F90, line 300
   PASS  DELayout equality after destroy Test, ESMF_DELayoutUTest.F90, line 308
   PASS  DELayout non-equality after destroy Test, ESMF_DELayoutUTest.F90, line 316
@@ -142,9 +143,9 @@ build time -- 2021-04-26 16:33:06
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x25d81d0
+vm located at: 0xa8b1d0
 npets = 4, mypet=2
-  pth_mutex =		 0x261b4d0
+  pth_mutex =		 0xace4d0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 2
@@ -153,7 +154,9 @@ MPI thread level support: 3
 mpi_mutex_flag: 0
 mpionly: 1
 threadsflag: 0
-  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0,00
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
+  00
   PASS  DELayout equality after destroy Test, ESMF_DELayoutUTest.F90, line 308
   PASS  DELayout non-equality after destroy Test, ESMF_DELayoutUTest.F90, line 316
   PASS  Double DELayoutDestroy through alias Test, ESMF_DELayoutUTest.F90, line 323
@@ -177,9 +180,9 @@ threadsflag: 0
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x22021d0
+vm located at: 0x18a11d0
 npets = 4, mypet=3
-  pth_mutex =		 0x22454d0
+  pth_mutex =		 0x18e44d0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 3
@@ -214,9 +217,9 @@ DELayout non-equality after destroy Test, ESMF_DELayoutUTest.F90, line 316
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x1ec01d0
+vm located at: 0xf581d0
 npets = 4, mypet=0
-  pth_mutex =		 0x1f6fa20
+  pth_mutex =		 0x1007a20
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
@@ -233,8 +236,7 @@ ncores = 4
   cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
-  cp    0
-  PASS  DELayout with deCount and deGrouping Create Test, ESMF_DELayoutUTest.F90, line 406
+  cpune 406
   PASS  DELayoutGetNEW(), ESMF_DELayoutUTest.F90, line 419
  petMap:            0           1           2           3           2           1           0           0
 --- ESMCI::VM::print() start ---
@@ -244,9 +246,9 @@ ncores = 4
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x250d1d0
+vm located at: 0x11a91d0
 npets = 4, mypet=1
-  pth_mutex =		 0x25504d0
+  pth_mutex =		 0x11ec4d0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
@@ -273,9 +275,9 @@ ncores = 4
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x250d1d0
+vm located at: 0x11a91d0
 npets = 4, mypet=1
-  pth_mutex =		 0x25504d0
+  pth_mutex =		 0x11ec4d0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 1
@@ -295,9 +297,8 @@ ncores = 4
   cpuid[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
-  PAS cid[0][0]=0
-  lpid[1]=1, tid[1]=0, vas[1]=1, ncpet[1]=1, nadevs[1]=0, cid[1][0]=1
-  lpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
+  PASS  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F90, line 433
+  Plpid[2]=2, tid[2]=0, vas[2]=2, ncpet[2]=1, nadevs[2]=0, cid[2][0]=2
   lpid[3]=3, tid[3]=0, vas[3]=3, ncpet[3]=1, nadevs[3]=0, cid[3][0]=3
 ncores = 4
   cpuid[0]=0, ssiid[0]=0
@@ -313,9 +314,9 @@ ncores = 4
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x25d81d0
+vm located at: 0xa8b1d0
 npets = 4, mypet=2
-  pth_mutex =		 0x261b4d0
+  pth_mutex =		 0xace4d0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 2
@@ -344,7 +345,8 @@ ncores = 4
   PASS  Print a non-created DELayout Test, ESMF_DELayoutUTest.F90, line 485
   PASS  Default DELayout Create Test for serialization, ESMF_DELayoutUTest.F90, line 498
  computed serialization buffer length =         992  bytes
-  PASS  Computing space for serialization buffer, ESMF_ncores = 4
+  PASS  Computing space for serialization buffer, ESMF_DELayoutUTest.F90, line 511
+  PASS  Allocate serialization buffer, ESMF_DELayoutUTest.Fncores = 4
   cpuid[0]=0, ssiid[0]=0
   cpuid[1]=1, ssiid[1]=0
   cpuid[2]=2, ssiid[2]=0
@@ -358,9 +360,9 @@ ncores = 4
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x22021d0
+vm located at: 0x18a11d0
 npets = 4, mypet=3
-  pth_mutex =		 0x22454d0
+  pth_mutex =		 0x18e44d0
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 3
@@ -393,7 +395,7 @@ ncores = 4
   PASS  Allocate serialization buffer, ESMF_DELayoutUTest.F90, line 522
   PASS  Serialization DELayout data, ESMF_DELayoutUTest.F90, line 537
   Ending Test, file ESMF_DELayoutUTest.F90, line 545
-uid[3]=3, ssiid[3]=0
+id[3]=3, ssiid[3]=0
 --- VMK::print() end ---
 --- ESMCI::VM::print() end ---
 --- ESMCI::VM::print() start ---
@@ -403,9 +405,9 @@ uid[3]=3, ssiid[3]=0
   localID = 0
 --- ESMCI::VMId::print() end ---
 --- VMK::print() start ---
-vm located at: 0x1ec01d0
+vm located at: 0xf581d0
 npets = 4, mypet=0
-  pth_mutex =		 0x1f6fa20
+  pth_mutex =		 0x1007a20
   pth_finish_count =	 (nil)
 MPI_Comm_size: 4
 MPI_Comm_rank in local MPI communicator: 0
@@ -438,8 +440,7 @@ ncores = 4
   PASS  Allocate serialization buffer, ESMF_DELayoutUTest.F90, line 522
   PASS  Serialization DELayout data, ESMF_DELayoutUTest.F90, line 537
   Ending Test, file ESMF_DELayoutUTest.F90, line 545
-S  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F90, line 433
-  PASS  Destroy a destroyed DELayout Test, ESMF_DELayoutUTest.F90, line 441
+ASS  Destroy a destroyed DELayout Test, ESMF_DELayoutUTest.F90, line 441
   PASS  Destroy a non-created DELayout Test, ESMF_DELayoutUTest.F90, line 449
   PASS  DELayoutGet from destroyed DELayout Test, ESMF_DELayoutUTest.F90, line 458
   PASS  DELayoutGet from non-created DELayout Test, ESMF_DELayoutUTest.F90, line 468
@@ -451,11 +452,10 @@ S  DELayout with deCount and deGrouping Destroy Test, ESMF_DELayoutUTest.F90, li
   PASS  Allocate serialization buffer, ESMF_DELayoutUTest.F90, line 522
   PASS  Serialization DELayout data, ESMF_DELayoutUTest.F90, line 537
   Ending Test, file ESMF_DELayoutUTest.F90, line 545
-DELayoutUTest.F90, line 511
-  PASS  Allocate serialization buffer, ESMF_DELayoutUTest.F90, line 522
+90, line 522
   PASS  Serialization DELayout data, ESMF_DELayoutUTest.F90, line 537
   Ending Test, file ESMF_DELayoutUTest.F90, line 545
-  PET           2  Test Elapsed Time    1.8729999999999998       msec.
-  PET           0  Test Elapsed Time    1.9100000000000090       msec.
-  PET           3  Test Elapsed Time    1.9219999999999930       msec.
-  PET           1  Test Elapsed Time    1.9590000000000023       msec.
+  PET           0  Test Elapsed Time    1.9440000000000013       msec.
+  PET           2  Test Elapsed Time    1.9620000000000055       msec.
+  PET           3  Test Elapsed Time    1.9329999999999903       msec.
+  PET           1  Test Elapsed Time    1.8979999999999970       msec.
