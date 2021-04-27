@@ -12,6 +12,7 @@ export hash=${CIRCLE_SHA1}
 export TERM=xterm
 #export host=${CIRCLE_BRANCH}
 export message=`git log --format=%B -n 1 $hash | head -n 1`
+export message=$message" [ci skip]"
 export host=`echo $message |  awk -F ' ' '{print $10}'`
 export branch=`echo $message |  awk -F ' ' '{print $5}' | awk -F '_._' '{print $2}'`
 export bmessage=`echo $message |  awk -F ' ' '{print $8}'` 
