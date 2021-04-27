@@ -1,5 +1,4 @@
-build time -- 2021-04-26 06:02:03
-  Beginning Test, file ESMF_ArrayIOUTest.F90, line 92
+build time -- 2021-04-27 06:00:25
   Beginning Test, file ESMF_ArrayIOUTest.F90, line 92
   Beginning Test, file ESMF_ArrayIOUTest.F90, line 92
   Beginning Test, file ESMF_ArrayIOUTest.F90, line 92
@@ -8,6 +7,7 @@ build time -- 2021-04-26 06:02:03
   NUMBER_OF_PROCESSORS           6
   Beginning Test, file ESMF_ArrayIOUTest.F90, line 92
   NUMBER_OF_PROCESSORS           6
+  Beginning Test, file ESMF_ArrayIOUTest.F90, line 92
   NUMBER_OF_PROCESSORS           6
   NUMBER_OF_PROCESSORS           6
   NUMBER_OF_PROCESSORS           6
@@ -29,8 +29,8 @@ build time -- 2021-04-26 06:02:03
   PASS  Array without Halo Create Test, ESMF_ArrayIOUTest.F90, line 159
   PASS  Array without Halo Create Test, ESMF_ArrayIOUTest.F90, line 159
   PASS  Array with Halo Create Test, ESMF_ArrayIOUTest.F90, line 149
-  PASS  Array with Halo Create Test, ESMF_ArrayIOUTest.F90, line 149
   PASS  Array without Halo Create Test, ESMF_ArrayIOUTest.F90, line 159
+  PASS  Array with Halo Create Test, ESMF_ArrayIOUTest.F90, line 149
   PASS  Array with Halo Create Test, ESMF_ArrayIOUTest.F90, line 149
   PASS  Array without Halo Create Test, ESMF_ArrayIOUTest.F90, line 159
   PASS  Array without Halo Create Test, ESMF_ArrayIOUTest.F90, line 159
@@ -48,11 +48,11 @@ build time -- 2021-04-26 06:02:03
   PASS  Accessing Fortran pointers for Arrays Test, ESMF_ArrayIOUTest.F90, line 
  214
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 86386, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_ArrayIOUTest
+	Process ID: 22941, Host: r2i3n9, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_ArrayIOUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/86386/exe, process 86386
+MPT: Attaching to program: /proc/22941/exe, process 22941
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -90,7 +90,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab177c18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab1eb5806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7ffffffec9c0 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 86386, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_ArrayIOUTest\n\tMPT "...) at sig.c:340
+MPT:     header=header@entry=0x7ffffffec9c0 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 22941, Host: r2i3n9, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_ArrayIOUTest\n\tMPT V"...) at sig.c:340
 MPT: #3  0x00002aaab1eb5a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabcdc0080) at sig.c:489
 MPT: #4  0x00002aaab1eb5d9b in slave_sig_handler (signo=11, 
@@ -129,43 +129,43 @@ MPT:     cache_nelems=<error reading variable: Cannot access memory at address 0
 MPT:     cache_preemption=<error reading variable: Cannot access memory at address 0x0>, comm=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     info=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     .tmp.PATH.len_V$102f=18) at netcdf4_file.f90:134
-MPT: #20 0x00002aaaadd9f1d1 in esmfionf_mod::create_nf (file=..., 
+MPT: #20 0x00002aaaadd9f2b1 in esmfionf_mod::create_nf (file=..., 
 MPT:     fname='file3D_withhalo.nc', amode=0, .tmp.FNAME.len_V$12f=18)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/ionf_mod.F90:109
-MPT: #21 0x00002aaaae2ff2fa in esmfpiolib_mod::createfile (iosystem=..., file=..., 
+MPT: #21 0x00002aaaae2ff3da in esmfpiolib_mod::createfile (iosystem=..., file=..., 
 MPT:     iotype=6, fname='file3D_withhalo.nc', amode_in=0, 
 MPT:     .tmp.FNAME.len_V$22e2=18)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/piolib_mod.F90:2500
-MPT: #22 0x00002aaaae28c56c in esmcpio_cpp_createfile (iosystem_handle=1, 
+MPT: #22 0x00002aaaae28c64c in esmcpio_cpp_createfile (iosystem_handle=1, 
 MPT:     file=..., iotype=6, fname=..., amode_in=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/PIO/pio_cpp_binding.F90:564
-MPT: #23 0x00002aaaac6a6a90 in ESMCI::PIO_Handler::open (this=0x1968d80, 
+MPT: #23 0x00002aaaac6a6ac0 in ESMCI::PIO_Handler::open (this=0x1968d80, 
 MPT:     readonly=false, rc=0x7ffffffef700)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_PIO_Handler.C:1481
-MPT: #24 0x00002aaaac3717fe in ESMCI::IO_Handler::open (this=0x1968d80, 
+MPT: #24 0x00002aaaac37182e in ESMCI::IO_Handler::open (this=0x1968d80, 
 MPT:     file="file3D_withhalo.nc", filestatusflag_arg=ESMC_FILESTATUS_REPLACE, 
 MPT:     overwrite_arg=false, readonly_arg=false, rc=0x7ffffffef79c)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO_Handler.C:547
-MPT: #25 0x00002aaaac3807b4 in ESMCI::IO::open (this=0x193fe70, 
+MPT: #25 0x00002aaaac3807e4 in ESMCI::IO::open (this=0x193fe70, 
 MPT:     file="file3D_withhalo.nc", filestatusflag=ESMC_FILESTATUS_REPLACE, 
 MPT:     iofmt=ESMF_IOFMT_NETCDF, overwrite=false, readonly=false)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:830
-MPT: #26 0x00002aaaac37e2fb in ESMCI::IO::write (this=0x193fe70, 
+MPT: #26 0x00002aaaac37e32b in ESMCI::IO::write (this=0x193fe70, 
 MPT:     file="file3D_withhalo.nc", iofmt=ESMF_IOFMT_NETCDF, overwrite=false, 
 MPT:     status=ESMC_FILESTATUS_REPLACE, timeslice=0x0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/src/ESMCI_IO.C:462
-MPT: #27 0x00002aaaabe229b3 in ESMCI::Array::write (this=0x1967b30, 
+MPT: #27 0x00002aaaabe229e3 in ESMCI::Array::write (this=0x1967b30, 
 MPT:     file="file3D_withhalo.nc", variableName="", convention="", purpose="", 
 MPT:     overwrite=0x7ffffffefc23, status=0x7ffffffefde8, timeslice=0x0, 
 MPT:     iofmt=0x7ffffffefdd8)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/src/ESMCI_Array.C:4064
-MPT: #28 0x00002aaaabe05e85 in c_esmc_arraywrite_ (array=0x7fffffff1070, 
+MPT: #28 0x00002aaaabe05eb5 in c_esmc_arraywrite_ (array=0x7fffffff1070, 
 MPT:     file=0x524aa0 <__STRLITPACK_825> "file3D_withhalo.nc", variableName=0x0, 
 MPT:     convention=0x0, purpose=0x0, opt_overwriteflag=0x7ffffffefdf8, 
 MPT:     status=0x7ffffffefde8, timeslice=0x0, iofmt=0x7ffffffefdd8, 
 MPT:     rc=0x7ffffffefd78, file_l=18, varname_l=0, convention_l=0, purpose_l=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Array/interface/ESMCI_Array_F.C:798
-MPT: #29 0x00002aaaac9a0646 in esmf_arraymod::esmf_arraywrite (array=..., 
+MPT: #29 0x00002aaaac9a0676 in esmf_arraymod::esmf_arraywrite (array=..., 
 MPT:     filename='file3D_withhalo.nc', 
 MPT:     keywordenforcer=<error reading variable: Cannot access memory at address 0x0>, warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: variablename=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -177,8 +177,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, ' \372\070\023', '\000' <repeats 20 times>, '`\372\070\023', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000\320\037U\r', '\000' <repeats 28 times>, '\340Vk\023', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
-MPT: 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, ' *\034\021', '\000' <repeats 20 times>, '`*\034\021', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\220\037\357\000\000\000\000\000@pG\r', '\000' <repeats 28 times>, '\340\356]\021', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: convention=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -188,7 +187,8 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, ' ([\r', '\000' <repeats 20 times>, '`([\r', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000\320\037U\r', '\000' <repeats 28 times>, '\300\324\037\021', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '`\262\374\016', '\000' <repeats 20 times>, '\240\262\374\016', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\220\037\357\000\000\000\000\000@pG\r', '\000' <repeats 28 times>, 'p\223\256\017', '\000' <repeats 20 times>, 'A', '\000' <repeats 24 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: 
 MPT: purpose=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -198,7 +198,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\220a\324\v', '\000' <repeats 20 times>, '\320a\324\v', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000\320\037U\r', '\000' <repeats 28 times>, '`\240\214\n', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\020!~\r', '\000' <repeats 20 times>, 'P!~\r', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\220\037\357\000\000\000\000\000@pG\r', '\000' <repeats 28 times>, '\300\033\200\r', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
 MPT:     overwrite=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     status=..., 
 MPT:     timeslice=<error reading variable: Cannot access memory at address 0x0>, 
@@ -212,14 +212,14 @@ MPT: #32 0x00002aaab2d7a555 in __libc_start_main () from /lib64/libc.so.6
 MPT: #33 0x000000000040c229 in _start ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 86386] will be detached.
+MPT: 	Inferior 1 [process 22941] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/86386/exe, process 86386
-MPT: [Inferior 1 (process 86386) detached]
+MPT: Detaching from program: /proc/22941/exe, process 22941
+MPT: [Inferior 1 (process 22941) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i1n28, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_ArrayIOUTest, Rank 0, Process 86386: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r2i3n9, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_ArrayIOUTest, Rank 0, Process 22941: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

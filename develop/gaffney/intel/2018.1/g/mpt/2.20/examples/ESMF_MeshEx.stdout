@@ -1,10 +1,10 @@
-build time -- 2021-04-26 06:02:03
+build time -- 2021-04-27 06:00:25
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 224265, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx
+	Process ID: 160816, Host: r2i3n9, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/224265/exe, process 224265
+MPT: Attaching to program: /proc/160816/exe, process 160816
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -42,7 +42,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab177c18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab1eb5806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff3000 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 224265, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx\n\tM"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff3000 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 160816, Host: r2i3n9, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx\n\tMP"...) at sig.c:340
 MPT: #3  0x00002aaab1eb5a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5c0080) at sig.c:489
 MPT: #4  0x00002aaab1eb5d9b in slave_sig_handler (signo=11, 
@@ -71,17 +71,17 @@ MPT: #16 0x00002aaab0d90aac in NC_open ()
 MPT:    from /app/CSE/CSEIntel.20200724/Datamodels/netcdf-4.7.4/lib/libnetcdf.so.18
 MPT: #17 0x00002aaab0d907d7 in nc_open ()
 MPT:    from /app/CSE/CSEIntel.20200724/Datamodels/netcdf-4.7.4/lib/libnetcdf.so.18
-MPT: #18 0x00002aaaac6751c5 in c_convertscrip_ (
+MPT: #18 0x00002aaaac6751f5 in c_convertscrip_ (
 MPT:     infile=0x51932c <__STRLITPACK_8> "data/ne4np4-pentagons.nc", 
 MPT:     outfile=0x7fffffff4ff0 ".esmf.nc", ' ' <repeats 120 times>, '\314' <repeats 71 times>, <incomplete sequence \314>..., dualflag=0x7fffffff4af0, 
 MPT:     rc=0x7fffffff4b44, infileLen=24, outfileLen=128)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/interface/ESMC_IOScrip2ESMF.C:318
-MPT: #19 0x00002aaaad99f448 in esmf_meshmod::esmf_meshcreatefromscrip (
+MPT: #19 0x00002aaaad99f478 in esmf_meshmod::esmf_meshcreatefromscrip (
 MPT:     esmf_meshcreatefromscrip=..., filename='data/ne4np4-pentagons.nc', 
 MPT:     converttodual=.FALSE., adduserarea=.FALSE., rc=18, 
 MPT:     .tmp.FILENAME.len_V$2099=24)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:2901
-MPT: #20 0x00002aaaad989d4f in esmf_meshmod::esmf_meshcreatefromfile (
+MPT: #20 0x00002aaaad989d7f in esmf_meshmod::esmf_meshcreatefromfile (
 MPT:     esmf_meshcreatefromfile=..., filename='data/ne4np4-pentagons.nc', 
 MPT:     fileformat=..., 
 MPT:     keywordenforcer=<error reading variable: Cannot access memory at address 0x0>, 
@@ -97,7 +97,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, 'PT\304\001', '\000' <repeats 20 times>, '\220T\304\001', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '  \357\000\000\000\000\000\260\vG\r', '\000' <repeats 29 times>, 'ڋ\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, 'p\334\027\003', '\000' <repeats 20 times>, '\260\334\027\003', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\200\037\357\000\000\000\000\000\360\200F\r', '\000' <repeats 29 times>, '\213\307\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
 MPT:     nodaldistgrid=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     elementdistgrid=<error reading variable: Cannot access memory at address 0x0>, warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: name=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -109,8 +109,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\240l^\r', '\000' <repeats 20 times>, '\340l^\r', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '  \357\000\000\000\000\000\260\vG\r', '\000' <repeats 28 times>, '\060\063G\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., rc=0, 
-MPT:     .tmp.FILENAME.len_V$17a9=24, .tmp.VARNAME.len_V$17b1=0, 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\020\335~\005', '\000' <repeats 20 times>, 'P\335~\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\200\037\357\000\000\000\000\000\360\200F\r', '\000' <repeats 28 times>, '\220v\022\003', '\000' <repeats 20 times>, 'A\000\000\000\000\000\000\000libjpeg-'..., rc=0, .tmp.FILENAME.len_V$17a9=24, .tmp.VARNAME.len_V$17b1=0, 
 MPT:     .tmp.NAME.len_V$17b6=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Mesh/interface/ESMF_Mesh.F90:2051
 MPT: #21 0x0000000000429863 in esmf_meshex () at ESMF_MeshEx.F90:1168
@@ -119,17 +118,17 @@ MPT: #23 0x00002aaab2d7a555 in __libc_start_main () from /lib64/libc.so.6
 MPT: #24 0x000000000040c029 in _start ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 224265] will be detached.
+MPT: 	Inferior 1 [process 160816] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/224265/exe, process 224265
-MPT: [Inferior 1 (process 224265) detached]
+MPT: Detaching from program: /proc/160816/exe, process 160816
+MPT: [Inferior 1 (process 160816) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i1n28, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx, Rank 0, Process 224265: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default
-MPT: Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx, Rank 1, Process 224266: Core dump on signal SIGBUS(7) suppressed.
-MPT: Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx, Rank 2, Process 224267: Core dump on signal SIGBUS(7) suppressed.
-MPT: Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx, Rank 3, Process 224268: Core dump on signal SIGBUS(7) suppressed.
+MPT: On host r2i3n9, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx, Rank 0, Process 160816: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default
+MPT: Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx, Rank 1, Process 160817: Core dump on signal SIGBUS(7) suppressed.
+MPT: Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx, Rank 2, Process 160818: Core dump on signal SIGBUS(7) suppressed.
+MPT: Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/examples/examplesg/Linux.intel.64.mpt.default/ESMF_MeshEx, Rank 3, Process 160819: Core dump on signal SIGBUS(7) suppressed.
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

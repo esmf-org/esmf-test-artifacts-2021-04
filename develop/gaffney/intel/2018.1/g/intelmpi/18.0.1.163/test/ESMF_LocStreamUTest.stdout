@@ -1,4 +1,4 @@
-build time -- 2021-04-26 06:02:05
+build time -- 2021-04-27 06:00:15
   Beginning Test, file ESMF_LocStreamUTest.F90, line 78
   Beginning Test, file ESMF_LocStreamUTest.F90, line 78
   Beginning Test, file ESMF_LocStreamUTest.F90, line 78
@@ -47,6 +47,8 @@ build time -- 2021-04-26 06:02:05
   PASS  Destroy test LocStream for IsCreated, ESMF_LocStreamUTest.F90, line 139
   PASS  Destroy test LocStream for IsCreated, ESMF_LocStreamUTest.F90, line 139
   PASS  Destroy test LocStream for IsCreated, ESMF_LocStreamUTest.F90, line 139
+  PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
+ 0, line 147
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 147
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
@@ -55,8 +57,6 @@ build time -- 2021-04-26 06:02:05
  0, line 147
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 155
-  PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
- 0, line 147
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
  0, line 155
   PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F9
@@ -73,6 +73,10 @@ build time -- 2021-04-26 06:02:05
  .F90, line 335
   PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
  .F90, line 335
+  PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
+ .F90, line 335
+  PASS  LocStream equality before assignment Test, ESMF_LocStreamUTest.F90, line
+  343
   PASS  LocStream equality before assignment Test, ESMF_LocStreamUTest.F90, line
   343
   PASS  LocStream equality before assignment Test, ESMF_LocStreamUTest.F90, line
@@ -83,20 +87,20 @@ build time -- 2021-04-26 06:02:05
  2
   PASS  LocStream assignment and equality Test, ESMF_LocStreamUTest.F90, line 35
  2
-  PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
- .F90, line 335
+  PASS  LocStream assignment and equality Test, ESMF_LocStreamUTest.F90, line 35
+ 2
   PASS  LocStream assignment and equality Test, ESMF_LocStreamUTest.F90, line 35
  2
   PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
-  PASS  LocStream equality before assignment Test, ESMF_LocStreamUTest.F90, line
-  343
   PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
   PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
-  PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
-  PASS  LocStream assignment and equality Test, ESMF_LocStreamUTest.F90, line 35
- 2
+  PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
   PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
   PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
+  PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
+  PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
+  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
+  375
   PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
   375
   PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
@@ -105,14 +109,10 @@ build time -- 2021-04-26 06:02:05
   375
   PASS  Double LocStreamDestroy through alias Test, ESMF_LocStreamUTest.F90, lin
  e 382
-  PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
   PASS  Double LocStreamDestroy through alias Test, ESMF_LocStreamUTest.F90, lin
  e 382
   PASS  Double LocStreamDestroy through alias Test, ESMF_LocStreamUTest.F90, lin
  e 382
-  PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
-  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line
-  375
   PASS  Double LocStreamDestroy through alias Test, ESMF_LocStreamUTest.F90, lin
  e 382
   PASS  Test ESMF_LocStreamCreate from Irregular distribution, ESMF_LocStreamUTe
@@ -193,11 +193,15 @@ build time -- 2021-04-26 06:02:05
   PASS  Test LocStream Serialize/Deserialize, ESMF_LocStreamUTest.F90, line 1017
  LocStream Print Starts ====>
  Name =     'LocStream048'
+ KeyCount =           2
  LocStream Print Starts ====>
  Name =     'LocStream048'
  KeyCount =           2
  Keys:
+ LocStream Print Starts ====>
+ Name =     'LocStream048'
  KeyCount =           2
+ Keys:
  Keys:
     A1 - LN1    U1
     A1 - LN1    U1
@@ -206,53 +210,56 @@ build time -- 2021-04-26 06:02:05
  KeyCount =           2
  Keys:
     A1 - LN1    U1
- LocStream Print Starts ====>
- Name =     'LocStream048'
- KeyCount =           2
- Keys:
     A1 - LN1    U1
-     arr(           1 )=   2.317800752386068E-310
-     arr(           1 )=   2.317800745910250E-310
+     arr(           1 )=   2.317800754005022E-310
+     arr(           1 )=   2.317800747529205E-310
      arr(           2 )=    512.000122547150     
-     arr(           3 )=    8192.00197219849     
-     arr(           1 )=   2.317800745910250E-310
+     arr(           1 )=   2.317800747529205E-310
      arr(           2 )=    512.000122547150     
+     arr(           1 )=   2.317800747529205E-310
      arr(           2 )=    512.000122547150     
-     arr(           3 )=    8192.00197219849     
-     arr(           4 )=    131072.031677246     
-     arr(           5 )=    524288.127075195     
-     arr(           4 )=    131072.031677246     
-     arr(           5 )=    524288.127075195     
-    A2 - LN2    U2
-     arr(           3 )=    8192.00197219849     
-     arr(           4 )=    131072.031677246     
-     arr(           5 )=    524288.127075195     
-    A2 - LN2    U2
-    A2 - LN2    U2
-     arr(           1 )=   2.317800745910250E-310
      arr(           2 )=    512.000122547150     
      arr(           3 )=    8192.00197219849     
      arr(           4 )=    131072.031677246     
      arr(           5 )=    524288.127075195     
     A2 - LN2    U2
-     arr(           1 )=   2.317800752379744E-310
-     arr(           1 )=   2.317800745903926E-310
+     arr(           3 )=    8192.00197219849     
+     arr(           4 )=    131072.031677246     
+     arr(           5 )=    524288.127075195     
+    A2 - LN2    U2
+     arr(           3 )=    8192.00197219849     
+     arr(           4 )=    131072.031677246     
+     arr(           5 )=    524288.127075195     
+    A2 - LN2    U2
+     arr(           3 )=    8192.00197219849     
+     arr(           4 )=    131072.031677246     
+     arr(           5 )=    524288.127075195     
+    A2 - LN2    U2
+     arr(           1 )=   2.317800747522881E-310
+     arr(           2 )=   7.676145470849514E+218
+     arr(           3 )=   3.035286940369342E-152
+     arr(           1 )=   2.317800747522881E-310
      arr(           2 )=   7.676145470849514E+218
      arr(           3 )=   3.035286940369342E-152
      arr(           4 )=   1.377080536897474E+093
-     arr(           5 )=   2.221052049552993E+252
-     arr(           2 )=   7.676145470849514E+218
-     arr(           3 )=   3.035286940369342E-152
-     arr(           4 )=   1.377080536897474E+093
-     arr(           5 )=   2.221052049552993E+252
- LocStream Print Ends   ====>
- LocStream Print Ends   ====>
-     arr(           1 )=   2.317800745903926E-310
+     arr(           1 )=   2.317800753998698E-310
      arr(           2 )=   7.676145470849514E+218
      arr(           3 )=   3.035286940369342E-152
      arr(           4 )=   1.377080536897474E+093
      arr(           5 )=   2.221052049552993E+252
  LocStream Print Ends   ====>
+     arr(           4 )=   1.377080536897474E+093
+     arr(           5 )=   2.221052049552993E+252
+ LocStream Print Ends   ====>
+     arr(           5 )=   2.221052049552993E+252
+ LocStream Print Ends   ====>
+     arr(           1 )=   2.317800747522881E-310
+     arr(           2 )=   7.676145470849514E+218
+     arr(           3 )=   3.035286940369342E-152
+     arr(           4 )=   1.377080536897474E+093
+     arr(           5 )=   2.221052049552993E+252
+ LocStream Print Ends   ====>
+  PASS  Test Print, ESMF_LocStreamUTest.F90, line 1050
   PASS  Test Print, ESMF_LocStreamUTest.F90, line 1050
   PASS  Test Print, ESMF_LocStreamUTest.F90, line 1050
   PASS  Test Print, ESMF_LocStreamUTest.F90, line 1050
@@ -262,21 +269,14 @@ build time -- 2021-04-26 06:02:05
  .F90, line 1202
   PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
  .F90, line 1202
-     arr(           1 )=   2.317800745903926E-310
-     arr(           2 )=   7.676145470849514E+218
-     arr(           3 )=   3.035286940369342E-152
-     arr(           4 )=   1.377080536897474E+093
-     arr(           5 )=   2.221052049552993E+252
- LocStream Print Ends   ====>
-  PASS  Test Print, ESMF_LocStreamUTest.F90, line 1050
+  PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
+ .F90, line 1202
   PASS  Test ESMF_LocStreamCreate from Irregular distribution, ESMF_LocStreamUTe
  st.F90, line 1355
   PASS  Test ESMF_LocStreamCreate from Irregular distribution, ESMF_LocStreamUTe
  st.F90, line 1355
   PASS  Test ESMF_LocStreamCreate from Irregular distribution, ESMF_LocStreamUTe
  st.F90, line 1355
-  PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest
- .F90, line 1202
   PASS  Test ESMF_LocStreamCreate from Irregular distribution, ESMF_LocStreamUTe
  st.F90, line 1355
   PASS  Test ESMF_LocStream Create From Background Mesh, ESMF_LocStreamUTest.F90
@@ -307,15 +307,15 @@ build time -- 2021-04-26 06:02:05
  mUTest.F90, line 1714
   PASS  Test ESMF_LocStream Create From Background Grid on Sphere, ESMF_LocStrea
  mUTest.F90, line 1714
-  PASS  Test ESMF_LocStream Create From Background Grid on Sphere, ESMF_LocStrea
- mUTest.F90, line 1714
-  Ending Test, file ESMF_LocStreamUTest.F90, line 1724
   Ending Test, file ESMF_LocStreamUTest.F90, line 1724
   Ending Test, file ESMF_LocStreamUTest.F90, line 1724
   PASS  Test ESMF_LocStream Create From Background Grid on Sphere, ESMF_LocStrea
  mUTest.F90, line 1714
+  PASS  Test ESMF_LocStream Create From Background Grid on Sphere, ESMF_LocStrea
+ mUTest.F90, line 1714
   Ending Test, file ESMF_LocStreamUTest.F90, line 1724
-  PET           1  Test Elapsed Time    40.4080000000000       msec.
-  PET           2  Test Elapsed Time    40.5190000000000       msec.
-  PET           3  Test Elapsed Time    40.4410000000000       msec.
-  PET           0  Test Elapsed Time    40.8260000000000       msec.
+  Ending Test, file ESMF_LocStreamUTest.F90, line 1724
+  PET           0  Test Elapsed Time    40.9960000000000       msec.
+  PET           3  Test Elapsed Time    41.0740000000000       msec.
+  PET           2  Test Elapsed Time    41.0640000000000       msec.
+  PET           1  Test Elapsed Time    41.4220000000000       msec.

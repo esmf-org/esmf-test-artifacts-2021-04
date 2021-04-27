@@ -1,4 +1,4 @@
-build time -- 2021-04-26 06:02:03
+build time -- 2021-04-27 06:00:25
   Beginning Test, file ESMF_FileRegridUTest.F90, line 63
   Beginning Test, file ESMF_FileRegridUTest.F90, line 63
   Beginning Test, file ESMF_FileRegridUTest.F90, line 63
@@ -8,11 +8,11 @@ build time -- 2021-04-26 06:02:03
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 122045, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FileRegridUTest
+	Process ID: 58584, Host: r2i3n9, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FileRegridUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/122045/exe, process 122045
+MPT: Attaching to program: /proc/58584/exe, process 58584
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: (no debugging symbols found)...done.
@@ -50,7 +50,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab177c18c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab1eb5806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7ffffffe9200 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 122045, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FileRegridUTest\n\t"...) at sig.c:340
+MPT:     header=header@entry=0x7ffffffe9200 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 58584, Host: r2i3n9, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FileRegridUTest\n\tMP"...) at sig.c:340
 MPT: #3  0x00002aaab1eb5a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5c0080) at sig.c:489
 MPT: #4  0x00002aaab1eb5d9b in slave_sig_handler (signo=11, 
@@ -91,12 +91,12 @@ MPT:     cache_nelems=<error reading variable: Cannot access memory at address 0
 MPT:     cache_preemption=<error reading variable: Cannot access memory at address 0x0>, comm=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     info=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     .tmp.PATH.len_V$1016=256) at netcdf4_file.f90:64
-MPT: #20 0x00002aaaad6073b5 in esmf_iofiletypecheckmod::esmf_filetypecheck (
+MPT: #20 0x00002aaaad6073e5 in esmf_iofiletypecheckmod::esmf_filetypecheck (
 MPT:     filename='data/BT42_ugrid.nc', ' ' <repeats 238 times>, filetype=..., 
 MPT:     varname='\314' <repeats 63 times>, <incomplete sequence \314>, rc=-1, 
 MPT:     .tmp.FILENAME.len_V$158=256, .tmp.VARNAME.len_V$15c=64)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/interface/ESMF_IOFileTypeCheck.F90:108
-MPT: #21 0x00002aaaad2e315a in esmf_fileregridmod::esmf_fileregrid (
+MPT: #21 0x00002aaaad2e318a in esmf_fileregridmod::esmf_fileregrid (
 MPT:     srcfile='data/BT42_ugrid.nc', ' ' <repeats 238 times>, 
 MPT:     dstfile='data/BT42_ugrid_dual.nc', ' ' <repeats 233 times>, 
 MPT:     srcvarname='nodedata', dstvarname='nodedata', 
@@ -110,7 +110,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\340\254j\003', '\000' <repeats 20 times>, ' \255j\003', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\020\037\357\000\000\000\000\000\240|V\r', '\000' <repeats 28 times>, 'P\263\343\003', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\200U\227\005', '\000' <repeats 20 times>, '\300U\227\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000\240P~\r', '\000' <repeats 28 times>, 'P\360\064\003', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
 MPT: dstdatafile=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -121,7 +121,8 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\320zM\005', '\000' <repeats 12 times>, '\004\000\000\000\000\000\000\000 \323\351\002', '\000' <repeats 12 times>, '\241', '\000' <repeats 11 times>, '\t', '\000' <repeats 35 times>, '\001', '\000' <repeats 47 times>, '`V\267\b\000\000\000\000`V\267\b', '\000' <repeats 20 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, 'P\022\267\005', '\000' <repeats 20 times>, '\220\022\267\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000\240P~\r', '\000' <repeats 28 times>, '\260\354h\r', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: 
 MPT: tilefilepath=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -131,7 +132,8 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, ' \000&\a', '\000' <repeats 20 times>, '`\000&\a', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\020\037\357\000\000\000\000\000\240|V\r', '\000' <repeats 29 times>, 'Ӱ\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\260\032\034\f', '\000' <repeats 20 times>, '\360\032\034\f', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000\240P~\r', '\000' <repeats 28 times>, '\340u^\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
+MPT: 
 MPT: dstcoordvars=warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
@@ -141,7 +143,7 @@ MPT: warning: Range for type <error type> has invalid bounds 1..-368934881474191
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: warning: Range for type <error type> has invalid bounds 1..-3689348814741910324
 MPT: 
-MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, '\060\017\213\003', '\000' <repeats 20 times>, 'p\017\213\003', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, '\020\037\357\000\000\000\000\000\240|V\r', '\000' <repeats 29 times>, 'h~\005', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
+MPT: '\000' <repeats 24 times>, 'A', '\000' <repeats 23 times>, ' \025\251\005', '\000' <repeats 20 times>, '`\025\251\005', '\000' <repeats 12 times>, 'a\000\000\000\000\000\000\000\r\000\000\000\001\000\377\377', '\000' <repeats 16 times>, 'P\037\357\000\000\000\000\000\240P~\r', '\000' <repeats 28 times>, 'P7\322\v', '\000' <repeats 20 times>, 'A', '\000' <repeats 23 times>..., 
 MPT:     regridmethod=..., polemethod=..., 
 MPT:     regridpolenpnts=<error reading variable: Cannot access memory at address 0x0>, unmappedaction=..., 
 MPT:     ignoredegenerate=<error reading variable: Cannot access memory at address 0x0>, 
@@ -159,14 +161,14 @@ MPT: #24 0x00002aaab2d7a555 in __libc_start_main () from /lib64/libc.so.6
 MPT: #25 0x000000000040b7e9 in _start ()
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 122045] will be detached.
+MPT: 	Inferior 1 [process 58584] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/122045/exe, process 122045
-MPT: [Inferior 1 (process 122045) detached]
+MPT: Detaching from program: /proc/58584/exe, process 58584
+MPT: [Inferior 1 (process 58584) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i1n28, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FileRegridUTest, Rank 0, Process 122045: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r2i3n9, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMF_FileRegridUTest, Rank 0, Process 58584: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11

@@ -1,4 +1,4 @@
-build time -- 2021-04-26 06:02:03
+build time -- 2021-04-27 06:00:25
 Beginning Test, file ESMC_GridUTest.C, line 54
 NUMBER_OF_PROCESSORS 4
 Beginning Test, file ESMC_GridUTest.C, line 54
@@ -36,11 +36,11 @@ PASS GridCreate, ESMC_GridUTest.C, line 206
 PASS GridCreate_periodicDim_1, ESMC_GridUTest.C, line 221
 PASS GridCreate_periodicDim_2, ESMC_GridUTest.C, line 243
 MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).
-	Process ID: 91829, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_GridUTest
+	Process ID: 28288, Host: r2i3n9, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_GridUTest
 	MPT Version: HPE MPT 2.20  08/30/19 04:33:45
 
 MPT: --------stack traceback-------
-MPT: Attaching to program: /proc/91829/exe, process 91829
+MPT: Attaching to program: /proc/28288/exe, process 28288
 MPT: [Thread debugging using libthread_db enabled]
 MPT: Using host libthread_db library "/lib64/libthread_db.so.1".
 MPT: done.
@@ -78,7 +78,7 @@ MPT: Missing separate debuginfos, use: debuginfo-install cyrus-sasl-lib-2.1.26-2
 MPT: (gdb) #0  0x00002aaab071718c in waitpid () from /lib64/libpthread.so.0
 MPT: #1  0x00002aaab4bf7806 in mpi_sgi_system (
 MPT: #2  MPI_SGI_stacktraceback (
-MPT:     header=header@entry=0x7fffffff5a00 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 91829, Host: r3i1n28, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_GridUTest\n\tMPT Ver"...) at sig.c:340
+MPT:     header=header@entry=0x7fffffff5a00 "MPT ERROR: Rank 0(g:0) received signal SIGSEGV(11).\n\tProcess ID: 28288, Host: r2i3n9, Program: /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_GridUTest\n\tMPT Vers"...) at sig.c:340
 MPT: #3  0x00002aaab4bf7a02 in first_arriver_handler (signo=signo@entry=11, 
 MPT:     stack_trace_sem=stack_trace_sem@entry=0x2aaabc5c0080) at sig.c:489
 MPT: #4  0x00002aaab4bf7d9b in slave_sig_handler (signo=11, 
@@ -117,20 +117,20 @@ MPT:     cache_nelems=<error reading variable: Cannot access memory at address 0
 MPT:     cache_preemption=<error reading variable: Cannot access memory at address 0x0>, comm=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     info=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     .tmp.PATH.len_V$1016=16) at netcdf4_file.f90:64
-MPT: #20 0x00002aaaad68dced in esmf_ioscripmod::esmf_scripinq (
+MPT: #20 0x00002aaaad68dd1d in esmf_ioscripmod::esmf_scripinq (
 MPT:     filename='data/T42_grid.nc', grid_size=-858993460, 
 MPT:     grid_corners=-858993460, grid_dims=..., grid_rank=-858993460, 
 MPT:     has_area=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     rc=0, .tmp.FILENAME.len_V$3cc8=16)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/IO/interface/ESMF_IOScrip.F90:411
-MPT: #21 0x00002aaaad3d79d3 in esmf_gridmod::esmf_gridcreatefrmscrip (
+MPT: #21 0x00002aaaad3d7a03 in esmf_gridmod::esmf_gridcreatefrmscrip (
 MPT:     esmf_gridcreatefrmscrip=..., filename='data/T42_grid.nc', regdecomp=..., 
 MPT:     indexflag=..., 
 MPT:     keywordenforcer=<error reading variable: Cannot access memory at address 0x0>, decompflag=..., issphere=.TRUE., 
 MPT:     polekindflag=<error reading variable: Cannot access memory at address 0x0>, addcornerstagger=.FALSE., adduserarea=.FALSE., rc=18, 
 MPT:     .tmp.FILENAME.len_V$a3ec=16)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Grid/interface/ESMF_Grid.F90:6715
-MPT: #22 0x00002aaaad3d57bd in esmf_gridmod::esmf_gridcreatefrmncfile (
+MPT: #22 0x00002aaaad3d57ed in esmf_gridmod::esmf_gridcreatefrmncfile (
 MPT:     esmf_gridcreatefrmncfile=..., filename='data/T42_grid.nc', 
 MPT:     fileformat=..., 
 MPT:     keywordenforcer=<error reading variable: Cannot access memory at address 0x0>, 
@@ -145,7 +145,7 @@ MPT:     addmask=.FALSE., varname="",
 MPT:     coordnames=<error reading variable: Cannot resolve DW_OP_push_object_address for a missing object>, rc=-1, .tmp.FILENAME.len_V$a25b=16, 
 MPT:     .tmp.VARNAME.len_V$a28a=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Grid/interface/ESMF_Grid.F90:6490
-MPT: #23 0x00002aaaad36bc2d in f_esmf_gridcreatefromfile (gridp=..., 
+MPT: #23 0x00002aaaad36bc5d in f_esmf_gridcreatefromfile (gridp=..., 
 MPT:     filename='data/T42_grid.nc', filetypeflag=..., 
 MPT:     regdecomp=<error reading variable: Cannot access memory at address 0x0>, 
 MPT:     decompflag=<error reading variable: Cannot access memory at address 0x0>, 
@@ -188,13 +188,13 @@ MPT: ..., rc=-1,
 MPT:     .tmp.FILENAME.len_V$652=16, .tmp.VARNAME.len_V$662=0, 
 MPT:     .tmp.COORDNAMES.len_V$665=0)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Grid/interface/ESMF_Grid_C.F90:292
-MPT: #24 0x00002aaaac29a20b in ESMCI::Grid::createfromfile (
+MPT: #24 0x00002aaaac29a23b in ESMCI::Grid::createfromfile (
 MPT:     filename=0x40e9c4 "data/T42_grid.nc", fileTypeFlag=2, regDecomp=0x0, 
 MPT:     decompflag=0x0, isSphere=0x0, polekindflag=0x0, addCornerStagger=0x0, 
 MPT:     addUserArea=0x0, indexflag=0x0, addMask=0x0, varname=0x0, coordNames=0x0, 
 MPT:     rc=0x7fffffffa940)
 MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Grid/src/ESMCI_Grid.C:647
-MPT: #25 0x00002aaaabdd0c2b in ESMC_GridCreateFromFile (
+MPT: #25 0x00002aaaabdd0c5b in ESMC_GridCreateFromFile (
 MPT:     filename=0x40e9c4 "data/T42_grid.nc", fileTypeFlag=2, regDecomp=0x0, 
 MPT:     decompflag=0x0, isSphere=0x0, polekindflag=0x0, addCornerStagger=0x0, 
 MPT:     addUserArea=0x0, indexflag=0x0, addMask=0x0, varname=0x0, coordNames=0x0, 
@@ -203,14 +203,14 @@ MPT:     at /p/work1/mpotts/intel_2018.1_mpt_g_develop/src/Infrastructure/Grid/i
 MPT: #26 0x0000000000407adf in main () at ESMC_GridUTest.C:261
 MPT: (gdb) A debugging session is active.
 MPT: 
-MPT: 	Inferior 1 [process 91829] will be detached.
+MPT: 	Inferior 1 [process 28288] will be detached.
 MPT: 
 MPT: Quit anyway? (y or n) [answered Y; input not from terminal]
-MPT: Detaching from program: /proc/91829/exe, process 91829
-MPT: [Inferior 1 (process 91829) detached]
+MPT: Detaching from program: /proc/28288/exe, process 28288
+MPT: [Inferior 1 (process 28288) detached]
 
 MPT: -----stack traceback ends-----
-MPT: On host r3i1n28, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_GridUTest, Rank 0, Process 91829: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
+MPT: On host r2i3n9, Program /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default/ESMC_GridUTest, Rank 0, Process 28288: Dumping core on signal SIGSEGV(11) into directory /p/work1/mpotts/intel_2018.1_mpt_g_develop/test/testg/Linux.intel.64.mpt.default
 MPT ERROR: MPI_COMM_WORLD rank 0 has terminated without calling MPI_Finalize()
 	aborting job
 MPT: Received signal 11
