@@ -8,7 +8,7 @@ cd ~/esmf-test-artifacts
 git config --global user.email "mark.potts@noaa.gov"
 git config --global user.name "dcv-bot"
 git branch
-export hash=`git for-each-ref --sort=-committerdate refs/heads/ | head -n 1 | awk -F" " '{print $1}'`
+export hash=`git for-each-ref --sort=-committerdate refs/heads/${CIRCLE_BRANCH} | head -n 1 | awk -F" " '{print $1}'`
 export TERM=xterm
 export host=${CIRCLE_BRANCH}
 export message=`git log --format=%B -n 1 $hash | head -n 1`
