@@ -53,3 +53,4 @@ python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
 python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
 ssh alogin01 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/getres-test.sh
+ssh alogin01 /lfs/h1/emc/ptmp/Mark.Potts/intel_2019.3_mpi_g_develop/getres-test.sh
