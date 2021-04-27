@@ -9,6 +9,7 @@
 #SBATCH --ntasks-per-node=40
 #SBATCH --exclusive
 export JOBID=$SLURM_JOBID
+export ESMF_MPIRUN=/scratch1/NCEPDEV/stmp2/Mark.Potts/intel_18.0.4_mpiuni_O_develop/src/Infrastructure/stubs/mpiuni/mpirun
 module load intel/18.0.5.274  netcdf/4.7.0
 module list >& module-build.log
 

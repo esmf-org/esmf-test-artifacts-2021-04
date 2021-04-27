@@ -1,4 +1,4 @@
-build time -- 2021-04-26 16:38:18
+build time -- 2021-04-27 15:00:52
   Beginning Test, file ESMF_VMSendRecvNbUTest.F90, line 85
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMSendRecvNbUTest.F90, line 85
@@ -23,6 +23,18 @@ build time -- 2021-04-26 16:38:18
   PASS  Verify local R4 data after receive Test, ESMF_VMSendRecvNbUTest.F90, lin
  e 247
   PASS  Waiting for R8 SendRecvNb, ESMF_VMSendRecvNbUTest.F90, line 257
+           2 After recv r8_recvData is    101.000000000000     
+   102.000000000000      ( Should be    101.000000000000     
+   102.000000000000       )
+  PASS  Verify local R8 data after receive Test, ESMF_VMSendRecvNbUTest.F90, lin
+ e 269
+  PASS  Waiting for LOGICAL SendRecvNb, ESMF_VMSendRecvNbUTest.F90, line 279
+           2 After recv: Recv_Logical(1) is True
+           2 After recv: Recv_Logical(2) is False
+           2 After recv: Logical_soln(1) is True
+           2 After recv: logical_soln(2) is False
+  PASS  Verify local LOGICAL data after receive Test, ESMF_VMSendRecvNbUTest.F90
+ , line 300
   Beginning Test, file ESMF_VMSendRecvNbUTest.F90, line 85
   NUMBER_OF_PROCESSORS           4
   PASS  SendRecvNb local I4 data Test, ESMF_VMSendRecvNbUTest.F90, line 170
@@ -53,7 +65,12 @@ build time -- 2021-04-26 16:38:18
   PASS  Verify local LOGICAL data after receive Test, ESMF_VMSendRecvNbUTest.F90
  , line 300
   PASS  SendRecvNb local I4 data Test, ESMF_VMSendRecvNbUTest.F90, line 343
-  PASS  SendRecvNb local I4 data Test, ESMF_VMSendRecvNbUTest.F90, line 170
+  PASS  SendRecvNb local R4 data Test, ESMF_VMSendRecvNbUTest.F90, line 354
+  PASS  SendRecvNb local R8 data Test, ESMF_VMSendRecvNbUTest.F90, line 365
+  PASS  SendRecvNb local LOGICAL data Test, ESMF_VMSendRecvNbUTest.F90, line 376
+  PASS  Waiting for all queued non-blocking comms in VM, ESMF_VMSendRecvNbUTest.
+ F90, line 387
+           3  A  PASS  SendRecvNb local I4 data Test, ESMF_VMSendRecvNbUTest.F90, line 170
   PASS  SendRecvNb local R4 data Test, ESMF_VMSendRecvNbUTest.F90, line 181
   PASS  SendRecvNb local R8 data Test, ESMF_VMSendRecvNbUTest.F90, line 192
   PASS  SendRecvNb local LOGICAL data Test, ESMF_VMSendRecvNbUTest.F90, line 203
@@ -124,19 +141,7 @@ build time -- 2021-04-26 16:38:18
  e 401
            1 After recv r4_recvData is    301.0000       302.0000     
  ( should be    301.0000       302.0000      )
-  PASS  Verify local R4 dat           2 After recv r8_recvData is    101.000000000000     
-   102.000000000000      ( Should be    101.000000000000     
-   102.000000000000       )
-  PASS  Verify local R8 data after receive Test, ESMF_VMSendRecvNbUTest.F90, lin
- e 269
-  PASS  Waiting for LOGICAL SendRecvNb, ESMF_VMSendRecvNbUTest.F90, line 279
-           2 After recv: Recv_Logical(1) is True
-           2 After recv: Recv_Logical(2) is False
-           2 After recv: Logical_soln(1) is True
-           2 After recv: logical_soln(2) is False
-  PASS  Verify local LOGICAL data after receive Test, ESMF_VMSendRecvNbUTest.F90
- , line 300
-  PASS  SendRecvNb local I4 data Test, ESMF_VMSendRecvNbUTest.F90, line 343
+  PASS  Verify local R4 dat  PASS  SendRecvNb local I4 data Test, ESMF_VMSendRecvNbUTest.F90, line 343
   PASS  SendRecvNb local R4 data Test, ESMF_VMSendRecvNbUTest.F90, line 354
   PASS  SendRecvNb local R8 data Test, ESMF_VMSendRecvNbUTest.F90, line 365
   PASS  SendRecvNb local LOGICAL data Test, ESMF_VMSendRecvNbUTest.F90, line 376
@@ -162,12 +167,7 @@ build time -- 2021-04-26 16:38:18
   PASS  Verify local LOGICAL data after receive Test, ESMF_VMSendRecvNbUTest.F90
  , line 452
   Ending Test, file ESMF_VMSendRecvNbUTest.F90, line 469
-  PASS  SendRecvNb local R4 data Test, ESMF_VMSendRecvNbUTest.F90, line 354
-  PASS  SendRecvNb local R8 data Test, ESMF_VMSendRecvNbUTest.F90, line 365
-  PASS  SendRecvNb local LOGICAL data Test, ESMF_VMSendRecvNbUTest.F90, line 376
-  PASS  Waiting for all queued non-blocking comms in VM, ESMF_VMSendRecvNbUTest.
- F90, line 387
-           3  After rcv i_recvData is          101         102 ( should be 
+fter rcv i_recvData is          101         102 ( should be 
          101         102  )
   PASS  Verify local I4 data after receive Test, ESMF_VMSendRecvNbUTest.F90, lin
  e 401
@@ -219,7 +219,7 @@ a after receive Test, ESMF_VMSendRecvNbUTest.F90, lin
   PASS  Verify local LOGICAL data after receive Test, ESMF_VMSendRecvNbUTest.F90
  , line 452
   Ending Test, file ESMF_VMSendRecvNbUTest.F90, line 469
-  PET           3  Test Elapsed Time    1.86699999999999       msec.
-  PET           0  Test Elapsed Time    1.83400000000000       msec.
-  PET           1  Test Elapsed Time    1.90100000000000       msec.
-  PET           2  Test Elapsed Time    1.92600000000001       msec.
+  PET           1  Test Elapsed Time    1.78400000000001       msec.
+  PET           2  Test Elapsed Time    1.79600000000001       msec.
+  PET           3  Test Elapsed Time    1.75800000000001       msec.
+  PET           0  Test Elapsed Time    1.86200000000000       msec.
