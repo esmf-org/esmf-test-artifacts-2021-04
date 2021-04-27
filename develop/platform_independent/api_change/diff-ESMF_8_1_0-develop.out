@@ -1,0 +1,82 @@
+741c741,742
+< <SPAN      minStackSize, openMpHandling, openMpNumThreads, rc)
+---
+> <SPAN      pthreadMinStackSize, openMpHandling, openMpNumThreads, &amp;
+> <SPAN      forceChildPthreads, rc)
+749c750
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+751a753
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+757c759
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+765c767,768
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+771c774
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+779c782,783
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+1456c1460
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+1464c1468,1469
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+1470c1475
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+1478c1483,1484
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+1484c1490
+< <SPAN      minStackSize, rc)
+---
+> <SPAN      pthreadMinStackSize, forceChildPthreads, rc)
+1492c1498,1499
+< <SPAN      integer,             intent(in),  optional :: minStackSize
+---
+> <SPAN      integer,             intent(in),  optional :: pthreadMinStackSize
+> <SPAN      logical,             intent(in),  optional :: forceChildPthreads
+9954a9962,9967
+> <SPAN <PRE>    subroutine ESMF_MeshGetMOAB(moabOn, rc)
+> <SPAN </PRE><EM>ARGUMENTS:</EM>
+> <SPAN <PRE>     logical, intent(out)                      :: moabOn
+> <SPAN      integer, intent(out), optional            :: rc
+> <SPAN </PRE>
+> 
+9981,9986d9993
+< <SPAN <PRE>    subroutine ESMF_MeshGetMOAB(moabOn, rc)
+< <SPAN </PRE><EM>ARGUMENTS:</EM>
+< <SPAN <PRE>     logical, intent(out)                      :: moabOn
+< <SPAN      integer, intent(out), optional            :: rc
+< <SPAN </PRE>
+< 
+14396a14404,14411
+> <SPAN </LI>
+> <SPAN <LI>This interface was modified since ESMF version 5.2.0r. The fact that code using this interface compiles with the current ESMF version does not guarantee that it compiles with previous versions of this interface. If user code compatibility with version 5.2.0r is desired then care must be taken to limit the use of this interface to features that were available in the 5.2.0r release. 
+> <SPAN <BR>
+> <SPAN Changes made after the 5.2.0r release:
+> <SPAN    <DL>
+> <SPAN <DT><STRONG>8.1.0</STRONG></DT>
+> <SPAN <DD>Made argument <TT>vm</TT> optional to simplify usage when calling
+> <SPAN      on the current VM.
+14397a14413,14414
+> <SPAN </DD>
+> <SPAN </DL>
