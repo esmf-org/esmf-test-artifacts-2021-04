@@ -22,5 +22,6 @@ echo $message
 git checkout $hash $branch/$host
 find $branch -iname summary.dat | xargs grep -l "$branchhash" | xargs grep "test results" | sed 's/\// /g'  | sed -e 's/\t/ /g' | sed -e 's/ \+/ /g' | sed -e 's/mpiuni/mpiuni none/g'  | awk -F " " '{print $2,$3,$4,$6,$7,$5,$12,$14}' > "$branch/$branchhash.summary"
 git add $branch
+git pull -X theirs --no-edit origin main
 git commit -a -m"$message"
 git push origin main
