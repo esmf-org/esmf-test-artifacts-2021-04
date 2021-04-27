@@ -1,4 +1,4 @@
-build time -- 2021-04-27 17:57:46
+build time -- 2021-04-27 20:17:39
   Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
   NUMBER_OF_PROCESSORS           2
   Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
@@ -157,6 +157,11 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
 --- ESMCI::DistGrid::print end ---
  Field Print Starts ====>
  Field base status = Ready
+   Name = 'Field030'
+ Base name    = Field030
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
  for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 2: (11, 2)
@@ -174,19 +179,7 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
  Status: Base = Ready,  object = Ready
  Proxy        = no
  Root Info (Attributes):
-   Name = 'Field030'
- Base name    = Field030
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
 {} Field status =            4
- gridrank =            1
---- ESMCI::Array::print start ---
- Base name    = Array031
- Status: Base = Ready,  object = Ready
- Proxy        = no
- Root Info (Attributes):
-{}{} Field status =            4
  gridrank =            1
 --- ESMCI::Array::print start ---
  Base name    = Array031
@@ -199,8 +192,8 @@ DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x2232fc0:
-            rank = 1, typekind = 6, base_addr = 0x2231a40
+LocalArrayPrint: Array at address 0x2218fc0:
+            rank = 1, typekind = 6, base_addr = 0x2217a40
             dim[0] = 5  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -220,14 +213,21 @@ dim 1: [0]: [1 [1 [1, 5] 5] 5]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
-Array typekind/rank: Real*8 / 1 
+{} Field status =            4
+ gridrank =            1
+--- ESMCI::Array::print start ---
+ Base name    = Array031
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Array typekind/rank: Real*8 / 1 
 ~ lower class' values ~
 DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0xe03090:
-            rank = 1, typekind = 6, base_addr = 0xe033c0
+LocalArrayPrint: Array at address 0x170ff80:
+            rank = 1, typekind = 6, base_addr = 0x17102b0
             dim[0] = 7  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -423,8 +423,8 @@ DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 0 ~
-LocalArrayPrint: Array at address 0xe03090:
-            rank = 1, typekind = 6, base_addr = 0xf4ff50
+LocalArrayPrint: Array at address 0x170ff80:
+            rank = 1, typekind = 6, base_addr = 0x185cf30
             dim[0] = 7  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -442,8 +442,7 @@ dim 1: [0]: [1 [1 [1, 7] 7] 7]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
-          -1          -1          -1               -1          -1
-          :  (2, 3) /
+:  (2, 3) /
 diffCollocationCount = 1
 collocationPDim:	1
 arbSeqIndexListPCollPLocalDe:
@@ -475,8 +474,8 @@ DistGrid dimCount = 1
 deCount = 2
 localDeCount = 1
 ~ local data in LocalArray for DE 1 ~
-LocalArrayPrint: Array at address 0x2232fc0:
-            rank = 1, typekind = 6, base_addr = 0x237f4f0
+LocalArrayPrint: Array at address 0x2218fc0:
+            rank = 1, typekind = 6, base_addr = 0x23654f0
             dim[0] = 5  
   Real, *8, Dim 1, Data values:
 ( 1) =  0
@@ -496,13 +495,14 @@ dim 1: [0]: [1 [1 [1, 5] 5] 5]
           -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
--1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
           -1          -1          -1               -1          -1
  Field Print Ends   ====>
  - before SMM from A -> X
-           1           5   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
- - before SMM from A -> X
            1           7   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ - before SMM from A -> X
+           1           5   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
  - SMM from A -> X
    1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        0.0000000000000000     
  - SMM from A -> X
@@ -1279,5 +1279,5 @@ DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
 00000000000062        2.0000000000000044        2.0000000000000013        2.0000000000000022        1.9999999999999973        2.0000000000000000        2.0000000000000000        1.9999999999999976        2.0000000000000000        1.9999999999999982        2.0000000000000018        2.0000000000000000        2.0000000000000036        1.9999999999999987        2.0000000000000013        2.0000000000000031        2.0000000000000053        2.0000000000000000        1.9999999999999987        2.0000000000000018     
   PASS  Regrid then create xgrid and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGSMMUTest.F90, line 102
   Ending Test, file ESMF_FieldRegridXGSMMUTest.F90, line 112
-  PET           0  Test Elapsed Time    435.27099999999996       msec.
-  PET           1  Test Elapsed Time    434.68799999999999       msec.
+  PET           0  Test Elapsed Time    444.20999999999998       msec.
+  PET           1  Test Elapsed Time    443.73099999999999       msec.
