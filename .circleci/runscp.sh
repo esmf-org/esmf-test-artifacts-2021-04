@@ -162,10 +162,12 @@ git add $branch
 git pull -X theirs --no-edit origin main
 git commit -a -m"$message"
 git push origin main
-while [ $? -ne 0 ]
+$ret = $?
+while [ $ret -ne 0 ]
 do
   git pull -X theirs --no-edit origin main
   git commit --amend -m'$message'
   git push origin main
+  $ret = $?
 done
 
