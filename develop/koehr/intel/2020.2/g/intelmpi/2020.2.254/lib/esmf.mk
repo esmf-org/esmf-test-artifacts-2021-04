@@ -1,4 +1,4 @@
-build time -- 2021-04-26 06:53:25
+build time -- 2021-04-27 06:56:21
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -14,7 +14,7 @@ build time -- 2021-04-26 06:53:25
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.2.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-4-g394ef51
+ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-6-gb8c1a70
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -34,7 +34,7 @@ ESMF_F90LINKER=mpiifort
 
 ESMF_F90COMPILEOPTS=-g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -pthread -threads  -qopenmp
 ESMF_F90COMPILEPATHS=-I/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/mod/modg/Linux.intel.64.intelmpi.default -I/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/src/include -I/app/COST/netcdf-c/4.3.3.1/intel/include -I/app/COST/netcdf-fortran/4.4.2/intel/include /app/COST/netcdf-c/4.3.3.1/intel//include /app/COST/hdf5/1.8.15/intel//include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-4-g394ef51' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_05-6-gb8c1a70' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=
 ESMF_F90COMPILEFIXCPP=
@@ -53,7 +53,7 @@ ESMF_CXXLINKER=mpiicpc
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -traceback -Wcheck -fPIC -m64 -mcmodel=small -pthread  -qopenmp
 ESMF_CXXCOMPILEPATHS= -I/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/src/include  -I/app/COST/netcdf-c/4.3.3.1/intel/include -I/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-4-g394ef51' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_05-6-gb8c1a70' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -qopenmp
 ESMF_CXXLINKPATHS=-L/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/lib/libg/Linux.intel.64.intelmpi.default -L/app/COST/netcdf-c/4.3.3.1/intel//lib -L/app/COST/netcdf-fortran/4.4.2/intel/lib -L/app/COST/netcdf-c/4.3.3.1/intel//lib -L/app/COST/hdf5/1.8.15/intel//lib -L/p/app/intel/parallel_studio_xe_2020_update2/compilers_and_libraries_2020.2.254/linux/compiler/lib/intel64_lin/
@@ -139,7 +139,7 @@ ESMF_INTERNAL_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.2.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-4-g394ef51
+ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-6-gb8c1a70
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -159,7 +159,7 @@ ESMF_F90LINKER=mpiifort
 
 ESMF_F90COMPILEOPTS=-g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -pthread -threads  -qopenmp
 ESMF_F90COMPILEPATHS=-I/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/mod/modg/Linux.intel.64.intelmpi.default -I/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/src/include -I/app/COST/netcdf-c/4.3.3.1/intel/include -I/app/COST/netcdf-fortran/4.4.2/intel/include /app/COST/netcdf-c/4.3.3.1/intel//include /app/COST/hdf5/1.8.15/intel//include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-4-g394ef51' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_05-6-gb8c1a70' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=
 ESMF_F90COMPILEFIXCPP=
@@ -178,7 +178,7 @@ ESMF_CXXLINKER=mpiicpc
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -traceback -Wcheck -fPIC -m64 -mcmodel=small -pthread  -qopenmp
 ESMF_CXXCOMPILEPATHS= -I/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/src/include  -I/app/COST/netcdf-c/4.3.3.1/intel/include -I/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-4-g394ef51' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_05-6-gb8c1a70' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/p/work1/mpotts/intel_2020.2_intelmpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11
 
 ESMF_CXXLINKOPTS=  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -qopenmp
 ESMF_CXXLINKPATHS=-L/p/work1/mpotts/intel_2020.2_intelmpi_g_develop/lib/libg/Linux.intel.64.intelmpi.default -L/app/COST/netcdf-c/4.3.3.1/intel//lib -L/app/COST/netcdf-fortran/4.4.2/intel/lib -L/app/COST/netcdf-c/4.3.3.1/intel//lib -L/app/COST/hdf5/1.8.15/intel//lib -L/p/app/intel/parallel_studio_xe_2020_update2/compilers_and_libraries_2020.2.254/linux/compiler/lib/intel64_lin/
