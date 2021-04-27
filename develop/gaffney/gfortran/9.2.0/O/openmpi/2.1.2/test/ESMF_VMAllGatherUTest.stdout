@@ -1,4 +1,4 @@
-build time -- 2021-04-26 06:00:08
+build time -- 2021-04-27 05:58:25
 --------------------------------------------------------------------------
 WARNING: Open MPI will create a shared memory backing file in a
 directory that appears to be mounted on a network filesystem.
@@ -15,18 +15,18 @@ Note, too, that system administrators can set a list of filesystems
 where Open MPI is disallowed from creating temporary files by setting
 the MCA parameter "orte_no_session_dir".
 
-  Local host: r3i2n27
-  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r3i2n27_0/42351/1/1/vader_segment.r3i2n27.1
+  Local host: r2i1n32
+  Filename:   /p/work1/tmp/mpotts/openmpi-sessions-10547@r2i1n32_0/45400/1/1/vader_segment.r2i1n32.1
 
 You can set the MCA paramter shmem_mmap_enable_nfs_warning to 0 to
 disable this message.
 --------------------------------------------------------------------------
   Beginning Test, file ESMF_VMAllGatherUTest.F90, line 67
   Beginning Test, file ESMF_VMAllGatherUTest.F90, line 67
-  NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMAllGatherUTest.F90, line 67
   NUMBER_OF_PROCESSORS           4
   Beginning Test, file ESMF_VMAllGatherUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   NUMBER_OF_PROCESSORS           4
   PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 105
@@ -38,9 +38,9 @@ disable this message.
   PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 105
   PASS  Verifying array1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 116
  contents after allgather (should be 1,2,... :
-           0  array1:            1
-           0  array1:            2
-           0  array1:            3
+           2  array1:            1
+           2  array1:            2
+           2  array1:            3
  contents after allgather (should be 1,2,... :
            3  array1:            1
            3  array1:            2
@@ -50,6 +50,16 @@ disable this message.
            3  array1:            6
            3  array1:            7
            3  array1:            8
+  PASS  Verifying array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 132
+ contents after allgather (should be 1,2,... :
+           0  array1:            1
+           0  array1:            2
+           0  array1:            3
+           0  array1:            4
+           0  array1:            5
+           0  array1:            6
+           0  array1:            7
+           0  array1:            8
  contents after allgather (should be 1,2,... :
            1  array1:            1
            1  array1:            2
@@ -58,16 +68,11 @@ disable this message.
            1  array1:            5
            1  array1:            6
            1  array1:            7
-           0  array1:            4
-           0  array1:            5
-           0  array1:            6
-           0  array1:            7
-           0  array1:            8
+           1  array1:            8
   PASS  Verifying array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 132
- contents after allgather (should be 1,2,... :
-           2  array1:            1
-           2  array1:            2
-           2  array1:            3
+  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 142
+  PASS  Verifying array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 132
+  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 142
            2  array1:            4
            2  array1:            5
            2  array1:            6
@@ -75,18 +80,15 @@ disable this message.
            2  array1:            8
   PASS  Verifying array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 132
   PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 142
-           1  array1:            8
-  PASS  Verifying array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 132
-  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 142
-  PASS  Verifying array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 132
-  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 142
+  PASS  Verifying farray1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 153
   PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 142
   PASS  Verifying farray1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 153
- contents after allgather (should be 1.,2.,... :
   PASS  Verifying farray1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 153
  contents after allgather (should be 1.,2.,... :
-  PASS  Verifying farray1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 153
- contents after allgather (should be 1.,2.,... :
+           1  farray1:    1.0000000000000000     
+           1  farray1:    2.0000000000000000     
+           1  farray1:    3.0000000000000000     
+           1  farray1:    4.0000000000000000     
   PASS  Verifying farray1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 153
  contents after allgather (should be 1.,2.,... :
            0  farray1:    1.0000000000000000     
@@ -96,10 +98,16 @@ disable this message.
            0  farray1:    5.0000000000000000     
            0  farray1:    6.0000000000000000     
            0  farray1:    7.0000000000000000     
-           0  farray1:    8.0000000000000000     
- contents after allgather (should be 1.,2.,...):
-           0  farray2:    1.0000000000000000     
-           0  farray2:    2.0000000000000000     
+ contents after allgather (should be 1.,2.,... :
+           2  farray1:    1.0000000000000000     
+           2  farray1:    2.0000000000000000     
+           2  farray1:    3.0000000000000000     
+           2  farray1:    4.0000000000000000     
+           2  farray1:    5.0000000000000000     
+           2  farray1:    6.0000000000000000     
+           2  farray1:    7.0000000000000000     
+           2  farray1:    8.0000000000000000     
+ contents after allgather (should be 1.,2.,... :
            3  farray1:    1.0000000000000000     
            3  farray1:    2.0000000000000000     
            3  farray1:    3.0000000000000000     
@@ -110,67 +118,55 @@ disable this message.
            3  farray1:    8.0000000000000000     
  contents after allgather (should be 1.,2.,...):
            3  farray2:    7.0000000000000000     
-           3  farray2:    8.0000000000000000     
-  PASS  Verifying farray2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 174
-           2  farray1:    1.0000000000000000     
-           2  farray1:    2.0000000000000000     
-           2  farray1:    3.0000000000000000     
-           2  farray1:    4.0000000000000000     
-           2  farray1:    5.0000000000000000     
-           2  farray1:    6.0000000000000000     
-           2  farray1:    7.0000000000000000     
-           2  farray1:    8.0000000000000000     
  contents after allgather (should be 1.,2.,...):
            2  farray2:    5.0000000000000000     
-           2  farray2:    6.0000000000000000     
-  PASS  Verifying farray2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 174
-           1  farray1:    1.0000000000000000     
-           1  farray1:    2.0000000000000000     
-           1  farray1:    3.0000000000000000     
-           1  farray1:    4.0000000000000000     
            1  farray1:    5.0000000000000000     
            1  farray1:    6.0000000000000000     
            1  farray1:    7.0000000000000000     
            1  farray1:    8.0000000000000000     
  contents after allgather (should be 1.,2.,...):
            1  farray2:    3.0000000000000000     
+           0  farray1:    8.0000000000000000     
+ contents after allgather (should be 1.,2.,...):
+           0  farray2:    1.0000000000000000     
+           0  farray2:    2.0000000000000000     
+  PASS  Verifying farray2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 174
+           3  farray2:    8.0000000000000000     
+  PASS  Verifying farray2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 174
+  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 184
+  PASS  Verifying f4array1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 195
+  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 184
+  PASS  Verifying f4array1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 195
+           2  farray2:    6.0000000000000000     
+  PASS  Verifying farray2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 174
+  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 184
+  PASS  Verifying f4array1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 195
+ contents after allgather (should be 1.,2.,...  :
            1  farray2:    4.0000000000000000     
   PASS  Verifying farray2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 174
-  PASS  Verifying farray2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 174
-  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 184
-  PASS  Verifying f4array1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 195
   PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 184
   PASS  Verifying f4array1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 195
  contents after allgather (should be 1.,2.,...  :
-  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 184
-  PASS  Verifying f4array1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 195
- contents after allgather (should be 1.,2.,...  :
-  PASS  AllGather Test, ESMF_VMAllGatherUTest.F90, line 184
-  PASS  Verifying f4array1 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 195
+           1  f4array1:    1.00000000    
+           1  f4array1:    2.00000000    
+           1  f4array1:    3.00000000    
+           1  f4array1:    4.00000000    
+           1  f4array1:    5.00000000    
  contents after allgather (should be 1.,2.,...  :
            3  f4array1:    1.00000000    
            3  f4array1:    2.00000000    
            3  f4array1:    3.00000000    
            3  f4array1:    4.00000000    
            3  f4array1:    5.00000000    
- contents after allgather (should be 1.,2.,...  :
-           2  f4array1:    1.00000000    
-           2  f4array1:    2.00000000    
-           2  f4array1:    3.00000000    
-           2  f4array1:    4.00000000    
-           2  f4array1:    5.00000000    
-           2  f4array1:    6.00000000    
-           2  f4array1:    7.00000000    
-           2  f4array1:    8.00000000    
-           1  f4array1:    1.00000000    
-           1  f4array1:    2.00000000    
-           1  f4array1:    3.00000000    
-           1  f4array1:    4.00000000    
-           1  f4array1:    5.00000000    
-           1  f4array1:    6.00000000    
-           1  f4array1:    7.00000000    
-           1  f4array1:    8.00000000    
+           3  f4array1:    6.00000000    
+           3  f4array1:    7.00000000    
+           3  f4array1:    8.00000000    
  contents after allgather (should be 1.,2.,...):
+           3  f4array2:    7.00000000    
+           3  f4array2:    8.00000000    
+  PASS  Verifying f4array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 217
+  Ending Test, file ESMF_VMAllGatherUTest.F90, line 226
+ contents after allgather (should be 1.,2.,...  :
            0  f4array1:    1.00000000    
            0  f4array1:    2.00000000    
            0  f4array1:    3.00000000    
@@ -184,26 +180,30 @@ disable this message.
            0  f4array2:    2.00000000    
   PASS  Verifying f4array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 217
   Ending Test, file ESMF_VMAllGatherUTest.F90, line 226
-           1  f4array2:    3.00000000    
-           1  f4array2:    4.00000000    
-  PASS  Verifying f4array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 217
-  Ending Test, file ESMF_VMAllGatherUTest.F90, line 226
-           3  f4array1:    6.00000000    
-           3  f4array1:    7.00000000    
-           3  f4array1:    8.00000000    
- contents after allgather (should be 1.,2.,...):
-           3  f4array2:    7.00000000    
-           3  f4array2:    8.00000000    
-  PASS  Verifying f4array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 217
-  Ending Test, file ESMF_VMAllGatherUTest.F90, line 226
+           2  f4array1:    1.00000000    
+           2  f4array1:    2.00000000    
+           2  f4array1:    3.00000000    
+           2  f4array1:    4.00000000    
+           2  f4array1:    5.00000000    
+           2  f4array1:    6.00000000    
+           2  f4array1:    7.00000000    
+           2  f4array1:    8.00000000    
  contents after allgather (should be 1.,2.,...):
            2  f4array2:    5.00000000    
            2  f4array2:    6.00000000    
   PASS  Verifying f4array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 217
+           1  f4array1:    6.00000000    
+           1  f4array1:    7.00000000    
+           1  f4array1:    8.00000000    
+ contents after allgather (should be 1.,2.,...):
+           1  f4array2:    3.00000000    
+           1  f4array2:    4.00000000    
+  PASS  Verifying f4array2 data after allgather Test, ESMF_VMAllGatherUTest.F90, line 217
   Ending Test, file ESMF_VMAllGatherUTest.F90, line 226
-  PET           2  Test Elapsed Time    4.8160000000000007       msec.
-  PET           3  Test Elapsed Time    4.3230000000000075       msec.
-  PET           0  Test Elapsed Time    4.1709999999999940       msec.
-  PET           1  Test Elapsed Time    4.1600000000000108       msec.
-[r3i2n27:221733] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
-[r3i2n27:221733] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+  Ending Test, file ESMF_VMAllGatherUTest.F90, line 226
+  PET           2  Test Elapsed Time    4.6540000000000052       msec.
+  PET           1  Test Elapsed Time    4.5160000000000062       msec.
+  PET           0  Test Elapsed Time    4.4529999999999985       msec.
+  PET           3  Test Elapsed Time    4.0580000000000060       msec.
+[r2i1n32:366700] 5 more processes have sent help message help-opal-shmem-mmap.txt / mmap on nfs
+[r2i1n32:366700] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
