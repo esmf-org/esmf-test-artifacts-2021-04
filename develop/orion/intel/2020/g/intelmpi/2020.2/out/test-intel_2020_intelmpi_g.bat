@@ -36,7 +36,7 @@ cd ../src/addon/ESMPy
 
 export PATH=$PATH:$HOME/.local/bin
 python3 setup.py build 2>&1 | tee python_build.log
-ssh Orion-login-1.HPC.MsState.Edu /work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_g_develop/runpython.sh 2>&1 | tee python_build.log
+ssh Orion-login-4.HPC.MsState.Edu /work/noaa/da/mpotts/sandbox/intel_2020_intelmpi_g_develop/runpython.sh 2>&1 | tee python_build.log
 python3 setup.py test 2>&1 | tee python_test.log
 python3 setup.py test_examples 2>&1 | tee python_examples.log
 python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log
