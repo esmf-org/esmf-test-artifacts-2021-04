@@ -1,4 +1,4 @@
-build time -- 2021-04-27 20:51:54
+build time -- 2021-04-28 07:03:30
   Beginning Test, file ESMF_LocalArrayUTest.F90, line 58
   NUMBER_OF_PROCESSORS           4
   PASS  Testing LocalArray IsCreated for uncreated object, ESMF_LocalArrayUTest.F90, line 71
@@ -95,6 +95,7 @@ build time -- 2021-04-27 20:51:54
   PASS  Creating a LocalArray from TKR without counts, ESMF_LocalArrayUTest.F90, line 307
   PASS  Creating a LocalArray as a Copy of existing LocalArray, ESMF_LocalArrayUTest.F90, line 314
   PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 321
+LocalArrayPrint: Array at address 0x17a5980:
   Beginning Test, file ESMF_LocalArrayUTest.F90, line 58
   NUMBER_OF_PROCESSORS           4
   PASS  Testing LocalArray IsCreated for uncreated object, ESMF_LocalArrayUTest.F90, line 71
@@ -127,15 +128,9 @@ build time -- 2021-04-27 20:51:54
   PASS  Creating a LocalArray from TKR without counts, ESMF_LocalArrayUTest.F90, line 307
   PASS  Creating a LocalArray as a Copy of existing LocalArray, ESMF_LocalArrayUTest.F90, line 314
   PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 321
-LocalArrayPrint: Array at address 0x17a5810:
-            rank = 1, typekind = 3, base_addr = 0x177b3c0
 LocalArrayPrint: Array at address 0x17a57c0:
             rank = 1, typekind = 3, base_addr = 0x177a560
             dim[0] = 10  
-  Integer, *4, Dim 1, Data values:
-(-5) =  0
-(-4) =  0
-(-3) =  128
 LocalArrayPrint: Array at address 0x17a5750:
             rank = 1, typekind = 3, base_addr = 0x177b300
             dim[0] = 10  
@@ -146,8 +141,8 @@ LocalArrayPrint: Array at address 0x17a5750:
 (-2) =  0
 (-1) =  0
 ( 0) =  0
-( 1) =  0
-( 2) =  0
+LocalArrayPrint: Array at address 0x17a5810:
+            rank = 1, typekind = 3, base_addr = 0x177b3c0
             dim[0] = 10  
   Integer, *4, Dim 1, Data values:
 (-5) =  0
@@ -159,7 +154,7 @@ LocalArrayPrint: Array at address 0x17a5750:
 ( 1) =  0
 ( 2) =  0
 ( 3) =  538994023
-LocalArrayPrint: Array at address 0x17a5980:
+( 4) =  1869881389
             rank = 1, typekind = 3, base_addr = 0x177b400
             dim[0] = 10  
   Integer, *4, Dim 1, Data values:
@@ -173,6 +168,10 @@ LocalArrayPrint: Array at address 0x17a5980:
 ( 2) =  0
 ( 3) =  538994023
 ( 4) =  1869881389
+  Integer, *4, Dim 1, Data values:
+(-5) =  0
+(-4) =  0
+(-3) =  128
 (-2) =  0
 (-1) =  0
 ( 0) =  0
@@ -180,8 +179,9 @@ LocalArrayPrint: Array at address 0x17a5980:
 ( 2) =  0
 ( 3) =  538994023
 ( 4) =  8237
+( 1) =  0
+( 2) =  0
 ( 3) =  538994023
-( 4) =  1869881389
 ( 4) =  1869881389
   PASS  Printing LocalArray Copy after original LocalArray destroy, ESMF_LocalArrayUTest.F90, line 328
   PASS  Local Array Copy Destroy Test, ESMF_LocalArrayUTest.F90, line 335
@@ -200,34 +200,9 @@ LocalArrayPrint: Array at address 0x177af20:
   PASS  Validate an ArraySpec, ESMF_LocalArrayUTest.F90, line 368
   PASS  Creating a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 375
  array 1b create returned
-LocalArrayPrint: Array at address 0x177b0d0:
-            rank = 1, typekind = 3, base_addr = 0x177a8b0
-            rank = 1, typekind = 3, base_addr = 0x177a700
-            dim[0] = 516  
-  Integer, *4, Dim 1, Data values:
-( 5) =  55
-( 6) =  66
-( 7) =  77
-( 8) =  88
-( 9) =  99
-  PASS  Printing LocalArray Copy after original LocalArray destroy, ESMF_LocalArrayUTest.F90, line 328
-  PASS  Local Array Copy Destroy Test, ESMF_LocalArrayUTest.F90, line 335
-  PASS  Creating a LocalArray from unassociated Fortran pointer with docpy argument, ESMF_LocalArrayUTest.F90, line 343
-  PASS  Validate a non-set ArraySpec, ESMF_LocalArrayUTest.F90, line 352
-  PASS  Initializing an Array Spec of rank 3 Test, ESMF_LocalArrayUTest.F90, line 360
-  PASS  Validate an ArraySpec, ESMF_LocalArrayUTest.F90, line 368
-  PASS  Creating a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 375
- array 1b create returned
 LocalArrayPrint: Array at address 0x177afd0:
             rank = 1, typekind = 3, base_addr = 0x177a7b0
             dim[0] = 516  
-  Integer, *4, Dim 1, Data values:
-( 5) =  55
-( 6) =  66
-( 7) =  77
-( 8) =  88
-( 9) =  99
-(10) =  110
   PASS  Printing LocalArray Copy after original LocalArray destroy, ESMF_LocalArrayUTest.F90, line 328
   PASS  Local Array Copy Destroy Test, ESMF_LocalArrayUTest.F90, line 335
   PASS  Creating a LocalArray from unassociated Fortran pointer with docpy argument, ESMF_LocalArrayUTest.F90, line 343
@@ -242,6 +217,30 @@ LocalArrayPrint: Array at address 0x177b090:
   Integer, *4, Dim 1, Data values:
 ( 5) =  55
 ( 6) =  66
+  PASS  Printing LocalArray Copy after original LocalArray destroy, ESMF_LocalArrayUTest.F90, line 328
+  PASS  Local Array Copy Destroy Test, ESMF_LocalArrayUTest.F90, line 335
+  PASS  Creating a LocalArray from unassociated Fortran pointer with docpy argument, ESMF_LocalArrayUTest.F90, line 343
+  PASS  Validate a non-set ArraySpec, ESMF_LocalArrayUTest.F90, line 352
+  PASS  Initializing an Array Spec of rank 3 Test, ESMF_LocalArrayUTest.F90, line 360
+  PASS  Validate an ArraySpec, ESMF_LocalArrayUTest.F90, line 368
+  PASS  Creating a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 375
+ array 1b create returned
+LocalArrayPrint: Array at address 0x177b0d0:
+            rank = 1, typekind = 3, base_addr = 0x177a8b0
+            dim[0] = 516  
+  Integer, *4, Dim 1, Data values:
+( 5) =  55
+( 6) =  66
+( 7) =  77
+( 8) =  88
+( 9) =  99
+(10) =  110
+(11) =  121
+            rank = 1, typekind = 3, base_addr = 0x177a700
+            dim[0] = 516  
+  Integer, *4, Dim 1, Data values:
+( 5) =  55
+( 6) =  66
 ( 7) =  77
 ( 8) =  88
 ( 9) =  99
@@ -250,7 +249,9 @@ LocalArrayPrint: Array at address 0x177b090:
 (12) =  132
 (13) =  143
 (14) =  154
-            dim[0] = 516  
+  skipping to end ...
+(511) =  5621
+(512) =  5632
   Integer, *4, Dim 1, Data values:
 ( 5) =  55
 ( 6) =  66
@@ -267,6 +268,10 @@ LocalArrayPrint: Array at address 0x177b090:
 (512) =  5632
 (513) =  5643
 (514) =  5654
+(515) =  5665
+( 7) =  77
+( 8) =  88
+( 9) =  99
 (10) =  110
 (11) =  121
 (12) =  132
@@ -281,9 +286,6 @@ LocalArrayPrint: Array at address 0x177b090:
 (516) =  5676
 (517) =  5687
 (518) =  5698
-(519) =  5709
-(520) =  5720
-(11) =  121
 (12) =  132
 (13) =  143
 (14) =  154
@@ -298,9 +300,6 @@ LocalArrayPrint: Array at address 0x177b090:
 (518) =  5698
 (519) =  5709
 (520) =  5720
-  skipping to end ...
-(511) =  5621
-(512) =  5632
 (513) =  5643
 (514) =  5654
 (515) =  5665
@@ -309,10 +308,11 @@ LocalArrayPrint: Array at address 0x177b090:
 (518) =  5698
 (519) =  5709
 (520) =  5720
-(515) =  5665
 (516) =  5676
 (517) =  5687
 (518) =  5698
+(519) =  5709
+(520) =  5720
 (519) =  5709
 (520) =  5720
   PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
@@ -329,8 +329,24 @@ LocalArrayPrint: Array at address 0x177b090:
  array 1b destroy returned
   PASS  Creating Local Array Based on existing pointer Test, ESMF_LocalArrayUTest.F90, line 448
  array 1c create returned
+LocalArrayPrint: Array at address 0x17a6530:
+  PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
+ array 1b print returned
+  PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 391
+ array 1b get returned
+ real lb, ub =            5         520   lib return lb, ub =            5         520
+  PASS  Getting lower and upper index bounds, ESMF_LocalArrayUTest.F90, line 403
+ array 1b getbounds returned
+  PASS  Compare Local Array Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 418
+ array 1b get returned
+ first 10 intptr2 data =           55          66          77          88          99         110         121         132         143         154         165
+  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 427
+ array 1b destroy returned
+  PASS  Creating Local Array Based on existing pointer Test, ESMF_LocalArrayUTest.F90, line 448
+ array 1c create returned
 LocalArrayPrint: Array at address 0x177a230:
             rank = 1, typekind = 3, base_addr = 0x177a700
+            dim[0] = 835  
   PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
  array 1b print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 391
@@ -348,21 +364,12 @@ LocalArrayPrint: Array at address 0x177a230:
 LocalArrayPrint: Array at address 0x17a6470:
             rank = 1, typekind = 3, base_addr = 0x17a5750
             dim[0] = 835  
-  PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
- array 1b print returned
-  PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 391
- array 1b get returned
- real lb, ub =            5         520   lib return lb, ub =            5         520
-  PASS  Getting lower and upper index bounds, ESMF_LocalArrayUTest.F90, line 403
- array 1b getbounds returned
-  PASS  Compare Local Array Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 418
- array 1b get returned
- first 10 intptr2 data =           55          66          77          88          99         110         121         132         143         154         165
-  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 427
- array 1b destroy returned
-  PASS  Creating Local Array Based on existing pointer Test, ESMF_LocalArrayUTest.F90, line 448
- array 1c create returned
-LocalArrayPrint: Array at address 0x17a6530:
+  Integer, *4, Dim 1, Data values:
+( 1) =  1
+( 2) =  2
+( 3) =  3
+( 4) =  4
+( 5) =  5
             rank = 1, typekind = 3, base_addr = 0x17a5810
             dim[0] = 835  
   Integer, *4, Dim 1, Data values:
@@ -370,6 +377,12 @@ LocalArrayPrint: Array at address 0x17a6530:
 ( 2) =  2
 ( 3) =  3
 ( 4) =  4
+( 5) =  5
+( 6) =  6
+( 7) =  7
+( 8) =  8
+( 9) =  9
+(10) =  10
   PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
  array 1b print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 391
@@ -396,22 +409,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 6) =  6
 ( 7) =  7
 ( 8) =  8
-            dim[0] = 835  
-  Integer, *4, Dim 1, Data values:
-( 1) =  1
-( 2) =  2
-( 3) =  3
-( 4) =  4
-( 5) =  5
-( 6) =  6
-( 7) =  7
-( 8) =  8
-( 9) =  9
-(10) =  10
-  skipping to end ...
-(826) =  826
-(827) =  827
-(828) =  828
   Integer, *4, Dim 1, Data values:
 ( 1) =  1
 ( 2) =  2
@@ -429,7 +426,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (828) =  828
 (829) =  829
 (830) =  830
-( 5) =  5
 ( 6) =  6
 ( 7) =  7
 ( 8) =  8
@@ -445,6 +441,18 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (832) =  832
 (833) =  833
 (834) =  834
+(835) =  835
+  skipping to end ...
+(826) =  826
+(827) =  827
+(828) =  828
+(829) =  829
+(830) =  830
+(831) =  831
+(832) =  832
+(833) =  833
+(834) =  834
+(835) =  835
 ( 9) =  9
 (10) =  10
   skipping to end ...
@@ -458,18 +466,10 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (833) =  833
 (834) =  834
 (835) =  835
-(829) =  829
-(830) =  830
 (831) =  831
 (832) =  832
 (833) =  833
 (834) =  834
-(835) =  835
-(831) =  831
-(832) =  832
-(833) =  833
-(834) =  834
-(835) =  835
 (835) =  835
  array 1c print returned
   PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
@@ -490,8 +490,24 @@ LocalArrayPrint: Array at address 0x177a230:
  array 1c re-destroy returned
   PASS  Creating Local Array Based on allocated pointer Test, ESMF_LocalArrayUTest.F90, line 508
  array 1d create returned
+LocalArrayPrint: Array at address 0x177a2a0:
+            rank = 1, typekind = 3, base_addr = 0x17a74d0
+            dim[0] = 1022  
+ array 1c print returned
+  PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
+  PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 472
+  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 479
+ array 1c destroy returned
+  PASS  Local Array Destroy a destroyed Array Test, ESMF_LocalArrayUTest.F90, line 487
+ array 1c re-destroy returned
+  PASS  Creating Local Array Based on allocated pointer Test, ESMF_LocalArrayUTest.F90, line 508
+ array 1d create returned
 LocalArrayPrint: Array at address 0x177a360:
             rank = 1, typekind = 3, base_addr = 0x17a7590
+            dim[0] = 1022  
+  Integer, *4, Dim 1, Data values:
+( 1) =  1
+( 2) =  2
  array 1c print returned
   PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 472
@@ -508,6 +524,8 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 1) =  1
 ( 2) =  2
 ( 3) =  3
+( 4) =  4
+( 5) =  5
             rank = 1, typekind = 3, base_addr = 0x17a57c0
             dim[0] = 1022  
   Integer, *4, Dim 1, Data values:
@@ -520,93 +538,84 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 7) =  7
 ( 8) =  8
 ( 9) =  9
- array 1c print returned
-  PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
-  PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 472
-  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 479
- array 1c destroy returned
-  PASS  Local Array Destroy a destroyed Array Test, ESMF_LocalArrayUTest.F90, line 487
- array 1c re-destroy returned
-  PASS  Creating Local Array Based on allocated pointer Test, ESMF_LocalArrayUTest.F90, line 508
- array 1d create returned
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+  Integer, *4, Dim 1, Data values:
+( 1) =  1
+( 2) =  2
+( 3) =  3
+( 4) =  4
+( 5) =  5
+( 6) =  6
+( 7) =  7
+( 8) =  8
+( 9) =  9
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+(1015) =  1015
+(1016) =  1016
+(1017) =  1017
+( 3) =  3
+( 4) =  4
+( 5) =  5
+( 6) =  6
+( 7) =  7
+( 8) =  8
+( 9) =  9
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+(1015) =  1015
+(1016) =  1016
+(1017) =  1017
+(1018) =  1018
+(1019) =  1019
+(1020) =  1020
+( 6) =  6
+( 7) =  7
+( 8) =  8
+( 9) =  9
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+(1015) =  1015
+(1016) =  1016
+(1017) =  1017
+(1018) =  1018
+(1019) =  1019
+(1020) =  1020
+(1021) =  1021
+(1022) =  1022
+(1015) =  1015
+(1016) =  1016
+(1017) =  1017
+(1018) =  1018
+(1019) =  1019
+(1020) =  1020
+(1021) =  1021
+(1022) =  1022
+(1018) =  1018
+(1019) =  1019
+(1020) =  1020
+(1021) =  1021
+(1022) =  1022
+(1021) =  1021
+(1022) =  1022
+ array 1d print returned
+  PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
+  PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
+ array 1d destroy returned
+ partial print of realptr data =    303.10000610351562        304.10000610351562        305.10000610351562        306.10000610351562        353.10000610351562        354.10000610351562        355.10000610351562        356.10000610351562        403.10000610351562        404.10000610351562        405.10000610351562        406.10000610351562     
+ Creating array2
+  PASS  Creating Local Array with 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 562
+ array 2a create returned
 LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 1, typekind = 3, base_addr = 0x17a74d0
-            dim[0] = 1022  
-  Integer, *4, Dim 1, Data values:
-( 1) =  1
-( 2) =  2
-( 3) =  3
-( 4) =  4
-( 5) =  5
-( 6) =  6
-( 7) =  7
-( 8) =  8
-( 9) =  9
-(10) =  10
-            dim[0] = 1022  
-  Integer, *4, Dim 1, Data values:
-( 1) =  1
-( 2) =  2
-( 3) =  3
-( 4) =  4
-( 5) =  5
-( 6) =  6
-( 7) =  7
-( 8) =  8
-( 9) =  9
-(10) =  10
-  skipping to end ...
-(1013) =  1013
-(1014) =  1014
-(1015) =  1015
-(1016) =  1016
-( 4) =  4
-( 5) =  5
-( 6) =  6
-( 7) =  7
-( 8) =  8
-( 9) =  9
-(10) =  10
-  skipping to end ...
-(1013) =  1013
-(1014) =  1014
-(1015) =  1015
-(1016) =  1016
-(1017) =  1017
-(1018) =  1018
-(1019) =  1019
-(1020) =  1020
-(1021) =  1021
-(10) =  10
-  skipping to end ...
-(1013) =  1013
-(1014) =  1014
-(1015) =  1015
-(1016) =  1016
-(1017) =  1017
-(1018) =  1018
-(1019) =  1019
-(1020) =  1020
-(1021) =  1021
-(1022) =  1022
-  skipping to end ...
-(1013) =  1013
-(1014) =  1014
-(1015) =  1015
-(1016) =  1016
-(1017) =  1017
-(1018) =  1018
-(1019) =  1019
-(1020) =  1020
-(1021) =  1021
-(1022) =  1022
-(1017) =  1017
-(1018) =  1018
-(1019) =  1019
-(1020) =  1020
-(1021) =  1021
-(1022) =  1022
-(1022) =  1022
  array 1d print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
@@ -617,18 +626,12 @@ LocalArrayPrint: Array at address 0x177a2a0:
  array 2a create returned
 LocalArrayPrint: Array at address 0x177a230:
             rank = 2, typekind = 6, base_addr = 0x17a7880
+            rank = 2, typekind = 6, base_addr = 0x17a74d0
             dim[0] = 51  dim[1] = 31  
   Real, *8, Dim 2, Data values:
- array 1d print returned
-  PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
-  PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
- array 1d destroy returned
- partial print of realptr data =    303.10000610351562        304.10000610351562        305.10000610351562        306.10000610351562        353.10000610351562        354.10000610351562        355.10000610351562        356.10000610351562        403.10000610351562        404.10000610351562        405.10000610351562        406.10000610351562     
- Creating array2
-  PASS  Creating Local Array with 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 562
- array 2a create returned
-LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 2, typekind = 6, base_addr = 0x17a74d0
+( 3, 7) =  303.1
+( 4, 7) =  304.1
+( 5, 7) =  305.1
  array 1d print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
@@ -641,6 +644,10 @@ LocalArrayPrint: Array at address 0x177a360:
             rank = 2, typekind = 6, base_addr = 0x17a7590
             dim[0] = 51  dim[1] = 31  
   Real, *8, Dim 2, Data values:
+( 3, 7) =  303.1
+( 4, 7) =  304.1
+( 5, 7) =  305.1
+( 6, 7) =  306.1
  array 1d print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
@@ -658,19 +665,8 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 5, 7) =  305.1
 ( 6, 7) =  306.1
 ( 7, 7) =  307.1
-( 3, 7) =  303.1
-( 4, 7) =  304.1
-( 5, 7) =  305.1
-( 6, 7) =  306.1
-( 7, 7) =  307.1
 ( 8, 7) =  308.1
 ( 9, 7) =  309.1
-(10, 7) =  310.1
-(11, 7) =  311.1
-(12, 7) =  312.1
-  skipping to end ...
-(44,37) =  1844.1
-(45,37) =  1845.1
             dim[0] = 51  dim[1] = 31  
   Real, *8, Dim 2, Data values:
 ( 3, 7) =  303.1
@@ -684,9 +680,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (11, 7) =  311.1
 (12, 7) =  312.1
   skipping to end ...
-( 3, 7) =  303.1
-( 4, 7) =  304.1
-( 5, 7) =  305.1
 ( 6, 7) =  306.1
 ( 7, 7) =  307.1
 ( 8, 7) =  308.1
@@ -697,6 +690,10 @@ LocalArrayPrint: Array at address 0x177a3a0:
   skipping to end ...
 (44,37) =  1844.1
 (45,37) =  1845.1
+(46,37) =  1846.1
+(47,37) =  1847.1
+(48,37) =  1848.1
+( 7, 7) =  307.1
 ( 8, 7) =  308.1
 ( 9, 7) =  309.1
 (10, 7) =  310.1
@@ -708,14 +705,19 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (46,37) =  1846.1
 (47,37) =  1847.1
 (48,37) =  1848.1
+(49,37) =  1849.1
+(10, 7) =  310.1
+(11, 7) =  311.1
+(12, 7) =  312.1
+  skipping to end ...
+(44,37) =  1844.1
+(45,37) =  1845.1
 (46,37) =  1846.1
 (47,37) =  1847.1
 (48,37) =  1848.1
 (49,37) =  1849.1
 (50,37) =  1850.1
 (51,37) =  1851.1
-(52,37) =  1852.1
-(53,37) =  1853.1
 (44,37) =  1844.1
 (45,37) =  1845.1
 (46,37) =  1846.1
@@ -726,36 +728,17 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (51,37) =  1851.1
 (52,37) =  1852.1
 (53,37) =  1853.1
-(46,37) =  1846.1
-(47,37) =  1847.1
-(48,37) =  1848.1
 (49,37) =  1849.1
 (50,37) =  1850.1
 (51,37) =  1851.1
 (52,37) =  1852.1
 (53,37) =  1853.1
-(49,37) =  1849.1
 (50,37) =  1850.1
 (51,37) =  1851.1
 (52,37) =  1852.1
 (53,37) =  1853.1
- array 2a print returned
- realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
- array 2a get returned
- bounds:            3           7          53          37
- partial print of realptr2 data =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        314.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        364.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000        414.00000000000000     
-  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 597
- array 2a destroy returned
-  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 622
- array 2b create returned
- array 2b get returned
- partial print of realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        16.100000381469727        17.100000381469727        18.100000381469727        31.100000381469727        32.099998474121094        33.099998474121094     
-  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 645
-LocalArrayPrint: Array at address 0x177a230:
-            rank = 2, typekind = 6, base_addr = 0x177a700
-            dim[0] = 15  dim[1] = 13  
-  Real, *8, Dim 2, Data values:
-( 1, 1) =  1.1
+(52,37) =  1852.1
+(53,37) =  1853.1
  array 2a print returned
  realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
  array 2a get returned
@@ -769,9 +752,6 @@ LocalArrayPrint: Array at address 0x177a230:
  partial print of realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        16.100000381469727        17.100000381469727        18.100000381469727        31.100000381469727        32.099998474121094        33.099998474121094     
   PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 645
 LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 2, typekind = 6, base_addr = 0x177a7b0
-            dim[0] = 15  dim[1] = 13  
-  Real, *8, Dim 2, Data values:
  array 2a print returned
  realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
  array 2a get returned
@@ -788,10 +768,6 @@ LocalArrayPrint: Array at address 0x177a360:
             rank = 2, typekind = 6, base_addr = 0x177a870
             dim[0] = 15  dim[1] = 13  
   Real, *8, Dim 2, Data values:
-( 1, 1) =  1.1
-( 2, 1) =  2.1
-( 3, 1) =  3.1
-( 4, 1) =  4.1
  array 2a print returned
  realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
  array 2a get returned
@@ -811,12 +787,23 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 1, 1) =  1.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
-( 4, 1) =  4.1
-( 5, 1) =  5.1
-( 6, 1) =  6.1
-( 7, 1) =  7.1
-( 8, 1) =  8.1
-( 9, 1) =  9.1
+ array 2a print returned
+ realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
+ array 2a get returned
+ bounds:            3           7          53          37
+ partial print of realptr2 data =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        314.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        364.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000        414.00000000000000     
+  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 597
+ array 2a destroy returned
+  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 622
+ array 2b create returned
+ array 2b get returned
+ partial print of realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        16.100000381469727        17.100000381469727        18.100000381469727        31.100000381469727        32.099998474121094        33.099998474121094     
+  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 645
+LocalArrayPrint: Array at address 0x177a230:
+            rank = 2, typekind = 6, base_addr = 0x177a700
+            dim[0] = 15  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
+( 1, 1) =  1.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
 ( 4, 1) =  4.1
@@ -826,11 +813,9 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 8, 1) =  8.1
 ( 9, 1) =  9.1
 (10, 1) =  10.1
-  skipping to end ...
-( 6,13) =  186.1
-( 7,13) =  187.1
-( 8,13) =  188.1
-( 9,13) =  189.1
+            rank = 2, typekind = 6, base_addr = 0x177a7b0
+            dim[0] = 15  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
 ( 1, 1) =  1.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
@@ -845,6 +830,10 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 6,13) =  186.1
 ( 7,13) =  187.1
 ( 8,13) =  188.1
+( 1, 1) =  1.1
+( 2, 1) =  2.1
+( 3, 1) =  3.1
+( 4, 1) =  4.1
 ( 5, 1) =  5.1
 ( 6, 1) =  6.1
 ( 7, 1) =  7.1
@@ -858,7 +847,22 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 9,13) =  189.1
 (10,13) =  190.1
 (11,13) =  191.1
+( 4, 1) =  4.1
+( 5, 1) =  5.1
+( 6, 1) =  6.1
+( 7, 1) =  7.1
+( 8, 1) =  8.1
+( 9, 1) =  9.1
 (10, 1) =  10.1
+  skipping to end ...
+( 6,13) =  186.1
+( 7,13) =  187.1
+( 8,13) =  188.1
+( 9,13) =  189.1
+(10,13) =  190.1
+(11,13) =  191.1
+(12,13) =  192.1
+(13,13) =  193.1
   skipping to end ...
 ( 6,13) =  186.1
 ( 7,13) =  187.1
@@ -870,12 +874,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (13,13) =  193.1
 (14,13) =  194.1
 (15,13) =  195.1
-(10,13) =  190.1
-(11,13) =  191.1
-(12,13) =  192.1
-(13,13) =  193.1
-(14,13) =  194.1
-(15,13) =  195.1
 ( 9,13) =  189.1
 (10,13) =  190.1
 (11,13) =  191.1
@@ -887,18 +885,8 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (13,13) =  193.1
 (14,13) =  194.1
 (15,13) =  195.1
- array 2b print returned
- array 2b destroy returned
-  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
- array 2c create returned
-LocalArrayPrint: Array at address 0x177a3a0:
- array 2b print returned
- array 2b destroy returned
-  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
- array 2c create returned
-LocalArrayPrint: Array at address 0x177a230:
-            rank = 2, typekind = 6, base_addr = 0x180d7a0
-            dim[0] = 4015  dim[1] = 13  
+(14,13) =  194.1
+(15,13) =  195.1
  array 2b print returned
  array 2b destroy returned
   PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
@@ -908,35 +896,6 @@ LocalArrayPrint: Array at address 0x177a2a0:
             dim[0] = 4015  dim[1] = 13  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  1.1
-            rank = 2, typekind = 6, base_addr = 0x180d960
-            dim[0] = 4015  dim[1] = 13  
-  Real, *8, Dim 2, Data values:
-( 1, 1) =  1.1
-( 2, 1) =  2.1
-( 3, 1) =  3.1
-( 4, 1) =  4.1
-( 5, 1) =  5.1
-( 6, 1) =  6.1
-  Real, *8, Dim 2, Data values:
-( 1, 1) =  1.1
-( 2, 1) =  2.1
-( 3, 1) =  3.1
-( 4, 1) =  4.1
-( 5, 1) =  5.1
-( 6, 1) =  6.1
-( 7, 1) =  7.1
-( 8, 1) =  8.1
-( 9, 1) =  9.1
-( 2, 1) =  2.1
-( 3, 1) =  3.1
-( 4, 1) =  4.1
-( 5, 1) =  5.1
-( 6, 1) =  6.1
-( 7, 1) =  7.1
-( 8, 1) =  8.1
-( 9, 1) =  9.1
-(10, 1) =  10.1
-  skipping to end ...
  array 2b print returned
  array 2b destroy returned
   PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
@@ -946,12 +905,42 @@ LocalArrayPrint: Array at address 0x177a360:
             dim[0] = 4015  dim[1] = 13  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  1.1
+ array 2b print returned
+ array 2b destroy returned
+  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
+ array 2c create returned
+LocalArrayPrint: Array at address 0x177a3a0:
+            rank = 2, typekind = 6, base_addr = 0x180d960
+            dim[0] = 4015  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
+ array 2b print returned
+ array 2b destroy returned
+  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
+ array 2c create returned
+LocalArrayPrint: Array at address 0x177a230:
+            rank = 2, typekind = 6, base_addr = 0x180d7a0
+            dim[0] = 4015  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
+( 1, 1) =  1.1
+( 2, 1) =  2.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
 ( 4, 1) =  4.1
 ( 5, 1) =  5.1
 ( 6, 1) =  6.1
 ( 7, 1) =  7.1
+( 8, 1) =  8.1
+( 9, 1) =  9.1
+(10, 1) =  10.1
+  skipping to end ...
+(4006,13) =  52186.1
+(4007,13) =  52187.1
+(4008,13) =  52188.1
+( 2, 1) =  2.1
+( 3, 1) =  3.1
+( 4, 1) =  4.1
+( 5, 1) =  5.1
+( 6, 1) =  6.1
 ( 7, 1) =  7.1
 ( 8, 1) =  8.1
 ( 9, 1) =  9.1
@@ -961,29 +950,25 @@ LocalArrayPrint: Array at address 0x177a360:
 (4007,13) =  52187.1
 (4008,13) =  52188.1
 (4009,13) =  52189.1
-(4010,13) =  52190.1
-(4011,13) =  52191.1
+( 1, 1) =  1.1
+( 2, 1) =  2.1
+( 3, 1) =  3.1
+( 4, 1) =  4.1
+( 5, 1) =  5.1
+( 6, 1) =  6.1
+( 7, 1) =  7.1
+( 8, 1) =  8.1
+( 9, 1) =  9.1
 (10, 1) =  10.1
   skipping to end ...
 (4006,13) =  52186.1
 (4007,13) =  52187.1
 (4008,13) =  52188.1
-(4009,13) =  52189.1
-(4010,13) =  52190.1
-(4011,13) =  52191.1
-(4012,13) =  52192.1
-(4013,13) =  52193.1
-(4014,13) =  52194.1
-(4006,13) =  52186.1
-(4007,13) =  52187.1
-(4008,13) =  52188.1
-(4009,13) =  52189.1
-(4010,13) =  52190.1
-(4011,13) =  52191.1
-(4012,13) =  52192.1
-(4013,13) =  52193.1
-(4014,13) =  52194.1
-(4015,13) =  52195.1
+( 3, 1) =  3.1
+( 4, 1) =  4.1
+( 5, 1) =  5.1
+( 6, 1) =  6.1
+( 7, 1) =  7.1
 ( 8, 1) =  8.1
 ( 9, 1) =  9.1
 (10, 1) =  10.1
@@ -992,40 +977,32 @@ LocalArrayPrint: Array at address 0x177a360:
 (4007,13) =  52187.1
 (4008,13) =  52188.1
 (4009,13) =  52189.1
+(4009,13) =  52189.1
 (4010,13) =  52190.1
 (4011,13) =  52191.1
 (4012,13) =  52192.1
 (4013,13) =  52193.1
+(4014,13) =  52194.1
+(4015,13) =  52195.1
+(4010,13) =  52190.1
+(4011,13) =  52191.1
 (4012,13) =  52192.1
 (4013,13) =  52193.1
 (4014,13) =  52194.1
 (4015,13) =  52195.1
-(4015,13) =  52195.1
+(4009,13) =  52189.1
+(4010,13) =  52190.1
+(4011,13) =  52191.1
+(4012,13) =  52192.1
+(4013,13) =  52193.1
 (4014,13) =  52194.1
 (4015,13) =  52195.1
- array 2c print returned
- realptr data changed after datacopyflag set, now =    2.0000000000000000        4.0000000000000000        6.0000000000000000        4017.0000000000000        4019.0000000000000        4021.0000000000000        8032.0000000000000        8034.0000000000000        8036.0000000000000     
- array 2c get returned
- realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        4016.1000976562500        4017.1000976562500        4018.1000976562500        8031.1000976562500        8032.1000976562500        8033.1000976562500     
-  PASS  Getting Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 696
- array 2c get returned
- realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        4016.1000976562500        4017.1000976562500        4018.1000976562500        8031.1000976562500        8032.1000976562500        8033.1000976562500     
-  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 714
- array 2c destroy returned
-  PASS  Creating a Local Array 3D DATACOPY_VALUE Real Data Test, ESMF_LocalArrayUTest.F90, line 742
- array 4a create returned
-  PASS  Getting Local Array 3D Real Data with wrong dimension array Test, ESMF_LocalArrayUTest.F90, line 751
-  PASS  Getting Local Array 3D Real Data without allocating array size Test, ESMF_LocalArrayUTest.F90, line 761
- array 4a get returned
-  PASS  Compare Local Array 3D Real Data without allocating array size Test, ESMF_LocalArrayUTest.F90, line 782
-  PASS  Getting Local Array 3D Real Data Test, ESMF_LocalArrayUTest.F90, line 791
- array 4a get returned
-  PASS  Compare Local Array 3D Real Data Test, ESMF_LocalArrayUTest.F90, line 812
- array 4a print returned
- array 4a destroy returned
-  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data Test, ESMF_LocalArrayUTest.F90, line 837
- array 4b create returned
-LocalArrayPrint: Array at address 0x177a230:
+(4010,13) =  52190.1
+(4011,13) =  52191.1
+(4012,13) =  52192.1
+(4013,13) =  52193.1
+(4014,13) =  52194.1
+(4015,13) =  52195.1
  array 2c print returned
  realptr data changed after datacopyflag set, now =    2.0000000000000000        4.0000000000000000        6.0000000000000000        4017.0000000000000        4019.0000000000000        4021.0000000000000        8032.0000000000000        8034.0000000000000        8036.0000000000000     
  array 2c get returned
@@ -1049,7 +1026,6 @@ LocalArrayPrint: Array at address 0x177a230:
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data Test, ESMF_LocalArrayUTest.F90, line 837
  array 4b create returned
 LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 3, typekind = 6, base_addr = 0x17a67b0
  array 2c print returned
  realptr data changed after datacopyflag set, now =    2.0000000000000000        4.0000000000000000        6.0000000000000000        4017.0000000000000        4019.0000000000000        4021.0000000000000        8032.0000000000000        8034.0000000000000        8036.0000000000000     
  array 2c get returned
@@ -1098,23 +1074,9 @@ LocalArrayPrint: Array at address 0x177a360:
  array 4a destroy returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data Test, ESMF_LocalArrayUTest.F90, line 837
  array 4b create returned
-LocalArrayPrint: Array at address 0x177a3a0:
-            rank = 3, typekind = 6, base_addr = 0x17a7a40
-            dim[0] = 33  dim[1] = 8  dim[2] = 160  
-  Real, *8, Dim 3, Data values:
-( 1, 1, 1) =  2.31779e-310
-( 2, 1, 1) =  1.21618e-316
-( 3, 1, 1) =  0
+LocalArrayPrint: Array at address 0x177a230:
             rank = 3, typekind = 6, base_addr = 0x17a7880
-            dim[0] = 33  dim[1] = 8  dim[2] = 160  
-  Real, *8, Dim 3, Data values:
-( 1, 1, 1) =  2.31779e-310
-( 2, 1, 1) =  1.21631e-316
-( 3, 1, 1) =  0
-( 4, 1, 1) =  0
-( 5, 1, 1) =  5.1
-( 6, 1, 1) =  6.1
-( 7, 1, 1) =  7.1
+            rank = 3, typekind = 6, base_addr = 0x17a67b0
             dim[0] = 33  dim[1] = 8  dim[2] = 160  
   Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  2.31779e-310
@@ -1123,11 +1085,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 4, 1, 1) =  0
 ( 5, 1, 1) =  5.1
 ( 6, 1, 1) =  6.1
-( 7, 1, 1) =  7.1
-( 8, 1, 1) =  8.1
-( 9, 1, 1) =  9.1
-(10, 1, 1) =  10.1
-  skipping to end ...
 ( 1, 1, 1) =  2.31779e-310
 ( 2, 1, 1) =  1.21618e-316
 ( 3, 1, 1) =  0
@@ -1137,21 +1094,74 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 7, 1, 1) =  7.1
 ( 8, 1, 1) =  8.1
 ( 9, 1, 1) =  9.1
-(10, 1, 1) =  10.1
-  skipping to end ...
-(24, 8,160) =  43472
+ array 2c print returned
+ realptr data changed after datacopyflag set, now =    2.0000000000000000        4.0000000000000000        6.0000000000000000        4017.0000000000000        4019.0000000000000        4021.0000000000000        8032.0000000000000        8034.0000000000000        8036.0000000000000     
+ array 2c get returned
+ realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        4016.1000976562500        4017.1000976562500        4018.1000976562500        8031.1000976562500        8032.1000976562500        8033.1000976562500     
+  PASS  Getting Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 696
+ array 2c get returned
+ realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        4016.1000976562500        4017.1000976562500        4018.1000976562500        8031.1000976562500        8032.1000976562500        8033.1000976562500     
+  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 714
+ array 2c destroy returned
+  PASS  Creating a Local Array 3D DATACOPY_VALUE Real Data Test, ESMF_LocalArrayUTest.F90, line 742
+ array 4a create returned
+  PASS  Getting Local Array 3D Real Data with wrong dimension array Test, ESMF_LocalArrayUTest.F90, line 751
+  PASS  Getting Local Array 3D Real Data without allocating array size Test, ESMF_LocalArrayUTest.F90, line 761
+ array 4a get returned
+  PASS  Compare Local Array 3D Real Data without allocating array size Test, ESMF_LocalArrayUTest.F90, line 782
+  PASS  Getting Local Array 3D Real Data Test, ESMF_LocalArrayUTest.F90, line 791
+ array 4a get returned
+  PASS  Compare Local Array 3D Real Data Test, ESMF_LocalArrayUTest.F90, line 812
+ array 4a print returned
+ array 4a destroy returned
+  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data Test, ESMF_LocalArrayUTest.F90, line 837
+ array 4b create returned
+LocalArrayPrint: Array at address 0x177a3a0:
+            rank = 3, typekind = 6, base_addr = 0x17a7a40
+            dim[0] = 33  dim[1] = 8  dim[2] = 160  
+  Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  2.31779e-310
+( 2, 1, 1) =  1.21618e-316
+( 3, 1, 1) =  0
+( 4, 1, 1) =  0
+( 5, 1, 1) =  5.1
+( 6, 1, 1) =  6.1
+( 7, 1, 1) =  7.1
+            dim[0] = 33  dim[1] = 8  dim[2] = 160  
+  Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  2.31779e-310
+( 2, 1, 1) =  1.21631e-316
+( 3, 1, 1) =  0
 ( 4, 1, 1) =  0
 ( 5, 1, 1) =  5.1
 ( 6, 1, 1) =  6.1
 ( 7, 1, 1) =  7.1
 ( 8, 1, 1) =  8.1
+( 7, 1, 1) =  7.1
+( 8, 1, 1) =  8.1
 ( 9, 1, 1) =  9.1
 (10, 1, 1) =  10.1
   skipping to end ...
-(24, 8,160) =  44312
-(25, 8,160) =  44314
-(26, 8,160) =  44316
-(27, 8,160) =  44318
+(24, 8,160) =  43472
+(25, 8,160) =  43474
+(26, 8,160) =  43476
+(27, 8,160) =  43478
+(28, 8,160) =  43480
+(29, 8,160) =  43482
+(30, 8,160) =  43484
+(31, 8,160) =  43486
+(10, 1, 1) =  10.1
+  skipping to end ...
+(24, 8,160) =  43472
+(25, 8,160) =  43474
+(26, 8,160) =  43476
+(27, 8,160) =  43478
+(28, 8,160) =  43480
+(29, 8,160) =  43482
+(30, 8,160) =  43484
+(31, 8,160) =  43486
+(32, 8,160) =  43488
+(33, 8,160) =  43490
 ( 8, 1, 1) =  8.1
 ( 9, 1, 1) =  9.1
 (10, 1, 1) =  10.1
@@ -1163,41 +1173,24 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (28, 8,160) =  44320
 (29, 8,160) =  44322
 (30, 8,160) =  44324
-(24, 8,160) =  43472
-(25, 8,160) =  43474
-(26, 8,160) =  43476
-(27, 8,160) =  43478
-(28, 8,160) =  43480
-(29, 8,160) =  43482
-(30, 8,160) =  43484
-(31, 8,160) =  43486
-(32, 8,160) =  43488
-(33, 8,160) =  43490
-(25, 8,160) =  43474
-(26, 8,160) =  43476
-(27, 8,160) =  43478
-(28, 8,160) =  43480
-(29, 8,160) =  43482
-(30, 8,160) =  43484
-(31, 8,160) =  43486
-(32, 8,160) =  43488
-(33, 8,160) =  43490
+(31, 8,160) =  44326
+(32, 8,160) =  44328
+( 9, 1, 1) =  9.1
+(10, 1, 1) =  10.1
+  skipping to end ...
+(24, 8,160) =  44312
+(25, 8,160) =  44314
+(26, 8,160) =  44316
+(27, 8,160) =  44318
 (28, 8,160) =  44320
 (29, 8,160) =  44322
 (30, 8,160) =  44324
 (31, 8,160) =  44326
 (32, 8,160) =  44328
 (33, 8,160) =  44330
-(31, 8,160) =  44326
-(32, 8,160) =  44328
+(32, 8,160) =  43488
+(33, 8,160) =  43490
 (33, 8,160) =  44330
- array 4b print returned
- array 4b destroy returned
-  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
- array 4c failed create returned
-  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 888
- array 4d create returned
-LocalArrayPrint: Array at address 0x177a230:
  array 4b print returned
  array 4b destroy returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
@@ -1205,7 +1198,6 @@ LocalArrayPrint: Array at address 0x177a230:
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 888
  array 4d create returned
 LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 3, typekind = 6, base_addr = 0x17a67b0
  array 4b print returned
  array 4b destroy returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
@@ -1214,8 +1206,18 @@ LocalArrayPrint: Array at address 0x177a2a0:
  array 4d create returned
 LocalArrayPrint: Array at address 0x177a360:
             rank = 3, typekind = 6, base_addr = 0x17a6870
+            rank = 3, typekind = 6, base_addr = 0x17a67b0
             dim[0] = 10  dim[1] = 3  dim[2] = 40  
   Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  1.21617e-316
+( 2, 1, 1) =  0
+            dim[0] = 10  dim[1] = 3  dim[2] = 40  
+  Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  1.21618e-316
+( 2, 1, 1) =  0
+( 3, 1, 1) =  0
+( 4, 1, 1) =  2.02567e-322
+( 5, 1, 1) =  0
  array 4b print returned
  array 4b destroy returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
@@ -1228,19 +1230,22 @@ LocalArrayPrint: Array at address 0x177a3a0:
   Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  2.31779e-310
 ( 2, 1, 1) =  1.21618e-316
+( 3, 1, 1) =  0
+( 4, 1, 1) =  0
+( 5, 1, 1) =  5.1
+ array 4b print returned
+ array 4b destroy returned
+  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
+ array 4c failed create returned
+  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 888
+ array 4d create returned
+LocalArrayPrint: Array at address 0x177a230:
             rank = 3, typekind = 6, base_addr = 0x17a7880
             dim[0] = 10  dim[1] = 3  dim[2] = 40  
   Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  2.31779e-310
 ( 2, 1, 1) =  1.21631e-316
 ( 3, 1, 1) =  0
-( 4, 1, 1) =  0
-( 5, 1, 1) =  5.1
-( 6, 1, 1) =  6.1
-            dim[0] = 10  dim[1] = 3  dim[2] = 40  
-  Real, *8, Dim 3, Data values:
-( 1, 1, 1) =  1.21617e-316
-( 2, 1, 1) =  0
 ( 3, 1, 1) =  0
 ( 4, 1, 1) =  2.02567e-322
 ( 5, 1, 1) =  0
@@ -1248,18 +1253,33 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 7, 1, 1) =  1.22525e-316
 ( 8, 1, 1) =  1.22525e-316
 ( 9, 1, 1) =  1.22524e-316
-( 1, 1, 1) =  1.21618e-316
-( 2, 1, 1) =  0
-( 3, 1, 1) =  0
-( 4, 1, 1) =  2.02567e-322
-( 5, 1, 1) =  0
+(10, 1, 1) =  0
+  skipping to end ...
+( 1, 3,40) =  1191.1
+( 2, 3,40) =  1192.1
 ( 6, 1, 1) =  6.1
 ( 7, 1, 1) =  1.22526e-316
 ( 8, 1, 1) =  1.22526e-316
 ( 9, 1, 1) =  1.22525e-316
 (10, 1, 1) =  0
   skipping to end ...
-( 3, 1, 1) =  0
+( 1, 3,40) =  1191.1
+( 2, 3,40) =  1192.1
+( 3, 3,40) =  1193.1
+( 4, 3,40) =  1194.1
+( 5, 3,40) =  1195.1
+( 6, 1, 1) =  6.1
+( 7, 1, 1) =  7.1
+( 8, 1, 1) =  8.1
+( 9, 1, 1) =  9.1
+(10, 1, 1) =  10.1
+  skipping to end ...
+( 1, 3,40) =  1191.1
+( 2, 3,40) =  1192.1
+( 3, 3,40) =  1193.1
+( 4, 3,40) =  1194.1
+( 5, 3,40) =  1195.1
+( 6, 3,40) =  1196.1
 ( 4, 1, 1) =  0
 ( 5, 1, 1) =  5.1
 ( 6, 1, 1) =  6.1
@@ -1271,22 +1291,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 1, 3,40) =  1191.1
 ( 2, 3,40) =  1192.1
 ( 3, 3,40) =  1193.1
-( 7, 1, 1) =  7.1
-( 8, 1, 1) =  8.1
-( 9, 1, 1) =  9.1
-(10, 1, 1) =  10.1
-  skipping to end ...
-( 1, 3,40) =  1191.1
-( 2, 3,40) =  1192.1
-( 3, 3,40) =  1193.1
 ( 4, 3,40) =  1194.1
-( 5, 3,40) =  1195.1
-( 6, 3,40) =  1196.1
-( 7, 3,40) =  1197.1
-(10, 1, 1) =  0
-  skipping to end ...
-( 1, 3,40) =  1191.1
-( 2, 3,40) =  1192.1
 ( 3, 3,40) =  1193.1
 ( 4, 3,40) =  1194.1
 ( 5, 3,40) =  1195.1
@@ -1295,38 +1300,26 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 8, 3,40) =  1198.1
 ( 9, 3,40) =  1199.1
 (10, 3,40) =  1200.1
-( 1, 3,40) =  1191.1
-( 2, 3,40) =  1192.1
-( 3, 3,40) =  1193.1
-( 4, 3,40) =  1194.1
+( 6, 3,40) =  1196.1
+( 7, 3,40) =  1197.1
+( 8, 3,40) =  1198.1
+( 9, 3,40) =  1199.1
+(10, 3,40) =  1200.1
+( 7, 3,40) =  1197.1
+( 8, 3,40) =  1198.1
+( 9, 3,40) =  1199.1
+(10, 3,40) =  1200.1
 ( 5, 3,40) =  1195.1
 ( 6, 3,40) =  1196.1
 ( 7, 3,40) =  1197.1
 ( 8, 3,40) =  1198.1
 ( 9, 3,40) =  1199.1
 (10, 3,40) =  1200.1
-( 4, 3,40) =  1194.1
-( 5, 3,40) =  1195.1
-( 6, 3,40) =  1196.1
-( 7, 3,40) =  1197.1
-( 8, 3,40) =  1198.1
-( 9, 3,40) =  1199.1
-(10, 3,40) =  1200.1
-( 8, 3,40) =  1198.1
-( 9, 3,40) =  1199.1
-(10, 3,40) =  1200.1
- array 4d print returned
-  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 911
- array 4e create returned
-LocalArrayPrint: Array at address 0x177a230:
-            rank = 3, typekind = 6, base_addr = 0x17a7880
  array 4d print returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 911
  array 4e create returned
 LocalArrayPrint: Array at address 0x177a2a0:
             rank = 3, typekind = 6, base_addr = 0x17a67b0
-            dim[0] = 11  dim[1] = 3  dim[2] = 40  
-  Real, *8, Dim 3, Data values:
  array 4d print returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 911
  array 4e create returned
@@ -1345,18 +1338,16 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 1, 1, 1) =  2.31779e-310
 ( 2, 1, 1) =  1.21618e-316
 ( 3, 1, 1) =  0
-( 4, 1, 1) =  0
-( 5, 1, 1) =  5.1
+ array 4d print returned
+  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 911
+ array 4e create returned
+LocalArrayPrint: Array at address 0x177a230:
+            rank = 3, typekind = 6, base_addr = 0x17a7880
             dim[0] = 11  dim[1] = 3  dim[2] = 40  
   Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  2.31779e-310
-( 2, 1, 1) =  1.21631e-316
-( 3, 1, 1) =  0
-( 4, 1, 1) =  0
-( 5, 1, 1) =  5.1
-( 6, 1, 1) =  6.1
-( 7, 1, 1) =  7.1
-( 8, 1, 1) =  8.1
+            dim[0] = 11  dim[1] = 3  dim[2] = 40  
+  Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  1.21617e-316
 ( 2, 1, 1) =  0
 ( 3, 1, 1) =  0
@@ -1368,6 +1359,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 9, 1, 1) =  1.22524e-316
 (10, 1, 1) =  0
   skipping to end ...
+( 2, 3,40) =  1311.1
 ( 2, 1, 1) =  0
 ( 3, 1, 1) =  0
 ( 4, 1, 1) =  2.02567e-322
@@ -1380,6 +1372,10 @@ LocalArrayPrint: Array at address 0x177a3a0:
   skipping to end ...
 ( 2, 3,40) =  1311.1
 ( 3, 3,40) =  1312.1
+( 4, 3,40) =  1313.1
+( 5, 3,40) =  1314.1
+( 4, 1, 1) =  0
+( 5, 1, 1) =  5.1
 ( 6, 1, 1) =  6.1
 ( 7, 1, 1) =  7.1
 ( 8, 1, 1) =  8.1
@@ -1391,20 +1387,18 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 4, 3,40) =  1313.1
 ( 5, 3,40) =  1314.1
 ( 6, 3,40) =  1315.1
-( 7, 3,40) =  1316.1
+( 2, 1, 1) =  1.21631e-316
+( 3, 1, 1) =  0
+( 4, 1, 1) =  0
+( 5, 1, 1) =  5.1
+( 6, 1, 1) =  6.1
+( 7, 1, 1) =  7.1
+( 8, 1, 1) =  8.1
 ( 9, 1, 1) =  9.1
 (10, 1, 1) =  10.1
   skipping to end ...
 ( 2, 3,40) =  1311.1
 ( 3, 3,40) =  1312.1
-( 4, 3,40) =  1313.1
-( 5, 3,40) =  1314.1
-( 6, 3,40) =  1315.1
-( 7, 3,40) =  1316.1
-( 8, 3,40) =  1317.1
-( 9, 3,40) =  1318.1
-(10, 3,40) =  1319.1
-( 2, 3,40) =  1311.1
 ( 3, 3,40) =  1312.1
 ( 4, 3,40) =  1313.1
 ( 5, 3,40) =  1314.1
@@ -1414,6 +1408,17 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 9, 3,40) =  1318.1
 (10, 3,40) =  1319.1
 (11, 3,40) =  1320.1
+( 6, 3,40) =  1315.1
+( 7, 3,40) =  1316.1
+( 8, 3,40) =  1317.1
+( 9, 3,40) =  1318.1
+(10, 3,40) =  1319.1
+(11, 3,40) =  1320.1
+( 7, 3,40) =  1316.1
+( 8, 3,40) =  1317.1
+( 9, 3,40) =  1318.1
+(10, 3,40) =  1319.1
+(11, 3,40) =  1320.1
 ( 4, 3,40) =  1313.1
 ( 5, 3,40) =  1314.1
 ( 6, 3,40) =  1315.1
@@ -1422,11 +1427,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 9, 3,40) =  1318.1
 (10, 3,40) =  1319.1
 (11, 3,40) =  1320.1
-( 8, 3,40) =  1317.1
-( 9, 3,40) =  1318.1
-(10, 3,40) =  1319.1
-(11, 3,40) =  1320.1
-(11, 3,40) =  1320.1
  array 4e print returned
  array 4e destroy returned
   PASS  Initializing an Array Spec of rank 2 Test, ESMF_LocalArrayUTest.F90, line 932
@@ -1443,7 +1443,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
-  PET           3  Test Elapsed Time    3.3030000000000004       msec.
+  PET           2  Test Elapsed Time    3.3600000000000003       msec.
  array 4e print returned
  array 4e destroy returned
   PASS  Initializing an Array Spec of rank 2 Test, ESMF_LocalArrayUTest.F90, line 932
@@ -1460,7 +1460,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
-  PET           1  Test Elapsed Time    3.3170000000000006       msec.
+  PET           0  Test Elapsed Time    3.3539999999999992       msec.
  array 4e print returned
  array 4e destroy returned
   PASS  Initializing an Array Spec of rank 2 Test, ESMF_LocalArrayUTest.F90, line 932
@@ -1477,7 +1477,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
-  PET           2  Test Elapsed Time    3.3060000000000000       msec.
+  PET           1  Test Elapsed Time    3.3569999999999998       msec.
  array 4e print returned
  array 4e destroy returned
   PASS  Initializing an Array Spec of rank 2 Test, ESMF_LocalArrayUTest.F90, line 932
@@ -1494,7 +1494,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
-  PET           0  Test Elapsed Time    3.3079999999999994       msec.
+  PET           3  Test Elapsed Time    3.3569999999999989       msec.
   Beginning Test, file ESMF_LocalArrayUTest.F90, line 58
   NUMBER_OF_PROCESSORS           4
   PASS  Testing LocalArray IsCreated for uncreated object, ESMF_LocalArrayUTest.F90, line 71
@@ -1591,6 +1591,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
   PASS  Creating a LocalArray from TKR without counts, ESMF_LocalArrayUTest.F90, line 307
   PASS  Creating a LocalArray as a Copy of existing LocalArray, ESMF_LocalArrayUTest.F90, line 314
   PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 321
+LocalArrayPrint: Array at address 0x17a5980:
   Beginning Test, file ESMF_LocalArrayUTest.F90, line 58
   NUMBER_OF_PROCESSORS           4
   PASS  Testing LocalArray IsCreated for uncreated object, ESMF_LocalArrayUTest.F90, line 71
@@ -1623,15 +1624,9 @@ LocalArrayPrint: Array at address 0x177a3a0:
   PASS  Creating a LocalArray from TKR without counts, ESMF_LocalArrayUTest.F90, line 307
   PASS  Creating a LocalArray as a Copy of existing LocalArray, ESMF_LocalArrayUTest.F90, line 314
   PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 321
-LocalArrayPrint: Array at address 0x17a5810:
-            rank = 1, typekind = 3, base_addr = 0x177b3c0
 LocalArrayPrint: Array at address 0x17a57c0:
             rank = 1, typekind = 3, base_addr = 0x177a560
             dim[0] = 10  
-  Integer, *4, Dim 1, Data values:
-(-5) =  0
-(-4) =  0
-(-3) =  128
 LocalArrayPrint: Array at address 0x17a5750:
             rank = 1, typekind = 3, base_addr = 0x177b300
             dim[0] = 10  
@@ -1642,8 +1637,8 @@ LocalArrayPrint: Array at address 0x17a5750:
 (-2) =  0
 (-1) =  0
 ( 0) =  0
-( 1) =  0
-( 2) =  0
+LocalArrayPrint: Array at address 0x17a5810:
+            rank = 1, typekind = 3, base_addr = 0x177b3c0
             dim[0] = 10  
   Integer, *4, Dim 1, Data values:
 (-5) =  0
@@ -1655,7 +1650,7 @@ LocalArrayPrint: Array at address 0x17a5750:
 ( 1) =  0
 ( 2) =  0
 ( 3) =  538994023
-LocalArrayPrint: Array at address 0x17a5980:
+( 4) =  1869881389
             rank = 1, typekind = 3, base_addr = 0x177b400
             dim[0] = 10  
   Integer, *4, Dim 1, Data values:
@@ -1669,6 +1664,10 @@ LocalArrayPrint: Array at address 0x17a5980:
 ( 2) =  0
 ( 3) =  538994023
 ( 4) =  1869881389
+  Integer, *4, Dim 1, Data values:
+(-5) =  0
+(-4) =  0
+(-3) =  128
 (-2) =  0
 (-1) =  0
 ( 0) =  0
@@ -1676,8 +1675,9 @@ LocalArrayPrint: Array at address 0x17a5980:
 ( 2) =  0
 ( 3) =  538994023
 ( 4) =  8237
+( 1) =  0
+( 2) =  0
 ( 3) =  538994023
-( 4) =  1869881389
 ( 4) =  1869881389
   PASS  Printing LocalArray Copy after original LocalArray destroy, ESMF_LocalArrayUTest.F90, line 328
   PASS  Local Array Copy Destroy Test, ESMF_LocalArrayUTest.F90, line 335
@@ -1696,34 +1696,9 @@ LocalArrayPrint: Array at address 0x177af20:
   PASS  Validate an ArraySpec, ESMF_LocalArrayUTest.F90, line 368
   PASS  Creating a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 375
  array 1b create returned
-LocalArrayPrint: Array at address 0x177b0d0:
-            rank = 1, typekind = 3, base_addr = 0x177a8b0
-            rank = 1, typekind = 3, base_addr = 0x177a700
-            dim[0] = 516  
-  Integer, *4, Dim 1, Data values:
-( 5) =  55
-( 6) =  66
-( 7) =  77
-( 8) =  88
-( 9) =  99
-  PASS  Printing LocalArray Copy after original LocalArray destroy, ESMF_LocalArrayUTest.F90, line 328
-  PASS  Local Array Copy Destroy Test, ESMF_LocalArrayUTest.F90, line 335
-  PASS  Creating a LocalArray from unassociated Fortran pointer with docpy argument, ESMF_LocalArrayUTest.F90, line 343
-  PASS  Validate a non-set ArraySpec, ESMF_LocalArrayUTest.F90, line 352
-  PASS  Initializing an Array Spec of rank 3 Test, ESMF_LocalArrayUTest.F90, line 360
-  PASS  Validate an ArraySpec, ESMF_LocalArrayUTest.F90, line 368
-  PASS  Creating a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 375
- array 1b create returned
 LocalArrayPrint: Array at address 0x177afd0:
             rank = 1, typekind = 3, base_addr = 0x177a7b0
             dim[0] = 516  
-  Integer, *4, Dim 1, Data values:
-( 5) =  55
-( 6) =  66
-( 7) =  77
-( 8) =  88
-( 9) =  99
-(10) =  110
   PASS  Printing LocalArray Copy after original LocalArray destroy, ESMF_LocalArrayUTest.F90, line 328
   PASS  Local Array Copy Destroy Test, ESMF_LocalArrayUTest.F90, line 335
   PASS  Creating a LocalArray from unassociated Fortran pointer with docpy argument, ESMF_LocalArrayUTest.F90, line 343
@@ -1738,6 +1713,30 @@ LocalArrayPrint: Array at address 0x177b090:
   Integer, *4, Dim 1, Data values:
 ( 5) =  55
 ( 6) =  66
+  PASS  Printing LocalArray Copy after original LocalArray destroy, ESMF_LocalArrayUTest.F90, line 328
+  PASS  Local Array Copy Destroy Test, ESMF_LocalArrayUTest.F90, line 335
+  PASS  Creating a LocalArray from unassociated Fortran pointer with docpy argument, ESMF_LocalArrayUTest.F90, line 343
+  PASS  Validate a non-set ArraySpec, ESMF_LocalArrayUTest.F90, line 352
+  PASS  Initializing an Array Spec of rank 3 Test, ESMF_LocalArrayUTest.F90, line 360
+  PASS  Validate an ArraySpec, ESMF_LocalArrayUTest.F90, line 368
+  PASS  Creating a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 375
+ array 1b create returned
+LocalArrayPrint: Array at address 0x177b0d0:
+            rank = 1, typekind = 3, base_addr = 0x177a8b0
+            dim[0] = 516  
+  Integer, *4, Dim 1, Data values:
+( 5) =  55
+( 6) =  66
+( 7) =  77
+( 8) =  88
+( 9) =  99
+(10) =  110
+(11) =  121
+            rank = 1, typekind = 3, base_addr = 0x177a700
+            dim[0] = 516  
+  Integer, *4, Dim 1, Data values:
+( 5) =  55
+( 6) =  66
 ( 7) =  77
 ( 8) =  88
 ( 9) =  99
@@ -1746,7 +1745,9 @@ LocalArrayPrint: Array at address 0x177b090:
 (12) =  132
 (13) =  143
 (14) =  154
-            dim[0] = 516  
+  skipping to end ...
+(511) =  5621
+(512) =  5632
   Integer, *4, Dim 1, Data values:
 ( 5) =  55
 ( 6) =  66
@@ -1763,6 +1764,10 @@ LocalArrayPrint: Array at address 0x177b090:
 (512) =  5632
 (513) =  5643
 (514) =  5654
+(515) =  5665
+( 7) =  77
+( 8) =  88
+( 9) =  99
 (10) =  110
 (11) =  121
 (12) =  132
@@ -1777,9 +1782,6 @@ LocalArrayPrint: Array at address 0x177b090:
 (516) =  5676
 (517) =  5687
 (518) =  5698
-(519) =  5709
-(520) =  5720
-(11) =  121
 (12) =  132
 (13) =  143
 (14) =  154
@@ -1794,9 +1796,6 @@ LocalArrayPrint: Array at address 0x177b090:
 (518) =  5698
 (519) =  5709
 (520) =  5720
-  skipping to end ...
-(511) =  5621
-(512) =  5632
 (513) =  5643
 (514) =  5654
 (515) =  5665
@@ -1805,10 +1804,11 @@ LocalArrayPrint: Array at address 0x177b090:
 (518) =  5698
 (519) =  5709
 (520) =  5720
-(515) =  5665
 (516) =  5676
 (517) =  5687
 (518) =  5698
+(519) =  5709
+(520) =  5720
 (519) =  5709
 (520) =  5720
   PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
@@ -1825,8 +1825,24 @@ LocalArrayPrint: Array at address 0x177b090:
  array 1b destroy returned
   PASS  Creating Local Array Based on existing pointer Test, ESMF_LocalArrayUTest.F90, line 448
  array 1c create returned
+LocalArrayPrint: Array at address 0x17a6530:
+  PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
+ array 1b print returned
+  PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 391
+ array 1b get returned
+ real lb, ub =            5         520   lib return lb, ub =            5         520
+  PASS  Getting lower and upper index bounds, ESMF_LocalArrayUTest.F90, line 403
+ array 1b getbounds returned
+  PASS  Compare Local Array Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 418
+ array 1b get returned
+ first 10 intptr2 data =           55          66          77          88          99         110         121         132         143         154         165
+  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 427
+ array 1b destroy returned
+  PASS  Creating Local Array Based on existing pointer Test, ESMF_LocalArrayUTest.F90, line 448
+ array 1c create returned
 LocalArrayPrint: Array at address 0x177a230:
             rank = 1, typekind = 3, base_addr = 0x177a700
+            dim[0] = 835  
   PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
  array 1b print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 391
@@ -1844,21 +1860,12 @@ LocalArrayPrint: Array at address 0x177a230:
 LocalArrayPrint: Array at address 0x17a6470:
             rank = 1, typekind = 3, base_addr = 0x17a5750
             dim[0] = 835  
-  PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
- array 1b print returned
-  PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 391
- array 1b get returned
- real lb, ub =            5         520   lib return lb, ub =            5         520
-  PASS  Getting lower and upper index bounds, ESMF_LocalArrayUTest.F90, line 403
- array 1b getbounds returned
-  PASS  Compare Local Array Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 418
- array 1b get returned
- first 10 intptr2 data =           55          66          77          88          99         110         121         132         143         154         165
-  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 427
- array 1b destroy returned
-  PASS  Creating Local Array Based on existing pointer Test, ESMF_LocalArrayUTest.F90, line 448
- array 1c create returned
-LocalArrayPrint: Array at address 0x17a6530:
+  Integer, *4, Dim 1, Data values:
+( 1) =  1
+( 2) =  2
+( 3) =  3
+( 4) =  4
+( 5) =  5
             rank = 1, typekind = 3, base_addr = 0x17a5810
             dim[0] = 835  
   Integer, *4, Dim 1, Data values:
@@ -1866,6 +1873,12 @@ LocalArrayPrint: Array at address 0x17a6530:
 ( 2) =  2
 ( 3) =  3
 ( 4) =  4
+( 5) =  5
+( 6) =  6
+( 7) =  7
+( 8) =  8
+( 9) =  9
+(10) =  10
   PASS  Printing a Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 383
  array 1b print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 391
@@ -1892,22 +1905,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 6) =  6
 ( 7) =  7
 ( 8) =  8
-            dim[0] = 835  
-  Integer, *4, Dim 1, Data values:
-( 1) =  1
-( 2) =  2
-( 3) =  3
-( 4) =  4
-( 5) =  5
-( 6) =  6
-( 7) =  7
-( 8) =  8
-( 9) =  9
-(10) =  10
-  skipping to end ...
-(826) =  826
-(827) =  827
-(828) =  828
   Integer, *4, Dim 1, Data values:
 ( 1) =  1
 ( 2) =  2
@@ -1925,7 +1922,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (828) =  828
 (829) =  829
 (830) =  830
-( 5) =  5
 ( 6) =  6
 ( 7) =  7
 ( 8) =  8
@@ -1941,6 +1937,18 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (832) =  832
 (833) =  833
 (834) =  834
+(835) =  835
+  skipping to end ...
+(826) =  826
+(827) =  827
+(828) =  828
+(829) =  829
+(830) =  830
+(831) =  831
+(832) =  832
+(833) =  833
+(834) =  834
+(835) =  835
 ( 9) =  9
 (10) =  10
   skipping to end ...
@@ -1954,18 +1962,10 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (833) =  833
 (834) =  834
 (835) =  835
-(829) =  829
-(830) =  830
 (831) =  831
 (832) =  832
 (833) =  833
 (834) =  834
-(835) =  835
-(831) =  831
-(832) =  832
-(833) =  833
-(834) =  834
-(835) =  835
 (835) =  835
  array 1c print returned
   PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
@@ -1986,8 +1986,24 @@ LocalArrayPrint: Array at address 0x177a230:
  array 1c re-destroy returned
   PASS  Creating Local Array Based on allocated pointer Test, ESMF_LocalArrayUTest.F90, line 508
  array 1d create returned
+LocalArrayPrint: Array at address 0x177a2a0:
+            rank = 1, typekind = 3, base_addr = 0x17a74d0
+            dim[0] = 1022  
+ array 1c print returned
+  PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
+  PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 472
+  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 479
+ array 1c destroy returned
+  PASS  Local Array Destroy a destroyed Array Test, ESMF_LocalArrayUTest.F90, line 487
+ array 1c re-destroy returned
+  PASS  Creating Local Array Based on allocated pointer Test, ESMF_LocalArrayUTest.F90, line 508
+ array 1d create returned
 LocalArrayPrint: Array at address 0x177a360:
             rank = 1, typekind = 3, base_addr = 0x17a7590
+            dim[0] = 1022  
+  Integer, *4, Dim 1, Data values:
+( 1) =  1
+( 2) =  2
  array 1c print returned
   PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 472
@@ -2004,6 +2020,8 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 1) =  1
 ( 2) =  2
 ( 3) =  3
+( 4) =  4
+( 5) =  5
             rank = 1, typekind = 3, base_addr = 0x17a57c0
             dim[0] = 1022  
   Integer, *4, Dim 1, Data values:
@@ -2016,93 +2034,84 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 7) =  7
 ( 8) =  8
 ( 9) =  9
- array 1c print returned
-  PASS  Getting Local Array Data Test, ESMF_LocalArrayUTest.F90, line 459
-  PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 472
-  PASS  Local Array Destroy Test, ESMF_LocalArrayUTest.F90, line 479
- array 1c destroy returned
-  PASS  Local Array Destroy a destroyed Array Test, ESMF_LocalArrayUTest.F90, line 487
- array 1c re-destroy returned
-  PASS  Creating Local Array Based on allocated pointer Test, ESMF_LocalArrayUTest.F90, line 508
- array 1d create returned
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+  Integer, *4, Dim 1, Data values:
+( 1) =  1
+( 2) =  2
+( 3) =  3
+( 4) =  4
+( 5) =  5
+( 6) =  6
+( 7) =  7
+( 8) =  8
+( 9) =  9
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+(1015) =  1015
+(1016) =  1016
+(1017) =  1017
+( 3) =  3
+( 4) =  4
+( 5) =  5
+( 6) =  6
+( 7) =  7
+( 8) =  8
+( 9) =  9
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+(1015) =  1015
+(1016) =  1016
+(1017) =  1017
+(1018) =  1018
+(1019) =  1019
+(1020) =  1020
+( 6) =  6
+( 7) =  7
+( 8) =  8
+( 9) =  9
+(10) =  10
+  skipping to end ...
+(1013) =  1013
+(1014) =  1014
+(1015) =  1015
+(1016) =  1016
+(1017) =  1017
+(1018) =  1018
+(1019) =  1019
+(1020) =  1020
+(1021) =  1021
+(1022) =  1022
+(1015) =  1015
+(1016) =  1016
+(1017) =  1017
+(1018) =  1018
+(1019) =  1019
+(1020) =  1020
+(1021) =  1021
+(1022) =  1022
+(1018) =  1018
+(1019) =  1019
+(1020) =  1020
+(1021) =  1021
+(1022) =  1022
+(1021) =  1021
+(1022) =  1022
+ array 1d print returned
+  PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
+  PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
+ array 1d destroy returned
+ partial print of realptr data =    303.10000610351562        304.10000610351562        305.10000610351562        306.10000610351562        353.10000610351562        354.10000610351562        355.10000610351562        356.10000610351562        403.10000610351562        404.10000610351562        405.10000610351562        406.10000610351562     
+ Creating array2
+  PASS  Creating Local Array with 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 562
+ array 2a create returned
 LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 1, typekind = 3, base_addr = 0x17a74d0
-            dim[0] = 1022  
-  Integer, *4, Dim 1, Data values:
-( 1) =  1
-( 2) =  2
-( 3) =  3
-( 4) =  4
-( 5) =  5
-( 6) =  6
-( 7) =  7
-( 8) =  8
-( 9) =  9
-(10) =  10
-            dim[0] = 1022  
-  Integer, *4, Dim 1, Data values:
-( 1) =  1
-( 2) =  2
-( 3) =  3
-( 4) =  4
-( 5) =  5
-( 6) =  6
-( 7) =  7
-( 8) =  8
-( 9) =  9
-(10) =  10
-  skipping to end ...
-(1013) =  1013
-(1014) =  1014
-(1015) =  1015
-(1016) =  1016
-( 4) =  4
-( 5) =  5
-( 6) =  6
-( 7) =  7
-( 8) =  8
-( 9) =  9
-(10) =  10
-  skipping to end ...
-(1013) =  1013
-(1014) =  1014
-(1015) =  1015
-(1016) =  1016
-(1017) =  1017
-(1018) =  1018
-(1019) =  1019
-(1020) =  1020
-(1021) =  1021
-(10) =  10
-  skipping to end ...
-(1013) =  1013
-(1014) =  1014
-(1015) =  1015
-(1016) =  1016
-(1017) =  1017
-(1018) =  1018
-(1019) =  1019
-(1020) =  1020
-(1021) =  1021
-(1022) =  1022
-  skipping to end ...
-(1013) =  1013
-(1014) =  1014
-(1015) =  1015
-(1016) =  1016
-(1017) =  1017
-(1018) =  1018
-(1019) =  1019
-(1020) =  1020
-(1021) =  1021
-(1022) =  1022
-(1017) =  1017
-(1018) =  1018
-(1019) =  1019
-(1020) =  1020
-(1021) =  1021
-(1022) =  1022
-(1022) =  1022
  array 1d print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
@@ -2113,18 +2122,12 @@ LocalArrayPrint: Array at address 0x177a2a0:
  array 2a create returned
 LocalArrayPrint: Array at address 0x177a230:
             rank = 2, typekind = 6, base_addr = 0x17a7880
+            rank = 2, typekind = 6, base_addr = 0x17a74d0
             dim[0] = 51  dim[1] = 31  
   Real, *8, Dim 2, Data values:
- array 1d print returned
-  PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
-  PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
- array 1d destroy returned
- partial print of realptr data =    303.10000610351562        304.10000610351562        305.10000610351562        306.10000610351562        353.10000610351562        354.10000610351562        355.10000610351562        356.10000610351562        403.10000610351562        404.10000610351562        405.10000610351562        406.10000610351562     
- Creating array2
-  PASS  Creating Local Array with 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 562
- array 2a create returned
-LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 2, typekind = 6, base_addr = 0x17a74d0
+( 3, 7) =  303.1
+( 4, 7) =  304.1
+( 5, 7) =  305.1
  array 1d print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
@@ -2137,6 +2140,10 @@ LocalArrayPrint: Array at address 0x177a360:
             rank = 2, typekind = 6, base_addr = 0x17a7590
             dim[0] = 51  dim[1] = 31  
   Real, *8, Dim 2, Data values:
+( 3, 7) =  303.1
+( 4, 7) =  304.1
+( 5, 7) =  305.1
+( 6, 7) =  306.1
  array 1d print returned
   PASS  Getting Local Array with Integer 1D Data Test, ESMF_LocalArrayUTest.F90, line 519
   PASS  Compare Local Array Data Integer 1D Test, ESMF_LocalArrayUTest.F90, line 533
@@ -2154,19 +2161,8 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 5, 7) =  305.1
 ( 6, 7) =  306.1
 ( 7, 7) =  307.1
-( 3, 7) =  303.1
-( 4, 7) =  304.1
-( 5, 7) =  305.1
-( 6, 7) =  306.1
-( 7, 7) =  307.1
 ( 8, 7) =  308.1
 ( 9, 7) =  309.1
-(10, 7) =  310.1
-(11, 7) =  311.1
-(12, 7) =  312.1
-  skipping to end ...
-(44,37) =  1844.1
-(45,37) =  1845.1
             dim[0] = 51  dim[1] = 31  
   Real, *8, Dim 2, Data values:
 ( 3, 7) =  303.1
@@ -2180,9 +2176,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (11, 7) =  311.1
 (12, 7) =  312.1
   skipping to end ...
-( 3, 7) =  303.1
-( 4, 7) =  304.1
-( 5, 7) =  305.1
 ( 6, 7) =  306.1
 ( 7, 7) =  307.1
 ( 8, 7) =  308.1
@@ -2193,6 +2186,10 @@ LocalArrayPrint: Array at address 0x177a3a0:
   skipping to end ...
 (44,37) =  1844.1
 (45,37) =  1845.1
+(46,37) =  1846.1
+(47,37) =  1847.1
+(48,37) =  1848.1
+( 7, 7) =  307.1
 ( 8, 7) =  308.1
 ( 9, 7) =  309.1
 (10, 7) =  310.1
@@ -2204,14 +2201,19 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (46,37) =  1846.1
 (47,37) =  1847.1
 (48,37) =  1848.1
+(49,37) =  1849.1
+(10, 7) =  310.1
+(11, 7) =  311.1
+(12, 7) =  312.1
+  skipping to end ...
+(44,37) =  1844.1
+(45,37) =  1845.1
 (46,37) =  1846.1
 (47,37) =  1847.1
 (48,37) =  1848.1
 (49,37) =  1849.1
 (50,37) =  1850.1
 (51,37) =  1851.1
-(52,37) =  1852.1
-(53,37) =  1853.1
 (44,37) =  1844.1
 (45,37) =  1845.1
 (46,37) =  1846.1
@@ -2222,36 +2224,17 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (51,37) =  1851.1
 (52,37) =  1852.1
 (53,37) =  1853.1
-(46,37) =  1846.1
-(47,37) =  1847.1
-(48,37) =  1848.1
 (49,37) =  1849.1
 (50,37) =  1850.1
 (51,37) =  1851.1
 (52,37) =  1852.1
 (53,37) =  1853.1
-(49,37) =  1849.1
 (50,37) =  1850.1
 (51,37) =  1851.1
 (52,37) =  1852.1
 (53,37) =  1853.1
- array 2a print returned
- realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
- array 2a get returned
- bounds:            3           7          53          37
- partial print of realptr2 data =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        314.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        364.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000        414.00000000000000     
-  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 597
- array 2a destroy returned
-  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 622
- array 2b create returned
- array 2b get returned
- partial print of realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        16.100000381469727        17.100000381469727        18.100000381469727        31.100000381469727        32.099998474121094        33.099998474121094     
-  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 645
-LocalArrayPrint: Array at address 0x177a230:
-            rank = 2, typekind = 6, base_addr = 0x177a700
-            dim[0] = 15  dim[1] = 13  
-  Real, *8, Dim 2, Data values:
-( 1, 1) =  1.1
+(52,37) =  1852.1
+(53,37) =  1853.1
  array 2a print returned
  realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
  array 2a get returned
@@ -2265,9 +2248,6 @@ LocalArrayPrint: Array at address 0x177a230:
  partial print of realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        16.100000381469727        17.100000381469727        18.100000381469727        31.100000381469727        32.099998474121094        33.099998474121094     
   PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 645
 LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 2, typekind = 6, base_addr = 0x177a7b0
-            dim[0] = 15  dim[1] = 13  
-  Real, *8, Dim 2, Data values:
  array 2a print returned
  realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
  array 2a get returned
@@ -2284,10 +2264,6 @@ LocalArrayPrint: Array at address 0x177a360:
             rank = 2, typekind = 6, base_addr = 0x177a870
             dim[0] = 15  dim[1] = 13  
   Real, *8, Dim 2, Data values:
-( 1, 1) =  1.1
-( 2, 1) =  2.1
-( 3, 1) =  3.1
-( 4, 1) =  4.1
  array 2a print returned
  realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
  array 2a get returned
@@ -2307,12 +2283,23 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 1, 1) =  1.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
-( 4, 1) =  4.1
-( 5, 1) =  5.1
-( 6, 1) =  6.1
-( 7, 1) =  7.1
-( 8, 1) =  8.1
-( 9, 1) =  9.1
+ array 2a print returned
+ realptr data changed after nocopy set, now =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000     
+ array 2a get returned
+ bounds:            3           7          53          37
+ partial print of realptr2 data =    306.00000000000000        308.00000000000000        310.00000000000000        312.00000000000000        314.00000000000000        356.00000000000000        358.00000000000000        360.00000000000000        362.00000000000000        364.00000000000000        406.00000000000000        408.00000000000000        410.00000000000000        412.00000000000000        414.00000000000000     
+  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 597
+ array 2a destroy returned
+  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 622
+ array 2b create returned
+ array 2b get returned
+ partial print of realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        16.100000381469727        17.100000381469727        18.100000381469727        31.100000381469727        32.099998474121094        33.099998474121094     
+  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 645
+LocalArrayPrint: Array at address 0x177a230:
+            rank = 2, typekind = 6, base_addr = 0x177a700
+            dim[0] = 15  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
+( 1, 1) =  1.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
 ( 4, 1) =  4.1
@@ -2322,11 +2309,9 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 8, 1) =  8.1
 ( 9, 1) =  9.1
 (10, 1) =  10.1
-  skipping to end ...
-( 6,13) =  186.1
-( 7,13) =  187.1
-( 8,13) =  188.1
-( 9,13) =  189.1
+            rank = 2, typekind = 6, base_addr = 0x177a7b0
+            dim[0] = 15  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
 ( 1, 1) =  1.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
@@ -2341,6 +2326,10 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 6,13) =  186.1
 ( 7,13) =  187.1
 ( 8,13) =  188.1
+( 1, 1) =  1.1
+( 2, 1) =  2.1
+( 3, 1) =  3.1
+( 4, 1) =  4.1
 ( 5, 1) =  5.1
 ( 6, 1) =  6.1
 ( 7, 1) =  7.1
@@ -2354,7 +2343,22 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 9,13) =  189.1
 (10,13) =  190.1
 (11,13) =  191.1
+( 4, 1) =  4.1
+( 5, 1) =  5.1
+( 6, 1) =  6.1
+( 7, 1) =  7.1
+( 8, 1) =  8.1
+( 9, 1) =  9.1
 (10, 1) =  10.1
+  skipping to end ...
+( 6,13) =  186.1
+( 7,13) =  187.1
+( 8,13) =  188.1
+( 9,13) =  189.1
+(10,13) =  190.1
+(11,13) =  191.1
+(12,13) =  192.1
+(13,13) =  193.1
   skipping to end ...
 ( 6,13) =  186.1
 ( 7,13) =  187.1
@@ -2366,12 +2370,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (13,13) =  193.1
 (14,13) =  194.1
 (15,13) =  195.1
-(10,13) =  190.1
-(11,13) =  191.1
-(12,13) =  192.1
-(13,13) =  193.1
-(14,13) =  194.1
-(15,13) =  195.1
 ( 9,13) =  189.1
 (10,13) =  190.1
 (11,13) =  191.1
@@ -2383,18 +2381,8 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (13,13) =  193.1
 (14,13) =  194.1
 (15,13) =  195.1
- array 2b print returned
- array 2b destroy returned
-  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
- array 2c create returned
-LocalArrayPrint: Array at address 0x177a3a0:
- array 2b print returned
- array 2b destroy returned
-  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
- array 2c create returned
-LocalArrayPrint: Array at address 0x177a230:
-            rank = 2, typekind = 6, base_addr = 0x180d7a0
-            dim[0] = 4015  dim[1] = 13  
+(14,13) =  194.1
+(15,13) =  195.1
  array 2b print returned
  array 2b destroy returned
   PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
@@ -2404,35 +2392,6 @@ LocalArrayPrint: Array at address 0x177a2a0:
             dim[0] = 4015  dim[1] = 13  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  1.1
-            rank = 2, typekind = 6, base_addr = 0x180d960
-            dim[0] = 4015  dim[1] = 13  
-  Real, *8, Dim 2, Data values:
-( 1, 1) =  1.1
-( 2, 1) =  2.1
-( 3, 1) =  3.1
-( 4, 1) =  4.1
-( 5, 1) =  5.1
-( 6, 1) =  6.1
-  Real, *8, Dim 2, Data values:
-( 1, 1) =  1.1
-( 2, 1) =  2.1
-( 3, 1) =  3.1
-( 4, 1) =  4.1
-( 5, 1) =  5.1
-( 6, 1) =  6.1
-( 7, 1) =  7.1
-( 8, 1) =  8.1
-( 9, 1) =  9.1
-( 2, 1) =  2.1
-( 3, 1) =  3.1
-( 4, 1) =  4.1
-( 5, 1) =  5.1
-( 6, 1) =  6.1
-( 7, 1) =  7.1
-( 8, 1) =  8.1
-( 9, 1) =  9.1
-(10, 1) =  10.1
-  skipping to end ...
  array 2b print returned
  array 2b destroy returned
   PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
@@ -2442,12 +2401,42 @@ LocalArrayPrint: Array at address 0x177a360:
             dim[0] = 4015  dim[1] = 13  
   Real, *8, Dim 2, Data values:
 ( 1, 1) =  1.1
+ array 2b print returned
+ array 2b destroy returned
+  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
+ array 2c create returned
+LocalArrayPrint: Array at address 0x177a3a0:
+            rank = 2, typekind = 6, base_addr = 0x180d960
+            dim[0] = 4015  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
+ array 2b print returned
+ array 2b destroy returned
+  PASS  Creating Local Array with 2D Real Data based on an existing F90 pointer Test, ESMF_LocalArrayUTest.F90, line 674
+ array 2c create returned
+LocalArrayPrint: Array at address 0x177a230:
+            rank = 2, typekind = 6, base_addr = 0x180d7a0
+            dim[0] = 4015  dim[1] = 13  
+  Real, *8, Dim 2, Data values:
+( 1, 1) =  1.1
+( 2, 1) =  2.1
 ( 2, 1) =  2.1
 ( 3, 1) =  3.1
 ( 4, 1) =  4.1
 ( 5, 1) =  5.1
 ( 6, 1) =  6.1
 ( 7, 1) =  7.1
+( 8, 1) =  8.1
+( 9, 1) =  9.1
+(10, 1) =  10.1
+  skipping to end ...
+(4006,13) =  52186.1
+(4007,13) =  52187.1
+(4008,13) =  52188.1
+( 2, 1) =  2.1
+( 3, 1) =  3.1
+( 4, 1) =  4.1
+( 5, 1) =  5.1
+( 6, 1) =  6.1
 ( 7, 1) =  7.1
 ( 8, 1) =  8.1
 ( 9, 1) =  9.1
@@ -2457,29 +2446,25 @@ LocalArrayPrint: Array at address 0x177a360:
 (4007,13) =  52187.1
 (4008,13) =  52188.1
 (4009,13) =  52189.1
-(4010,13) =  52190.1
-(4011,13) =  52191.1
+( 1, 1) =  1.1
+( 2, 1) =  2.1
+( 3, 1) =  3.1
+( 4, 1) =  4.1
+( 5, 1) =  5.1
+( 6, 1) =  6.1
+( 7, 1) =  7.1
+( 8, 1) =  8.1
+( 9, 1) =  9.1
 (10, 1) =  10.1
   skipping to end ...
 (4006,13) =  52186.1
 (4007,13) =  52187.1
 (4008,13) =  52188.1
-(4009,13) =  52189.1
-(4010,13) =  52190.1
-(4011,13) =  52191.1
-(4012,13) =  52192.1
-(4013,13) =  52193.1
-(4014,13) =  52194.1
-(4006,13) =  52186.1
-(4007,13) =  52187.1
-(4008,13) =  52188.1
-(4009,13) =  52189.1
-(4010,13) =  52190.1
-(4011,13) =  52191.1
-(4012,13) =  52192.1
-(4013,13) =  52193.1
-(4014,13) =  52194.1
-(4015,13) =  52195.1
+( 3, 1) =  3.1
+( 4, 1) =  4.1
+( 5, 1) =  5.1
+( 6, 1) =  6.1
+( 7, 1) =  7.1
 ( 8, 1) =  8.1
 ( 9, 1) =  9.1
 (10, 1) =  10.1
@@ -2488,40 +2473,32 @@ LocalArrayPrint: Array at address 0x177a360:
 (4007,13) =  52187.1
 (4008,13) =  52188.1
 (4009,13) =  52189.1
+(4009,13) =  52189.1
 (4010,13) =  52190.1
 (4011,13) =  52191.1
 (4012,13) =  52192.1
 (4013,13) =  52193.1
+(4014,13) =  52194.1
+(4015,13) =  52195.1
+(4010,13) =  52190.1
+(4011,13) =  52191.1
 (4012,13) =  52192.1
 (4013,13) =  52193.1
 (4014,13) =  52194.1
 (4015,13) =  52195.1
-(4015,13) =  52195.1
+(4009,13) =  52189.1
+(4010,13) =  52190.1
+(4011,13) =  52191.1
+(4012,13) =  52192.1
+(4013,13) =  52193.1
 (4014,13) =  52194.1
 (4015,13) =  52195.1
- array 2c print returned
- realptr data changed after datacopyflag set, now =    2.0000000000000000        4.0000000000000000        6.0000000000000000        4017.0000000000000        4019.0000000000000        4021.0000000000000        8032.0000000000000        8034.0000000000000        8036.0000000000000     
- array 2c get returned
- realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        4016.1000976562500        4017.1000976562500        4018.1000976562500        8031.1000976562500        8032.1000976562500        8033.1000976562500     
-  PASS  Getting Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 696
- array 2c get returned
- realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        4016.1000976562500        4017.1000976562500        4018.1000976562500        8031.1000976562500        8032.1000976562500        8033.1000976562500     
-  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 714
- array 2c destroy returned
-  PASS  Creating a Local Array 3D DATACOPY_VALUE Real Data Test, ESMF_LocalArrayUTest.F90, line 742
- array 4a create returned
-  PASS  Getting Local Array 3D Real Data with wrong dimension array Test, ESMF_LocalArrayUTest.F90, line 751
-  PASS  Getting Local Array 3D Real Data without allocating array size Test, ESMF_LocalArrayUTest.F90, line 761
- array 4a get returned
-  PASS  Compare Local Array 3D Real Data without allocating array size Test, ESMF_LocalArrayUTest.F90, line 782
-  PASS  Getting Local Array 3D Real Data Test, ESMF_LocalArrayUTest.F90, line 791
- array 4a get returned
-  PASS  Compare Local Array 3D Real Data Test, ESMF_LocalArrayUTest.F90, line 812
- array 4a print returned
- array 4a destroy returned
-  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data Test, ESMF_LocalArrayUTest.F90, line 837
- array 4b create returned
-LocalArrayPrint: Array at address 0x177a230:
+(4010,13) =  52190.1
+(4011,13) =  52191.1
+(4012,13) =  52192.1
+(4013,13) =  52193.1
+(4014,13) =  52194.1
+(4015,13) =  52195.1
  array 2c print returned
  realptr data changed after datacopyflag set, now =    2.0000000000000000        4.0000000000000000        6.0000000000000000        4017.0000000000000        4019.0000000000000        4021.0000000000000        8032.0000000000000        8034.0000000000000        8036.0000000000000     
  array 2c get returned
@@ -2545,7 +2522,6 @@ LocalArrayPrint: Array at address 0x177a230:
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data Test, ESMF_LocalArrayUTest.F90, line 837
  array 4b create returned
 LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 3, typekind = 6, base_addr = 0x17a67b0
  array 2c print returned
  realptr data changed after datacopyflag set, now =    2.0000000000000000        4.0000000000000000        6.0000000000000000        4017.0000000000000        4019.0000000000000        4021.0000000000000        8032.0000000000000        8034.0000000000000        8036.0000000000000     
  array 2c get returned
@@ -2594,23 +2570,9 @@ LocalArrayPrint: Array at address 0x177a360:
  array 4a destroy returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data Test, ESMF_LocalArrayUTest.F90, line 837
  array 4b create returned
-LocalArrayPrint: Array at address 0x177a3a0:
-            rank = 3, typekind = 6, base_addr = 0x17a7a40
-            dim[0] = 33  dim[1] = 8  dim[2] = 160  
-  Real, *8, Dim 3, Data values:
-( 1, 1, 1) =  2.31779e-310
-( 2, 1, 1) =  1.21618e-316
-( 3, 1, 1) =  0
+LocalArrayPrint: Array at address 0x177a230:
             rank = 3, typekind = 6, base_addr = 0x17a7880
-            dim[0] = 33  dim[1] = 8  dim[2] = 160  
-  Real, *8, Dim 3, Data values:
-( 1, 1, 1) =  2.31779e-310
-( 2, 1, 1) =  1.21631e-316
-( 3, 1, 1) =  0
-( 4, 1, 1) =  0
-( 5, 1, 1) =  5.1
-( 6, 1, 1) =  6.1
-( 7, 1, 1) =  7.1
+            rank = 3, typekind = 6, base_addr = 0x17a67b0
             dim[0] = 33  dim[1] = 8  dim[2] = 160  
   Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  2.31779e-310
@@ -2619,11 +2581,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 4, 1, 1) =  0
 ( 5, 1, 1) =  5.1
 ( 6, 1, 1) =  6.1
-( 7, 1, 1) =  7.1
-( 8, 1, 1) =  8.1
-( 9, 1, 1) =  9.1
-(10, 1, 1) =  10.1
-  skipping to end ...
 ( 1, 1, 1) =  2.31779e-310
 ( 2, 1, 1) =  1.21618e-316
 ( 3, 1, 1) =  0
@@ -2633,21 +2590,74 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 7, 1, 1) =  7.1
 ( 8, 1, 1) =  8.1
 ( 9, 1, 1) =  9.1
-(10, 1, 1) =  10.1
-  skipping to end ...
-(24, 8,160) =  43472
+ array 2c print returned
+ realptr data changed after datacopyflag set, now =    2.0000000000000000        4.0000000000000000        6.0000000000000000        4017.0000000000000        4019.0000000000000        4021.0000000000000        8032.0000000000000        8034.0000000000000        8036.0000000000000     
+ array 2c get returned
+ realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        4016.1000976562500        4017.1000976562500        4018.1000976562500        8031.1000976562500        8032.1000976562500        8033.1000976562500     
+  PASS  Getting Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 696
+ array 2c get returned
+ realptr2 data =    1.1000000238418579        2.0999999046325684        3.0999999046325684        4016.1000976562500        4017.1000976562500        4018.1000976562500        8031.1000976562500        8032.1000976562500        8033.1000976562500     
+  PASS  Compare Local Array 2D Real Data Test, ESMF_LocalArrayUTest.F90, line 714
+ array 2c destroy returned
+  PASS  Creating a Local Array 3D DATACOPY_VALUE Real Data Test, ESMF_LocalArrayUTest.F90, line 742
+ array 4a create returned
+  PASS  Getting Local Array 3D Real Data with wrong dimension array Test, ESMF_LocalArrayUTest.F90, line 751
+  PASS  Getting Local Array 3D Real Data without allocating array size Test, ESMF_LocalArrayUTest.F90, line 761
+ array 4a get returned
+  PASS  Compare Local Array 3D Real Data without allocating array size Test, ESMF_LocalArrayUTest.F90, line 782
+  PASS  Getting Local Array 3D Real Data Test, ESMF_LocalArrayUTest.F90, line 791
+ array 4a get returned
+  PASS  Compare Local Array 3D Real Data Test, ESMF_LocalArrayUTest.F90, line 812
+ array 4a print returned
+ array 4a destroy returned
+  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data Test, ESMF_LocalArrayUTest.F90, line 837
+ array 4b create returned
+LocalArrayPrint: Array at address 0x177a3a0:
+            rank = 3, typekind = 6, base_addr = 0x17a7a40
+            dim[0] = 33  dim[1] = 8  dim[2] = 160  
+  Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  2.31779e-310
+( 2, 1, 1) =  1.21618e-316
+( 3, 1, 1) =  0
+( 4, 1, 1) =  0
+( 5, 1, 1) =  5.1
+( 6, 1, 1) =  6.1
+( 7, 1, 1) =  7.1
+            dim[0] = 33  dim[1] = 8  dim[2] = 160  
+  Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  2.31779e-310
+( 2, 1, 1) =  1.21631e-316
+( 3, 1, 1) =  0
 ( 4, 1, 1) =  0
 ( 5, 1, 1) =  5.1
 ( 6, 1, 1) =  6.1
 ( 7, 1, 1) =  7.1
 ( 8, 1, 1) =  8.1
+( 7, 1, 1) =  7.1
+( 8, 1, 1) =  8.1
 ( 9, 1, 1) =  9.1
 (10, 1, 1) =  10.1
   skipping to end ...
-(24, 8,160) =  44312
-(25, 8,160) =  44314
-(26, 8,160) =  44316
-(27, 8,160) =  44318
+(24, 8,160) =  43472
+(25, 8,160) =  43474
+(26, 8,160) =  43476
+(27, 8,160) =  43478
+(28, 8,160) =  43480
+(29, 8,160) =  43482
+(30, 8,160) =  43484
+(31, 8,160) =  43486
+(10, 1, 1) =  10.1
+  skipping to end ...
+(24, 8,160) =  43472
+(25, 8,160) =  43474
+(26, 8,160) =  43476
+(27, 8,160) =  43478
+(28, 8,160) =  43480
+(29, 8,160) =  43482
+(30, 8,160) =  43484
+(31, 8,160) =  43486
+(32, 8,160) =  43488
+(33, 8,160) =  43490
 ( 8, 1, 1) =  8.1
 ( 9, 1, 1) =  9.1
 (10, 1, 1) =  10.1
@@ -2659,41 +2669,24 @@ LocalArrayPrint: Array at address 0x177a3a0:
 (28, 8,160) =  44320
 (29, 8,160) =  44322
 (30, 8,160) =  44324
-(24, 8,160) =  43472
-(25, 8,160) =  43474
-(26, 8,160) =  43476
-(27, 8,160) =  43478
-(28, 8,160) =  43480
-(29, 8,160) =  43482
-(30, 8,160) =  43484
-(31, 8,160) =  43486
-(32, 8,160) =  43488
-(33, 8,160) =  43490
-(25, 8,160) =  43474
-(26, 8,160) =  43476
-(27, 8,160) =  43478
-(28, 8,160) =  43480
-(29, 8,160) =  43482
-(30, 8,160) =  43484
-(31, 8,160) =  43486
-(32, 8,160) =  43488
-(33, 8,160) =  43490
+(31, 8,160) =  44326
+(32, 8,160) =  44328
+( 9, 1, 1) =  9.1
+(10, 1, 1) =  10.1
+  skipping to end ...
+(24, 8,160) =  44312
+(25, 8,160) =  44314
+(26, 8,160) =  44316
+(27, 8,160) =  44318
 (28, 8,160) =  44320
 (29, 8,160) =  44322
 (30, 8,160) =  44324
 (31, 8,160) =  44326
 (32, 8,160) =  44328
 (33, 8,160) =  44330
-(31, 8,160) =  44326
-(32, 8,160) =  44328
+(32, 8,160) =  43488
+(33, 8,160) =  43490
 (33, 8,160) =  44330
- array 4b print returned
- array 4b destroy returned
-  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
- array 4c failed create returned
-  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 888
- array 4d create returned
-LocalArrayPrint: Array at address 0x177a230:
  array 4b print returned
  array 4b destroy returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
@@ -2701,7 +2694,6 @@ LocalArrayPrint: Array at address 0x177a230:
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 888
  array 4d create returned
 LocalArrayPrint: Array at address 0x177a2a0:
-            rank = 3, typekind = 6, base_addr = 0x17a67b0
  array 4b print returned
  array 4b destroy returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
@@ -2710,8 +2702,18 @@ LocalArrayPrint: Array at address 0x177a2a0:
  array 4d create returned
 LocalArrayPrint: Array at address 0x177a360:
             rank = 3, typekind = 6, base_addr = 0x17a6870
+            rank = 3, typekind = 6, base_addr = 0x17a67b0
             dim[0] = 10  dim[1] = 3  dim[2] = 40  
   Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  1.21617e-316
+( 2, 1, 1) =  0
+            dim[0] = 10  dim[1] = 3  dim[2] = 40  
+  Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  1.21618e-316
+( 2, 1, 1) =  0
+( 3, 1, 1) =  0
+( 4, 1, 1) =  2.02567e-322
+( 5, 1, 1) =  0
  array 4b print returned
  array 4b destroy returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
@@ -2724,19 +2726,22 @@ LocalArrayPrint: Array at address 0x177a3a0:
   Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  2.31779e-310
 ( 2, 1, 1) =  1.21618e-316
+( 3, 1, 1) =  0
+( 4, 1, 1) =  0
+( 5, 1, 1) =  5.1
+ array 4b print returned
+ array 4b destroy returned
+  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with deallocated array Test, ESMF_LocalArrayUTest.F90, line 862
+ array 4c failed create returned
+  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 888
+ array 4d create returned
+LocalArrayPrint: Array at address 0x177a230:
             rank = 3, typekind = 6, base_addr = 0x17a7880
             dim[0] = 10  dim[1] = 3  dim[2] = 40  
   Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  2.31779e-310
 ( 2, 1, 1) =  1.21631e-316
 ( 3, 1, 1) =  0
-( 4, 1, 1) =  0
-( 5, 1, 1) =  5.1
-( 6, 1, 1) =  6.1
-            dim[0] = 10  dim[1] = 3  dim[2] = 40  
-  Real, *8, Dim 3, Data values:
-( 1, 1, 1) =  1.21617e-316
-( 2, 1, 1) =  0
 ( 3, 1, 1) =  0
 ( 4, 1, 1) =  2.02567e-322
 ( 5, 1, 1) =  0
@@ -2744,18 +2749,33 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 7, 1, 1) =  1.22525e-316
 ( 8, 1, 1) =  1.22525e-316
 ( 9, 1, 1) =  1.22524e-316
-( 1, 1, 1) =  1.21618e-316
-( 2, 1, 1) =  0
-( 3, 1, 1) =  0
-( 4, 1, 1) =  2.02567e-322
-( 5, 1, 1) =  0
+(10, 1, 1) =  0
+  skipping to end ...
+( 1, 3,40) =  1191.1
+( 2, 3,40) =  1192.1
 ( 6, 1, 1) =  6.1
 ( 7, 1, 1) =  1.22526e-316
 ( 8, 1, 1) =  1.22526e-316
 ( 9, 1, 1) =  1.22525e-316
 (10, 1, 1) =  0
   skipping to end ...
-( 3, 1, 1) =  0
+( 1, 3,40) =  1191.1
+( 2, 3,40) =  1192.1
+( 3, 3,40) =  1193.1
+( 4, 3,40) =  1194.1
+( 5, 3,40) =  1195.1
+( 6, 1, 1) =  6.1
+( 7, 1, 1) =  7.1
+( 8, 1, 1) =  8.1
+( 9, 1, 1) =  9.1
+(10, 1, 1) =  10.1
+  skipping to end ...
+( 1, 3,40) =  1191.1
+( 2, 3,40) =  1192.1
+( 3, 3,40) =  1193.1
+( 4, 3,40) =  1194.1
+( 5, 3,40) =  1195.1
+( 6, 3,40) =  1196.1
 ( 4, 1, 1) =  0
 ( 5, 1, 1) =  5.1
 ( 6, 1, 1) =  6.1
@@ -2767,22 +2787,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 1, 3,40) =  1191.1
 ( 2, 3,40) =  1192.1
 ( 3, 3,40) =  1193.1
-( 7, 1, 1) =  7.1
-( 8, 1, 1) =  8.1
-( 9, 1, 1) =  9.1
-(10, 1, 1) =  10.1
-  skipping to end ...
-( 1, 3,40) =  1191.1
-( 2, 3,40) =  1192.1
-( 3, 3,40) =  1193.1
 ( 4, 3,40) =  1194.1
-( 5, 3,40) =  1195.1
-( 6, 3,40) =  1196.1
-( 7, 3,40) =  1197.1
-(10, 1, 1) =  0
-  skipping to end ...
-( 1, 3,40) =  1191.1
-( 2, 3,40) =  1192.1
 ( 3, 3,40) =  1193.1
 ( 4, 3,40) =  1194.1
 ( 5, 3,40) =  1195.1
@@ -2791,38 +2796,26 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 8, 3,40) =  1198.1
 ( 9, 3,40) =  1199.1
 (10, 3,40) =  1200.1
-( 1, 3,40) =  1191.1
-( 2, 3,40) =  1192.1
-( 3, 3,40) =  1193.1
-( 4, 3,40) =  1194.1
+( 6, 3,40) =  1196.1
+( 7, 3,40) =  1197.1
+( 8, 3,40) =  1198.1
+( 9, 3,40) =  1199.1
+(10, 3,40) =  1200.1
+( 7, 3,40) =  1197.1
+( 8, 3,40) =  1198.1
+( 9, 3,40) =  1199.1
+(10, 3,40) =  1200.1
 ( 5, 3,40) =  1195.1
 ( 6, 3,40) =  1196.1
 ( 7, 3,40) =  1197.1
 ( 8, 3,40) =  1198.1
 ( 9, 3,40) =  1199.1
 (10, 3,40) =  1200.1
-( 4, 3,40) =  1194.1
-( 5, 3,40) =  1195.1
-( 6, 3,40) =  1196.1
-( 7, 3,40) =  1197.1
-( 8, 3,40) =  1198.1
-( 9, 3,40) =  1199.1
-(10, 3,40) =  1200.1
-( 8, 3,40) =  1198.1
-( 9, 3,40) =  1199.1
-(10, 3,40) =  1200.1
- array 4d print returned
-  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 911
- array 4e create returned
-LocalArrayPrint: Array at address 0x177a230:
-            rank = 3, typekind = 6, base_addr = 0x17a7880
  array 4d print returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 911
  array 4e create returned
 LocalArrayPrint: Array at address 0x177a2a0:
             rank = 3, typekind = 6, base_addr = 0x17a67b0
-            dim[0] = 11  dim[1] = 3  dim[2] = 40  
-  Real, *8, Dim 3, Data values:
  array 4d print returned
   PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 911
  array 4e create returned
@@ -2841,18 +2834,16 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 1, 1, 1) =  2.31779e-310
 ( 2, 1, 1) =  1.21618e-316
 ( 3, 1, 1) =  0
-( 4, 1, 1) =  0
-( 5, 1, 1) =  5.1
+ array 4d print returned
+  PASS  Creating a Local Array 3D DATACOPY_REFERENCE Real Data with an allocated array Test, ESMF_LocalArrayUTest.F90, line 911
+ array 4e create returned
+LocalArrayPrint: Array at address 0x177a230:
+            rank = 3, typekind = 6, base_addr = 0x17a7880
             dim[0] = 11  dim[1] = 3  dim[2] = 40  
   Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  2.31779e-310
-( 2, 1, 1) =  1.21631e-316
-( 3, 1, 1) =  0
-( 4, 1, 1) =  0
-( 5, 1, 1) =  5.1
-( 6, 1, 1) =  6.1
-( 7, 1, 1) =  7.1
-( 8, 1, 1) =  8.1
+            dim[0] = 11  dim[1] = 3  dim[2] = 40  
+  Real, *8, Dim 3, Data values:
 ( 1, 1, 1) =  1.21617e-316
 ( 2, 1, 1) =  0
 ( 3, 1, 1) =  0
@@ -2864,6 +2855,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 9, 1, 1) =  1.22524e-316
 (10, 1, 1) =  0
   skipping to end ...
+( 2, 3,40) =  1311.1
 ( 2, 1, 1) =  0
 ( 3, 1, 1) =  0
 ( 4, 1, 1) =  2.02567e-322
@@ -2876,6 +2868,10 @@ LocalArrayPrint: Array at address 0x177a3a0:
   skipping to end ...
 ( 2, 3,40) =  1311.1
 ( 3, 3,40) =  1312.1
+( 4, 3,40) =  1313.1
+( 5, 3,40) =  1314.1
+( 4, 1, 1) =  0
+( 5, 1, 1) =  5.1
 ( 6, 1, 1) =  6.1
 ( 7, 1, 1) =  7.1
 ( 8, 1, 1) =  8.1
@@ -2887,20 +2883,18 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 4, 3,40) =  1313.1
 ( 5, 3,40) =  1314.1
 ( 6, 3,40) =  1315.1
-( 7, 3,40) =  1316.1
+( 2, 1, 1) =  1.21631e-316
+( 3, 1, 1) =  0
+( 4, 1, 1) =  0
+( 5, 1, 1) =  5.1
+( 6, 1, 1) =  6.1
+( 7, 1, 1) =  7.1
+( 8, 1, 1) =  8.1
 ( 9, 1, 1) =  9.1
 (10, 1, 1) =  10.1
   skipping to end ...
 ( 2, 3,40) =  1311.1
 ( 3, 3,40) =  1312.1
-( 4, 3,40) =  1313.1
-( 5, 3,40) =  1314.1
-( 6, 3,40) =  1315.1
-( 7, 3,40) =  1316.1
-( 8, 3,40) =  1317.1
-( 9, 3,40) =  1318.1
-(10, 3,40) =  1319.1
-( 2, 3,40) =  1311.1
 ( 3, 3,40) =  1312.1
 ( 4, 3,40) =  1313.1
 ( 5, 3,40) =  1314.1
@@ -2910,6 +2904,17 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 9, 3,40) =  1318.1
 (10, 3,40) =  1319.1
 (11, 3,40) =  1320.1
+( 6, 3,40) =  1315.1
+( 7, 3,40) =  1316.1
+( 8, 3,40) =  1317.1
+( 9, 3,40) =  1318.1
+(10, 3,40) =  1319.1
+(11, 3,40) =  1320.1
+( 7, 3,40) =  1316.1
+( 8, 3,40) =  1317.1
+( 9, 3,40) =  1318.1
+(10, 3,40) =  1319.1
+(11, 3,40) =  1320.1
 ( 4, 3,40) =  1313.1
 ( 5, 3,40) =  1314.1
 ( 6, 3,40) =  1315.1
@@ -2918,11 +2923,6 @@ LocalArrayPrint: Array at address 0x177a3a0:
 ( 9, 3,40) =  1318.1
 (10, 3,40) =  1319.1
 (11, 3,40) =  1320.1
-( 8, 3,40) =  1317.1
-( 9, 3,40) =  1318.1
-(10, 3,40) =  1319.1
-(11, 3,40) =  1320.1
-(11, 3,40) =  1320.1
  array 4e print returned
  array 4e destroy returned
   PASS  Initializing an Array Spec of rank 2 Test, ESMF_LocalArrayUTest.F90, line 932
@@ -2939,7 +2939,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
-  PET           3  Test Elapsed Time    3.3030000000000004       msec.
+  PET           2  Test Elapsed Time    3.3600000000000003       msec.
  array 4e print returned
  array 4e destroy returned
   PASS  Initializing an Array Spec of rank 2 Test, ESMF_LocalArrayUTest.F90, line 932
@@ -2956,7 +2956,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
-  PET           1  Test Elapsed Time    3.3170000000000006       msec.
+  PET           0  Test Elapsed Time    3.3539999999999992       msec.
  array 4e print returned
  array 4e destroy returned
   PASS  Initializing an Array Spec of rank 2 Test, ESMF_LocalArrayUTest.F90, line 932
@@ -2973,7 +2973,7 @@ LocalArrayPrint: Array at address 0x177a3a0:
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
-  PET           2  Test Elapsed Time    3.3060000000000000       msec.
+  PET           1  Test Elapsed Time    3.3569999999999998       msec.
  array 4e print returned
  array 4e destroy returned
   PASS  Initializing an Array Spec of rank 2 Test, ESMF_LocalArrayUTest.F90, line 932
@@ -2990,4 +2990,4 @@ LocalArrayPrint: Array at address 0x177a3a0:
  array 1f create returned
  array 1f destroy returned
   Ending Test, file ESMF_LocalArrayUTest.F90, line 1045
-  PET           0  Test Elapsed Time    3.3079999999999994       msec.
+  PET           3  Test Elapsed Time    3.3569999999999989       msec.
