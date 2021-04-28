@@ -1,4 +1,4 @@
-build time -- 2021-04-27 20:17:39
+build time -- 2021-04-28 16:33:41
  -------------------------------- 
  Start of System Test FieldRegrid:
  -------------------------------- 
@@ -32,14 +32,7 @@ build time -- 2021-04-27 20:17:39
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
  Comp SetServices finished, rc=            0           0
- Created component user model 1rc =           0
- Created component user model 2rc =           0
- Created component user one-way coupler, rc =           0
- Comp Creates finished
- Comp SetServices finished, rc=            0           0
- In user register routine
- Registered Initialize, Run, and Finalize routines
- Comp SetServices finished, rc=            0           0
+ in user setservices routine
  Created component user model 1rc =           0
  Created component user model 2rc =           0
  Created component user one-way coupler, rc =           0
@@ -62,6 +55,21 @@ build time -- 2021-04-27 20:17:39
  in user setservices routine
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
+ Comp 1 Initialize finished, rc =           0
+           1 User Comp 2 Init starting
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Comp SetServices finished, rc=            0           0
+ In user register routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ Comp 1 Initialize finished, rc =           0
+           2 User Comp 2 Init starting
  Created component user model 2rc =           0
  Created component user one-way coupler, rc =           0
  Comp Creates finished
@@ -72,28 +80,19 @@ build time -- 2021-04-27 20:17:39
  in user setservices routine
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
+           0 User Comp 1 Init starting
  Comp SetServices finished, rc=            0           0
  Comp SetServices finished, rc=            0           0
  in user setservices routine
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
            1 User Comp 1 Init starting
- in user setservices routine
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
            2 User Comp 1 Init starting
- in user setservices routine
- Registered Initialize, Run, and Finalize routines
- Comp SetServices finished, rc=            0           0
  Comp 1 Initialize finished, rc =           0
            0 User Comp 2 Init starting
-           0 User Comp 1 Init starting
- Comp 1 Initialize finished, rc =           0
-           1 User Comp 2 Init starting
- Comp 1 Initialize finished, rc =           0
-           2 User Comp 2 Init starting
            0 User Comp 1 Init returning
- Comp 1 Initialize finished, rc =           0
            1 User Comp 1 Init returning
  Comp 1 Initialize finished, rc =           0
  Comp 2 Initialize finished, rc =           0
@@ -105,6 +104,7 @@ build time -- 2021-04-27 20:17:39
            0 User Comp 2 Init returning
  Comp 2 Initialize finished, rc =           0
  User Coupler Init starting
+ Comp 1 Initialize finished, rc =           0
  Comp 2 Initialize finished, rc =           0
  User Coupler Init starting
            1 User Comp 2 Init returning
@@ -129,31 +129,23 @@ build time -- 2021-04-27 20:17:39
  Coupler Initialize finished, rc =           0
  Comp 1 Run returned, rc =           0
  User Coupler Run starting
+ Comp 1 Run returned, rc =           0
+ User Coupler Run starting
+ User Coupler Init returning
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  User Comp Run starting
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  User Comp Run starting
- User Comp Run returning
- Comp 1 Run returned, rc =           0
- User Coupler Run starting
- User Coupler Init returning
  Coupler Initialize finished, rc =           0
  User Comp Run starting
  User Comp Run returning
  Comp 1 Run returned, rc =           0
  User Coupler Run starting
+ User Comp Run returning
  Comp 1 Run returned, rc =           0
  User Coupler Run starting
- User Coupler Run returning
- Coupler Run returned, rc =           0
- User Comp Run starting
- User Comp Run returning
- Comp 2 Run returned, rc =           0
- Comp 1 Finalize finished, rc =           0
- User Comp Final starting
- User verifyResults starting
  User Comp Run returning
  Comp 1 Run returned, rc =           0
  User Coupler Run starting
@@ -161,18 +153,6 @@ build time -- 2021-04-27 20:17:39
  Coupler Run returned, rc =           0
  Comp 2 Run returned, rc =           0
  User Comp Final starting
- User Comp Final returning
- Comp 1 Finalize finished, rc =           0
- Comp 2 Finalize finished, rc =           0
- User Coupler Final starting
- User Coupler Final returning
- Coupler Finalize finished, rc =           0
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, pet_id =            0
- ------------------------------------------------------------
- ------------------------------------------------------------
- Comp Finalize returned
  User Coupler Run returning
  Coupler Run returned, rc =           0
  Comp 2 Run returned, rc =           0
@@ -205,7 +185,6 @@ build time -- 2021-04-27 20:17:39
  ------------------------------------------------------------
  ------------------------------------------------------------
  Comp Finalize returned
- rc from array get data =            0
  User Coupler Run returning
  Coupler Run returned, rc =           0
  User Comp Run starting
@@ -224,22 +203,35 @@ build time -- 2021-04-27 20:17:39
  User Comp Final starting
  User verifyResults starting
  rc from array get data =            0
- Results for DE #           2 :
-    minimum regridded value =    10.000012675907950     
-    maximum regridded value =    16.273727289906567     
-    minimum computed value  =    10.000012675907954     
-    maximum computed value  =    16.276301394177899     
-    maximum error           =    3.0455840962844150E-003
-    maximum percent error   =    1.9027675135586900E-002
- User verifyResults returning
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ User Comp Run starting
+ User Comp Run returning
+ Comp 2 Run returned, rc =           0
+ Comp 1 Finalize finished, rc =           0
+ User Comp Final starting
+ User verifyResults starting
+ rc from array get data =            0
+ User Comp Final returning
+ Comp 1 Finalize finished, rc =           0
+ Comp 2 Finalize finished, rc =           0
+ User Coupler Final starting
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ All Destroy routines done
+ System Test FieldRegrid complete.
  All Destroy routines done
  System Test FieldRegrid complete.
   PASS  System Test FieldRegrid: Field Regrid, ESMF_FieldRegridDisjointSTest.F90, line 398
  All Destroy routines done
  System Test FieldRegrid complete.
   PASS  System Test FieldRegrid: Field Regrid, ESMF_FieldRegridDisjointSTest.F90, line 398
- All Destroy routines done
- System Test FieldRegrid complete.
   PASS  System Test FieldRegrid: Field Regrid, ESMF_FieldRegridDisjointSTest.F90, line 398
  Results for DE #           0 :
     minimum regridded value =    10.000000000000000     
@@ -252,14 +244,6 @@ build time -- 2021-04-27 20:17:39
  User Comp Final returning
  Comp 2 Finalize finished, rc =           0
  User Coupler Final starting
- User Coupler Final returning
- Coupler Finalize finished, rc =           0
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, pet_id =            3
- ------------------------------------------------------------
- ------------------------------------------------------------
- Comp Finalize returned
  Results for DE #           1 :
     minimum regridded value =    14.315415831863316     
     maximum regridded value =    16.996606247681683     
@@ -271,14 +255,14 @@ build time -- 2021-04-27 20:17:39
  User Comp Final returning
  Comp 2 Finalize finished, rc =           0
  User Coupler Final starting
- User Coupler Final returning
- Coupler Finalize finished, rc =           0
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, pet_id =            4
- ------------------------------------------------------------
- ------------------------------------------------------------
- Comp Finalize returned
+ Results for DE #           2 :
+    minimum regridded value =    10.000012675907950     
+    maximum regridded value =    16.273727289906567     
+    minimum computed value  =    10.000012675907954     
+    maximum computed value  =    16.276301394177899     
+    maximum error           =    3.0455840962844150E-003
+    maximum percent error   =    1.9027675135586900E-002
+ User verifyResults returning
  User Comp Final returning
  Comp 2 Finalize finished, rc =           0
  User Coupler Final starting
@@ -290,12 +274,28 @@ build time -- 2021-04-27 20:17:39
  ------------------------------------------------------------
  ------------------------------------------------------------
  Comp Finalize returned
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            3
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            4
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
  All Destroy routines done
  System Test FieldRegrid complete.
   PASS  System Test FieldRegrid: Field Regrid, ESMF_FieldRegridDisjointSTest.F90, line 398
  All Destroy routines done
  System Test FieldRegrid complete.
-  PASS  System Test FieldRegrid: Field Regrid, ESMF_FieldRegridDisjointSTest.F90, line 398
  All Destroy routines done
  System Test FieldRegrid complete.
+  PASS  System Test FieldRegrid: Field Regrid, ESMF_FieldRegridDisjointSTest.F90, line 398
   PASS  System Test FieldRegrid: Field Regrid, ESMF_FieldRegridDisjointSTest.F90, line 398
