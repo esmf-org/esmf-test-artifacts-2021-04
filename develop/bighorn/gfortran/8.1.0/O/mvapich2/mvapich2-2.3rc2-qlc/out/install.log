@@ -1,0 +1,74 @@
+ 
+Installing ESMF:
+ 
+mkdir -p /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/include
+cp -f /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/include/ESMC.h /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/include
+cp -f /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/include/ESMC_*.h /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/include
+cp -f /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/build_config/Linux.gfortran.default/ESMC_Conf.h /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/include
+mkdir -p /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mvapich2.default
+cp -f /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/mod/modO/Linux.gfortran.64.mvapich2.default/*.mod /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mvapich2.default
+mkdir -p /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default
+cp -f /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/lib/libO/Linux.gfortran.64.mvapich2.default/libesmf*.* /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default
+make ESMF_PRELOADDIR=/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default build_preload_script
+make[1]: Entering directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop'
+chmod 755 /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default/preload.sh
+make[1]: Leaving directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop'
+ranlib /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default/libesmf*.a
+make install_apps
+make[1]: Entering directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop'
+mkdir -p /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.gfortran.64.mvapich2.default
+make build_apps ESMF_APPSDIR=/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.gfortran.64.mvapich2.default ESMF_LDIR=/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default ESMF_LIBDIR=/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default ESMF_MODDIR=/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mvapich2.default
+make[2]: Entering directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop'
+cd /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps; make ACTION=tree_build_apps tree
+make[3]: Entering directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps'
+tree_build_apps in: /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps/ESMF_PrintInfo
+make[4]: Entering directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps/ESMF_PrintInfo'
+make chkdir_locobj
+make[5]: Entering directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps/ESMF_PrintInfo'
+Making directory /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/obj/objO/Linux.gfortran.64.mvapich2.default/src/apps/ESMF_PrintInfo for apps output
+make[5]: Leaving directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps/ESMF_PrintInfo'
+mpif90 -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp -I/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps/ESMF_PrintInfo -I/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/build_config/Linux.gfortran.default -I/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/Infrastructure -I/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/Superstructure -I/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/mod/modO/Linux.gfortran.64.mvapich2.default -I/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/include -I/usr/local/netcdf-c-4.6.1-f-4.4.4-gcc-g++-gfortran-8.1.0/include -I/usr/local/netcdf-c-4.6.1-f-4.4.4-gcc-g++-gfortran-8.1.0/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='"ESMF_8_2_0_beta_snapshot_05-6-gb8c1a7077f"' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=mvapich2 -DESMF_DIR=/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop ESMF_PrintInfo.F90 -o /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/obj/objO/Linux.gfortran.64.mvapich2.default/src/apps/ESMF_PrintInfo/ESMF_PrintInfo.o
+make chkdir_apps
+make[5]: Entering directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps/ESMF_PrintInfo'
+make[5]: Leaving directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps/ESMF_PrintInfo'
+mpif90     -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -fopenmp -L/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default -L/usr/local/netcdf-c-4.6.1-f-4.4.4-gcc-g++-gfortran-8.1.0/lib -L/usr/local/netcdf-c-4.6.1-f-4.4.4-gcc-g++-gfortran-8.1.0/lib -L/usr/local/gcc-g++-gfortran-8.1.0/lib -L/usr/local/hdf5-1.8.7-gcc-g++-gfortran-8.1.0/lib -L/usr/local/netcdf-c-4.6.1-f-4.4.4-gcc-g++-gfortran-8.1.0/lib -L/usr/local/gcc-g++-gfortran-8.1.0/lib/gcc/x86_64-pc-linux-gnu/8.1.0/../../../../lib64/ -Wl,-rpath,/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.mvapich2.default -Wl,-rpath,/usr/local/netcdf-c-4.6.1-f-4.4.4-gcc-g++-gfortran-8.1.0/lib -Wl,-rpath,/usr/local/netcdf-c-4.6.1-f-4.4.4-gcc-g++-gfortran-8.1.0/lib -Wl,-rpath,/usr/local/gcc-g++-gfortran-8.1.0/lib -Wl,-rpath,/usr/local/hdf5-1.8.7-gcc-g++-gfortran-8.1.0/lib -Wl,-rpath,/usr/local/netcdf-c-4.6.1-f-4.4.4-gcc-g++-gfortran-8.1.0/lib -Wl,-rpath,/usr/local/gcc-g++-gfortran-8.1.0/lib/gcc/x86_64-pc-linux-gnu/8.1.0/../../../../lib64/ -o /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.gfortran.64.mvapich2.default/ESMF_PrintInfo /scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/obj/objO/Linux.gfortran.64.mvapich2.default/src/apps/ESMF_PrintInfo/ESMF_PrintInfo.o -lesmf  -lrt -lstdc++ -ldl -lnetcdf -lnetcdff -lnetcdf -lnetcdf
+/usr/bin/ld: warning: libibverbs.so.1, needed by /cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpifort.so, not found (try using -rpath or -rpath-link)
+/usr/bin/ld: warning: libpsm_infinipath.so.1, needed by /cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpifort.so, not found (try using -rpath or -rpath-link)
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_wait'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_ipeek'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_irecv'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `ibv_get_device_list@IBVERBS_1.1'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_ep_open'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_getopt'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_error_register_handler'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_ep_connect'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_init'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_error_get_string'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_send'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `ibv_free_device_list@IBVERBS_1.1'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_poll'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_ep_open_opts_get_defaults'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_cancel'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_setopt'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_finalize'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_ep_close'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_iprobe'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_test'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_finalize'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `ibv_query_device@IBVERBS_1.1'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_uuid_generate'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `ibv_query_port@IBVERBS_1.1'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `ibv_get_device_name@IBVERBS_1.1'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_isend'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `ibv_open_device@IBVERBS_1.1'
+/cluster/mvapich2-2.3rc2-gcc-g++-gfortran-8.1.0/lib/libmpi.so: undefined reference to `psm_mq_init'
+collect2: error: ld returned 1 exit status
+make[4]: *** [/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/DEFAULTINSTALLDIR/bin/binO/Linux.gfortran.64.mvapich2.default/ESMF_PrintInfo] Error 1
+make[4]: Leaving directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps/ESMF_PrintInfo'
+make[3]: *** [tree] Error 1
+make[3]: Leaving directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop/src/apps'
+make[2]: *** [build_apps] Error 2
+make[2]: Leaving directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop'
+make[1]: *** [install_apps] Error 2
+make[1]: Leaving directory `/scratch/mpotts/gfortran_8.1.0_mvapich2_O_develop'
+make: *** [install] Error 2
