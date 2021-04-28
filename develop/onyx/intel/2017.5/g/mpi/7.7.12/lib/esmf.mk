@@ -1,4 +1,4 @@
-build time -- 2021-04-26 08:57:35
+build time -- 2021-04-28 10:49:37
 # ESMF application makefile fragment
 #
 # Use the following ESMF_ variables to compile and link
@@ -14,7 +14,7 @@ build time -- 2021-04-26 08:57:35
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.2.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-4-g394ef51454
+ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-6-gb8c1a7077f
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -34,7 +34,7 @@ ESMF_F90LINKER=ftn
 
 ESMF_F90COMPILEOPTS=-g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs   -qopenmp
 ESMF_F90COMPILEPATHS=-I/p/work/mpotts/intel_2017.5_mpi_g_develop/mod/modg/Unicos.intel.64.mpi.default -I/p/work/mpotts/intel_2017.5_mpi_g_develop/src/include -I/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/include -I/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-4-g394ef51454' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_05-6-gb8c1a7077f' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=
 ESMF_F90COMPILEFIXCPP=
@@ -53,7 +53,7 @@ ESMF_CXXLINKER=CC
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -traceback -Wcheck -fPIC -pthread  -qopenmp
 ESMF_CXXCOMPILEPATHS= -I/p/work/mpotts/intel_2017.5_mpi_g_develop/src/include  -I/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/include -I/p/work/mpotts/intel_2017.5_mpi_g_develop/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-4-g394ef51454' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_POSIXIPC
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_05-6-gb8c1a7077f' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_POSIXIPC
 
 ESMF_CXXLINKOPTS=  -pthread -Wl,--no-as-needed  -qopenmp
 ESMF_CXXLINKPATHS=-L/p/work/mpotts/intel_2017.5_mpi_g_develop/lib/libg/Unicos.intel.64.mpi.default -L/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/lib -L/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/lib -L/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/lib -L/p/app/unsupported/hdf5/1.8.18-intel-17.0.1.132/lib -L/p/app/unsupported/hdf4/4.2.12-nonetcdf-intel-17.0.1.132/lib -L/p/app/unsupported/szip/2.1.1-intel-17.0.1.132/lib -L/opt/intel/compilers_and_libraries_2017.1.132/linux/mkl/lib/intel64 -L/opt/intel/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin/
@@ -141,7 +141,7 @@ ESMF_INTERNAL_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop
 
 #----------------------------------------------
 ESMF_VERSION_STRING=8.2.0 beta snapshot
-ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-4-g394ef51454
+ESMF_VERSION_STRING_GIT=ESMF_8_2_0_beta_snapshot_05-6-gb8c1a7077f
 #----------------------------------------------
 
 ESMF_VERSION_MAJOR=8
@@ -161,7 +161,7 @@ ESMF_F90LINKER=ftn
 
 ESMF_F90COMPILEOPTS=-g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs   -qopenmp
 ESMF_F90COMPILEPATHS=-I/p/work/mpotts/intel_2017.5_mpi_g_develop/mod/modg/Unicos.intel.64.mpi.default -I/p/work/mpotts/intel_2017.5_mpi_g_develop/src/include -I/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/include -I/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/include
-ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-4-g394ef51454' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop
+ESMF_F90COMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_05-6-gb8c1a7077f' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop
 ESMF_F90COMPILEFREECPP=
 ESMF_F90COMPILEFREENOCPP=
 ESMF_F90COMPILEFIXCPP=
@@ -180,7 +180,7 @@ ESMF_CXXLINKER=CC
 
 ESMF_CXXCOMPILEOPTS=-std=c++11 -g -traceback -Wcheck -fPIC -pthread  -qopenmp
 ESMF_CXXCOMPILEPATHS= -I/p/work/mpotts/intel_2017.5_mpi_g_develop/src/include  -I/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/include -I/p/work/mpotts/intel_2017.5_mpi_g_develop/src/prologue/yaml-cpp/include
-ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='ESMF_8_2_0_beta_snapshot_05-4-g394ef51454' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_POSIXIPC
+ESMF_CXXCOMPILECPPFLAGS=-DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='ESMF_8_2_0_beta_snapshot_05-6-gb8c1a7077f' -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_g_develop -D__SDIR__='' -DESMF_CXXSTD=11 -DESMF_NO_POSIXIPC
 
 ESMF_CXXLINKOPTS=  -pthread -Wl,--no-as-needed  -qopenmp
 ESMF_CXXLINKPATHS=-L/p/work/mpotts/intel_2017.5_mpi_g_develop/lib/libg/Unicos.intel.64.mpi.default -L/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/lib -L/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/lib -L/p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/lib -L/p/app/unsupported/hdf5/1.8.18-intel-17.0.1.132/lib -L/p/app/unsupported/hdf4/4.2.12-nonetcdf-intel-17.0.1.132/lib -L/p/app/unsupported/szip/2.1.1-intel-17.0.1.132/lib -L/opt/intel/compilers_and_libraries_2017.1.132/linux/mkl/lib/intel64 -L/opt/intel/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin/
