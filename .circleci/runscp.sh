@@ -10,10 +10,13 @@ git config --global user.name "dcv-bot"
 git branch
 export hash=${CIRCLE_SHA1}
 export TERM=xterm
-#export host=${CIRCLE_BRANCH}
+export host=${CIRCLE_BRANCH}
+if [[ $host == "main" ]]; then
+  exit 0 
+fi
 export message=`git log --format=%B -n 1 $hash | head -n 1`
 export message=$message" [ci skip]"
-export host=`echo $message |  awk -F ' ' '{print $10}'`
+#export host=`echo $message |  awk -F ' ' '{print $10}'`
 export branch=`echo $message |  awk -F ' ' '{print $5}' | awk -F '_._' '{print $2}'`
 export bmessage=`echo $message |  awk -F ' ' '{print $8}'` 
 export branch=${branch:-'develop'}
